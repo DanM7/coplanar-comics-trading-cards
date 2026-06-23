@@ -143,7 +143,7 @@
       "home_district": "Realspace Row",
       "type": "Creature",
       "identity": "",
-      "description": ""
+      "description": "Acid is a slick, heavy creature from Realspace Row that oozes through fights without much fuss. He's got corrosive touch and acid spray that melt through trouble, and he'd rather soak problems away than leave a mess behind."
     },
     {
       "id": 14,
@@ -418,7 +418,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "This card is still waiting on a name, a face, and a real backstory. For now it only throws Placeholder Strike and Placeholder Guard, like a sketch of a fighter that hasn't been inked yet."
     },
     {
       "id": 39,
@@ -429,7 +429,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Bob Balloon Head fights with a grin and a giant rubbery skull that's somehow harder than it looks. He bounces his head into targets, then pops it on purpose when things get boring, turning every brawl into a loud, messy surprise."
     },
     {
       "id": 40,
@@ -440,7 +440,7 @@
       "home_district": "Angle Ranch",
       "type": "",
       "identity": "",
-      "description": "A crystalline construct from Angle Ranch whose shifting facets store ancient geometric data, making it a living archive of the plains’ 3D anomalies."
+      "description": "Once Alfred MacKenzie Posh IX, he was transformed by a catastrophic anti‑cartoon experiment that fused his body with the very ink‑born physics he despised. Now a warped hybrid of flesh and animation, he bends reality in a furious attempt to undo the mistake that made him part of the absurd world he tried to erase."
     },
     {
       "id": 41,
@@ -451,7 +451,7 @@
       "home_district": "Vector Heights",
       "type": "",
       "identity": "",
-      "description": "A sleek geometric warrior forged from aerodynamic shapes, gliding through Vector Heights to slice apart threats with razor-thin air currents."
+      "description": "A daring hero who rides the skies on jet‑powered boots, slicing through danger with precision and speed. Armed with twin aerodynamic hooks, he’s the guardian of the high altitudes—swift, fearless, and always one step ahead of the storm."
     },
     {
       "id": 42,
@@ -473,7 +473,7 @@
       "home_district": "Sketchline Fields",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Horns is a mean, horn-heavy fighter who stamps through Sketchline Fields looking for something to hit. He charges with a gore rush that doesn't stop early, and he'll toss his horns when he wants damage from farther away."
     },
     {
       "id": 44,
@@ -528,7 +528,7 @@
       "home_district": "Sketchline Fields",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Mud Man is slow, heavy, and impossible to knock down clean. He slings thick mud that sticks and grips like a bog, smothering trouble until every punch feels like it landed in wet earth."
     },
     {
       "id": 49,
@@ -539,7 +539,7 @@
       "home_district": "Sketchline Fields",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Clonez looks normal from across the room, but that's the point. He fights with swarms of copies and mirror strikes that hit from every angle until you can't tell which one is real and which one already got you."
     },
     {
       "id": 50,
@@ -550,7 +550,7 @@
       "home_district": "Sketchline Fields",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Cyclone doesn't walk into a fight. He spins in like a storm with arms full of wind, cutting through trouble with burst spins and shear gusts that knock plans sideways before anyone finds their footing."
     },
     {
       "id": 51,
@@ -561,7 +561,7 @@
       "home_district": "Sketchline Fields",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Wrist Missle treats every fight like a launch sequence. He's strapped with rockets on his wrists and ego, firing off barrages until the sky is full of smoke and you're wondering how he reloads that fast."
     },
     {
       "id": 52,
@@ -572,7 +572,7 @@
       "home_district": "Sketchline Fields",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "John is a toilet on wheels with glasses, a big laugh, and zero shame. He'll plain punch trouble, slam through it, and hose the whole scene down while cackling like saving the city is the funniest joke he ever heard."
     },
     {
       "id": 53,
@@ -583,7 +583,7 @@
       "home_district": "Sketchline Fields",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Spewtanoo is a floating mess of teeth, slime, and bad moods. He spews nasty sprays and bursts from every angle, turning a fight into something wet, gross, and hard to forget once you've smelled it."
     },
     {
       "id": 54,
@@ -594,7 +594,7 @@
       "home_district": "Sketchline Fields",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Mr. Big Stuff is a towering giant who mostly looks confused about his own size. He doesn't mean to crush cities, but one big shoulder check or stuff smash can flatten a block before he even notices what happened."
     },
     {
       "id": 55,
@@ -605,7 +605,7 @@
       "home_district": "Sketchline Fields",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Gas drifts into fights behind a mask and a cloud that makes your eyes water. He leaks toxic air on purpose, filling rooms with sick green haze until breathing feels like the real battle."
     },
     {
       "id": 56,
@@ -616,7 +616,7 @@
       "home_district": "Sketchline Fields",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Wrecking Ball is a walking demolition crew with spiked chains for arms and legs that never quit. He swings through walls and trouble alike, smashing whatever's in the way like the whole job is coming down today."
     },
     {
       "id": 57,
@@ -627,7 +627,7 @@
       "home_district": "Sketchline Fields",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Ochindew oozes through caves like living purple dew with bones inside. He's slow until he isn't, rushing forward with wet strikes that hit cold and cling long after the swing should be over."
     },
     {
       "id": 58,
@@ -649,7 +649,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Buzzard spends most fights circling above, watching every move before he moves in. He's patient, sharp-eyed, and hard to shake once he commits, diving with hooked talons and ripping through trouble like it's already carrion."
     },
     {
       "id": 60,
@@ -660,7 +660,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Powerline is raw city electricity with a bad attitude. He clings to wires and poles like they're home, then turns juice into jagged arcs that surge through anything dumb enough to get close."
     },
     {
       "id": 61,
@@ -671,7 +671,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Sal the Radioactive Pizza Guy shows up at your door with a smile, a hot slice, and a glow that'll linger long after he's gone. He never seems rushed, but his deliveries hit with a burn that isn't just pepperoni."
     },
     {
       "id": 62,
@@ -682,7 +682,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Trajic fights like every battle is the sad last scene of a movie. He's cold, dramatic, and always one step ahead, twisting fights with sudden strikes that land like heavy news nobody wanted to hear."
     },
     {
       "id": 63,
@@ -693,7 +693,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Psycho Duck isn't here for a friendly pond swim. He bounces in the ring with wild eyes and mean punches, unloading quack fury and vicious pecks until the whole fight feels like a bad fever dream."
     },
     {
       "id": 64,
@@ -704,7 +704,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Spike Lord rules with sharp edges and zero patience for nonsense. He'll rain spikes from above or wrap trouble in thorny guards, and getting close to him always feels like hugging a pile of razor wire."
     },
     {
       "id": 65,
@@ -715,7 +715,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Arid Maker turns dry air into a weapon. He forges dust into hard bursts and blasts heat into empty space until the whole fight feels like a desert with no water and no mercy left."
     },
     {
       "id": 66,
@@ -725,7 +725,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "G. I. O's aren't your average breakfast. These little cereal rings hit like a whole squad with legs, guns, and bad attitudes, crunching forward in a rush and bashing through trouble like a bowl tipped over in a food fight."
     },
     {
       "id": 67,
@@ -735,7 +735,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Daddy Longlegs is half man, half nightmare spider rig. He snares targets in sticky webs, sweeps legs out from under them, and watches from above with that creepy calm of something that knows you'll trip eventually."
     },
     {
       "id": 68,
@@ -745,7 +745,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Cactus walks into every fight already armed. His whole body is needles and attitude, jabbing fast and curling into a prickly guard that makes getting close feel like hugging a cactus on purpose."
     },
     {
       "id": 69,
@@ -755,7 +755,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Hydrant shows up when everything's on fire and keeps her cool under the helmet. She hits with blasting water and throws up shields that turn heat into steam before it can spread."
     },
     {
       "id": 70,
@@ -765,7 +765,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Drill Boy doesn't knock on doors. He spins up, bores straight through, and keeps going until the whole wall, floor, or enemy is just dust behind him. Loud, stubborn, and built to puncture."
     },
     {
       "id": 71,
@@ -775,7 +775,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Mr. Plaid Smiley Face is soft, round, and cheerful until you underestimate him. That goofy grin hides a quick swipe that lands harder than you'd expect from something that looks like a couch cushion."
     },
     {
       "id": 72,
@@ -785,7 +785,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Chinkyhooha is a weird blob of wires and noise that shouldn't be alive. It hollers sharp enough to rattle your teeth, then strikes from angles that make no sense until you're already hit."
     },
     {
       "id": 73,
@@ -795,7 +795,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Manta moves through a fight like he's swimming through open water. Smooth, quiet, and impossible to track, he glides in with a strike and cuts away before you even figure out which way he went."
     },
     {
       "id": 74,
@@ -805,7 +805,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Boa wraps around trouble and squeezes until it stops moving. He's patient, coiled, and always waiting for one wrong step before he crushes the air out of a fight and won't let go."
     },
     {
       "id": 75,
@@ -815,7 +815,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Polar Bear isn't cuddly, and that white beard isn't for show. He stalks cold places with ice claws and a roar that hits like a blizzard, treating every fight like survival at the top of the world."
     },
     {
       "id": 76,
@@ -825,7 +825,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Hair treats her long locks like extra arms, and they're stronger than they look. She whips, tangles, and snares with strands that move on their own, turning a bad hair day into everybody else's problem."
     },
     {
       "id": 77,
@@ -835,7 +835,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Cuff has hands built for stopping trouble, not starting it. He'll cuff-strike hard enough to drop a fight, then clamp down with a hold that won't break until the danger passes."
     },
     {
       "id": 78,
@@ -845,7 +845,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Suction Boy treats skyscrapers like jungle gyms. He grips glass with suction gear, pulls himself wherever help is needed, and won't let go until he's got someone safe or the bad guy reeled in."
     },
     {
       "id": 79,
@@ -855,7 +855,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Jay Memo is a walking sticky note with opinions and no schedule. He drifts through fights leaving memos nobody asked for, jaywalking past danger like the whole world is just another late-night bit."
     },
     {
       "id": 80,
@@ -865,7 +865,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Roley has weathered enough hard miles to make anyone bitter, yet he meets every setback with sharper attitude and faster momentum. Sardonic and stubborn, he refuses to stop, brake, or explain himself. Every hill is a dare, and every skid is proof he is still moving."
     },
     {
       "id": 81,
@@ -875,7 +875,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "He's a tactician that does not negotiate, troubleshoot, or retreat; he finds the nearest load-bearing wall and makes the conversation louder. Reckless and grinning through the smoke, he lives for the moment before detonation and treats restraint like a personal insult."
     },
     {
       "id": 82,
@@ -885,7 +885,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Nymph lives for open sky and open trails, chasing the next rush of wind like it might run away without him. Quick, curious, and hard to catch, he treats every clearing like a playground and every problem like a reason to fly faster."
     },
     {
       "id": 83,
@@ -895,7 +895,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Scarab Beetle fights like the beetle he is, trusting his hard shell to soak up hits and his heavy charge to break through anything in his way. Push him and he'll lower his horns, clamps down with iron jaws, and keeps pushing forward."
     },
     {
       "id": 84,
@@ -905,7 +905,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Larry's never met a corner he couldn't see around, thanks to eyes that swivel and watch every direction at once. He's goofy, fearless, and always the first to spot trouble coming. When it hits, he'll answer with a quick jab and an everyday punch like it's no big deal."
     },
     {
       "id": 85,
@@ -915,7 +915,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Mel built his way into the sky with propellers on his hands and a rotor on his head, and he never gets tired of the rush. He's cheerful, clever, and always tinkering. In a fight, he'll chop through trouble or spin up a lift that sends enemies flying."
     },
     {
       "id": 86,
@@ -925,7 +925,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Scorpolion's part lion, part scorpion, and all bad news. A cybernetic implant sits on his head, blinking in the dark, and people can't shake the feeling that something else is driving him. He hunts without mercy, closing in with a venomous sting or a crushing bite."
     },
     {
       "id": 87,
@@ -935,7 +935,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "The Lice Girls aren't here to sing hits. They're here to make your skin crawl. Five nasty bugs who move like a pop group and attack like a swarm, they'll flood a fight with itching bites until nobody can stand still long enough to hit back."
     },
     {
       "id": 88,
@@ -945,7 +945,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Lip and Pale don't waste time on speeches. When disaster hits, a floating mouth and a bucket-bodied partner rush in as a team. Lip hauls people out with a carry that's all tongue and grip, while Pale sorts the wounded with triage faster than most crews can grab their gear."
     },
     {
       "id": 89,
@@ -955,7 +955,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "The Glob isn't bothered by doorways, seat belts, or chairs that weren't built for a blob. He's a friendly ooze who reshapes on the fly, soaking up trouble and squishing through spots nobody else can reach. Easygoing, sticky, and impossible to pin down."
     },
     {
       "id": 90,
@@ -965,7 +965,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Crystal moves like she was cut from living light. Her body throws sharp shards and bends beams through her faceted skin, hitting from angles nobody saw coming. She's calm, dazzling, and tougher to crack than almost anything thrown at her."
     },
     {
       "id": 91,
@@ -975,7 +975,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Arrow doesn't chat, chase, or waste shots. He waits in the shadows with cold patience, then fires sharp shots and piercing volleys from his gauntlets before most targets even know they're being aimed at."
     },
     {
       "id": 92,
@@ -985,7 +985,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Vacuum was built from old cleaners and worse ideas, and now he treats the whole world like one big mess to swallow. He's quiet until he isn't, sucking up anything loose with a pull that feels like the floor just dropped out."
     },
     {
       "id": 93,
@@ -995,7 +995,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Fork fights like a nightmare from the junk drawer. He's weird, mean, and proud of it, stabbing with sharp prongs and flinging utensils until the whole fight feels like a kitchen riot gone wrong."
     },
     {
       "id": 94,
@@ -1005,7 +1005,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Blok is built brick by brick, and he carries himself like the wall holding everything up. He's steady, square, and tough to budge, slamming through trouble and throwing up a guard that won't crack under pressure."
     },
     {
       "id": 95,
@@ -1015,7 +1015,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Wind-Up never stays still for long. He needs a crank and a running start, but once he's wound tight he bursts into a blur of spinning strikes that hit hard, then slow down until he gets wound up all over again."
     },
     {
       "id": 96,
@@ -1025,7 +1025,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Life Extinguisher treats hope like a fire that needs putting out. He shows up where things are burning brightest and leaves nothing but smoke, snuffing flames and fighting spirit with the same cold, practiced swing of his hand."
     },
     {
       "id": 97,
@@ -1035,7 +1035,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Gourd of the Jungle sounds silly until you hear that rattle echo through the trees. He's old forest magic in a hard shell, bashing trouble away and shaking the whole jungle awake when danger gets too close."
     },
     {
       "id": 98,
@@ -1045,7 +1045,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Dispenser doesn't talk. He just opens those arm tubes and sprays whatever nasty shot the fight calls for, one burst after another until the whole room feels like a supply closet gone wrong. Cold, faceless, and always stocked."
     },
     {
       "id": 99,
@@ -1055,7 +1055,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Paws knows he looks ridiculous, and he doesn't care. He leaps in with a goofy grin and boots the size of dinner plates, swiping and raking with claws that hit way harder than anyone expects from a sweaty guy in yellow."
     },
     {
       "id": 100,
@@ -1065,7 +1065,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Ferrett is all teeth, twitchy speed, and bad attitude. He'll dash through a crowd, burrow under your feet, and pop up biting before anyone finishes asking what that weird green glow on his neck is even for."
     },
     {
       "id": 101,
@@ -1075,7 +1075,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Ziggo the Dog is pure tail-wagging loyalty with a few weird upgrades he didn't ask for. He'll fetch anything you throw, dash back faster than you blink, and act like the whole world is just one big game of catch."
     },
     {
       "id": 102,
@@ -1085,7 +1085,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Winch was built for bad weather and worse odds. He's got a cheerful screen-face and a cable arm that never quits, yanking people out of trouble and raising them back up when the river or the rubble says they shouldn't make it."
     },
     {
       "id": 103,
@@ -1095,7 +1095,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "The Ram doesn't bother with fancy footwork. He lowers those curved horns and charges like a whole stampede packed into one armored body, headbutting through walls, doors, and anybody dumb enough to stand in his path."
     },
     {
       "id": 104,
@@ -1105,7 +1105,7 @@
       "home_district": "",
       "type": "",
       "identity": "",
-      "description": ""
+      "description": "Tak is tiny, brass, and way too serious for something that lives on a desk. He dual-wields thumbtacks like they're real swords, landing quick strikes and vanishing before you realize your paperwork just became a battlefield."
     }
   ]
 }

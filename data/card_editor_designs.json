@@ -485,27 +485,56 @@
     {
       "id": "80",
       "rarity": "common",
-      "character": 80
+      "character": 80,
+      "design": {
+        "backOgScale": 80,
+        "backOgBackdropColor": "#d1d2c3",
+        "backGhostOpacity": 70,
+        "backGhostOffsetY": -70
+      },
+      "status": "affiliation?"
     },
     {
       "id": "81",
       "rarity": "common",
-      "character": 81
+      "character": 81,
+      "design": {
+        "backOgScale": 80,
+        "backOgBackdropColor": "#b2b3a6",
+        "backGhostOpacity": 70,
+        "backGhostOffsetY": -70
+      }
     },
     {
       "id": "82",
       "rarity": "common",
-      "character": 82
+      "character": 82,
+      "design": {
+        "backOgScale": 95,
+        "backOgBackdropColor": "#b2b3a6",
+        "backGhostOpacity": 55
+      }
     },
     {
       "id": "83",
       "rarity": "common",
-      "character": 83
+      "character": 83,
+      "design": {
+        "backOgScale": 60,
+        "backOgBackdropColor": "#b2b3a6",
+        "backGhostOpacity": 80,
+        "backGhostOffsetY": -58
+      }
     },
     {
       "id": "84",
       "rarity": "common",
-      "character": 84
+      "character": 84,
+      "design": {
+        "backOgScale": 85,
+        "backOgBackdropColor": "#a6a89b",
+        "backGhostOpacity": 70
+      }
     },
     {
       "id": "85",

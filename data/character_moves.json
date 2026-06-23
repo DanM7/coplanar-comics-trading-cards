@@ -39,7 +39,7 @@
       "name": "Ball Thing",
       "move1": "Gnarl",
       "move1_value": 2,
-      "move2": "Skyward Slam",
+      "move2": "Skyfall Slam",
       "move2_value": 3
     },
     {
@@ -340,10 +340,10 @@
     {
       "id": 41,
       "name": "Air-blade",
-      "move1": "Air Slice",
-      "move1_value": 3,
-      "move2": "Glide Strike",
-      "move2_value": 4
+      "move1": "Jetstream Slash",
+      "move1_value": 2,
+      "move2": "Skybreaker Dive",
+      "move2_value": 3
     },
     {
       "id": 42,
