@@ -1,0 +1,1356 @@
+{
+    "stats": [
+        {
+            "id": 1,
+            "name": "Zwingbat",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 3
+            }
+        },
+        {
+            "id": 2,
+            "name": "Centim",
+            "tier": 1,
+            "stats": {
+                "intelligence": 2,
+                "strength": 0,
+                "durability": 1,
+                "skill": 1,
+                "energy_projection": 0,
+                "speed": 1
+            }
+        },
+        {
+            "id": 3,
+            "name": "Millim",
+            "tier": 1,
+            "stats": {
+                "intelligence": 1,
+                "strength": 0,
+                "durability": 2,
+                "skill": 1,
+                "energy_projection": 0,
+                "speed": 1
+            }
+        },
+        {
+            "id": 4,
+            "name": "Trash-Man",
+            "tier": 4,
+            "stats": {
+                "intelligence": 2,
+                "strength": 4,
+                "durability": 5,
+                "skill": 3,
+                "energy_projection": 3,
+                "speed": 2
+            }
+        },
+        {
+            "id": 5,
+            "name": "Ball Thing",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 3,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 0,
+                "speed": 4
+            }
+        },
+        {
+            "id": 6,
+            "name": "Abstract",
+            "tier": 3,
+            "stats": {
+                "intelligence": 4,
+                "strength": 1,
+                "durability": 2,
+                "skill": 4,
+                "energy_projection": 3,
+                "speed": 2
+            }
+        },
+        {
+            "id": 7,
+            "name": "Line-Man",
+            "tier": 3,
+            "stats": {
+                "intelligence": 3,
+                "strength": 2,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 3,
+                "speed": 3
+            }
+        },
+        {
+            "id": 8,
+            "name": "Wormy",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 3,
+                "skill": 5,
+                "energy_projection": 1,
+                "speed": 4
+            }
+        },
+        {
+            "id": 9,
+            "name": "Tar",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 4,
+                "skill": 2,
+                "energy_projection": 2,
+                "speed": 1
+            }
+        },
+        {
+            "id": 10,
+            "name": "Molten Man",
+            "tier": 4,
+            "stats": {
+                "intelligence": 2,
+                "strength": 5,
+                "durability": 4,
+                "skill": 2,
+                "energy_projection": 4,
+                "speed": 2
+            }
+        },
+        {
+            "id": 11,
+            "name": "Bobo the Evil Gingerbread Man",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 1,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 1,
+                "speed": 3
+            }
+        },
+        {
+            "id": 12,
+            "name": "Unknown",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 1,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 4,
+                "speed": 2
+            }
+        },
+        {
+            "id": 13,
+            "name": "Acid",
+            "tier": 4,
+            "stats": {
+                "intelligence": 2,
+                "strength": 4,
+                "durability": 4,
+                "skill": 3,
+                "energy_projection": 4,
+                "speed": 2
+            }
+        },
+        {
+            "id": 14,
+            "name": "Sparky",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 1,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 4,
+                "speed": 4
+            }
+        },
+        {
+            "id": 15,
+            "name": "Chain",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 4,
+                "skill": 3,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 16,
+            "name": "Sand Monkey",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 1,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 1,
+                "speed": 3
+            }
+        },
+        {
+            "id": 17,
+            "name": "Abdominal Snowman",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 4,
+                "durability": 4,
+                "skill": 1,
+                "energy_projection": 2,
+                "speed": 1
+            }
+        },
+        {
+            "id": 18,
+            "name": "Ammo Supplying Robot",
+            "tier": 1,
+            "stats": {
+                "intelligence": 3,
+                "strength": 0,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 0,
+                "speed": 1
+            }
+        },
+        {
+            "id": 19,
+            "name": "Ms. Pac-Man's Evil Ex-Husband From Hell",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 4,
+                "skill": 2,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 20,
+            "name": "Grafitti",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 1,
+                "durability": 1,
+                "skill": 4,
+                "energy_projection": 2,
+                "speed": 3
+            }
+        },
+        {
+            "id": 21,
+            "name": "David Letter-Man",
+            "tier": 1,
+            "stats": {
+                "intelligence": 2,
+                "strength": 0,
+                "durability": 0,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 0
+            }
+        },
+        {
+            "id": 22,
+            "name": "Invisible Dude",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 2,
+                "skill": 5,
+                "energy_projection": 1,
+                "speed": 4
+            }
+        },
+        {
+            "id": 23,
+            "name": "Mr. Homonym",
+            "tier": 1,
+            "stats": {
+                "intelligence": 1,
+                "strength": 0,
+                "durability": 1,
+                "skill": 1,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 24,
+            "name": "Black Hole Kitty",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 1,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 25,
+            "name": "Rocket Redd",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 3,
+                "speed": 4
+            }
+        },
+        {
+            "id": 26,
+            "name": "Prehistoric Hand",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 0,
+                "speed": 2
+            }
+        },
+        {
+            "id": 27,
+            "name": "Alfred MacKenzy Posh IX",
+            "tier": 1,
+            "stats": {
+                "intelligence": 3,
+                "strength": 0,
+                "durability": 1,
+                "skill": 2,
+                "energy_projection": 0,
+                "speed": 0
+            }
+        },
+        {
+            "id": 28,
+            "name": "Evil Isaac the Tax Collector",
+            "tier": 3,
+            "stats": {
+                "intelligence": 3,
+                "strength": 1,
+                "durability": 2,
+                "skill": 4,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 29,
+            "name": "Geo Metric",
+            "tier": 3,
+            "stats": {
+                "intelligence": 3,
+                "strength": 2,
+                "durability": 3,
+                "skill": 2,
+                "energy_projection": 3,
+                "speed": 2
+            }
+        },
+        {
+            "id": 30,
+            "name": "The Mime",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 1,
+                "durability": 1,
+                "skill": 4,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 31,
+            "name": "CO2",
+            "tier": 4,
+            "stats": {
+                "intelligence": 3,
+                "strength": 3,
+                "durability": 3,
+                "skill": 4,
+                "energy_projection": 4,
+                "speed": 2
+            }
+        },
+        {
+            "id": 32,
+            "name": "Crimson Maker",
+            "tier": 4,
+            "stats": {
+                "intelligence": 3,
+                "strength": 4,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 4,
+                "speed": 2
+            }
+        },
+        {
+            "id": 33,
+            "name": "Uni-man",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 1,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 34,
+            "name": "Shattered",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 3
+            }
+        },
+        {
+            "id": 35,
+            "name": "Silhouette",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 2,
+                "skill": 4,
+                "energy_projection": 2,
+                "speed": 4
+            }
+        },
+        {
+            "id": 36,
+            "name": "Jake the Ripper",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 3,
+                "durability": 2,
+                "skill": 5,
+                "energy_projection": 1,
+                "speed": 3
+            }
+        },
+        {
+            "id": 37,
+            "name": "Rings",
+            "tier": 3,
+            "stats": {
+                "intelligence": 3,
+                "strength": 1,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 4,
+                "speed": 2
+            }
+        },
+        {
+            "id": 38,
+            "name": "",
+            "tier": 1,
+            "stats": {
+                "intelligence": 1,
+                "strength": 0,
+                "durability": 1,
+                "skill": 1,
+                "energy_projection": 0,
+                "speed": 0
+            }
+        },
+        {
+            "id": 39,
+            "name": "Bob Balloon Head",
+            "tier": 4,
+            "stats": {
+                "intelligence": 1,
+                "strength": 4,
+                "durability": 5,
+                "skill": 3,
+                "energy_projection": 4,
+                "speed": 2
+            }
+        },
+        {
+            "id": 40,
+            "name": "AMPIX",
+            "tier": 3,
+            "stats": {
+                "intelligence": 5,
+                "strength": 1,
+                "durability": 4,
+                "skill": 2,
+                "energy_projection": 3,
+                "speed": 1
+            }
+        },
+        {
+            "id": 41,
+            "name": "Air-blade",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 3,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 3,
+                "speed": 4
+            }
+        },
+        {
+            "id": 42,
+            "name": "Mr. Beep",
+            "tier": 1,
+            "stats": {
+                "intelligence": 2,
+                "strength": 0,
+                "durability": 1,
+                "skill": 1,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 43,
+            "name": "Horns",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 3,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 44,
+            "name": "Lamprey",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 3,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 45,
+            "name": "Jokes the Giant",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 3,
+                "durability": 3,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 46,
+            "name": "Scissor Kick",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 2,
+                "skill": 5,
+                "energy_projection": 1,
+                "speed": 4
+            }
+        },
+        {
+            "id": 47,
+            "name": "Cut and Paste Man",
+            "tier": 3,
+            "stats": {
+                "intelligence": 3,
+                "strength": 2,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 3
+            }
+        },
+        {
+            "id": 48,
+            "name": "Mud Man",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 4,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 49,
+            "name": "Clonez",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 50,
+            "name": "Cyclone",
+            "tier": 4,
+            "stats": {
+                "intelligence": 2,
+                "strength": 3,
+                "durability": 3,
+                "skill": 2,
+                "energy_projection": 4,
+                "speed": 5
+            }
+        },
+        {
+            "id": 51,
+            "name": "Wrist Missle",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 52,
+            "name": "John",
+            "tier": 1,
+            "stats": {
+                "intelligence": 1,
+                "strength": 1,
+                "durability": 1,
+                "skill": 1,
+                "energy_projection": 0,
+                "speed": 1
+            }
+        },
+        {
+            "id": 53,
+            "name": "Spewtanoo",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 1,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 3,
+                "speed": 2
+            }
+        },
+        {
+            "id": 54,
+            "name": "Mr. Big Stuff",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 4,
+                "durability": 4,
+                "skill": 3,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 55,
+            "name": "Gas",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 1,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 3,
+                "speed": 2
+            }
+        },
+        {
+            "id": 56,
+            "name": "Wrecking Ball",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 4,
+                "durability": 4,
+                "skill": 2,
+                "energy_projection": 2,
+                "speed": 1
+            }
+        },
+        {
+            "id": 57,
+            "name": "Ochindew",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 3
+            }
+        },
+        {
+            "id": 58,
+            "name": "Spotlight",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 1,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 59,
+            "name": "Buzzard",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 1,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 1,
+                "speed": 3
+            }
+        },
+        {
+            "id": 60,
+            "name": "Powerline",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 4,
+                "speed": 3
+            }
+        },
+        {
+            "id": 61,
+            "name": "Sal the Radioactive Pizza Guy",
+            "tier": 1,
+            "stats": {
+                "intelligence": 1,
+                "strength": 0,
+                "durability": 1,
+                "skill": 1,
+                "energy_projection": 2,
+                "speed": 1
+            }
+        },
+        {
+            "id": 62,
+            "name": "Trajic",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 3,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 63,
+            "name": "Psycho Duck",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 4,
+                "energy_projection": 2,
+                "speed": 3
+            }
+        },
+        {
+            "id": 64,
+            "name": "Spike Lord",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 3,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 65,
+            "name": "Arid Maker",
+            "tier": 3,
+            "stats": {
+                "intelligence": 3,
+                "strength": 2,
+                "durability": 3,
+                "skill": 2,
+                "energy_projection": 3,
+                "speed": 2
+            }
+        },
+        {
+            "id": 66,
+            "name": "G. I. O's",
+            "tier": 1,
+            "stats": {
+                "intelligence": 1,
+                "strength": 1,
+                "durability": 1,
+                "skill": 1,
+                "energy_projection": 0,
+                "speed": 1
+            }
+        },
+        {
+            "id": 67,
+            "name": "Daddy Longlegs",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 4,
+                "energy_projection": 1,
+                "speed": 3
+            }
+        },
+        {
+            "id": 68,
+            "name": "Cactus",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 4,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 69,
+            "name": "Hydrant",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 3,
+                "durability": 4,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 1
+            }
+        },
+        {
+            "id": 70,
+            "name": "Drill Boy",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 3,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 71,
+            "name": "Mr. Plaid Smiley Face",
+            "tier": 1,
+            "stats": {
+                "intelligence": 1,
+                "strength": 1,
+                "durability": 1,
+                "skill": 1,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 72,
+            "name": "Chinkyhooha",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 73,
+            "name": "Manta",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 3,
+                "speed": 3
+            }
+        },
+        {
+            "id": 74,
+            "name": "Boa",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 3,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 75,
+            "name": "Polar Bear",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 3,
+                "durability": 3,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 76,
+            "name": "Hair",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 1,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 77,
+            "name": "Cuff",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 78,
+            "name": "Suction Boy",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 1,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 79,
+            "name": "Jay Memo",
+            "tier": 1,
+            "stats": {
+                "intelligence": 2,
+                "strength": 0,
+                "durability": 1,
+                "skill": 1,
+                "energy_projection": 0,
+                "speed": 1
+            }
+        },
+        {
+            "id": 80,
+            "name": "Roley",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 3
+            }
+        },
+        {
+            "id": 81,
+            "name": "Blast",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 4,
+                "speed": 3
+            }
+        },
+        {
+            "id": 82,
+            "name": "Nymph",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 1,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 83,
+            "name": "Scarab Beetle",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 3,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 84,
+            "name": "Larry",
+            "tier": 1,
+            "stats": {
+                "intelligence": 1,
+                "strength": 1,
+                "durability": 1,
+                "skill": 1,
+                "energy_projection": 0,
+                "speed": 1
+            }
+        },
+        {
+            "id": 85,
+            "name": "Mel Propeller Hands",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 4
+            }
+        },
+        {
+            "id": 86,
+            "name": "Scorpolion",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 3,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 87,
+            "name": "The Lice Girls",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 1,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 88,
+            "name": "Lip And Pale Rescue Workers",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 1,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 89,
+            "name": "The Glob",
+            "tier": 1,
+            "stats": {
+                "intelligence": 0,
+                "strength": 1,
+                "durability": 2,
+                "skill": 0,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 90,
+            "name": "Crystal",
+            "tier": 3,
+            "stats": {
+                "intelligence": 3,
+                "strength": 2,
+                "durability": 4,
+                "skill": 2,
+                "energy_projection": 3,
+                "speed": 2
+            }
+        },
+        {
+            "id": 91,
+            "name": "Arrow",
+            "tier": 3,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 1,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 4
+            }
+        },
+        {
+            "id": 92,
+            "name": "Vacuum",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 3,
+                "speed": 2
+            }
+        },
+        {
+            "id": 93,
+            "name": "Fork",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 94,
+            "name": "Blok",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 3,
+                "durability": 3,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 95,
+            "name": "Wind-Up",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 3,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 96,
+            "name": "Life Extinguisher",
+            "tier": 3,
+            "stats": {
+                "intelligence": 3,
+                "strength": 2,
+                "durability": 2,
+                "skill": 3,
+                "energy_projection": 3,
+                "speed": 2
+            }
+        },
+        {
+            "id": 97,
+            "name": "Gourd of the Jungle",
+            "tier": 1,
+            "stats": {
+                "intelligence": 1,
+                "strength": 1,
+                "durability": 1,
+                "skill": 0,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 98,
+            "name": "Dispenser",
+            "tier": 3,
+            "stats": {
+                "intelligence": 3,
+                "strength": 1,
+                "durability": 3,
+                "skill": 3,
+                "energy_projection": 2,
+                "speed": 2
+            }
+        },
+        {
+            "id": 99,
+            "name": "Paws",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 3
+            }
+        },
+        {
+            "id": 100,
+            "name": "Ferrett",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 3
+            }
+        },
+        {
+            "id": 101,
+            "name": "Ziggo the Dog",
+            "tier": 2,
+            "stats": {
+                "intelligence": 1,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 3
+            }
+        },
+        {
+            "id": 102,
+            "name": "Winch",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 3,
+                "durability": 3,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 1
+            }
+        },
+        {
+            "id": 103,
+            "name": "The Ram",
+            "tier": 3,
+            "stats": {
+                "intelligence": 1,
+                "strength": 4,
+                "durability": 3,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        },
+        {
+            "id": 104,
+            "name": "Tak",
+            "tier": 2,
+            "stats": {
+                "intelligence": 2,
+                "strength": 2,
+                "durability": 2,
+                "skill": 2,
+                "energy_projection": 1,
+                "speed": 2
+            }
+        }
+    ]
+}

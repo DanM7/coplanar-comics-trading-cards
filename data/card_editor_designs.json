@@ -1,0 +1,621 @@
+{
+  "cards": [
+    {
+      "id": "1",
+      "rarity": "common",
+      "character": 1,
+      "design": {
+        "backGhostOpacity": 70
+      },
+      "status": "done"
+    },
+    {
+      "id": "2",
+      "rarity": "common",
+      "character": 2,
+      "design": {
+        "backGhostOpacity": 70
+      },
+      "status": "done"
+    },
+    {
+      "id": "3",
+      "rarity": "common",
+      "character": 3,
+      "design": {
+        "backGhostOpacity": 55
+      },
+      "status": "done"
+    },
+    {
+      "id": "4",
+      "rarity": "common",
+      "character": 4,
+      "design": {
+        "backGhostOpacity": 70,
+        "backGhostOffsetY": -30
+      },
+      "status": "done"
+    },
+    {
+      "id": "5",
+      "rarity": "common",
+      "character": 5,
+      "status": "done"
+    },
+    {
+      "id": "6",
+      "rarity": "common",
+      "character": 6,
+      "status": "need front image"
+    },
+    {
+      "id": "7",
+      "rarity": "common",
+      "character": 7,
+      "design": {
+        "backGhostOpacity": 50
+      },
+      "status": "done"
+    },
+    {
+      "id": "8",
+      "rarity": "common",
+      "character": 8,
+      "status": "need front image"
+    },
+    {
+      "id": "9",
+      "rarity": "common",
+      "character": 9,
+      "design": {
+        "backGhostOpacity": 80,
+        "backGhostOffsetY": -52
+      },
+      "status": "done"
+    },
+    {
+      "id": "10",
+      "rarity": "common",
+      "character": 10,
+      "design": {
+        "backOgScale": 90,
+        "backGhostOpacity": 45,
+        "backOgBackdropColor": "#c9baa4"
+      },
+      "status": "done"
+    },
+    {
+      "id": "11",
+      "rarity": "common",
+      "character": 11,
+      "design": {
+        "backOgScale": 90,
+        "backGhostOpacity": 50,
+        "backOgBackdropColor": "#c9baa4"
+      },
+      "status": "done"
+    },
+    {
+      "id": "12",
+      "rarity": "common",
+      "character": 12,
+      "design": {
+        "backOgScale": 70,
+        "backGhostOpacity": 60,
+        "backOgBackdropColor": "#c3b097",
+        "backGhostOffsetY": -120
+      },
+      "status": "done"
+    },
+    {
+      "id": "13",
+      "rarity": "common",
+      "character": 13,
+      "status": "needs description"
+    },
+    {
+      "id": "14",
+      "rarity": "common",
+      "character": 14,
+      "design": {
+        "backOgScale": 65,
+        "backGhostOpacity": 50,
+        "backOgBackdropColor": "#96978a",
+        "backGhostOffsetY": -70
+      },
+      "status": "done"
+    },
+    {
+      "id": "15",
+      "rarity": "common",
+      "character": 15,
+      "design": {
+        "backOgScale": 75,
+        "backGhostOpacity": 50,
+        "backOgBackdropColor": "#7b7c73",
+        "backGhostOffsetY": -20
+      }
+    },
+    {
+      "id": "16",
+      "rarity": "common",
+      "character": 16,
+      "design": {
+        "backGhostOpacity": 40,
+        "backGhostOffsetY": -40
+      }
+    },
+    {
+      "id": "17",
+      "rarity": "common",
+      "character": 17
+    },
+    {
+      "id": "18",
+      "rarity": "common",
+      "character": 18
+    },
+    {
+      "id": "19",
+      "rarity": "common",
+      "character": 19,
+      "design": {
+        "backOgScale": 75,
+        "backGhostOpacity": 50,
+        "backOgBackdropColor": "#d1d2c3"
+      }
+    },
+    {
+      "id": "20",
+      "rarity": "common",
+      "character": 20,
+      "design": {
+        "backGhostOpacity": 45,
+        "backGhostOffsetY": -18
+      }
+    },
+    {
+      "id": "21",
+      "rarity": "common",
+      "character": 21
+    },
+    {
+      "id": "22",
+      "rarity": "common",
+      "character": 22
+    },
+    {
+      "id": "23",
+      "rarity": "common",
+      "character": 23
+    },
+    {
+      "id": "24",
+      "rarity": "common",
+      "character": 24,
+      "design": {
+        "backOgScale": 70,
+        "backOgBackdropColor": "#d1d2c3",
+        "backGhostOpacity": 45,
+        "backGhostOffsetY": -18
+      },
+      "status": "done"
+    },
+    {
+      "id": "25",
+      "rarity": "common",
+      "character": 25,
+      "design": {
+        "backGhostOpacity": 55,
+        "backGhostOffsetY": -48
+      },
+      "status": "done"
+    },
+    {
+      "id": "26",
+      "rarity": "common",
+      "character": 26
+    },
+    {
+      "id": "27",
+      "rarity": "common",
+      "character": 27
+    },
+    {
+      "id": "28",
+      "rarity": "common",
+      "character": 28
+    },
+    {
+      "id": "29",
+      "rarity": "common",
+      "character": 29
+    },
+    {
+      "id": "30",
+      "rarity": "common",
+      "character": 30
+    },
+    {
+      "id": "31",
+      "rarity": "common",
+      "character": 31
+    },
+    {
+      "id": "32",
+      "rarity": "common",
+      "character": 32
+    },
+    {
+      "id": "33",
+      "rarity": "common",
+      "character": 33
+    },
+    {
+      "id": "34",
+      "rarity": "common",
+      "character": 34
+    },
+    {
+      "id": "35",
+      "rarity": "common",
+      "character": 35
+    },
+    {
+      "id": "36",
+      "rarity": "common",
+      "character": 36
+    },
+    {
+      "id": "37",
+      "rarity": "common",
+      "character": 37
+    },
+    {
+      "id": "38",
+      "rarity": "common",
+      "character": 38
+    },
+    {
+      "id": "39",
+      "rarity": "common",
+      "character": 39
+    },
+    {
+      "id": "40",
+      "rarity": "common",
+      "character": 40
+    },
+    {
+      "id": "41",
+      "rarity": "common",
+      "character": 41
+    },
+    {
+      "id": "42",
+      "rarity": "common",
+      "character": 42
+    },
+    {
+      "id": "43",
+      "rarity": "common",
+      "character": 43
+    },
+    {
+      "id": "44",
+      "rarity": "common",
+      "character": 44
+    },
+    {
+      "id": "45",
+      "rarity": "common",
+      "character": 45
+    },
+    {
+      "id": "46",
+      "rarity": "common",
+      "character": 46
+    },
+    {
+      "id": "47",
+      "rarity": "common",
+      "character": 47
+    },
+    {
+      "id": "48",
+      "rarity": "common",
+      "character": 48
+    },
+    {
+      "id": "49",
+      "rarity": "common",
+      "character": 49
+    },
+    {
+      "id": "50",
+      "rarity": "common",
+      "character": 50
+    },
+    {
+      "id": "51",
+      "rarity": "common",
+      "character": 51
+    },
+    {
+      "id": "52",
+      "rarity": "common",
+      "character": 52
+    },
+    {
+      "id": "53",
+      "rarity": "common",
+      "character": 53
+    },
+    {
+      "id": "54",
+      "rarity": "common",
+      "character": 54
+    },
+    {
+      "id": "55",
+      "rarity": "common",
+      "character": 55
+    },
+    {
+      "id": "56",
+      "rarity": "common",
+      "character": 56
+    },
+    {
+      "id": "57",
+      "rarity": "common",
+      "character": 57
+    },
+    {
+      "id": "58",
+      "rarity": "common",
+      "character": 58
+    },
+    {
+      "id": "59",
+      "rarity": "common",
+      "character": 59
+    },
+    {
+      "id": "60",
+      "rarity": "common",
+      "character": 60
+    },
+    {
+      "id": "61",
+      "rarity": "common",
+      "character": 61
+    },
+    {
+      "id": "62",
+      "rarity": "common",
+      "character": 62
+    },
+    {
+      "id": "63",
+      "rarity": "common",
+      "character": 63
+    },
+    {
+      "id": "64",
+      "rarity": "common",
+      "character": 64
+    },
+    {
+      "id": "65",
+      "rarity": "common",
+      "character": 65
+    },
+    {
+      "id": "66",
+      "rarity": "common",
+      "character": 66
+    },
+    {
+      "id": "67",
+      "rarity": "common",
+      "character": 67
+    },
+    {
+      "id": "68",
+      "rarity": "common",
+      "character": 68
+    },
+    {
+      "id": "69",
+      "rarity": "common",
+      "character": 69
+    },
+    {
+      "id": "70",
+      "rarity": "common",
+      "character": 70
+    },
+    {
+      "id": "71",
+      "rarity": "common",
+      "character": 71
+    },
+    {
+      "id": "72",
+      "rarity": "common",
+      "character": 72
+    },
+    {
+      "id": "73",
+      "rarity": "common",
+      "character": 73
+    },
+    {
+      "id": "74",
+      "rarity": "common",
+      "character": 74
+    },
+    {
+      "id": "75",
+      "rarity": "common",
+      "character": 75
+    },
+    {
+      "id": "76",
+      "rarity": "common",
+      "character": 76
+    },
+    {
+      "id": "77",
+      "rarity": "common",
+      "character": 77
+    },
+    {
+      "id": "78",
+      "rarity": "common",
+      "character": 78
+    },
+    {
+      "id": "79",
+      "rarity": "common",
+      "character": 79
+    },
+    {
+      "id": "80",
+      "rarity": "common",
+      "character": 80
+    },
+    {
+      "id": "81",
+      "rarity": "common",
+      "character": 81
+    },
+    {
+      "id": "82",
+      "rarity": "common",
+      "character": 82
+    },
+    {
+      "id": "83",
+      "rarity": "common",
+      "character": 83
+    },
+    {
+      "id": "84",
+      "rarity": "common",
+      "character": 84
+    },
+    {
+      "id": "85",
+      "rarity": "common",
+      "character": 85
+    },
+    {
+      "id": "86",
+      "rarity": "common",
+      "character": 86
+    },
+    {
+      "id": "87",
+      "rarity": "common",
+      "character": 87
+    },
+    {
+      "id": "88",
+      "rarity": "common",
+      "character": 88
+    },
+    {
+      "id": "89",
+      "rarity": "common",
+      "character": 89
+    },
+    {
+      "id": "90",
+      "rarity": "common",
+      "character": 90
+    },
+    {
+      "id": "91",
+      "rarity": "common",
+      "character": 91
+    },
+    {
+      "id": "92",
+      "rarity": "common",
+      "character": 92
+    },
+    {
+      "id": "93",
+      "rarity": "common",
+      "character": 93
+    },
+    {
+      "id": "94",
+      "rarity": "common",
+      "character": 94
+    },
+    {
+      "id": "95",
+      "rarity": "common",
+      "character": 95
+    },
+    {
+      "id": "96",
+      "rarity": "common",
+      "character": 96
+    },
+    {
+      "id": "97",
+      "rarity": "common",
+      "character": 97
+    },
+    {
+      "id": "98",
+      "rarity": "common",
+      "character": 98
+    },
+    {
+      "id": "99",
+      "rarity": "common",
+      "character": 99
+    },
+    {
+      "id": "100",
+      "rarity": "common",
+      "character": 100
+    },
+    {
+      "id": "101",
+      "rarity": "common",
+      "character": 101
+    },
+    {
+      "id": "102",
+      "rarity": "common",
+      "character": 102
+    },
+    {
+      "id": "103",
+      "rarity": "common",
+      "character": 103
+    },
+    {
+      "id": "104",
+      "rarity": "common",
+      "character": 104
+    },
+    {
+      "id": "105",
+      "rarity": "rare",
+      "frontImage": "G01_Trash-Man.JPG",
+      "design": {
+        "front": {
+          "borderId": "rare-golden"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+.statBlockList {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: calc(0.35rem + 10px);
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.statBlockColumn {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statBlockRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  width: 100%;
+  line-height: 1.2;
+}
+
+.statBlockRowMove {
+  display: block;
+  margin-top: 8px;
+}
+
+.statBlockRowMove::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.statBlockRowMove .statBlockLabel {
+  line-height: 1.15;
+}
+
+.statBlockRowMove .statBlocks {
+  float: right;
+  margin-left: 0.25rem;
+  align-items: flex-start;
+}
+
+.statBlockLabel {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--stat-color, #a0aec0);
+  text-align: left;
+  font-size: 0.92em;
+  line-height: 1.15;
+}
+
+.statBlocks {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.12rem;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+}
+
+.statBlock {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--stat-color, #cbd5e0) 55%, transparent);
+  box-sizing: border-box;
+}
+
+.statBlockFilled {
+  background: var(--stat-color, #e2e8f0);
+  border-color: var(--stat-color, #e2e8f0);
+}
+
+.statBlockEmpty {
+  background: transparent;
+}
+
+.statBlockMoveFilled {
+  background: var(--move-type-fill, #fc8181);
+  border-color: #f7fafc;
+}

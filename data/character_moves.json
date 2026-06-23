@@ -1,0 +1,853 @@
+{
+  "moves": [
+    {
+      "id": 1,
+      "name": "Zwingbat",
+      "move1": "Thagomizer Whip",
+      "move1_value": 2,
+      "move2": "Off-Key Screech",
+      "move2_value": 2,
+      "move2_type": "energy"
+    },
+    {
+      "id": 2,
+      "name": "Centim",
+      "move1": "Adorable Vigilance",
+      "move1_value": 1,
+      "move2": "Forest Trail Hop",
+      "move2_value": 1
+    },
+    {
+      "id": 3,
+      "name": "Millim",
+      "move1": "Spring Stomp",
+      "move1_value": 1,
+      "move2": "Boingy Pranks",
+      "move2_value": 2
+    },
+    {
+      "id": 4,
+      "name": "Trash-Man",
+      "move1": "Muck Mash",
+      "move1_value": 5,
+      "move2": "Stink Bomb",
+      "move2_value": 4,
+      "move2_type": "energy"
+    },
+    {
+      "id": 5,
+      "name": "Ball Thing",
+      "move1": "Gnarl",
+      "move1_value": 2,
+      "move2": "Skyward Slam",
+      "move2_value": 3
+    },
+    {
+      "id": 6,
+      "name": "Abstract",
+      "move1": "Shape-Shifting Showoff",
+      "move1_value": 3,
+      "move2": "Angle Assault",
+      "move2_value": 3,
+      "move2_type": "energy"
+    },
+    {
+      "id": 7,
+      "name": "Line-Man",
+      "move1": "Rayfire",
+      "move1_value": 3,
+      "move2": "Geometric Noir",
+      "move2_value": 3,
+      "move2_type": "energy"
+    },
+    {
+      "id": 8,
+      "name": "Wormy",
+      "move1": "Comedic Wiggle",
+      "move1_value": 5,
+      "move2": "Wall To Break",
+      "move2_value": 4,
+      "move2_type": "energy"
+    },
+    {
+      "id": 9,
+      "name": "Tar",
+      "move1": "Viscous Slam",
+      "move1_value": 2,
+      "move2": "Cosmic Oil Burst",
+      "move2_value": 2,
+      "move2_type": "energy"
+    },
+    {
+      "id": 10,
+      "name": "Molten Man",
+      "move1": "Lava Stomp",
+      "move1_value": 4,
+      "move2": "Core Eruption",
+      "move2_value": 4,
+      "move2_type": "energy"
+    },
+    {
+      "id": 11,
+      "name": "Bobo the Evil Gingerbread Man",
+      "move1": "Frosting Frenzy",
+      "move1_value": 2,
+      "move2": "Crumb Blast",
+      "move2_value": 2
+    },
+    {
+      "id": 12,
+      "name": "Unknown",
+      "move1": "Smoke Veil",
+      "move1_value": 3,
+      "move1_type": "energy",
+      "move2": "Possession Pulse",
+      "move2_value": 3,
+      "move2_type": "energy"
+    },
+    {
+      "id": 13,
+      "name": "Acid",
+      "move1": "Corrosive Touch",
+      "move1_value": 4,
+      "move2": "Acid Spray",
+      "move2_value": 4,
+      "move2_type": "energy"
+    },
+    {
+      "id": 14,
+      "name": "Sparky",
+      "move1": "Static Havoc",
+      "move1_value": 3,
+      "move1_type": "energy",
+      "move2": "Grid Overload",
+      "move2_value": 3,
+      "move2_type": "energy"
+    },
+    {
+      "id": 15,
+      "name": "Chain",
+      "move1": "Rail Grind Rush",
+      "move1_value": 2,
+      "move2": "Lock-Up Loop",
+      "move2_value": 2
+    },
+    {
+      "id": 16,
+      "name": "Sand Monkey",
+      "move1": "Tidal Tantrum Toss",
+      "move1_value": 2,
+      "move2": "Dune Cloud",
+      "move2_value": 1
+    },
+    {
+      "id": 17,
+      "name": "Abdominal Snowman",
+      "move1": "Belly Quake",
+      "move1_value": 3,
+      "move2": "Snow Slam",
+      "move2_value": 3
+    },
+    {
+      "id": 18,
+      "name": "Ammo Supplying Robot",
+      "move1": "Reload Rush",
+      "move1_value": 1,
+      "move2": "Field Repair",
+      "move2_value": 1
+    },
+    {
+      "id": 19,
+      "name": "Ms. Pac-Man's Evil Ex-Husband From Hell",
+      "move1": "Hell Chomp",
+      "move1_value": 2,
+      "move2": "Jagged Grin",
+      "move2_value": 2
+    },
+    {
+      "id": 20,
+      "name": "Grafitti",
+      "move1": "Spray Tag",
+      "move1_value": 2,
+      "move2": "Living Mural",
+      "move2_value": 2,
+      "move2_type": "energy"
+    },
+    {
+      "id": 21,
+      "name": "David Letter-Man",
+      "move1": "Vowel Volley",
+      "move1_value": 1,
+      "move1_type": "energy",
+      "move2": "Monologue Jab",
+      "move2_value": 1,
+      "move2_type": "energy"
+    },
+    {
+      "id": 22,
+      "name": "Invisible Dude",
+      "move1": "Phantom Flex",
+      "move1_value": 3,
+      "move2": "Air-Punch Ambush",
+      "move2_value": 3
+    },
+    {
+      "id": 23,
+      "name": "Mr. Homonym",
+      "move1": "Wing & Whack",
+      "move1_value": 1,
+      "move2": "Homer Howl",
+      "move2_value": 1
+    },
+    {
+      "id": 24,
+      "name": "Black Hole Kitty",
+      "move1": "Singularity Swat",
+      "move1_value": 2,
+      "move2": "Event Purr-izon",
+      "move2_value": 2,
+      "move2_type": "energy"
+    },
+    {
+      "id": 25,
+      "name": "Rocket Redd",
+      "move1": "Turbo Tinker Tackle",
+      "move1_value": 3,
+      "move2": "Reddline Burn",
+      "move2_value": 3,
+      "move2_type": "energy"
+    },
+    {
+      "id": 26,
+      "name": "Prehistoric Hand",
+      "move1": "Jurassic Jazz-Hands",
+      "move1_value": 2,
+      "move2": "Shadow Stomp Scare",
+      "move2_value": 2
+    },
+    {
+      "id": 27,
+      "name": "Alfred MacKenzy Posh IX",
+      "move1": "Posh Reprimand",
+      "move1_value": 1,
+      "move2": "Tea Toss",
+      "move2_value": 1
+    },
+    {
+      "id": 28,
+      "name": "Evil Isaac the Tax Collector",
+      "move1": "Audit Strike",
+      "move1_value": 3,
+      "move2": "Lien Lock",
+      "move2_value": 2
+    },
+    {
+      "id": 29,
+      "name": "Geo Metric",
+      "move1": "Vector Slash",
+      "move1_value": 3,
+      "move2": "Polygon Crush",
+      "move2_value": 3
+    },
+    {
+      "id": 30,
+      "name": "The Mime",
+      "move1": "Invisible Wall",
+      "move1_value": 2,
+      "move2": "Silent Trap",
+      "move2_value": 2
+    },
+    {
+      "id": 31,
+      "name": "CO2",
+      "move1": "Smother Cloud",
+      "move1_value": 4,
+      "move2": "Gas Burst",
+      "move2_value": 3
+    },
+    {
+      "id": 32,
+      "name": "Crimson Maker",
+      "move1": "Crimson Forge",
+      "move1_value": 4,
+      "move2": "Blood Construct",
+      "move2_value": 4
+    },
+    {
+      "id": 33,
+      "name": "Uni-man",
+      "move1": "Paper Fold",
+      "move1_value": 2,
+      "move2": "Origami Shield",
+      "move2_value": 2
+    },
+    {
+      "id": 34,
+      "name": "Shattered",
+      "move1": "Shard Spray",
+      "move1_value": 3,
+      "move2": "Paper Cut",
+      "move2_value": 3
+    },
+    {
+      "id": 35,
+      "name": "Silhouette",
+      "move1": "Flat Ambush",
+      "move1_value": 3,
+      "move2": "Shadow Slice",
+      "move2_value": 3
+    },
+    {
+      "id": 36,
+      "name": "Jake the Ripper",
+      "move1": "Alley Slash",
+      "move1_value": 3,
+      "move2": "Ripper Fade",
+      "move2_value": 4
+    },
+    {
+      "id": 37,
+      "name": "Rings",
+      "move1": "Harmonic Pulse",
+      "move1_value": 3,
+      "move2": "Ring Bind",
+      "move2_value": 4
+    },
+    {
+      "id": 38,
+      "name": "",
+      "move1": "Placeholder Strike",
+      "move1_value": 1,
+      "move2": "Placeholder Guard",
+      "move2_value": 1
+    },
+    {
+      "id": 39,
+      "name": "Bob Balloon Head",
+      "move1": "Balloon Pop",
+      "move1_value": 4,
+      "move2": "Head Bounce",
+      "move2_value": 4
+    },
+    {
+      "id": 40,
+      "name": "AMPIX",
+      "move1": "Facet Scan",
+      "move1_value": 3,
+      "move2": "Data Shard",
+      "move2_value": 3
+    },
+    {
+      "id": 41,
+      "name": "Air-blade",
+      "move1": "Air Slice",
+      "move1_value": 3,
+      "move2": "Glide Strike",
+      "move2_value": 4
+    },
+    {
+      "id": 42,
+      "name": "Mr. Beep",
+      "move1": "Beep Barrage",
+      "move1_value": 1,
+      "move2": "Boop Confusion",
+      "move2_value": 1
+    },
+    {
+      "id": 43,
+      "name": "Horns",
+      "move1": "Gore Charge",
+      "move1_value": 3,
+      "move2": "Horn Toss",
+      "move2_value": 3
+    },
+    {
+      "id": 44,
+      "name": "Lamprey",
+      "move1": "Tooth Circle",
+      "move1_value": 3,
+      "move2": "River Ambush",
+      "move2_value": 3
+    },
+    {
+      "id": 45,
+      "name": "Jokes the Giant",
+      "move1": "Punchline Slam",
+      "move1_value": 2,
+      "move2": "Giant Guffaw",
+      "move2_value": 2
+    },
+    {
+      "id": 46,
+      "name": "Scissor Kick",
+      "move1": "Scissor Kick",
+      "move1_value": 3,
+      "move2": "Spinning Roundhouse",
+      "move2_value": 4
+    },
+    {
+      "id": 47,
+      "name": "Cut and Paste Man",
+      "move1": "Slice Scene",
+      "move1_value": 3,
+      "move2": "Paste Chaos",
+      "move2_value": 3
+    },
+    {
+      "id": 48,
+      "name": "Mud Man",
+      "move1": "Mud Sling",
+      "move1_value": 2,
+      "move2": "Bog Grip",
+      "move2_value": 2
+    },
+    {
+      "id": 49,
+      "name": "Clonez",
+      "move1": "Clone Swarm",
+      "move1_value": 3,
+      "move2": "Mirror Strike",
+      "move2_value": 3
+    },
+    {
+      "id": 50,
+      "name": "Cyclone",
+      "move1": "Spin Burst",
+      "move1_value": 4,
+      "move2": "Wind Shear",
+      "move2_value": 4
+    },
+    {
+      "id": 51,
+      "name": "Wrist Missle",
+      "move1": "Wrist Rocket",
+      "move1_value": 2,
+      "move2": "Missile Barrage",
+      "move2_value": 2
+    },
+    {
+      "id": 52,
+      "name": "John",
+      "move1": "Plain Punch",
+      "move1_value": 1,
+      "move2": "John Slam",
+      "move2_value": 1
+    },
+    {
+      "id": 53,
+      "name": "Spewtanoo",
+      "move1": "Spew Spray",
+      "move1_value": 2,
+      "move2": "Tanoo Burst",
+      "move2_value": 3
+    },
+    {
+      "id": 54,
+      "name": "Mr. Big Stuff",
+      "move1": "Big Shoulder",
+      "move1_value": 3,
+      "move2": "Stuff Smash",
+      "move2_value": 4
+    },
+    {
+      "id": 55,
+      "name": "Gas",
+      "move1": "Toxic Cloud",
+      "move1_value": 2,
+      "move2": "Gas Leak",
+      "move2_value": 3
+    },
+    {
+      "id": 56,
+      "name": "Wrecking Ball",
+      "move1": "Demolition Swing",
+      "move1_value": 4,
+      "move2": "Chain Smash",
+      "move2_value": 3
+    },
+    {
+      "id": 57,
+      "name": "Ochindew",
+      "move1": "Dew Strike",
+      "move1_value": 2,
+      "move2": "Ochin Rush",
+      "move2_value": 2
+    },
+    {
+      "id": 58,
+      "name": "Spotlight",
+      "move1": "Beacon Flash",
+      "move1_value": 2,
+      "move2": "Alley Light",
+      "move2_value": 2
+    },
+    {
+      "id": 59,
+      "name": "Buzzard",
+      "move1": "Carrion Dive",
+      "move1_value": 2,
+      "move2": "Talon Rip",
+      "move2_value": 2
+    },
+    {
+      "id": 60,
+      "name": "Powerline",
+      "move1": "Live Wire",
+      "move1_value": 3,
+      "move2": "Voltage Surge",
+      "move2_value": 4
+    },
+    {
+      "id": 61,
+      "name": "Sal the Radioactive Pizza Guy",
+      "move1": "Hot Slice",
+      "move1_value": 1,
+      "move2": "Rad Delivery",
+      "move2_value": 2
+    },
+    {
+      "id": 62,
+      "name": "Trajic",
+      "move1": "Tragic Twist",
+      "move1_value": 3,
+      "move2": "Sorrow Strike",
+      "move2_value": 3
+    },
+    {
+      "id": 63,
+      "name": "Psycho Duck",
+      "move1": "Quack Fury",
+      "move1_value": 3,
+      "move2": "Psycho Peck",
+      "move2_value": 4
+    },
+    {
+      "id": 64,
+      "name": "Spike Lord",
+      "move1": "Spike Rain",
+      "move1_value": 3,
+      "move2": "Lord's Thorns",
+      "move2_value": 3
+    },
+    {
+      "id": 65,
+      "name": "Arid Maker",
+      "move1": "Dust Forge",
+      "move1_value": 3,
+      "move2": "Arid Blast",
+      "move2_value": 3
+    },
+    {
+      "id": 66,
+      "name": "G. I. O's",
+      "move1": "Crunch Rush",
+      "move1_value": 1,
+      "move2": "Bowl Bash",
+      "move2_value": 1
+    },
+    {
+      "id": 67,
+      "name": "Daddy Longlegs",
+      "move1": "Web Snare",
+      "move1_value": 3,
+      "move2": "Leg Sweep",
+      "move2_value": 4
+    },
+    {
+      "id": 68,
+      "name": "Cactus",
+      "move1": "Needle Jab",
+      "move1_value": 2,
+      "move2": "Prickly Guard",
+      "move2_value": 2
+    },
+    {
+      "id": 69,
+      "name": "Hydrant",
+      "move1": "Hydrant Blast",
+      "move1_value": 3,
+      "move2": "Water Shield",
+      "move2_value": 3
+    },
+    {
+      "id": 70,
+      "name": "Drill Boy",
+      "move1": "Drill Spin",
+      "move1_value": 2,
+      "move2": "Bore Through",
+      "move2_value": 2
+    },
+    {
+      "id": 71,
+      "name": "Mr. Plaid Smiley Face",
+      "move1": "Plaid Grin",
+      "move1_value": 1,
+      "move2": "Smiley Swipe",
+      "move2_value": 1
+    },
+    {
+      "id": 72,
+      "name": "Chinkyhooha",
+      "move1": "Hooha Holler",
+      "move1_value": 2,
+      "move2": "Chink Jab",
+      "move2_value": 2
+    },
+    {
+      "id": 73,
+      "name": "Manta",
+      "move1": "Glide Strike",
+      "move1_value": 3,
+      "move2": "Manta Ray",
+      "move2_value": 3
+    },
+    {
+      "id": 74,
+      "name": "Boa",
+      "move1": "Coil Crush",
+      "move1_value": 3,
+      "move2": "Constrict",
+      "move2_value": 3
+    },
+    {
+      "id": 75,
+      "name": "Polar Bear",
+      "move1": "Ice Claw",
+      "move1_value": 2,
+      "move2": "Arctic Roar",
+      "move2_value": 2
+    },
+    {
+      "id": 76,
+      "name": "Hair",
+      "move1": "Hair Whip",
+      "move1_value": 3,
+      "move2": "Strand Tangle",
+      "move2_value": 3
+    },
+    {
+      "id": 77,
+      "name": "Cuff",
+      "move1": "Cuff Strike",
+      "move1_value": 2,
+      "move2": "Restraint Hold",
+      "move2_value": 2
+    },
+    {
+      "id": 78,
+      "name": "Suction Boy",
+      "move1": "Vacuum Grip",
+      "move1_value": 2,
+      "move2": "Suction Pull",
+      "move2_value": 2
+    },
+    {
+      "id": 79,
+      "name": "Jay Memo",
+      "move1": "Memo Note",
+      "move1_value": 1,
+      "move2": "Jay Walk",
+      "move2_value": 1
+    },
+    {
+      "id": 80,
+      "name": "Roley",
+      "move1": "Roll Over",
+      "move1_value": 2,
+      "move2": "Roley Rush",
+      "move2_value": 2
+    },
+    {
+      "id": 81,
+      "name": "Blast",
+      "move1": "Shockwave",
+      "move1_value": 3,
+      "move2": "Blast Radius",
+      "move2_value": 4
+    },
+    {
+      "id": 82,
+      "name": "Nymph",
+      "move1": "Petal Dance",
+      "move1_value": 2,
+      "move2": "Nature's Kiss",
+      "move2_value": 2
+    },
+    {
+      "id": 83,
+      "name": "Scarab Beetle",
+      "move1": "Shell Ram",
+      "move1_value": 2,
+      "move2": "Beetle Bite",
+      "move2_value": 2
+    },
+    {
+      "id": 84,
+      "name": "Larry",
+      "move1": "Larry Jab",
+      "move1_value": 1,
+      "move2": "Everyday Punch",
+      "move2_value": 1
+    },
+    {
+      "id": 85,
+      "name": "Mel Propellers Hand",
+      "move1": "Propeller Chop",
+      "move1_value": 3,
+      "move2": "Spin Lift",
+      "move2_value": 4
+    },
+    {
+      "id": 86,
+      "name": "Scorpolion",
+      "move1": "Tail Sting",
+      "move1_value": 3,
+      "move2": "Scorpolion Pinch",
+      "move2_value": 3
+    },
+    {
+      "id": 87,
+      "name": "The Lice Girls",
+      "move1": "Itch Assault",
+      "move1_value": 2,
+      "move2": "Lice Swarm",
+      "move2_value": 2
+    },
+    {
+      "id": 88,
+      "name": "Lip And Pale Rescue Workers",
+      "move1": "Rescue Carry",
+      "move1_value": 2,
+      "move2": "Pale Triage",
+      "move2_value": 2
+    },
+    {
+      "id": 89,
+      "name": "The Glob",
+      "move1": "Glob Ooze",
+      "move1_value": 1,
+      "move2": "Squish",
+      "move2_value": 1
+    },
+    {
+      "id": 90,
+      "name": "Crystal",
+      "move1": "Crystal Shard",
+      "move1_value": 3,
+      "move2": "Refract Beam",
+      "move2_value": 4
+    },
+    {
+      "id": 91,
+      "name": "Arrow",
+      "move1": "Sharp Shot",
+      "move1_value": 3,
+      "move2": "Piercing Volley",
+      "move2_value": 4
+    },
+    {
+      "id": 92,
+      "name": "Vacuum",
+      "move1": "Suck Zone",
+      "move1_value": 3,
+      "move2": "Void Pull",
+      "move2_value": 3
+    },
+    {
+      "id": 93,
+      "name": "Fork",
+      "move1": "Prong Jab",
+      "move1_value": 2,
+      "move2": "Utensil Toss",
+      "move2_value": 2
+    },
+    {
+      "id": 94,
+      "name": "Blok",
+      "move1": "Blok Slam",
+      "move1_value": 2,
+      "move2": "Square Guard",
+      "move2_value": 2
+    },
+    {
+      "id": 95,
+      "name": "Wind-Up",
+      "move1": "Crank Strike",
+      "move1_value": 2,
+      "move2": "Wind-Up Spin",
+      "move2_value": 2
+    },
+    {
+      "id": 96,
+      "name": "Life Extinguisher",
+      "move1": "Snuff Flame",
+      "move1_value": 3,
+      "move2": "Extinguish",
+      "move2_value": 3
+    },
+    {
+      "id": 97,
+      "name": "Gourd of the Jungle",
+      "move1": "Gourd Bash",
+      "move1_value": 1,
+      "move2": "Jungle Rattle",
+      "move2_value": 1
+    },
+    {
+      "id": 98,
+      "name": "Dispenser",
+      "move1": "Dispense Shot",
+      "move1_value": 3,
+      "move2": "Supply Burst",
+      "move2_value": 3
+    },
+    {
+      "id": 99,
+      "name": "Paws",
+      "move1": "Paw Swipe",
+      "move1_value": 2,
+      "move2": "Claw Rake",
+      "move2_value": 2
+    },
+    {
+      "id": 100,
+      "name": "Ferrett",
+      "move1": "Ferret Dash",
+      "move1_value": 2,
+      "move2": "Burrow Bite",
+      "move2_value": 2
+    },
+    {
+      "id": 101,
+      "name": "Ziggo the Dog",
+      "move1": "Ziggo Fetch",
+      "move1_value": 2,
+      "move2": "Doggy Dash",
+      "move2_value": 2
+    },
+    {
+      "id": 102,
+      "name": "Winch",
+      "move1": "Cable Pull",
+      "move1_value": 1,
+      "move2": "Rescue Raiser",
+      "move2_value": 3
+    },
+    {
+      "id": 103,
+      "name": "The Ram",
+      "move1": "Headbutt Charge",
+      "move1_value": 4,
+      "move2": "Ram Stampede",
+      "move2_value": 3
+    },
+    {
+      "id": 104,
+      "name": "Tak",
+      "move1": "Tak Strike",
+      "move1_value": 2,
+      "move2": "Quick Tak",
+      "move2_value": 2
+    }
+  ]
+}
