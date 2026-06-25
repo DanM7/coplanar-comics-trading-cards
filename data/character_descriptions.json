@@ -416,9 +416,9 @@
       "home_plane": "",
       "home_location": "",
       "home_district": "",
-      "type": "Cartoon",
-      "identity": "Draft Dan Maguire",
-      "description": "This card is still waiting on a name, a face, and a real backstory. For now it only throws Placeholder Strike and Placeholder Guard, like a sketch of a fighter that hasn't been inked yet."
+      "type": "Superhuman",
+      "identity": "Xon",
+      "description": ""
     },
     {
       "id": 39,
@@ -428,7 +428,7 @@
       "home_location": "",
       "home_district": "",
       "type": "Cartoon",
-      "identity": "Buoyant Dan Maguire",
+      "identity": "Dolty Dan Maguire",
       "description": "Bob Balloon Head fights with a grin and a giant rubbery skull that's somehow harder than it looks. He bounces his head into targets, then pops it on purpose when things get boring, turning every brawl into a loud, messy surprise."
     },
     {
@@ -438,8 +438,8 @@
       "home_plane": "3D",
       "home_location": "Coplanar Plains",
       "home_district": "Angle Ranch",
-      "type": "Cyborg",
-      "identity": "Alfred MacKenzie Posh IX (AMPIX Hybrid)",
+      "type": "Human / Cartoon",
+      "identity": "Alfred MacKenzie Posh IX",
       "description": "Once Alfred MacKenzie Posh IX, he was transformed by a catastrophic anti‑cartoon experiment that fused his body with the very ink‑born physics he despised. Now a warped hybrid of flesh and animation, he bends reality in a furious attempt to undo the mistake that made him part of the absurd world he tried to erase."
     },
     {
@@ -450,8 +450,8 @@
       "home_location": "Coplanar City",
       "home_district": "Vector Heights",
       "type": "Superhuman",
-      "identity": "Aiden 'Ace' Stratton",
-      "description": "A daring hero who rides the skies on jet‑powered boots, slicing through danger with precision and speed. Armed with twin aerodynamic hooks, he’s the guardian of the high altitudes—swift, fearless, and always one step ahead of the storm."
+      "identity": "Aiden 'Ace' Wright",
+      "description": "A daring hero who rides the skies on jet‑powered boots, slicing through danger with precision and speed. The only thing to slow him down is making sure his brother Mel doesn't get left behind."
     },
     {
       "id": 42,
@@ -460,9 +460,9 @@
       "home_plane": "Comic",
       "home_location": "Coplanar Plains",
       "home_district": "Gag Gulch",
-      "type": "Robot",
-      "identity": "Gag Gulch Beeper Unit 7",
-      "description": "A tiny, jittery robot from Gag Gulch who communicates only in comedic beeps and boops, often causing slapstick misunderstandings around the valley."
+      "type": "Human",
+      "identity": "",
+      "description": ""
     },
     {
       "id": 43,
@@ -484,7 +484,7 @@
       "home_district": "Pine Hollow",
       "type": "Creature",
       "identity": "Petromyzon Insidiatus",
-      "description": "A predatory creature that lurks in the waterways of Pine Hollow, ambushing unsuspecting hikers with its circular rows of teeth."
+      "description": "A predatory creature that lurks in the waterways of Pine Hollow, ambushing unsuspecting hikers with its circular rows of razor-sharp teeth."
     },
     {
       "id": 45,
@@ -494,7 +494,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Gag Gulch",
       "type": "Cartoon",
-      "identity": "Jocular Dan Maguire",
+      "identity": "Dummy Dan Maguire",
       "description": "A towering, goofy giant who roams Gag Gulch telling terrible jokes, his booming laughter echoing across the cartoonish valley."
     },
     {
@@ -504,9 +504,9 @@
       "home_plane": "Comic",
       "home_location": "Coplanar City",
       "home_district": "Panel Park",
-      "type": "Cartoon",
-      "identity": "Daring Dan Maguire",
-      "description": "A hyperactive martial artist from Panel Park who leaps into action with exaggerated, cartoon-perfect scissor kicks that send villains spinning off-screen."
+      "type": "Cyborg",
+      "identity": "",
+      "description": ""
     },
     {
       "id": 47,
@@ -526,8 +526,8 @@
       "home_plane": "Human",
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
-      "type": "Construct",
-      "identity": "Sketchline Bog Sediment",
+      "type": "Superhuman",
+      "identity": "",
       "description": "Mud Man is slow, heavy, and impossible to knock down clean. He slings thick mud that sticks and grips like a bog, smothering trouble until every punch feels like it landed in wet earth."
     },
     {
@@ -537,9 +537,9 @@
       "home_plane": "Human",
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
-      "type": "Cyborg",
-      "identity": "Robert 'Bob' Kline",
-      "description": "Clonez looks normal from across the room, but that's the point. He fights with swarms of copies and mirror strikes that hit from every angle until you can't tell which one is real and which one already got you."
+      "type": "Robot",
+      "identity": "",
+      "description": ""
     },
     {
       "id": 50,
@@ -549,8 +549,8 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
-      "identity": "Cyrus 'Cy' Stormwell",
-      "description": "Cyclone doesn't walk into a fight. He spins in like a storm with arms full of wind, cutting through trouble with burst spins and shear gusts that knock plans sideways before anyone finds their footing."
+      "identity": "",
+      "description": ""
     },
     {
       "id": 51,
@@ -560,8 +560,8 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Cyborg",
-      "identity": "Marcus 'Missle' Wright",
-      "description": "Wrist Missle treats every fight like a launch sequence. He's strapped with rockets on his wrists and ego, firing off barrages until the sky is full of smoke and you're wondering how he reloads that fast."
+      "identity": "Marcus Wright",
+      "description": "Wrist Missle treats every fight like a launch sequence. He's strapped with rockets on his wrists and ego, firing off barrages until the sky is full of smoke. The only heros to ever ground him were his brothers, Mel and Aiden."
     },
     {
       "id": 52,
@@ -593,7 +593,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
-      "identity": "Bertram 'Big' Stuffin",
+      "identity": "Bertram Stuffin",
       "description": "Mr. Big Stuff is a towering giant who mostly looks confused about his own size. He doesn't mean to crush cities, but one big shoulder check or stuff smash can flatten a block before he even notices what happened."
     },
     {
@@ -604,7 +604,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
-      "identity": "Gareth 'Gas' Venn",
+      "identity": "Gareth Venn",
       "description": "Gas drifts into fights behind a mask and a cloud that makes your eyes water. He leaks toxic air on purpose, filling rooms with sick green haze until breathing feels like the real battle."
     },
     {
@@ -615,8 +615,8 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Cyborg",
-      "identity": "Spiked Chain Demolition Rig",
-      "description": "Wrecking Ball is a walking demolition crew with spiked chains for arms and legs that never quit. He swings through walls and trouble alike, smashing whatever's in the way like the whole job is coming down today."
+      "identity": "",
+      "description": ""
     },
     {
       "id": 57,
@@ -637,7 +637,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
-      "identity": "Spencer 'Spot' Lightman",
+      "identity": "Spencer Lightman",
       "description": "A heroic figure from Sketchline Fields who uses his spotlight to illuminate the darkness and guide others through the district’s dangerous alleys."
     },
     {
@@ -647,8 +647,8 @@
       "home_plane": "",
       "home_location": "",
       "home_district": "",
-      "type": "Creature",
-      "identity": "Buteo Carnivorus",
+      "type": "Human",
+      "identity": "",
       "description": "Buzzard spends most fights circling above, watching every move before he moves in. He's patient, sharp-eyed, and hard to shake once he commits, diving with hooked talons and ripping through trouble like it's already carrion."
     },
     {
@@ -681,7 +681,7 @@
       "home_location": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Travis 'Trajic' Moore",
+      "identity": "Travis Moore",
       "description": "Trajic fights like every battle is the sad last scene of a movie. He's cold, dramatic, and always one step ahead, twisting fights with sudden strikes that land like heavy news nobody wanted to hear."
     },
     {
@@ -702,8 +702,8 @@
       "home_plane": "Human",
       "home_location": "",
       "home_district": "",
-      "type": "Superhuman",
-      "identity": "Spencer 'Spike' Thornwell",
+      "type": "Robot",
+      "identity": "",
       "description": "Spike Lord rules with sharp edges and zero patience for nonsense. He'll rain spikes from above or wrap trouble in thorny guards, and getting close to him always feels like hugging a pile of razor wire."
     },
     {
@@ -714,7 +714,7 @@
       "home_location": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Ari 'Arid' Desertine",
+      "identity": "Ari Desertine",
       "description": "Arid Maker turns dry air into a weapon. He forges dust into hard bursts and blasts heat into empty space until the whole fight feels like a desert with no water and no mercy left."
     },
     {
@@ -734,7 +734,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Cyborg",
-      "identity": "Spider-Limb Exoskeleton Rig",
+      "identity": "",
       "description": "Daddy Longlegs is half man, half nightmare spider rig. He snares targets in sticky webs, sweeps legs out from under them, and watches from above with that creepy calm of something that knows you'll trip eventually."
     },
     {
@@ -743,8 +743,8 @@
       "alignment": "Evil",
       "home_plane": "",
       "home_district": "",
-      "type": "Creature",
-      "identity": "Cactaceae Spinosus",
+      "type": "Superhuman",
+      "identity": "",
       "description": "Cactus walks into every fight already armed. His whole body is needles and attitude, jabbing fast and curling into a prickly guard that makes getting close feel like hugging a cactus on purpose."
     },
     {
@@ -753,8 +753,8 @@
       "alignment": "Good",
       "home_plane": "",
       "home_district": "",
-      "type": "Construct",
-      "identity": "Municipal Fire Hydrant Unit",
+      "type": "Superhuman",
+      "identity": "",
       "description": "Hydrant shows up when everything's on fire and keeps her cool under the helmet. She hits with blasting water and throws up shields that turn heat into steam before it can spread."
     },
     {
@@ -764,7 +764,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Cyborg",
-      "identity": "Industrial Rotor Drill Frame",
+      "identity": "Coplanar Corp - Mining Division",
       "description": "Drill Boy doesn't knock on doors. He spins up, bores straight through, and keeps going until the whole wall, floor, or enemy is just dust behind him. Loud, stubborn, and built to puncture."
     },
     {
@@ -783,8 +783,8 @@
       "alignment": "Evil",
       "home_plane": "",
       "home_district": "",
-      "type": "Construct",
-      "identity": "Scrap Wire Resonance Node",
+      "type": "Creature",
+      "identity": "",
       "description": "Chinkyhooha is a weird blob of wires and noise that shouldn't be alive. It hollers sharp enough to rattle your teeth, then strikes from angles that make no sense until you're already hit."
     },
     {
@@ -793,8 +793,8 @@
       "alignment": "Good",
       "home_plane": "",
       "home_district": "",
-      "type": "Creature",
-      "identity": "Mobula Gladius",
+      "type": "Superhuman",
+      "identity": "",
       "description": "Manta moves through a fight like he's swimming through open water. Smooth, quiet, and impossible to track, he glides in with a strike and cuts away before you even figure out which way he went."
     },
     {
@@ -803,8 +803,8 @@
       "alignment": "Evil",
       "home_plane": "",
       "home_district": "",
-      "type": "Creature",
-      "identity": "Boa Constrictor Maximus",
+      "type": "Superhuman",
+      "identity": "",
       "description": "Boa wraps around trouble and squeezes until it stops moving. He's patient, coiled, and always waiting for one wrong step before he crushes the air out of a fight and won't let go."
     },
     {
@@ -813,8 +813,8 @@
       "alignment": "Evil",
       "home_plane": "",
       "home_district": "",
-      "type": "Creature",
-      "identity": "Ursus Maritimus Ferox",
+      "type": "Human",
+      "identity": "",
       "description": "Polar Bear isn't cuddly, and that white beard isn't for show. He stalks cold places with ice claws and a roar that hits like a blizzard, treating every fight like survival at the top of the world."
     },
     {
@@ -824,7 +824,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Hannah 'Hair' Lockwood",
+      "identity": "Hannah Lockwood",
       "description": "Hair treats her long locks like extra arms, and they're stronger than they look. She whips, tangles, and snares with strands that move on their own, turning a bad hair day into everybody else's problem."
     },
     {
@@ -834,7 +834,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Curtis 'Cuff' Brannigan",
+      "identity": "Curtis Brannigan",
       "description": "Cuff has hands built for stopping trouble, not starting it. He'll cuff-strike hard enough to drop a fight, then clamp down with a hold that won't break until the danger passes."
     },
     {
@@ -844,7 +844,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Samuel 'Suction' Graves",
+      "identity": "",
       "description": "Suction Boy treats skyscrapers like jungle gyms. He grips glass with suction gear, pulls himself wherever help is needed, and won't let go until he's got someone safe or the bad guy reeled in."
     },
     {
@@ -854,8 +854,8 @@
       "home_plane": "",
       "home_district": "",
       "type": "Cartoon",
-      "identity": "Doodled Dan Maguire",
-      "description": "Jay Memo is a walking sticky note with opinions and no schedule. He drifts through fights leaving memos nobody asked for, jaywalking past danger like the whole world is just another late-night bit."
+      "identity": "Doodler Dan Maguire",
+      "description": ""
     },
     {
       "id": 80,
@@ -874,7 +874,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Human",
-      "identity": "Blake 'Blast' Demolir",
+      "identity": "Blake Demolir",
       "description": "He's a tactician that does not negotiate, troubleshoot, or retreat; he finds the nearest load-bearing wall and makes the conversation louder. Reckless and grinning through the smoke, he lives for the moment before detonation and treats restraint like a personal insult."
     },
     {
@@ -883,8 +883,8 @@
       "alignment": "Good",
       "home_plane": "",
       "home_district": "",
-      "type": "Creature",
-      "identity": "Nympheus Ventosus",
+      "type": "Superhuman",
+      "identity": "",
       "description": "Nymph lives for open sky and open trails, chasing the next rush of wind like it might run away without him. Quick, curious, and hard to catch, he treats every clearing like a playground and every problem like a reason to fly faster."
     },
     {
@@ -893,8 +893,8 @@
       "alignment": "Good",
       "home_plane": "",
       "home_district": "",
-      "type": "Creature",
-      "identity": "Scarabaeus Impenetrabilis",
+      "type": "Superhuman",
+      "identity": "",
       "description": "Scarab Beetle fights like the beetle he is, trusting his hard shell to soak up hits and his heavy charge to break through anything in his way. Push him and he'll lower his horns, clamps down with iron jaws, and keeps pushing forward."
     },
     {
@@ -909,12 +909,12 @@
     },
     {
       "id": 85,
-      "name": "Mel Propellers Hand",
+      "name": "Mel Propeller Hands",
       "alignment": "Good",
       "home_plane": "",
       "home_district": "",
       "type": "Cyborg",
-      "identity": "Melvin 'Mel' Propeller",
+      "identity": "Melvin Wright",
       "description": "Mel built his way into the sky with propellers on his hands and a rotor on his head, and he never gets tired of the rush. He's cheerful, clever, and always tinkering. In a fight, he'll chop through trouble or spin up a lift that sends enemies flying."
     },
     {
@@ -923,7 +923,7 @@
       "alignment": "Evil",
       "home_plane": "",
       "home_district": "",
-      "type": "Cyborg",
+      "type": "Creature / Cyborg",
       "identity": "Panthera Scorpius Implant Host",
       "description": "Scorpolion's part lion, part scorpion, and all bad news. A cybernetic implant sits on his head, blinking in the dark, and people can't shake the feeling that something else is driving him. He hunts without mercy, closing in with a venomous sting or a crushing bite."
     },
@@ -944,7 +944,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Construct",
-      "identity": "Emergency Tongue-and-Bucket Unit",
+      "identity": "",
       "description": "Lip and Pale don't waste time on speeches. When disaster hits, a floating mouth and a bucket-bodied partner rush in as a team. Lip hauls people out with a carry that's all tongue and grip, while Pale sorts the wounded with triage faster than most crews can grab their gear."
     },
     {
@@ -963,8 +963,8 @@
       "alignment": "Good",
       "home_plane": "",
       "home_district": "",
-      "type": "Construct",
-      "identity": "Faceted Quartz Matrix",
+      "type": "Superhuman",
+      "identity": "",
       "description": "Crystal moves like she was cut from living light. Her body throws sharp shards and bends beams through her faceted skin, hitting from angles nobody saw coming. She's calm, dazzling, and tougher to crack than almost anything thrown at her."
     },
     {
@@ -973,8 +973,8 @@
       "alignment": "Evil",
       "home_plane": "",
       "home_district": "",
-      "type": "Superhuman",
-      "identity": "Alec 'Arrow' Pierce",
+      "type": "Human",
+      "identity": "Alec Pierce",
       "description": "Arrow doesn't chat, chase, or waste shots. He waits in the shadows with cold patience, then fires sharp shots and piercing volleys from his gauntlets before most targets even know they're being aimed at."
     },
     {
@@ -983,8 +983,8 @@
       "alignment": "Evil",
       "home_plane": "",
       "home_district": "",
-      "type": "Construct",
-      "identity": "Salvaged Vacuum Cleaner Assembly",
+      "type": "Robot",
+      "identity": "",
       "description": "Vacuum was built from old cleaners and worse ideas, and now he treats the whole world like one big mess to swallow. He's quiet until he isn't, sucking up anything loose with a pull that feels like the floor just dropped out."
     },
     {
@@ -993,8 +993,8 @@
       "alignment": "Evil",
       "home_plane": "",
       "home_district": "",
-      "type": "Construct",
-      "identity": "Kitchen Drawer Utensil Heap",
+      "type": "Robot",
+      "identity": "",
       "description": "Fork fights like a nightmare from the junk drawer. He's weird, mean, and proud of it, stabbing with sharp prongs and flinging utensils until the whole fight feels like a kitchen riot gone wrong."
     },
     {
@@ -1003,8 +1003,8 @@
       "alignment": "Good",
       "home_plane": "",
       "home_district": "",
-      "type": "Construct",
-      "identity": "Fired Clay Brick Stack",
+      "type": "Superhuman",
+      "identity": "",
       "description": "Blok is built brick by brick, and he carries himself like the wall holding everything up. He's steady, square, and tough to budge, slamming through trouble and throwing up a guard that won't crack under pressure."
     },
     {
@@ -1014,7 +1014,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Robot",
-      "identity": "Clockwork Spring Automaton",
+      "identity": "Clockwork Spring Company",
       "description": "Wind-Up never stays still for long. He needs a crank and a running start, but once he's wound tight he bursts into a blur of spinning strikes that hit hard, then slow down until he gets wound up all over again."
     },
     {
@@ -1023,8 +1023,8 @@
       "alignment": "Evil",
       "home_plane": "",
       "home_district": "",
-      "type": "Construct",
-      "identity": "Fire Suppression Gauntlet",
+      "type": "Human",
+      "identity": "",
       "description": "Life Extinguisher treats hope like a fire that needs putting out. He shows up where things are burning brightest and leaves nothing but smoke, snuffing flames and fighting spirit with the same cold, practiced swing of his hand."
     },
     {
@@ -1043,8 +1043,8 @@
       "alignment": "Evil",
       "home_plane": "",
       "home_district": "",
-      "type": "Robot",
-      "identity": "Arm-Mounted Fluid Dispenser",
+      "type": "Human",
+      "identity": "",
       "description": "Dispenser doesn't talk. He just opens those arm tubes and sprays whatever nasty shot the fight calls for, one burst after another until the whole room feels like a supply closet gone wrong. Cold, faceless, and always stocked."
     },
     {
@@ -1054,7 +1054,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Patrick 'Paws' Clawson",
+      "identity": "Patrick Clawson",
       "description": "Paws knows he looks ridiculous, and he doesn't care. He leaps in with a goofy grin and boots the size of dinner plates, swiping and raking with claws that hit way harder than anyone expects from a sweaty guy in yellow."
     },
     {
@@ -1073,8 +1073,8 @@
       "alignment": "Good",
       "home_plane": "",
       "home_district": "",
-      "type": "Cyborg",
-      "identity": "Canis Fidelis Augment Unit",
+      "type": "Creature",
+      "identity": "",
       "description": "Ziggo the Dog is pure tail-wagging loyalty with a few weird upgrades he didn't ask for. He'll fetch anything you throw, dash back faster than you blink, and act like the whole world is just one big game of catch."
     },
     {
@@ -1094,7 +1094,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Sir Graham 'Ram' Buckhorn",
+      "identity": "Sir Graham Buckhorn",
       "description": "The Ram doesn't bother with fancy footwork. He lowers those curved horns and charges like a whole stampede packed into one armored body, headbutting through walls, doors, and anybody dumb enough to stand in his path."
     },
     {
