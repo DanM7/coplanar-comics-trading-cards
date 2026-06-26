@@ -5,6 +5,8 @@ export const CARD_RARITY_SYMBOLS: Record<string, string> = {
   common: "●",
   uncommon: "◆",
   rare: "★",
+  "double-rare": "★★",
+  "triple-rare": "★★★",
   holo: "◆",
 };
 

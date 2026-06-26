@@ -47,9 +47,8 @@ export function formatCharacterTypeIdentityLine(input: {
 }): string {
   const type = (input.type ?? "").trim();
   const identity = (input.identity ?? "").trim();
-  const label = identityLabelForCharacterType(type || undefined);
 
-  return `Type: ${type} • ${label}: ${identity}`;
+  return `Type: ${type} • ${identity}`;
 }
 
 function normalizeCardId(cardId: string): string {

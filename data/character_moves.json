@@ -108,9 +108,10 @@
     {
       "id": 13,
       "name": "Acid",
-      "move1": "Corrosive Touch",
+      "move1": "Corrosive Burst",
+      "move1_type": "energy",
       "move1_value": 4,
-      "move2": "Acid Spray",
+      "move2": "Regenerative Frenzy",
       "move2_value": 4,
       "move2_type": "energy"
     },
@@ -138,7 +139,8 @@
       "move1": "Tidal Tantrum Toss",
       "move1_value": 2,
       "move2": "Dune Cloud",
-      "move2_value": 1
+      "move2_value": 1,
+      "move2_type": "energy"
     },
     {
       "id": 17,
@@ -245,65 +247,70 @@
       "id": 29,
       "name": "Geo Metric",
       "move1": "Vector Slash",
-      "move1_value": 3,
+      "move1_value": 2,
       "move2": "Polygon Crush",
-      "move2_value": 3
+      "move2_value": 3,
+      "move2_type": "energy"
     },
     {
       "id": 30,
       "name": "The Mime",
-      "move1": "Invisible Wall",
+      "move1": "Gelatinous Doppel‑Step",
       "move1_value": 2,
-      "move2": "Silent Trap",
-      "move2_value": 2
+      "move2": "Heroic Masquerade",
+      "move2_value": 2,
+      "move2_type": "energy"
     },
     {
       "id": 31,
       "name": "CO2",
-      "move1": "Smother Cloud",
+      "move1": "Crystalline Cloud",
       "move1_value": 4,
-      "move2": "Gas Burst",
-      "move2_value": 3
+      "move2": "Atmos Aura",
+      "move2_value": 4,
+      "move2_type": "energy"
     },
     {
       "id": 32,
       "name": "Crimson Maker",
-      "move1": "Crimson Forge",
+      "move1": "Spike Stomp",
       "move1_value": 4,
-      "move2": "Blood Construct",
+      "move2": "Pyro Pulse",
       "move2_value": 4
     },
     {
       "id": 33,
       "name": "Uni-man",
-      "move1": "Paper Fold",
+      "move1": "Rail‑Mind Grind",
       "move1_value": 2,
-      "move2": "Origami Shield",
+      "move2": "Dr. Mac Dash",
       "move2_value": 2
     },
     {
       "id": 34,
       "name": "Shattered",
-      "move1": "Shard Spray",
+      "move1": "Shardstorm",
       "move1_value": 3,
-      "move2": "Paper Cut",
+      "move2": "Cursed Rebind",
       "move2_value": 3
     },
     {
       "id": 35,
       "name": "Silhouette",
-      "move1": "Flat Ambush",
+      "move1": "Shadow Slice",
       "move1_value": 3,
-      "move2": "Shadow Slice",
-      "move2_value": 3
+      "move2": "Flat Ambush",
+      "move2_value": 3,
+      "move2_type": "energy"
     },
     {
       "id": 36,
       "name": "Jake the Ripper",
-      "move1": "Alley Slash",
-      "move1_value": 3,
-      "move2": "Ripper Fade",
-      "move2_value": 4
+      "move1": "Crimson Cut",
+      "move1_value": 4,
+      "move2": "Pulse Rend",
+      "move2_value": 4,
+      "move2_type": "energy"
     },
     {
       "id": 37,
@@ -324,18 +331,20 @@
     {
       "id": 39,
       "name": "Bob Balloon Head",
-      "move1": "Balloon Pop",
+      "move1": "Hostile Takeover",
       "move1_value": 4,
-      "move2": "Head Bounce",
+      "move2": "Inflation Spike",
       "move2_value": 4
     },
     {
       "id": 40,
       "name": "AMPIX",
-      "move1": "Facet Scan",
+      "move1": "Inkspace Tear",
       "move1_value": 3,
-      "move2": "Data Shard",
-      "move2_value": 3
+      "move1_type": "energy",
+      "move2": "Unframe the Flesh",
+      "move2_value": 3,
+      "move2_type": "energy"
     },
     {
       "id": 41,
@@ -848,6 +857,68 @@
       "move1_value": 2,
       "move2": "Quick Tak",
       "move2_value": 2
+    },
+    {
+      "id": 491,
+      "name": "D'Xen The Dragon Hunter",
+      "move1": "Dragon Strike",
+      "move1_value": 3,
+      "move2": "Dragon Breath",
+      "move2_value": 3
+    },
+    {
+      "id": 492,
+      "name": "Harmonic Coredrive",
+      "move1": "Resonance Bloom",
+      "move1_value": 5,
+      "move1_type": "energy",
+      "move2": "Planetary Tune‑Shift",
+      "move2_value": 5,
+      "move2_type": "energy"
+    },
+    {
+      "id": 493,
+      "name": "Iron Necrotek",
+      "move1": "Nanite Reaper Surge",
+      "move1_value": 5,
+      "move2": "Digital Oblivion Beam",
+      "move2_value": 5,
+      "move2_type": "energy"
+    },
+    {
+      "id": 495,
+      "name": "Mawdrath",
+      "move1": "Gore Gouge",
+      "move1_value": 5,
+      "move2": "Wormbelch Cascade",
+      "move2_value": 5,
+      "move2_type": "energy"
+    },
+    {
+      "id": 497,
+      "name": "Flatulance",
+      "move1": "Flatulence Bomb",
+      "move1_value": 5,
+      "move2": "Gasoline Fuel",
+      "move2_value": 5
+    },
+    {
+      "id": 500,
+      "name": "The Engineer",
+      "move1": "",
+      "move1_value": 5,
+      "move2": "",
+      "move2_value": 5,
+      "move2_type": "energy"
+    },
+    {
+      "id": 501,
+      "name": "The All-Mother",
+      "move1": "",
+      "move1_value": 5,
+      "move2": "",
+      "move2_value": 5,
+      "move2_type": "energy"
     }
   ]
 }

@@ -8,7 +8,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Old Coplanar",
       "type": "Creature",
-      "identity": "Trombonophis Barbitailus",
+      "identity": "Species: Trombonophis Barbitailus",
       "description": "A venomous forest serpent feared across the county, it slithers from the treeline to unleash sonic shrieks that terrorize tiny Centims and Millims. It thrives on fear and the eerie silence that follows its retreat back into the woods."
     },
     {
@@ -19,7 +19,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Old Coplanar",
       "type": "Creature",
-      "identity": "Cornuculus Saltator",
+      "identity": "Species: Cornuculus Saltator",
       "description": "A tiny owl‑like guardian perched along the fences of Old Coplanar, he watches over the plains with a calm vigilance that belies his size. Despite being frequently harassed by Zwingbat’s nightly terror runs, his gentle nature, sharp instincts, and surprising bursts of courage make him a beloved protector of the district."
     },
     {
@@ -30,7 +30,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Gag Gulch",
       "type": "Creature",
-      "identity": "Saltospira Coplanaris",
+      "identity": "Species: Saltospira Coplanaris",
       "description": "A spring‑born mischief‑maker from Gag Gulch, he bounds across the Coplanar Plains with endless energy and harmless chaos. Even when Zwingbat sends him tumbling, his quick reflexes and resilient grin keep him ready for the next adventure."
     },
     {
@@ -41,7 +41,7 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Construct",
-      "identity": "Coplanar Corp Unit 7 Waste",
+      "identity": "Origin: Coplanar Corp Unit 7 Waste",
       "description": "Animated by experimental waste spilled from Coplanar Corp, he stands as Realspace Row’s stubborn, sludge‑born defender. His brute strength, near‑impossible durability, and ability to unleash corrosive muck blasts and rolling stink waves make him a messy but unstoppable force."
     },
     {
@@ -52,7 +52,7 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Creature",
-      "identity": "Orbis Dentatus",
+      "identity": "Species: Orbis Dentatus",
       "description": "A fearsome sphere that bounces across skyscrapers of Realspace Row, its unblinking eyes and menacing maw unsettle everyone who crosses its path. Known for dropping without warning onto unsuspecting pedestrians and revealing rows of razor‑sharp teeth at the worst possible moment, it turns even a calm walk downtown into a nerve‑wracking gamble."
     },
     {
@@ -63,7 +63,7 @@
       "home_location": "Coplanar City",
       "home_district": "Vector Heights",
       "type": "Construct / Cartoon",
-      "identity": "Gag Gulch Comic Book Ink Contaminant",
+      "identity": "Origin: Gag Gulch Comic Book Ink Contaminant",
       "description": "A volatile mass of pure geometry, Abstract twists through Coplanar City with jagged strokes and impossible geometry. Where Line‑Man walks the straight and narrow, Abstract bends every rule of physics, perspective, and common sense. To him, reality is just another page to redraw, erase, or tear apart."
     },
     {
@@ -74,7 +74,7 @@
       "home_location": "Coplanar City",
       "home_district": "Vector Heights",
       "type": "Human / Cartoon",
-      "identity": "Jack Draft",
+      "identity": "Real Name: Jack Draft",
       "description": "A heroic hand-drawn detective who protects Vector Heights, reshaping his linear form into weapons when danger threatens the district. As walking sketch of justice, he cuts through the neon haze with sharp resolve and detective instincts honed on the crooked edges of Coplanar crime."
     },
     {
@@ -85,7 +85,7 @@
       "home_location": "Coplanar City",
       "home_district": "Panel Park",
       "type": "Cartoon",
-      "identity": "Dynamic Dan Maguire",
+      "identity": "Animator: Dynamic Dan Maguire",
       "description": "A stout worm creature who wriggles through the cartoonish streets of Panel Park, defending its residents with slapstick ferocity and a whip-like tongue."
     },
     {
@@ -96,7 +96,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Old Coplanar",
       "type": "Construct",
-      "identity": "Cosmic Bitumen Meteorite",
+      "identity": "Origin: Cosmic Bitumen Meteorite",
       "description": "A tar-born creature who emerged from an old industrial pit on the outskirts of Old Coplanar, now using its fluid form to protect the townsfolk. Its body contains hydrocarbons traced to a meteor fragment that struck the region decades ago."
     },
     {
@@ -107,7 +107,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Old Coplanar",
       "type": "Construct",
-      "identity": "Volcanic Core Automaton",
+      "identity": "Origin: Volcanic Core Automaton",
       "description": "A towering magma-born menace who erupted from beneath Old Coplanar, some say he is a molten mind fused with broken machinery, but no one can tell whether the lava is driving the tech or the tech is barely containing the lava.",
       "is_boss": true
     },
@@ -119,7 +119,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Gag Gulch",
       "type": "Construct",
-      "identity": "Coplanar Confectionary's experimental sweetener GBX",
+      "identity": "Origin: Coplanar Confectionary's experimental sweetener GBX",
       "description": "A deranged gingerbread outlaw baked in the malfunctioning ovens of Gag Gulch, Bobo is the disastrous result of Coplanar Confectionary’s reckless experiments with volatile sweeteners and sinister contraptions.",
       "description_2": "Tiny but terrifying, he scurries through the valley with frosting‑smeared bravado, a real firearm clutched in one hand and a jittering mechanical arm bolted to the other. Every encounter with Bobo ends in a spray of crumbs, scorch marks, and the unsettling realization that someone at Coplanar Confectionary signed off on this recipe."
     },
@@ -131,7 +131,7 @@
       "home_location": "Parallel Pines",
       "home_district": "Pine Hollow",
       "type": "Creature",
-      "identity": "Nebulomalus Aegyptiacus",
+      "identity": "Species: Nebulomalus Aegyptiacus",
       "description": "A shifting black haze that moves silently through Pine Hollow, warping the air and disorienting anyone who crosses its path. Locals fear it is the lingering spirit of a long‑buried temple demon, its smoky form searching for a vessel to inhabit."
     },
     {
@@ -142,8 +142,8 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Creature",
-      "identity": "Corrosivus Liquefactus",
-      "description": "Acid is a slick, heavy creature from Realspace Row that oozes through fights without much fuss. He's got corrosive touch and acid spray that melt through trouble, and he'd rather soak problems away than leave a mess behind."
+      "identity": "Species: Corrosivus Liquefactus",
+      "description": "Acid tumbled into Coplanar County through a dimensional rift, confused and out of control, and Molten‑Man quickly posed as a friend while shaping him into a living weapon. When Acid’s growing mind recognized the manipulation, he broke free in a fury and now lurks in the swamps, unsure whether he’s meant to protect this world or melt it."
     },
     {
       "id": 14,
@@ -153,7 +153,7 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Superhuman",
-      "identity": "Edison 'Eddy' Volt",
+      "identity": "Real Name: Edison 'Eddy' Volt",
       "description": "Driven half-mad after a bolt of mysterious electrical energy transformed him into living lightning during a high‑school football game, Sparky is obsessed with uncovering what caused the strike. He is convinced someone engineered the strike, and unleashes his raw power on anyone he thinks is hiding the truth."
     },
     {
@@ -164,7 +164,7 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Superhuman",
-      "identity": "Calvin 'Cal' Mercer",
+      "identity": "Real Name: Calvin 'Cal' Mercer",
       "description": "Chain is a tough‑looking, skateboard‑riding guardian of the city, using his size, swagger, and constant motion to make troublemakers think twice. Though he’s not the most powerful hero around, his presence alone keeps the streets steady—and he’s determined to protect his neighborhood with grit, heart, and a rolling start."
     },
     {
@@ -175,7 +175,7 @@
       "home_location": "Parallel Pines",
       "home_district": "Pine Hollow",
       "type": "Creature",
-      "identity": "Simio Littoralis Mischievus",
+      "identity": "Species: Simio Littoralis Mischievus",
       "description": "Sand Monkey is a chaotic beachside menace who stirs up trouble along the shores of Coplanar County, kicking up sandstorms and mischief wherever he scampers. He delights in meddling with tourists, lifeguards, and anyone who dares to relax, turning the coastline into his personal playground of irritation and upheaval."
     },
     {
@@ -186,7 +186,7 @@
       "home_location": "Parallel Pines",
       "home_district": "Pine Hollow",
       "type": "Cartoon",
-      "identity": "Devouring Dan Maguire",
+      "identity": "Animator: Devouring Dan Maguire",
       "description": "The Abdominal Snowman is a deranged cartoon snow beast whose entire midsection is literally a giant stomach organ, rumbling and flexing as if it has a mind of its own. It lurks atop the highest peaks of Coplanar County, living for the thrill of devouring anything foolish enough to climb its mountains, turning every ascent into a desperate race against its insatiable hunger."
     },
     {
@@ -197,7 +197,7 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Robot",
-      "identity": "Coplanar Corp - Weapons Division",
+      "identity": "Inventor / Manufacturer: Coplanar Corp - Weapons Division",
       "description": "ASR is a compact, cube‑shaped Ammo Supplying Robot, quietly rolling through Coplanar County with no allegiance to heroes or villains. It simply follows its programming with calm precision—dispensing ammunition to whoever requests it—making its neutrality both useful and unnervingly unpredictable."
     },
     {
@@ -208,7 +208,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Gag Gulch",
       "type": "Creature / Cartoon",
-      "identity": "Manducator Gaggalchi Possessivus",
+      "identity": "Species: Manducator Gaggalchi Possessivus",
       "description": "A monstrous, chomping menace whose jagged grin and insatiable appetite make him one of the valley’s most feared cartoon predators, especially if you try to date his ex-wife."
     },
     {
@@ -219,7 +219,7 @@
       "home_location": "Coplanar City",
       "home_district": "Panel Park",
       "type": "Construct / Cartoon",
-      "identity": "Chromatic Runoff",
+      "identity": "Origin: Chromatic Runoff",
       "description": "A spray-can trickster who streaks through Panel Park, painting living graffiti that crawls across buildings and rewrites the district’s cartoonish skyline."
     },
     {
@@ -230,7 +230,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Gag Gulch",
       "type": "Cartoon",
-      "identity": "Dexterous Dan Maguire",
+      "identity": "Animator: Dexterous Dan Maguire",
       "description": "He is a walking pile of punchlines and one-liners - literally - since is body is made of jittery, shifting letters. He delivers monologue jokes so sharp even his own vowels wince."
     },
     {
@@ -241,7 +241,7 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Superhuman",
-      "identity": "CJ Griffin",
+      "identity": "Real Name: CJ Griffin",
       "description": "He's the coolest cat you've never seen. The ladies say he's a real looker... which is impressive, considering none of them can actually see him."
     },
     {
@@ -252,7 +252,7 @@
       "home_location": "Parallel Pines",
       "home_district": "Fractal Timberline",
       "type": "Cartoon",
-      "identity": "Dauntless Dan Maguire",
+      "identity": "Animator: Dauntless Dan Maguire",
       "description": "A baseball bat with bat wings who can't decide if he's meant to hit things or just flap angrily at them. He screeches puns mid-swing, making him the only weapon that can both smack you and make you laugh at the same time."
     },
     {
@@ -263,7 +263,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Gag Gulch",
       "type": "Creature",
-      "identity": "Felis Singulatrix",
+      "identity": "Species: Felis Singulatrix",
       "description": "A sweet little furball whose face just happens to be a swirling cosmic void that occasionally slurps up loose snacks and unattended shoelaces. She purrs like a collapsing star and somehow makes existential doom feel cuddly."
     },
     {
@@ -274,7 +274,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Gag Gulch",
       "type": "Human",
-      "identity": "Reddick Redderson",
+      "identity": "Real Name: Reddick Redderson",
       "description": "Rocket Redd is a wild‑eyed ginger tinkerer who strapped himself to a homemade rocket because “walking is for losers.” He blasts around the valley grinning like a man who trusts his inventions way more than anyone else should."
     },
     {
@@ -285,8 +285,8 @@
       "home_location": "Parallel Pines",
       "home_district": "Paperbark Woods",
       "type": "Creature",
-      "identity": "Manum Rexumbrae",
-      "description": "With the hand’s owner somehow always off‑screen, it casts a gigantic shadow so convincing it sends citizens sprinting for their lives. The shadow causes maximum panic while the hand just kind of… gestures there menacingly."
+      "identity": "Species: Manum Rexumbrae",
+      "description": "With the hand’s owner somehow always off‑screen, it casts a gigantic shadow so convincing it sends citizens sprinting for their lives. The shadow causes maximum panic while the hand just kind of… gestures there menacingly. No one knows how the shadow makes terrifying roars and thunderous stomps, but it does."
     },
     {
       "id": 27,
@@ -296,7 +296,7 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Human",
-      "identity": "Alfred MacKenzy Posh IX (duh)",
+      "identity": "Real Name: Alfred MacKenzy Posh IX (duh)",
       "description": "An entitled aristocrat who treats the entire valley like it’s beneath his polished loafers, and nothing earns his disgust quite like cartoons. He considers them an insult to “proper culture.” No one is aware of just what he has in store..."
     },
     {
@@ -307,8 +307,9 @@
       "home_location": "Coplanar Plains",
       "home_district": "Gag Gulch",
       "type": "Creature",
-      "identity": "Lepus Fiscalius Maleficus",
-      "description": "He’s a sharp‑toothed, sharp‑suited rabbit who treats tax collection like a personal protection racket, hopping from door to door with ledgers that look suspiciously like criminal dossiers. Beneath the polite “just doing my job” routine, he runs his own little underworld empire—because in his mind, nothing says power like making everyone terrified of owed carrots."
+      "identity": "Species: Lepus Fiscalius Maleficus",
+      "descripti_2": ".",
+      "description": "With sharp teeth and even sharper suits, he treats tax collection like a personal protection racket, hopping from door to door with ledgers that look suspiciously like criminal dossiers. Beneath the polite “just doing my job” routine, he runs his own little underworld empire. In his mind, nothing says power like making everyone terrified of owed carrots."
     },
     {
       "id": 29,
@@ -318,8 +319,8 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Construct",
-      "identity": "Dimensional Vector Forge",
-      "description": "He’s an angular, malevolent entity built entirely from shifting 3D shapes—cubes, prisms, and razor‑edged polyhedra that click and rotate with unsettling precision. Every edge gleams like a warning sign, and every corner is a deadly hazard."
+      "identity": "Origin: Dimensional Vector Forge",
+      "description": "He’s an angular, malevolent entity built entirely from shifting 3D shapes. Cubes, prisms, and razor‑edged polyhedra all click and rotate with unsettling precision. Every edge gleams like a warning sign, and every corner is a deadly hazard."
     },
     {
       "id": 30,
@@ -329,7 +330,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Creature",
-      "identity": "Mimus Gelatinus Viridis",
+      "identity": "Species: Mimus Gelatinus Viridis",
       "description": "A creature of eerie green goo who can briefly mold itself into any human form, using its uncanny mimicry not for deception but for rescue, infiltration, and misdirection. Though its transformations are always a little off, it throws itself into danger with silent, expressive determination."
     },
     {
@@ -340,8 +341,8 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
-      "identity": "Caleb Carbonell",
-      "description": "A calm, sharp‑minded hero who can rip carbon straight out of the air and forge it into striking crystalline structures with a flick of his hand. Despite wielding a power that could level buildings, he uses it with quiet precision, always choosing protection over destruction. In every crisis, he’s the steady presence turning thin air into hope, one crystal at a time."
+      "identity": "Real Name: Caleb Carbonell",
+      "description": "A calm, sharp‑minded hero who can rip carbon straight out of the air and forge it into striking crystalline structures with a flick of his hand. Despite wielding a power that could level buildings, he uses it with quiet precision, always choosing protection over destruction."
     },
     {
       "id": 32,
@@ -351,19 +352,19 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Robot",
-      "identity": "Coplanar Corp - Weapons Division",
+      "identity": "Inventor / Manufacturer: Coplanar Corp - Weapons Division",
       "description": "A towering killing machine with spiked feet that punch through steel. His lasers cut with cold precision and his flamethrowers flood the field with fire. He moves with brutal purpose and leaves nothing standing."
     },
     {
       "id": 33,
-      "name": "Uni-man",
+      "name": "Uni-Man",
       "alignment": "Good",
-      "home_plane": "2D",
+      "home_plane": "Human",
       "home_location": "Coplanar City",
-      "home_district": "Flatiron Fold",
+      "home_district": "Realspace Row",
       "type": "Human",
-      "identity": "Dr. Starley 'Mac' MacMillan",
-      "description": "A brilliant scientist who lost his legs in a lab accident and refused to let the world slow him down. He fused himself to a motorized unicycle he controls through a helmet‑mounted cable, zipping into danger with sharp intellect and sharper balance."
+      "identity": "Real Name: Dr. Starley 'Dr. Mac' MacMillan",
+      "description": "A brilliant scientist who lost his legs in a lab accident and refused to let the world slow him down. He fused himself to a motorized unicycle he controls with his mind, zipping into danger with sharp intellect and sharper balance."
     },
     {
       "id": 34,
@@ -373,7 +374,7 @@
       "home_location": "Coplanar City",
       "home_district": "Flatiron Fold",
       "type": "Construct",
-      "identity": "Fractured Battle Armor Shards",
+      "identity": "Origin: Fractured Battle Armor Shards",
       "description": "A jagged horror of broken armor and colder intent, Shattered drags himself through the world like a curse that refuses to die. No one knows whether the armor itself lives or if a vengeful spirit puppets the shards from within, but every step he takes grinds like a grave being opened, and every appearance ends with someone begging the darkness for mercy he no longer remembers how to give."
     },
     {
@@ -384,7 +385,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Creature",
-      "identity": "Umbra Planaris",
+      "identity": "Species: Umbra Planaris",
       "description": "A shadowy figure that drifts across Sketchline Fields, flattening into the ground to ambush travelers with sudden, slicing strikes."
     },
     {
@@ -395,19 +396,19 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Human",
-      "identity": "Jacob 'Jake' Whitmore",
-      "description": "A masked slasher who stalks the alleys of Realspace Row, striking with surgical precision and vanishing into the shadows before anyone can react."
+      "identity": "Real Name: Jacob 'Jake' Whitmore",
+      "description": "A ruthless assassin whose twin blades gleam with crimson energy, able to carve through opponents up close or drop them from afar with a deadly psionic pulse. For those he hunts, the last thing they ever see is the cold red glow of his weapons closing in."
     },
     {
       "id": 37,
       "name": "Rings",
-      "alignment": "Neutral",
+      "alignment": "Good",
       "home_plane": "3D",
       "home_location": "Parallel Pines",
       "home_district": "Fractal Timberline",
       "type": "Construct",
-      "identity": "Harmonic Metal Ring Array",
-      "description": "A floating cluster of metallic rings that drift through the Fractal Timberline, resonating with harmonic tones that bend the forest’s geometry."
+      "identity": "Origin: Harmonic Metal Ring Array",
+      "description": "A good‑hearted construct of interlocking gold circles, always in motion yet perfectly balanced. His form may be simple, but his spirit binds together those around him with unbreakable unity."
     },
     {
       "id": 38,
@@ -417,7 +418,7 @@
       "home_location": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Xon",
+      "identity": "Real Name: Xon",
       "description": ""
     },
     {
@@ -428,8 +429,8 @@
       "home_location": "",
       "home_district": "",
       "type": "Cartoon",
-      "identity": "Dolty Dan Maguire",
-      "description": "Bob Balloon Head fights with a grin and a giant rubbery skull that's somehow harder than it looks. He bounces his head into targets, then pops it on purpose when things get boring, turning every brawl into a loud, messy surprise."
+      "identity": "Animator: Dolty Dan Maguire",
+      "description": "The unscrupulous CEO of Coplanar Corp, his inflated ego is matched only by his appetite for profit. Every decision he makes serves his own ascent, with employees, rivals, and entire cities treated as disposable assets in his pursuit of power."
     },
     {
       "id": 40,
@@ -439,7 +440,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Angle Ranch",
       "type": "Human / Cartoon",
-      "identity": "Alfred MacKenzie Posh IX",
+      "identity": "Real Name: Alfred MacKenzie Posh IX",
       "description": "Once Alfred MacKenzie Posh IX, he was transformed by a catastrophic anti‑cartoon experiment that fused his body with the very ink‑born physics he despised. Now a warped hybrid of flesh and animation, he bends reality in a furious attempt to undo the mistake that made him part of the absurd world he tried to erase."
     },
     {
@@ -450,7 +451,7 @@
       "home_location": "Coplanar City",
       "home_district": "Vector Heights",
       "type": "Superhuman",
-      "identity": "Aiden 'Ace' Wright",
+      "identity": "Real Name: Aiden 'Ace' Lefft",
       "description": "A daring hero who rides the skies on jet‑powered boots, slicing through danger with precision and speed. The only thing to slow him down is making sure his brother Mel doesn't get left behind."
     },
     {
@@ -472,7 +473,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Creature",
-      "identity": "Cornu Ferocissimus",
+      "identity": "Species: Cornu Ferocissimus",
       "description": "Horns is a mean, horn-heavy fighter who stamps through Sketchline Fields looking for something to hit. He charges with a gore rush that doesn't stop early, and he'll toss his horns when he wants damage from farther away."
     },
     {
@@ -483,7 +484,7 @@
       "home_location": "Parallel Pines",
       "home_district": "Pine Hollow",
       "type": "Creature",
-      "identity": "Petromyzon Insidiatus",
+      "identity": "Species: Petromyzon Insidiatus",
       "description": "A predatory creature that lurks in the waterways of Pine Hollow, ambushing unsuspecting hikers with its circular rows of razor-sharp teeth."
     },
     {
@@ -494,7 +495,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Gag Gulch",
       "type": "Cartoon",
-      "identity": "Dummy Dan Maguire",
+      "identity": "Animator: Dummy Dan Maguire",
       "description": "A towering, goofy giant who roams Gag Gulch telling terrible jokes, his booming laughter echoing across the cartoonish valley."
     },
     {
@@ -516,7 +517,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Construct",
-      "identity": "Sketchline Paper Collage",
+      "identity": "Origin: Sketchline Paper Collage",
       "description": "A collage-built villain from Sketchline Fields who slices apart the environment and rearranges it into chaotic new forms."
     },
     {
@@ -560,7 +561,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Cyborg",
-      "identity": "Marcus Wright",
+      "identity": "Original Identity: Marcus Lefft",
       "description": "Wrist Missle treats every fight like a launch sequence. He's strapped with rockets on his wrists and ego, firing off barrages until the sky is full of smoke. The only heros to ever ground him were his brothers, Mel and Aiden."
     },
     {
@@ -571,7 +572,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Cartoon",
-      "identity": "Delirious Dan Maguire",
+      "identity": "Animator: Delirious Dan Maguire",
       "description": "John is a toilet on wheels with glasses, a big laugh, and zero shame. He'll plain punch trouble, slam through it, and hose the whole scene down while cackling like saving the city is the funniest joke he ever heard."
     },
     {
@@ -582,7 +583,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Creature",
-      "identity": "Spewtonus Maximus",
+      "identity": "Species: Spewtonus Maximus",
       "description": "Spewtanoo is a floating mess of teeth, slime, and bad moods. He spews nasty sprays and bursts from every angle, turning a fight into something wet, gross, and hard to forget once you've smelled it."
     },
     {
@@ -593,7 +594,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
-      "identity": "Bertram Stuffin",
+      "identity": "Real Name: Bertram Stuffin",
       "description": "Mr. Big Stuff is a towering giant who mostly looks confused about his own size. He doesn't mean to crush cities, but one big shoulder check or stuff smash can flatten a block before he even notices what happened."
     },
     {
@@ -604,7 +605,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
-      "identity": "Gareth Venn",
+      "identity": "Real Name: Gareth Venn",
       "description": "Gas drifts into fights behind a mask and a cloud that makes your eyes water. He leaks toxic air on purpose, filling rooms with sick green haze until breathing feels like the real battle."
     },
     {
@@ -626,7 +627,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Creature",
-      "identity": "Ochindew Limus Ossium",
+      "identity": "Species: Ochindew Limus Ossium",
       "description": "Ochindew oozes through caves like living purple dew with bones inside. He's slow until he isn't, rushing forward with wet strikes that hit cold and cling long after the swing should be over."
     },
     {
@@ -637,7 +638,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
-      "identity": "Spencer Lightman",
+      "identity": "Real Name: Spencer Lightman",
       "description": "A heroic figure from Sketchline Fields who uses his spotlight to illuminate the darkness and guide others through the district’s dangerous alleys."
     },
     {
@@ -659,7 +660,7 @@
       "home_location": "",
       "home_district": "",
       "type": "Construct",
-      "identity": "Urban Power Grid Conductor",
+      "identity": "Origin: Urban Power Grid Conductor",
       "description": "Powerline is raw city electricity with a bad attitude. He clings to wires and poles like they're home, then turns juice into jagged arcs that surge through anything dumb enough to get close."
     },
     {
@@ -670,7 +671,7 @@
       "home_location": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Salvatore 'Sal' Marconi",
+      "identity": "Real Name: Salvatore 'Sal' Marconi",
       "description": "Sal the Radioactive Pizza Guy shows up at your door with a smile, a hot slice, and a glow that'll linger long after he's gone. He never seems rushed, but his deliveries hit with a burn that isn't just pepperoni."
     },
     {
@@ -681,7 +682,7 @@
       "home_location": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Travis Moore",
+      "identity": "Real Name: Travis Moore",
       "description": "Trajic fights like every battle is the sad last scene of a movie. He's cold, dramatic, and always one step ahead, twisting fights with sudden strikes that land like heavy news nobody wanted to hear."
     },
     {
@@ -692,7 +693,7 @@
       "home_location": "",
       "home_district": "",
       "type": "Creature",
-      "identity": "Anas Psychoticus",
+      "identity": "Species: Anas Psychoticus",
       "description": "Psycho Duck isn't here for a friendly pond swim. He bounces in the ring with wild eyes and mean punches, unloading quack fury and vicious pecks until the whole fight feels like a bad fever dream."
     },
     {
@@ -714,7 +715,7 @@
       "home_location": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Ari Desertine",
+      "identity": "Real Name: Ari Desertine",
       "description": "Arid Maker turns dry air into a weapon. He forges dust into hard bursts and blasts heat into empty space until the whole fight feels like a desert with no water and no mercy left."
     },
     {
@@ -724,7 +725,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Cartoon",
-      "identity": "Defiant Dan Maguire",
+      "identity": "Animator: Defiant Dan Maguire",
       "description": "G. I. O's aren't your average breakfast. These little cereal rings hit like a whole squad with legs, guns, and bad attitudes, crunching forward in a rush and bashing through trouble like a bowl tipped over in a food fight."
     },
     {
@@ -764,7 +765,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Cyborg",
-      "identity": "Coplanar Corp - Mining Division",
+      "identity": "Original Identity: Coplanar Corp - Mining Division",
       "description": "Drill Boy doesn't knock on doors. He spins up, bores straight through, and keeps going until the whole wall, floor, or enemy is just dust behind him. Loud, stubborn, and built to puncture."
     },
     {
@@ -774,7 +775,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Cartoon",
-      "identity": "Delightful Dan Maguire",
+      "identity": "Animator: Delightful Dan Maguire",
       "description": "Mr. Plaid Smiley Face is soft, round, and cheerful until you underestimate him. That goofy grin hides a quick swipe that lands harder than you'd expect from something that looks like a couch cushion."
     },
     {
@@ -824,7 +825,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Hannah Lockwood",
+      "identity": "Real Name: Hannah Lockwood",
       "description": "Hair treats her long locks like extra arms, and they're stronger than they look. She whips, tangles, and snares with strands that move on their own, turning a bad hair day into everybody else's problem."
     },
     {
@@ -834,7 +835,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Curtis Brannigan",
+      "identity": "Real Name: Curtis Brannigan",
       "description": "Cuff has hands built for stopping trouble, not starting it. He'll cuff-strike hard enough to drop a fight, then clamp down with a hold that won't break until the danger passes."
     },
     {
@@ -854,7 +855,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Cartoon",
-      "identity": "Doodler Dan Maguire",
+      "identity": "Animator: Doodler Dan Maguire",
       "description": ""
     },
     {
@@ -864,7 +865,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Construct",
-      "identity": "Vulcanized Road Rubber",
+      "identity": "Origin: Vulcanized Road Rubber",
       "description": "Roley has weathered enough hard miles to make anyone bitter, yet he meets every setback with sharper attitude and faster momentum. Sardonic and stubborn, he refuses to stop, brake, or explain himself. Every hill is a dare, and every skid is proof he is still moving."
     },
     {
@@ -874,7 +875,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Human",
-      "identity": "Blake Demolir",
+      "identity": "Real Name: Blake Demolir",
       "description": "He's a tactician that does not negotiate, troubleshoot, or retreat; he finds the nearest load-bearing wall and makes the conversation louder. Reckless and grinning through the smoke, he lives for the moment before detonation and treats restraint like a personal insult."
     },
     {
@@ -904,7 +905,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Creature",
-      "identity": "Oculus Rotundus",
+      "identity": "Species: Oculus Rotundus",
       "description": "Larry's never met a corner he couldn't see around, thanks to eyes that swivel and watch every direction at once. He's goofy, fearless, and always the first to spot trouble coming. When it hits, he'll answer with a quick jab and an everyday punch like it's no big deal."
     },
     {
@@ -914,7 +915,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Cyborg",
-      "identity": "Melvin Wright",
+      "identity": "Original Identity: Melvin Lefft",
       "description": "Mel built his way into the sky with propellers on his hands and a rotor on his head, and he never gets tired of the rush. He's cheerful, clever, and always tinkering. In a fight, he'll chop through trouble or spin up a lift that sends enemies flying."
     },
     {
@@ -924,7 +925,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Creature / Cyborg",
-      "identity": "Panthera Scorpius Implant Host",
+      "identity": "Species: Panthera Scorpius Implant Host",
       "description": "Scorpolion's part lion, part scorpion, and all bad news. A cybernetic implant sits on his head, blinking in the dark, and people can't shake the feeling that something else is driving him. He hunts without mercy, closing in with a venomous sting or a crushing bite."
     },
     {
@@ -934,7 +935,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Creature",
-      "identity": "Pediculus Cantus",
+      "identity": "Species: Pediculus Cantus",
       "description": "The Lice Girls aren't here to sing hits. They're here to make your skin crawl. Five nasty bugs who move like a pop group and attack like a swarm, they'll flood a fight with itching bites until nobody can stand still long enough to hit back."
     },
     {
@@ -954,7 +955,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Creature",
-      "identity": "Globulus Amicus",
+      "identity": "Species: Globulus Amicus",
       "description": "The Glob isn't bothered by doorways, seat belts, or chairs that weren't built for a blob. He's a friendly ooze who reshapes on the fly, soaking up trouble and squishing through spots nobody else can reach. Easygoing, sticky, and impossible to pin down."
     },
     {
@@ -974,7 +975,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Human",
-      "identity": "Alec Pierce",
+      "identity": "Real Name: Alec Pierce",
       "description": "Arrow doesn't chat, chase, or waste shots. He waits in the shadows with cold patience, then fires sharp shots and piercing volleys from his gauntlets before most targets even know they're being aimed at."
     },
     {
@@ -1014,7 +1015,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Robot",
-      "identity": "Clockwork Spring Company",
+      "identity": "Inventor / Manufacturer: Clockwork Spring Company",
       "description": "Wind-Up never stays still for long. He needs a crank and a running start, but once he's wound tight he bursts into a blur of spinning strikes that hit hard, then slow down until he gets wound up all over again."
     },
     {
@@ -1034,7 +1035,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Creature",
-      "identity": "Lagenaria Sylvatica",
+      "identity": "Species: Lagenaria Sylvatica",
       "description": "Gourd of the Jungle sounds silly until you hear that rattle echo through the trees. He's old forest magic in a hard shell, bashing trouble away and shaking the whole jungle awake when danger gets too close."
     },
     {
@@ -1054,7 +1055,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Patrick Clawson",
+      "identity": "Real Name: Patrick Clawson",
       "description": "Paws knows he looks ridiculous, and he doesn't care. He leaps in with a goofy grin and boots the size of dinner plates, swiping and raking with claws that hit way harder than anyone expects from a sweaty guy in yellow."
     },
     {
@@ -1064,7 +1065,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Creature",
-      "identity": "Mustela Ferox",
+      "identity": "Species: Mustela Ferox",
       "description": "Ferrett is all teeth, twitchy speed, and bad attitude. He'll dash through a crowd, burrow under your feet, and pop up biting before anyone finishes asking what that weird green glow on his neck is even for."
     },
     {
@@ -1084,7 +1085,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Robot",
-      "identity": "Rescue Winch Automaton MK-IV",
+      "identity": "Inventor / Manufacturer: Rescue Winch Automaton MK-IV",
       "description": "Winch was built for bad weather and worse odds. He's got a cheerful screen-face and a cable arm that never quits, yanking people out of trouble and raising them back up when the river or the rubble says they shouldn't make it."
     },
     {
@@ -1094,7 +1095,7 @@
       "home_plane": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Sir Graham Buckhorn",
+      "identity": "Real Name: Sir Graham Buckhorn",
       "description": "The Ram doesn't bother with fancy footwork. He lowers those curved horns and charges like a whole stampede packed into one armored body, headbutting through walls, doors, and anybody dumb enough to stand in his path."
     },
     {
@@ -1104,8 +1105,84 @@
       "home_plane": "",
       "home_district": "",
       "type": "Robot",
-      "identity": "Desktop Thumbtack Automaton MK-I",
+      "identity": "Inventor / Manufacturer: Desktop Thumbtack Automaton MK-I",
       "description": "Tak is tiny, brass, and way too serious for something that lives on a desk. He dual-wields thumbtacks like they're real swords, landing quick strikes and vanishing before you realize your paperwork just became a battlefield."
+    },
+    {
+      "id": 491,
+      "name": "D'Xen The Dragon Hunter",
+      "alignment": "Good",
+      "home_plane": "",
+      "home_district": "",
+      "type": "Human",
+      "identity": "",
+      "description": ""
+    },
+    {
+      "id": 492,
+      "name": "Harmonic Coredrive",
+      "alignment": "Good",
+      "is_legendary": true,
+      "home_plane": "",
+      "home_district": "",
+      "type": "Robot",
+      "identity": "",
+      "description": "A luminous robot whose body resonates with living frequencies, allowing it to sense fractures in ecosystems the way others sense pain. Traveling from planet to planet, it restores balance by tuning forests, oceans, and skies back into harmony, reshaping entire environments through radiant waves of sound and light."
+    },
+    {
+      "id": 493,
+      "name": "Iron Nekrotek",
+      "alignment": "Evil",
+      "is_legendary": true,
+      "home_plane": "",
+      "home_district": "",
+      "type": "Robot",
+      "identity": "",
+      "description": "The Iron Necrotek is an ancient robotic relic awakened by forbidden necro‑technology, its skeletal chassis echoing with the memory of civilizations it has erased. It seeks to complete its prime directive: overwrite every living realm with a cold, eternal necropolis of metal, code, and nanite dust."
+    },
+    {
+      "id": 495,
+      "name": "Mawdrath",
+      "alignment": "Evil",
+      "is_legendary": true,
+      "home_plane": "",
+      "home_district": "",
+      "type": "Creature",
+      "identity": "Species: Ursaputridus Verminor",
+      "description": "Once a towering guardian of the deep woods, its body was hollowed out by a parasitic hive that puppets its corpse from within. When it opens its jaws, rivers of undead worms spill forth, each one carrying a fragment of the hive’s collective hunger."
+    },
+    {
+      "id": 497,
+      "name": "Flatulance",
+      "alignment": "Evil",
+      "is_legendary": true,
+      "home_plane": "",
+      "home_district": "",
+      "type": "Cartoon",
+      "identity": "",
+      "description": "Flatulance is a malevolent cartoon rider who thunders across the realm reeking of farts. Armed with a cursed lance that unleashes explosive, weaponized flatulence, he spreads eye‑watering doom and nose‑melting terror wherever he rides."
+    },
+    {
+      "id": 500,
+      "name": "The Engineer",
+      "alignment": "Neutral",
+      "is_legendary": true,
+      "home_plane": "",
+      "home_district": "",
+      "type": "Human",
+      "identity": "",
+      "description": "A living conduit of design and computation, The Engineer manipulates matter and meaning with effortless focus. His allegiance is to balance alone, intervening only when the fabric of the Coplanar realm drifts out of alignment."
+    },
+    {
+      "id": 501,
+      "name": "Yggdra The Root-Mother",
+      "alignment": "Neutral",
+      "is_legendary": true,
+      "home_plane": "",
+      "home_district": "",
+      "type": "Human",
+      "identity": "",
+      "description": "Born of the world‑tree’s deepest roots, Yggdra shapes life’s pathways with steady, ancient purpose. Her neutrality is absolute, nurturing and withering with the same quiet certainty."
     }
   ]
 }
