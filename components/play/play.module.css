@@ -1,0 +1,675 @@
+.play {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.play h1 {
+  margin: 0 0 0.75rem;
+  color: var(--text-heading);
+}
+
+.playIntro {
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+  max-width: 52rem;
+}
+
+.playPanel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.playPanel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  color: var(--text-heading);
+}
+
+.playPanel h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-heading);
+}
+
+.modeBadge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--brand-cyan-light);
+  margin-bottom: 0.75rem;
+}
+
+.teamSelectHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.selectionCount {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.teamBuildRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+
+.teamSlots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  flex: 1 1 280px;
+}
+
+.teamSlot {
+  flex: 1 1 88px;
+  min-width: 88px;
+  max-width: 120px;
+}
+
+.teamSlotEmpty,
+.teamSlotFilled {
+  width: 100%;
+  min-height: 100%;
+  border-radius: 8px;
+  border: 2px dashed var(--border-subtle);
+  background: var(--bg-elevated);
+}
+
+.teamSlotEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  padding: 0.5rem;
+}
+
+.teamSlotLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.teamSlotFilled {
+  appearance: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 0.45rem;
+  border-style: solid;
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-elevated));
+  color: var(--text-primary);
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.teamSlotFilled:hover {
+  border-color: var(--brand-red);
+  background: color-mix(in srgb, var(--brand-red) 12%, var(--bg-elevated));
+}
+
+.teamSlotThumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 300 / 420;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.teamSlotThumbPlaceholder {
+  width: 100%;
+  aspect-ratio: 300 / 420;
+  border-radius: 4px;
+  margin-bottom: 0.35rem;
+  background: linear-gradient(
+    145deg,
+    var(--bg-surface),
+    color-mix(in srgb, var(--border-subtle) 40%, var(--bg-surface))
+  );
+}
+
+.teamSlotName {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.2;
+}
+
+.teamBonusPanel {
+  flex: 1 1 260px;
+  min-width: 240px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.teamStatBonusBlocks {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.teamBonusTotal {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.teamBonusTotal strong {
+  color: var(--brand-yellow);
+  font-size: 0.92rem;
+}
+
+.teamStatBlockGrid {
+  font-size: 0.72rem;
+}
+
+.teamBonusTitle {
+  margin: 0 0 0.65rem;
+  font-size: 0.85rem;
+  color: var(--text-heading);
+}
+
+.teamPowerScore {
+  margin: 0 0 0.65rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.teamPowerScore strong {
+  color: var(--brand-orange);
+  font-size: 1rem;
+}
+
+.teamPowerLine {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.teamPowerLine strong {
+  color: var(--brand-orange);
+}
+
+.teamBonusSection + .teamBonusSection {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.teamBonusSectionLabel {
+  margin: 0 0 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.teamBonusList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.teamBonusList li {
+  font-size: 0.78rem;
+  color: var(--brand-cyan-light);
+  line-height: 1.35;
+}
+
+.teamBonusEmpty {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.rosterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.65rem;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+.filterField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 9rem;
+}
+
+.filterLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.filterSelect {
+  appearance: none;
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.rosterCardThumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 300 / 420;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.4rem;
+  display: block;
+  background: var(--bg-surface);
+}
+
+.rosterCardThumbPlaceholder {
+  width: 100%;
+  aspect-ratio: 300 / 420;
+  border-radius: 4px;
+  margin-bottom: 0.4rem;
+  background: linear-gradient(
+    145deg,
+    var(--bg-surface),
+    color-mix(in srgb, var(--border-subtle) 40%, var(--bg-surface))
+  );
+}
+
+.rosterCard {
+  appearance: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: var(--bg-elevated);
+  border: 2px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.65rem;
+  color: var(--text-primary);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.rosterCard:hover:not(:disabled) {
+  border-color: var(--brand-blue);
+}
+
+.rosterCardSelected {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg-elevated));
+}
+
+.rosterCard:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.rosterCardName {
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 0.25rem;
+  font-size: 0.85rem;
+}
+
+.rosterCardMeta {
+  margin: 0;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.playActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.playBtn {
+  appearance: none;
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 0.55rem 1rem;
+  font-weight: 700;
+  background: var(--accent);
+  color: var(--accent-on);
+}
+
+.playBtn:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.playBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.playBtnSecondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-subtle);
+}
+
+.playBtnSecondary:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.battleLayout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .battleLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.battleTeams {
+  display: grid;
+  gap: 1rem;
+}
+
+.teamBlock {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.teamBlockPlayer {
+  border-color: color-mix(in srgb, var(--brand-cyan) 50%, transparent);
+}
+
+.teamBlockCpu {
+  border-color: color-mix(in srgb, var(--brand-red) 45%, transparent);
+}
+
+.teamLabel {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.synergyLine {
+  margin: 0 0 0.65rem;
+  font-size: 0.68rem;
+  color: var(--brand-cyan-light);
+}
+
+.fighterRow {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.fighterCard {
+  border: 2px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 0.55rem 0.65rem;
+  background: var(--bg-surface);
+}
+
+.fighterCardActive {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.fighterCardKO {
+  opacity: 0.45;
+}
+
+.fighterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.fighterName {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.fighterHpText {
+  margin: 0;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.hpBar {
+  height: 8px;
+  border-radius: 999px;
+  background: #1a2535;
+  overflow: hidden;
+}
+
+.hpBarFill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #48bb78, #68d391);
+  transition: width 0.25s ease;
+}
+
+.hpBarFillLow {
+  background: linear-gradient(90deg, #c53030, #fc8181);
+}
+
+.actionPanel {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.actionHint {
+  margin: 0 0 0.65rem;
+  font-size: 0.85rem;
+  color: var(--text-heading);
+}
+
+.moveGrid {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.moveBtn {
+  appearance: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  border: 2px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 0.5rem 0.65rem;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.moveBtn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.moveBtnSelected {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 15%, var(--bg-elevated));
+}
+
+.moveBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.moveName {
+  display: block;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--text-heading);
+}
+
+.moveType {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.targetGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.45rem;
+}
+
+.targetBtn {
+  appearance: none;
+  font: inherit;
+  cursor: pointer;
+  border: 2px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.targetBtn:hover:not(:disabled) {
+  border-color: var(--brand-red);
+}
+
+.targetBtnSelected {
+  border-color: var(--brand-red);
+  background: color-mix(in srgb, var(--brand-red) 18%, var(--bg-elevated));
+}
+
+.targetBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.combatLog {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.75rem;
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+.combatLog h3 {
+  margin: 0 0 0.65rem;
+  font-size: 0.9rem;
+  color: var(--text-heading);
+}
+
+.logList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.logEntry {
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.35rem 0.45rem;
+  border-radius: 4px;
+  background: var(--bg-surface);
+}
+
+.logEntryRound {
+  color: var(--brand-yellow);
+  font-weight: 700;
+  text-align: center;
+  background: transparent;
+}
+
+.logEntryMiss {
+  color: var(--text-muted);
+}
+
+.logEntryKo {
+  color: var(--brand-yellow-light);
+  font-weight: 700;
+}
+
+.victoryBanner {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  border: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-surface));
+  margin-bottom: 1rem;
+}
+
+.victoryBanner h2 {
+  margin: 0 0 0.35rem;
+  color: var(--text-heading);
+}
+
+.victoryBanner p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.cpuThinking {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0.5rem 0 0;
+}
+
+.roundBadge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--brand-yellow);
+  margin-bottom: 0.75rem;
+}
