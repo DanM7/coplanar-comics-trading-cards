@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { isDevToolsEnabled } from "@/lib/dev-only";
 
 const NAV_ITEMS = [
+  { href: "/play", label: "Play!", match: (path: string) => path.startsWith("/play") },
   { href: "/pack", label: "Open Pack", match: (path: string) => path.startsWith("/pack") },
   { href: "/binder", label: "Binder", match: (path: string) => path.startsWith("/binder") },
   {

@@ -19,6 +19,32 @@ export function preloadImageUrls(urls: Iterable<string>): void {
   }
 }
 
+/** Resolve when every URL has loaded (or failed). Safe to call repeatedly. */
+export function waitForImageUrls(urls: Iterable<string>): Promise<void> {
+  const unique = [...new Set([...urls].map((url) => url.trim()).filter(Boolean))];
+  if (unique.length === 0) {
+    return Promise.resolve();
+  }
+
+  return Promise.all(
+    unique.map(
+      (url) =>
+        new Promise<void>((resolve) => {
+          preloadImageUrl(url);
+          const img = new Image();
+          img.decoding = "async";
+          const finish = () => resolve();
+          img.onload = finish;
+          img.onerror = finish;
+          img.src = url;
+          if (img.complete) {
+            finish();
+          }
+        })
+    )
+  ).then(() => undefined);
+}
+
 /** Preload URLs in small idle-time batches so the main thread stays responsive. */
 export function preloadImageUrlsIdle(
   urls: string[],

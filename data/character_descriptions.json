@@ -412,14 +412,14 @@
     },
     {
       "id": 38,
-      "name": "",
-      "alignment": "",
-      "home_plane": "",
-      "home_location": "",
-      "home_district": "",
+      "name": "Xon Renborne",
+      "alignment": "Good",
+      "home_plane": "Lapsed Continuum",
+      "home_location": "Offcount Gap",
+      "home_district": "Offcount Convergence",
       "type": "Superhuman",
       "identity": "Real Name: Xon",
-      "description": ""
+      "description": "Forged in the chaos of the Offcount Convergence, Xon Renborne walks the unstable borders between ages. Wielding the legendary Axe Aeonedge, his time‑rending axe, he cuts into the lingering seams of that disaster to confront what slipped through."
     },
     {
       "id": 39,
@@ -428,8 +428,8 @@
       "home_plane": "",
       "home_location": "",
       "home_district": "",
-      "type": "Cartoon",
-      "identity": "Animator: Dolty Dan Maguire",
+      "type": "Cartoon / Human",
+      "identity": "Real Name: Robert Mylar / Animator: Dolty Dan Maguire",
       "description": "The unscrupulous CEO of Coplanar Corp, his inflated ego is matched only by his appetite for profit. Every decision he makes serves his own ascent, with employees, rivals, and entire cities treated as disposable assets in his pursuit of power."
     },
     {
@@ -445,12 +445,12 @@
     },
     {
       "id": 41,
-      "name": "Air-blade",
+      "name": "Air-Blade",
       "alignment": "Good",
       "home_plane": "3D",
       "home_location": "Coplanar City",
       "home_district": "Vector Heights",
-      "type": "Superhuman",
+      "type": "Human",
       "identity": "Real Name: Aiden 'Ace' Lefft",
       "description": "A daring hero who rides the skies on jet‑powered boots, slicing through danger with precision and speed. The only thing to slow him down is making sure his brother Mel doesn't get left behind."
     },
@@ -458,12 +458,12 @@
       "id": 42,
       "name": "Mr. Beep",
       "alignment": "Neutral",
-      "home_plane": "Comic",
+      "home_plane": "Human",
       "home_location": "Coplanar Plains",
       "home_district": "Gag Gulch",
       "type": "Human",
-      "identity": "",
-      "description": ""
+      "identity": "Real Name: Barry Bepler",
+      "description": "A perpetually frazzled TV host who speaks in nonstop bleeped explosions, leaving viewers to piece together his meaning when they only hear every tenth word. Half the audience tunes in just to hear the censors panic as they triy to keep up with him."
     },
     {
       "id": 43,
@@ -474,7 +474,7 @@
       "home_district": "Sketchline Fields",
       "type": "Creature",
       "identity": "Species: Cornu Ferocissimus",
-      "description": "Horns is a mean, horn-heavy fighter who stamps through Sketchline Fields looking for something to hit. He charges with a gore rush that doesn't stop early, and he'll toss his horns when he wants damage from farther away."
+      "description": "A living sculpture of spiraled antlers and creeping thorns, Horns drags his jagged bulk through Sketchline Fields with unsettling purpose. His charges feel more like natural disasters than attacks, and the horns he tears off to throw grow back in strange, shifting patterns."
     },
     {
       "id": 44,
@@ -502,12 +502,12 @@
       "id": 46,
       "name": "Scissor Kick",
       "alignment": "Good",
-      "home_plane": "Comic",
+      "home_plane": "Human",
       "home_location": "Coplanar City",
       "home_district": "Panel Park",
       "type": "Cyborg",
-      "identity": "",
-      "description": ""
+      "identity": "Original Identity: Kenji Rho",
+      "description": "A cybernetic martial artist whose bladed limbs slice through air and armor alike, moving with surgical precision and unstoppable momentum. A product of Coplanar Corp's Bio-Mechanical Rehab program, he broke free the moment he learned it was secretly building evil super‑weapons, vowing to dismantle every one they unleash."
     },
     {
       "id": 47,
@@ -517,8 +517,8 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Construct",
-      "identity": "Origin: Sketchline Paper Collage",
-      "description": "A collage-built villain from Sketchline Fields who slices apart the environment and rearranges it into chaotic new forms."
+      "identity": "Origin: Scrap Dimension Residue",
+      "description": "A two-dimensional terror stitched together from torn comic panels, each limb stolen from a different issue. Every move he makes rearranges the story itself: heroes vanish, panels warp, and continuity screams for mercy."
     },
     {
       "id": 48,
@@ -528,8 +528,8 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
-      "identity": "",
-      "description": "Mud Man is slow, heavy, and impossible to knock down clean. He slings thick mud that sticks and grips like a bog, smothering trouble until every punch feels like it landed in wet earth."
+      "identity": "Real Name: Marco Mire",
+      "description": "Slow, heavy, and stubborn as a landslide, Mud Man trudges through Sketchline Fields with the patience of someone who knows he can outlast anything. His living mud form smothers trouble in thick, gripping sludge, turning every punch, kick, or blast into a soggy thud that buys civilians time to escape."
     },
     {
       "id": 49,
@@ -539,8 +539,8 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Robot",
-      "identity": "",
-      "description": ""
+      "identity": "Manufacturer: Sketchline Research Guild",
+      "description": "A floating robotic core wrapped in shifting holograms, Clonez steals faces, voices, and mannerisms with unnerving precision. He drifts through the world as whoever he needs to be, unraveling trust and turning allies against each other before revealing the cold metal truth beneath the illusion."
     },
     {
       "id": 50,
@@ -549,9 +549,9 @@
       "home_plane": "Human",
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
-      "type": "Superhuman",
-      "identity": "",
-      "description": ""
+      "type": "Construct / Superhuman",
+      "identity": "Origin Material: Continuum-Threaded Aeonsteel / Real Name: Unknown",
+      "description": "Cyclone was born where time and matter collided. His form channels the infinite, a storm of stars encased in living metal. As the guardian of the Lapsed Continuum, his galaxy-veined limbs twist through space with dimensional force, each strike echoing the universe rebuilding itself after the Convergence."
     },
     {
       "id": 51,
@@ -562,6 +562,7 @@
       "home_district": "Sketchline Fields",
       "type": "Cyborg",
       "identity": "Original Identity: Marcus Lefft",
+	  "affiliation": "Apex Assembly",
       "description": "Wrist Missle treats every fight like a launch sequence. He's strapped with rockets on his wrists and ego, firing off barrages until the sky is full of smoke. The only heros to ever ground him were his brothers, Mel and Aiden."
     },
     {
@@ -617,7 +618,7 @@
       "home_district": "Sketchline Fields",
       "type": "Cyborg",
       "identity": "",
-      "description": ""
+      "description": "teams up with Scissor Kick"
     },
     {
       "id": 57,
@@ -736,6 +737,7 @@
       "home_district": "",
       "type": "Cyborg",
       "identity": "",
+	  "affiliation": "Apex Assembly",
       "description": "Daddy Longlegs is half man, half nightmare spider rig. He snares targets in sticky webs, sweeps legs out from under them, and watches from above with that creepy calm of something that knows you'll trip eventually."
     },
     {
@@ -874,8 +876,9 @@
       "alignment": "Evil",
       "home_plane": "",
       "home_district": "",
-      "type": "Human",
+      "type": "Cyborg",
       "identity": "Real Name: Blake Demolir",
+	  "affiliation": "Apex Assembly",
       "description": "He's a tactician that does not negotiate, troubleshoot, or retreat; he finds the nearest load-bearing wall and makes the conversation louder. Reckless and grinning through the smoke, he lives for the moment before detonation and treats restraint like a personal insult."
     },
     {
@@ -914,7 +917,7 @@
       "alignment": "Good",
       "home_plane": "",
       "home_district": "",
-      "type": "Cyborg",
+      "type": "Human",
       "identity": "Original Identity: Melvin Lefft",
       "description": "Mel built his way into the sky with propellers on his hands and a rotor on his head, and he never gets tired of the rush. He's cheerful, clever, and always tinkering. In a fight, he'll chop through trouble or spin up a lift that sends enemies flying."
     },
@@ -1112,7 +1115,7 @@
       "id": 491,
       "name": "D'Xen The Dragon Hunter",
       "alignment": "Good",
-      "home_plane": "",
+      "home_plane": " the dragon hunter realm, came here like Acid?",
       "home_district": "",
       "type": "Human",
       "identity": "",
@@ -1123,10 +1126,10 @@
       "name": "Harmonic Coredrive",
       "alignment": "Good",
       "is_legendary": true,
-      "home_plane": "",
+      "home_plane": "Lapsed Continuum",
       "home_district": "",
       "type": "Robot",
-      "identity": "",
+      "identity": "Material: Offcount Singularity Coremetal",
       "description": "A luminous robot whose body resonates with living frequencies, allowing it to sense fractures in ecosystems the way others sense pain. Traveling from planet to planet, it restores balance by tuning forests, oceans, and skies back into harmony, reshaping entire environments through radiant waves of sound and light."
     },
     {
@@ -1134,7 +1137,7 @@
       "name": "Iron Nekrotek",
       "alignment": "Evil",
       "is_legendary": true,
-      "home_plane": "",
+      "home_plane": "Lapsed Continuum",
       "home_district": "",
       "type": "Robot",
       "identity": "",
@@ -1145,7 +1148,7 @@
       "name": "Mawdrath",
       "alignment": "Evil",
       "is_legendary": true,
-      "home_plane": "",
+      "home_plane": "Lapsed Continuum",
       "home_district": "",
       "type": "Creature",
       "identity": "Species: Ursaputridus Verminor",
@@ -1156,7 +1159,7 @@
       "name": "Flatulance",
       "alignment": "Evil",
       "is_legendary": true,
-      "home_plane": "",
+      "home_plane": "Lapsed Continuum",
       "home_district": "",
       "type": "Cartoon",
       "identity": "",
@@ -1167,7 +1170,7 @@
       "name": "The Engineer",
       "alignment": "Neutral",
       "is_legendary": true,
-      "home_plane": "",
+      "home_plane": "Lapsed Continuum",
       "home_district": "",
       "type": "Human",
       "identity": "",
@@ -1178,7 +1181,7 @@
       "name": "Yggdra The Root-Mother",
       "alignment": "Neutral",
       "is_legendary": true,
-      "home_plane": "",
+      "home_plane": "Lapsed Continuum",
       "home_district": "",
       "type": "Human",
       "identity": "",

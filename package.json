@@ -13,6 +13,8 @@
     "logo:transparent": "node scripts/make-logo-transparent.mjs",
     "strip-raw-metadata": "node scripts/strip-raw-image-metadata.mjs",
     "cards:sync": "node scripts/sync-card-assets.mjs",
+    "cards:export-done": "node scripts/batch-export-done-cards.mjs",
+    "teams:rank": "vitest run --config vitest.rank.config.ts",
     "predev": "npm run cards:sync",
     "test": "vitest run"
   },
@@ -32,6 +34,7 @@
     "@types/react-dom": "^19.1.5",
     "eslint": "^9.28.0",
     "eslint-config-next": "^15.3.3",
+    "playwright": "^1.61.1",
     "prisma": "^6.9.0",
     "sharp": "^0.34.5",
     "typescript": "^5.8.3",

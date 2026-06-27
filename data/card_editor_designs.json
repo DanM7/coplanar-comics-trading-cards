@@ -371,63 +371,124 @@
     },
     {
       "id": "38",
-      "rarity": "common",
-      "character": 38
+      "rarity": "rare",
+      "character": 38,
+	  "status": "draw og image!"
     },
     {
       "id": "39",
       "rarity": "common",
-      "character": 39
+      "character": 39,
+	  "status": "update back image"
     },
     {
       "id": "40",
       "rarity": "common",
-      "character": 40
+      "character": 40,
+	  "status": "Metadata font size 80"
     },
     {
       "id": "41",
       "rarity": "common",
-      "character": 41
+      "character": 41,
+      "design": {
+        "backGhostOpacity": 55,
+        "backGhostOffsetY": -60
+      },
+      "status": "done"
     },
     {
       "id": "42",
-      "rarity": "common",
-      "character": 42
+      "rarity": "uncommon",
+      "character": 42,
+      "design": {
+        "backOgScale": 75,
+        "backOgBackdropColor": "#bbbdae",
+        "backGhostOpacity": 35,
+        "backGhostOffsetY": -106
+      },
+      "status": "done"
     },
     {
       "id": "43",
       "rarity": "common",
-      "character": 43
+      "character": 43,
+      "design": {
+        "backOgScale": 95,
+        "backOgBackdropColor": "#c8c8b8",
+        "backGhostOpacity": 35,
+        "backGhostOffsetY": -44
+      },
+      "status": "done"
     },
     {
       "id": "44",
       "rarity": "common",
-      "character": 44
+      "character": 44,
+      "design": {
+        "backOgScale": 95,
+        "backOgBackdropColor": "#c8c8b8",
+        "backGhostOpacity": 60,
+        "backGhostOffsetY": -78
+      },
+      "status": "done"
     },
     {
       "id": "45",
-      "rarity": "common",
-      "character": 45
+      "rarity": "uncommon",
+      "character": 45,
+      "design": {
+        "backOgScale": 65,
+        "backOgBackdropColor": "#a6a796",
+        "backGhostOpacity": 35,
+        "backGhostOffsetY": -94
+      },
+      "status": "done"
     },
     {
       "id": "46",
       "rarity": "common",
-      "character": 46
+      "character": 46,
+      "design": {
+        "backOgScale": 65,
+        "backOgBackdropColor": "#afb1a1",
+        "backGhostOpacity": 35,
+        "backGhostOffsetY": -94
+      },
+      "status": "done"
     },
     {
       "id": "47",
       "rarity": "common",
-      "character": 47
+      "character": 47,
+      "design": {
+        "backOgScale": 70,
+        "backOgBackdropColor": "#b0b2a2",
+        "backGhostOpacity": 55,
+        "backGhostOffsetY": -94
+      },
+      "status": "done"
     },
     {
       "id": "48",
       "rarity": "common",
-      "character": 48
+      "character": 48,
+      "design": {
+        "backOgScale": 110,
+        "backGhostOpacity": 55,
+        "backGhostOffsetY": 4
+      },
+      "status": "done"
     },
     {
       "id": "49",
-      "rarity": "common",
-      "character": 49
+      "rarity": "uncommon",
+      "character": 49,
+      "design": {
+        "backGhostOpacity": 50,
+        "backGhostOffsetY": -38
+      },
+      "status": "done"
     },
     {
       "id": "50",

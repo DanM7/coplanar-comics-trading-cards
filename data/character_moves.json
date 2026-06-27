@@ -322,11 +322,12 @@
     },
     {
       "id": 38,
-      "name": "",
-      "move1": "Placeholder Strike",
-      "move1_value": 1,
-      "move2": "Placeholder Guard",
-      "move2_value": 1
+      "name": "Xon Renborne",
+      "move1": "Axe Aeonedge Riftcleave",
+      "move1_value": 5,
+      "move2": "Timeline Rend",
+      "move2_value": 5,
+      "move2_type": "energy"
     },
     {
       "id": 39,
@@ -350,16 +351,17 @@
       "id": 41,
       "name": "Air-blade",
       "move1": "Jetstream Slash",
-      "move1_value": 2,
+      "move1_value": 3,
       "move2": "Skybreaker Dive",
-      "move2_value": 3
+      "move2_value": 2,
+      "move2_type": "energy"
     },
     {
       "id": 42,
       "name": "Mr. Beep",
-      "move1": "Beep Barrage",
+      "move1": "#@$! Barrage",
       "move1_value": 1,
-      "move2": "Boop Confusion",
+      "move2": "Curse Out",
       "move2_value": 1
     },
     {
@@ -367,13 +369,14 @@
       "name": "Horns",
       "move1": "Gore Charge",
       "move1_value": 3,
-      "move2": "Horn Toss",
-      "move2_value": 3
+      "move2": "Horn Hurl",
+      "move2_value": 3,
+      "move2_type": "energy"
     },
     {
       "id": 44,
       "name": "Lamprey",
-      "move1": "Tooth Circle",
+      "move1": "Razor Current",
       "move1_value": 3,
       "move2": "River Ambush",
       "move2_value": 3
@@ -383,40 +386,45 @@
       "name": "Jokes the Giant",
       "move1": "Punchline Slam",
       "move1_value": 2,
-      "move2": "Giant Guffaw",
+      "move2": "Hardy Har Har",
       "move2_value": 2
     },
     {
       "id": 46,
       "name": "Scissor Kick",
-      "move1": "Scissor Kick",
-      "move1_value": 3,
-      "move2": "Spinning Roundhouse",
+      "move1": "Razor Crescent Kick",
+      "move1_value": 4,
+      "move2": "Kinetic Cleaver",
       "move2_value": 4
     },
     {
       "id": 47,
       "name": "Cut and Paste Man",
-      "move1": "Slice Scene",
+      "move1": "Panel Warp",
+      "move1_type": "energy",
       "move1_value": 3,
-      "move2": "Paste Chaos",
-      "move2_value": 3
+      "move2": "Continuity Chaos",
+      "move2_value": 3,
+      "move2_type": "energy"
     },
     {
       "id": 48,
       "name": "Mud Man",
-      "move1": "Mud Sling",
+      "move1": "Muck Sling",
       "move1_value": 2,
-      "move2": "Bog Grip",
-      "move2_value": 2
+      "move2": "Silt Haymaker",
+      "move2_value": 2,
+      "move2_type": "energy"
     },
     {
       "id": 49,
       "name": "Clonez",
-      "move1": "Clone Swarm",
+      "move1": "Identity Fracture",
       "move1_value": 3,
-      "move2": "Mirror Strike",
-      "move2_value": 3
+      "move1_type": "energy",
+      "move2": "Cognitive Illusion",
+      "move2_value": 3,
+      "move2_type": "energy"
     },
     {
       "id": 50,
@@ -913,7 +921,7 @@
     },
     {
       "id": 501,
-      "name": "The All-Mother",
+      "name": "Yggdra The Root-Mother",
       "move1": "",
       "move1_value": 5,
       "move2": "",
