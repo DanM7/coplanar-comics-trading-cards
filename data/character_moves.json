@@ -445,10 +445,12 @@
     {
       "id": 52,
       "name": "John",
-      "move1": "Plain Punch",
+      "move1": "Splashdown Sweep",
       "move1_value": 1,
-      "move2": "John Slam",
-      "move2_value": 1
+      "move1_type": "energy",
+      "move2": "Double Flushnado",
+      "move2_value": 2,
+      "move2_type": "energy"
     },
     {
       "id": 53,
