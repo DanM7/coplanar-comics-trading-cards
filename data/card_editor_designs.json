@@ -507,7 +507,7 @@
     },
     {
       "id": "53",
-      "rarity": "common",
+      "rarity": "uncommon",
       "character": 53
     },
     {
@@ -802,6 +802,71 @@
         "front": {
           "borderId": "rare-golden"
         }
+      }
+    },
+    {
+      "id": "110",
+      "rarity": "uncommon",
+      "frontImage": "T01_Realspace_Reapers.JPG",
+      "design": {
+        "front": {
+          "borderId": "team-evil"
+        },
+		"back": {
+		  "description": "A vigilante strike team dedicated to hunting and eliminating Cartoon Plane intrusions by any means necessary. Each member fights with lethal precision and personal vendetta, united by the belief that reality must be defended from the chaos that laughs at consequences."
+		}
+      }
+    },
+    {
+      "id": "111",
+      "rarity": "uncommon",
+      "frontImage": "T02_Iron_Apex_Assembly.JPG",
+      "design": {
+        "front": {
+          "borderId": "team-evil"
+        },
+		"back": {
+		  "description": "Coplanar Corp’s premier strike unit, publicly celebrated as the crown jewel of the Bio-Mechanical Rehabilitation Program (CC-BMR), a “public service” initiative that claims to rebuild injured workers for safer futures. Behind the polished messaging, they serve as CC’s most disciplined and lethal enforcers, executing high‑risk directives with engineered obedience and apex‑level precision."
+		}
+      }
+    },
+    {
+      "id": "115",
+      "rarity": "uncommon",
+      "frontImage": "F01_Trash-Man_vs_Bob_Ballon_Head.JPG",
+      "design": {
+        "front": {
+          "borderId": "famous-fights"
+        },
+		"back": {
+		  "description": ""
+		}
+      }
+    },
+    {
+      "id": "116",
+      "rarity": "uncommon",
+      "frontImage": "F02_Line-Man_vs_Abstract.JPG",
+      "design": {
+        "front": {
+          "borderId": "famous-fights"
+        },
+		"back": {
+		  "description": ""
+		}
+      }
+    },
+    {
+      "id": "117",
+      "rarity": "uncommon",
+      "frontImage": "F03_The_Lefft_Brothers.JPG",
+      "design": {
+        "front": {
+          "borderId": "famous-fights"
+        },
+		"back": {
+		  "description": ""
+		}
       }
     }
   ]

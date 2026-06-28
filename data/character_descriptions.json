@@ -507,7 +507,7 @@
       "home_district": "Panel Park",
       "type": "Cyborg",
       "identity": "Original Identity: Kenji Rho",
-      "description": "A cybernetic martial artist whose bladed limbs slice through air and armor alike, moving with surgical precision and unstoppable momentum. A product of Coplanar Corp's Bio-Mechanical Rehab program, he broke free the moment he learned it was secretly building evil super‑weapons, vowing to dismantle every one they unleash."
+      "description": "A cybernetic martial artist whose bladed limbs slice through air and armor alike, moving with surgical precision and unstoppable momentum. A product of Coplanar Corp's Bio-Mechanical Rehab program, he broke free the moment he learned it was secretly building evil super-weapons, vowing to dismantle every one they unleash."
     },
     {
       "id": 47,
@@ -562,8 +562,8 @@
       "home_district": "Sketchline Fields",
       "type": "Cyborg",
       "identity": "Original Identity: Marcus Lefft",
-	  "affiliation": "Apex Assembly",
-      "description": "Wrist Missle treats every fight like a launch sequence. He's strapped with rockets on his wrists and ego, firing off barrages until the sky is full of smoke. The only heros to ever ground him were his brothers, Mel and Aiden."
+	  "affiliation": "Iron Apex Assembly",
+      "description": "A cyborg built for speed, shock, and spectacle, Wrist Missle scorches the sky on his massive rocket body while his wrist-mounted missiles streak past in blazing trails of smoke and fire. He’s the Iron Apex Assembly’s most unpredictable projectile, but even he couldn’t outfly the only heroes who have ever grounded him: his brothers, Aiden and Mel."
     },
     {
       "id": 52,
@@ -584,8 +584,8 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Creature",
-      "identity": "Species: Spewtonus Maximus",
-      "description": "Spewtanoo is a floating mess of teeth, slime, and bad moods. He spews nasty sprays and bursts from every angle, turning a fight into something wet, gross, and hard to forget once you've smelled it."
+      "identity": "Species: Guttapustula Horrens",
+      "description": "A pulsating mass of flesh and mucus that crawls through the forest leaving trails of slime. It doesn’t think or speak, it just drools, writhes, and devours anything unlucky enough to touch its dripping tendrils."
     },
     {
       "id": 54,
@@ -596,7 +596,7 @@
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
       "identity": "Real Name: Bertram Stuffin",
-      "description": "Mr. Big Stuff is a towering giant who mostly looks confused about his own size. He doesn't mean to crush cities, but one big shoulder check or stuff smash can flatten a block before he even notices what happened."
+      "description": "Mr. Big Stuff towers over the Coplanar Plains like a walking skyline, forever bewildered by how tiny everything looks beneath him. He tries to tiptoe, but one absent minded step or shoulder-lean can flatten a whole block before he even realizes he bumped something."
     },
     {
       "id": 55,
@@ -606,8 +606,8 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
-      "identity": "Real Name: Gareth Venn",
-      "description": "Gas drifts into fights behind a mask and a cloud that makes your eyes water. He leaks toxic air on purpose, filling rooms with sick green haze until breathing feels like the real battle."
+      "identity": "Real Name: Gareth ",
+      "description": "Once a disaster response specialist who watched an entire rescue operation collapse when Cartoon Plane physics turned a burning building into a slapstick deathtrap. Now he weaponizes industrial-grade accelerants with surgical precision, hunting cartoons with the conviction of a man who believes their “comedy” has cost real lives."
     },
     {
       "id": 56,
@@ -618,7 +618,7 @@
       "home_district": "Sketchline Fields",
       "type": "Cyborg",
       "identity": "",
-      "description": "teams up with Scissor Kick"
+      "description": "Rebuilt by CC-BMR under the promise of humanitarian rehabilitation, he escaped when he realized the program was exploiting vulnerable people and weaponizing their bodies. He now fights as a free agent alongside Scissor Kick to shield civilians and cartoons from harm, driven by a belief that Realspace needs guardians, not enforcers."
     },
     {
       "id": 57,
@@ -629,7 +629,7 @@
       "home_district": "Sketchline Fields",
       "type": "Creature",
       "identity": "Species: Ochindew Limus Ossium",
-      "description": "Ochindew oozes through caves like living purple dew with bones inside. He's slow until he isn't, rushing forward with wet strikes that hit cold and cling long after the swing should be over."
+      "description": ""
     },
     {
       "id": 58,
@@ -639,7 +639,7 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Superhuman",
-      "identity": "Real Name: Spencer Lightman",
+      "identity": "Real Name: Spencer Litman",
       "description": "A heroic figure from Sketchline Fields who uses his spotlight to illuminate the darkness and guide others through the district’s dangerous alleys."
     },
     {
@@ -650,8 +650,8 @@
       "home_location": "",
       "home_district": "",
       "type": "Human",
-      "identity": "",
-      "description": "Buzzard spends most fights circling above, watching every move before he moves in. He's patient, sharp-eyed, and hard to shake once he commits, diving with hooked talons and ripping through trouble like it's already carrion."
+      "identity": "Real Name: ???",
+      "description": ""
     },
     {
       "id": 60,
@@ -683,7 +683,7 @@
       "home_location": "",
       "home_district": "",
       "type": "Superhuman",
-      "identity": "Real Name: Travis Moore",
+      "identity": "Real Name: Travis Patel",
       "description": "Trajic fights like every battle is the sad last scene of a movie. He's cold, dramatic, and always one step ahead, twisting fights with sudden strikes that land like heavy news nobody wanted to hear."
     },
     {
@@ -737,7 +737,7 @@
       "home_district": "",
       "type": "Cyborg",
       "identity": "",
-	  "affiliation": "Apex Assembly",
+	  "affiliation": "Iron Apex Assembly",
       "description": "Daddy Longlegs is half man, half nightmare spider rig. He snares targets in sticky webs, sweeps legs out from under them, and watches from above with that creepy calm of something that knows you'll trip eventually."
     },
     {
@@ -878,7 +878,7 @@
       "home_district": "",
       "type": "Cyborg",
       "identity": "Real Name: Blake Demolir",
-	  "affiliation": "Apex Assembly",
+	  "affiliation": "Iron Apex Assembly",
       "description": "He's a tactician that does not negotiate, troubleshoot, or retreat; he finds the nearest load-bearing wall and makes the conversation louder. Reckless and grinning through the smoke, he lives for the moment before detonation and treats restraint like a personal insult."
     },
     {
@@ -979,7 +979,7 @@
       "home_district": "",
       "type": "Human",
       "identity": "Real Name: Alec Pierce",
-      "description": "Arrow doesn't chat, chase, or waste shots. He waits in the shadows with cold patience, then fires sharp shots and piercing volleys from his gauntlets before most targets even know they're being aimed at."
+      "description": "Once a precision marksman for a metropolitan response unit, he lost an entire operation when a cartoon creature rewrote spatial rules, turning clear sightlines into impossible angles. Now he deploys custom‑forged arrows that cut through toon distortions without fail, committed to restoring order in a world cartoons keep trying to twist."
     },
     {
       "id": 92,
@@ -1029,7 +1029,7 @@
       "home_district": "",
       "type": "Human",
       "identity": "",
-      "description": "Life Extinguisher treats hope like a fire that needs putting out. He shows up where things are burning brightest and leaves nothing but smoke, snuffing flames and fighting spirit with the same cold, practiced swing of his hand."
+      "description": "A former safety inspector who watched a pedestrian bridge collapse after Cartoon Plane physics turned its support beams into wobbling rubber, killing dozens in a disaster that no real-world engineer could have predicted. He now wields a custom laser chainsaw built for cutting through toon matter, determined to make sure no animated thing ever bends reality far enough to break human lives again."
     },
     {
       "id": 97,
@@ -1049,7 +1049,7 @@
       "home_district": "",
       "type": "Human",
       "identity": "",
-      "description": "Dispenser doesn't talk. He just opens those arm tubes and sprays whatever nasty shot the fight calls for, one burst after another until the whole room feels like a supply closet gone wrong. Cold, faceless, and always stocked."
+      "description": "A former hazmat technician whose containment protocol failed when a cartoon creature rewrote pressure and volume inside a sealed chamber, causing an explosion that killed his entire team. He now deploys industrial dispersal gear modified for anti‑toon warfare, dispensing targeted sprays and gases with the cold focus of a man who refuses to let physics be optional again."
     },
     {
       "id": 99,

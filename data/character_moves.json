@@ -429,18 +429,19 @@
     {
       "id": 50,
       "name": "Cyclone",
-      "move1": "Spin Burst",
+      "move1": "Guardian's Celestial Slash",
       "move1_value": 4,
-      "move2": "Wind Shear",
-      "move2_value": 4
+      "move2": "Aeonsteel Supernova",
+      "move2_value": 4,
+      "move2_type": "energy"
     },
     {
       "id": 51,
       "name": "Wrist Missle",
-      "move1": "Wrist Rocket",
+      "move1": "Smoke Trail",
       "move1_value": 2,
       "move2": "Missile Barrage",
-      "move2_value": 2
+      "move2_value": 3
     },
     {
       "id": 52,
@@ -455,33 +456,36 @@
     {
       "id": 53,
       "name": "Spewtanoo",
-      "move1": "Spew Spray",
+      "move1": "Mucus Mire Lunge",
       "move1_value": 2,
-      "move2": "Tanoo Burst",
-      "move2_value": 3
+      "move2": "Spew Spray",
+      "move2_value": 3,
+      "move2_type": "energy"
     },
     {
       "id": 54,
       "name": "Mr. Big Stuff",
-      "move1": "Big Shoulder",
+      "move1": "Skyline Shoulder-Sweep",
       "move1_value": 3,
-      "move2": "Stuff Smash",
-      "move2_value": 4
+      "move2": "Quake Step",
+      "move2_value": 3
     },
     {
       "id": 55,
       "name": "Gas",
-      "move1": "Toxic Cloud",
-      "move1_value": 2,
-      "move2": "Gas Leak",
-      "move2_value": 3
+      "move1": "Poison Cloud",
+      "move1_value": 3,
+      "move1_type": "energy"
+      "move2": "Toxic Leak",
+      "move2_value": 3,
+      "move2_type": "energy"
     },
     {
       "id": 56,
       "name": "Wrecking Ball",
       "move1": "Demolition Swing",
       "move1_value": 4,
-      "move2": "Chain Smash",
+      "move2": "Spike Smash",
       "move2_value": 3
     },
     {

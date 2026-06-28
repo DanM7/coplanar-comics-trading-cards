@@ -640,14 +640,14 @@
         {
             "id": 50,
             "name": "Cyclone",
-            "tier": 4,
+            "tier": 5,
             "stats": {
-                "intelligence": 2,
-                "strength": 3,
-                "durability": 3,
-                "skill": 2,
-                "energy_projection": 4,
-                "speed": 5
+                "intelligence": 4,
+                "strength": 5,
+                "durability": 5,
+                "skill": 3,
+                "energy_projection": 5,
+                "speed": 4
             }
         },
         {
@@ -659,8 +659,8 @@
                 "strength": 2,
                 "durability": 2,
                 "skill": 2,
-                "energy_projection": 2,
-                "speed": 2
+                "energy_projection": 3,
+                "speed": 4
             }
         },
         {
@@ -669,10 +669,10 @@
             "tier": 1,
             "stats": {
                 "intelligence": 1,
-                "strength": 1,
+                "strength": 0,
                 "durability": 1,
                 "skill": 1,
-                "energy_projection": 0,
+                "energy_projection": 1,
                 "speed": 1
             }
         },
@@ -682,35 +682,35 @@
             "tier": 2,
             "stats": {
                 "intelligence": 1,
-                "strength": 1,
+                "strength": 2,
                 "durability": 2,
                 "skill": 2,
                 "energy_projection": 3,
-                "speed": 2
+                "speed": 1
             }
         },
         {
             "id": 54,
             "name": "Mr. Big Stuff",
-            "tier": 3,
+            "tier": 2,
             "stats": {
                 "intelligence": 1,
                 "strength": 4,
                 "durability": 4,
-                "skill": 3,
-                "energy_projection": 1,
+                "skill": 1,
+                "energy_projection": 0,
                 "speed": 1
             }
         },
         {
             "id": 55,
             "name": "Gas",
-            "tier": 2,
+            "tier": 3,
             "stats": {
-                "intelligence": 1,
+                "intelligence": 3,
                 "strength": 1,
                 "durability": 2,
-                "skill": 2,
+                "skill": 3,
                 "energy_projection": 3,
                 "speed": 2
             }
@@ -720,12 +720,12 @@
             "name": "Wrecking Ball",
             "tier": 3,
             "stats": {
-                "intelligence": 1,
+                "intelligence": 2,
                 "strength": 4,
                 "durability": 4,
-                "skill": 2,
-                "energy_projection": 2,
-                "speed": 1
+                "skill": 3,
+                "energy_projection": 0,
+                "speed": 2
             }
         },
         {
