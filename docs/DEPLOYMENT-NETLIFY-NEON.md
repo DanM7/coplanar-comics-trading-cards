@@ -228,7 +228,7 @@ The **build can succeed** while **deploy** fails — that means the serverless f
 Common causes in this repo:
 
 - **Publish directory empty or set to repo root** — use `.next` (also set in `netlify.toml`). Empty defaults to `/` and the plugin errors: *"publish directory cannot be the same as the base directory"*.
-- **Large card PNGs** (~280 MB in `public/assets/cards/`) must stay **static assets**, not bundled into the server function. The repo excludes them via `outputFileTracingExcludes` in `next.config.ts`.
+- **Large card PNGs** (~280 MB in `public/assets/cards/`) must stay **static assets**, not bundled into the server function. The repo excludes them via `outputFileTracingExcludes` in `next.config.ts`. Finished art lives in `assets/cards/` in git; `npm run build` runs `cards:sync` to copy them into `public/assets/cards/` for deploy.
 - **`data/team_rankings.json`** is a local test artifact (~80 MB) and must not be committed.
 
 Do **not** upgrade to Prisma 7 to fix this — it is unrelated.
