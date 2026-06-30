@@ -128,7 +128,7 @@ npm run dev
 
    - **Build command:** `npx prisma migrate deploy && npm run build`
    - **Plugin:** `@netlify/plugin-nextjs` (auto-installed on first build)
-   - **Publish directory:** leave **empty** (do not set `.next` in the UI — the plugin handles output)
+   - **Publish directory:** `.next` (must not be empty — empty defaults to repo root and fails the plugin)
 
 4. **Do not deploy yet** — add environment variables first (Step 4).
 
@@ -227,7 +227,7 @@ The **build can succeed** while **deploy** fails — that means the serverless f
 
 Common causes in this repo:
 
-- **Publish directory set to `.next` in Netlify UI** — clear it (Site settings → Build & deploy → Publish directory → empty). `@netlify/plugin-nextjs` manages deploy output.
+- **Publish directory empty or set to repo root** — use `.next` (also set in `netlify.toml`). Empty defaults to `/` and the plugin errors: *"publish directory cannot be the same as the base directory"*.
 - **Large card PNGs** (~280 MB in `public/assets/cards/`) must stay **static assets**, not bundled into the server function. The repo excludes them via `outputFileTracingExcludes` in `next.config.ts`.
 - **`data/team_rankings.json`** is a local test artifact (~80 MB) and must not be committed.
 

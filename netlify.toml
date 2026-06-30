@@ -1,6 +1,6 @@
 [build]
   command = "npx prisma migrate deploy && npm run build"
-  # Leave "Publish directory" empty in Netlify UI — the Next.js plugin manages deploy output.
+  publish = ".next"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
