@@ -40,3 +40,6 @@ next-env.d.ts
 # generated card art (add real assets locally)
 /public/assets/cards/*.png
 !/public/assets/cards/.gitkeep
+
+# vitest rank script output (large, local only)
+/data/team_rankings.json

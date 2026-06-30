@@ -499,11 +499,11 @@
             "name": "Bob Balloon Head",
             "tier": 4,
             "stats": {
-                "intelligence": 1,
+                "intelligence": 2,
                 "strength": 4,
                 "durability": 5,
-                "skill": 3,
-                "energy_projection": 4,
+                "skill": 5,
+                "energy_projection": 1,
                 "speed": 2
             }
         },

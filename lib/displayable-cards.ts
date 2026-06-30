@@ -3,6 +3,7 @@ import path from "path";
 import { getAllCharacters } from "@/lib/cards-loader";
 import {
   getCardPrintById,
+  getCardPrintDefinitions,
   getDefaultCardPrintForCharacter,
 } from "@/lib/card-editor-designs-loader";
 import { cardPrintPngFilename, cardPrintPngPublicUrl } from "@/lib/card-export-filenames";
@@ -12,6 +13,16 @@ import type { GeneratedCard } from "@/types/card";
 import type { Character } from "@/types/character";
 
 let cachedDisplayableCharacterIds: Set<string> | null = null;
+
+function isDoneCardPrint(status: string | undefined): boolean {
+  return String(status ?? "").trim().toLowerCase() === "done";
+}
+
+export function isCollectibleCardPrint(
+  print: { status?: string } | undefined
+): boolean {
+  return print ? isDoneCardPrint(print.status) : false;
+}
 
 export function finishedPngExists(
   printId: string | number,
@@ -26,48 +37,11 @@ export function finishedPngExists(
   return candidates.some((filePath) => fs.existsSync(filePath));
 }
 
-function readCardAssetFilenames(): string[] {
-  const root = process.cwd();
-  const dirs = [
-    path.join(root, "assets", "cards"),
-    path.join(root, "public", "assets", "cards"),
-  ];
-  const names = new Set<string>();
-
-  for (const dir of dirs) {
-    try {
-      for (const name of fs.readdirSync(dir)) {
-        if (/\.png$/i.test(name)) {
-          names.add(name.toLowerCase());
-        }
-      }
-    } catch {
-      // Directory may not exist yet.
-    }
-  }
-
-  return [...names];
-}
-
 function getPrintIdsWithFinishedArt(): Set<string> {
-  const fronts = new Set<string>();
-  const backs = new Set<string>();
-
-  for (const filename of readCardAssetFilenames()) {
-    const frontMatch = filename.match(/^(.+)-front\.png$/);
-    const backMatch = filename.match(/^(.+)-back\.png$/);
-    if (frontMatch) {
-      fronts.add(formatCardPrintId(frontMatch[1]));
-    }
-    if (backMatch) {
-      backs.add(formatCardPrintId(backMatch[1]));
-    }
-  }
-
   const complete = new Set<string>();
-  for (const printId of fronts) {
-    if (backs.has(printId)) {
-      complete.add(printId);
+  for (const print of getCardPrintDefinitions()) {
+    if (isDoneCardPrint(print.status)) {
+      complete.add(formatCardPrintId(print.id));
     }
   }
   return complete;
@@ -94,7 +68,7 @@ export function characterHasFinishedCardArt(characterId: string): boolean {
   return getDisplayableCharacterIdSet().has(normalizeCharacterId(characterId));
 }
 
-/** Characters whose default print has both front and back PNGs in assets/cards/. */
+/** Characters whose default print is marked done in card_editor_designs.json. */
 export function getDisplayableCharacters(): Character[] {
   const allowed = getDisplayableCharacterIdSet();
   return getAllCharacters().filter((character) => allowed.has(character.id));
@@ -108,7 +82,7 @@ export function clearDisplayableCardsCache(): void {
   cachedDisplayableCharacterIds = null;
 }
 
-/** Attach finished PNG URLs for displayable cards (both sides on disk). */
+/** Attach finished PNG URLs for displayable cards. */
 export function attachFinishedCardArt(card: GeneratedCard): GeneratedCard {
   if (!characterHasFinishedCardArt(card.characterId)) {
     return card;

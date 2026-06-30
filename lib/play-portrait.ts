@@ -1,15 +1,19 @@
+import { cardPrintPngPublicUrl } from "@/lib/card-export-filenames";
+import { getDefaultCardPrintForCharacter } from "@/lib/card-editor-designs-loader";
 import { normalizeCharacterId } from "@/lib/character-id";
-import { portraitUrlForCharacter } from "@/lib/character-portrait-url";
+import { characterHasFinishedCardArt } from "@/lib/displayable-cards";
 
-/** Public play-mode portrait URL (raw front art, no card frame). */
-export function playPortraitPublicUrl(characterId: string): string {
-  return `/api/play/portrait/${encodeURIComponent(normalizeCharacterId(characterId))}`;
-}
-
-/** Resolve raw front portrait URL for roster/battle (play API, not finished card PNG). */
+/** Public play-mode portrait URL (finished card front PNG, no frame). */
 export function resolvePlayPortraitUrl(characterId: string): string | null {
-  if (!portraitUrlForCharacter(characterId)) {
+  const id = normalizeCharacterId(characterId);
+  if (!characterHasFinishedCardArt(id)) {
     return null;
   }
-  return playPortraitPublicUrl(characterId);
+
+  const print = getDefaultCardPrintForCharacter(id);
+  if (!print) {
+    return null;
+  }
+
+  return cardPrintPngPublicUrl(print.id, "front");
 }

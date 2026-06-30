@@ -1,13 +1,13 @@
 import { BINDER_TOTAL_PRINT_SLOTS } from "@/constants/series";
 import { getCardPrintById } from "@/lib/card-editor-designs-loader";
-import { characterHasFinishedCardArt } from "@/lib/displayable-cards";
+import { isCollectibleCardPrint } from "@/lib/displayable-cards";
 import { formatCardPrintId } from "@/lib/format-card-series-footer";
 import { normalizeCharacterId } from "@/lib/character-id";
 
 export interface BinderCatalogEntry {
   printId: string;
   characterId: string;
-  /** True when finished front/back PNGs exist for this character. */
+  /** True when this print is marked done in card_editor_designs.json. */
   isCollectible: boolean;
 }
 
@@ -20,7 +20,7 @@ export function getBinderCatalog(): BinderCatalogEntry[] {
     return {
       printId,
       characterId,
-      isCollectible: characterHasFinishedCardArt(characterId),
+      isCollectible: isCollectibleCardPrint(print),
     };
   });
 }

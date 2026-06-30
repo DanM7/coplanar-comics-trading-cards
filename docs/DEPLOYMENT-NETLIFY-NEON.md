@@ -128,6 +128,7 @@ npm run dev
 
    - **Build command:** `npx prisma migrate deploy && npm run build`
    - **Plugin:** `@netlify/plugin-nextjs` (auto-installed on first build)
+   - **Publish directory:** leave **empty** (do not set `.next` in the UI — the plugin handles output)
 
 4. **Do not deploy yet** — add environment variables first (Step 4).
 
@@ -219,6 +220,18 @@ App must be **Live** (not Development) for public users.
 | `/play` | Roster limited to owned cards when signed in |
 | Open pack (signed out) | Works but cards not saved |
 | `/editor` | 404 in production |
+
+### If deploy fails with `request body too large` / `___netlify-server-handler`
+
+The **build can succeed** while **deploy** fails — that means the serverless function bundle is too big, not a Prisma or Next.js compile error.
+
+Common causes in this repo:
+
+- **Publish directory set to `.next` in Netlify UI** — clear it (Site settings → Build & deploy → Publish directory → empty). `@netlify/plugin-nextjs` manages deploy output.
+- **Large card PNGs** (~280 MB in `public/assets/cards/`) must stay **static assets**, not bundled into the server function. The repo excludes them via `outputFileTracingExcludes` in `next.config.ts`.
+- **`data/team_rankings.json`** is a local test artifact (~80 MB) and must not be committed.
+
+Do **not** upgrade to Prisma 7 to fix this — it is unrelated.
 
 ### If sign-in fails
 

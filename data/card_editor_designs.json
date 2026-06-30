@@ -379,13 +379,26 @@
       "id": "39",
       "rarity": "common",
       "character": 39,
-	  "status": "update back image"
+      "design": {
+        "backOgScale": 75,
+        "backOgBackdropColor": "#baccb8",
+        "backGhostOpacity": 55,
+        "backGhostOffsetY": -2
+      },
+      "status": "done"
     },
     {
       "id": "40",
       "rarity": "common",
       "character": 40,
-	  "status": "Metadata font size 80"
+      "design": {
+        "backOgScale": 90,
+        "backOgBackdropColor": "#b7baac",
+        "backGhostOpacity": 55,
+        "backGhostOffsetY": -2,
+        "backMetaFontSize": 80
+      },
+      "status": "done"
     },
     {
       "id": "41",

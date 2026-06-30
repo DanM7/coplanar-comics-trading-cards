@@ -21,11 +21,11 @@ describe("buildBinderPages", () => {
 
     const six = slots.find((slot) => slot.printId === "006");
     const eight = slots.find((slot) => slot.printId === "008");
-    const thirteen = slots.find((slot) => slot.printId === "013");
+    const seventeen = slots.find((slot) => slot.printId === "017");
 
     expect(six).toMatchObject({ owned: false, isCollectible: false });
     expect(eight).toMatchObject({ owned: false, isCollectible: false });
-    expect(thirteen).toMatchObject({ owned: false, isCollectible: false });
+    expect(seventeen).toMatchObject({ owned: false, isCollectible: false });
   });
 
   it("paginates nine slots per page", () => {

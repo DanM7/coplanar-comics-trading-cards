@@ -425,9 +425,9 @@
       "id": 39,
       "name": "Bob Balloon Head",
       "alignment": "Evil",
-      "home_plane": "",
-      "home_location": "",
-      "home_district": "",
+      "home_plane": "Human",
+      "home_location": "Coplanar City",
+      "home_district": "Realspace Row",
       "type": "Cartoon / Human",
       "identity": "Real Name: Robert Mylar / Animator: Dolty Dan Maguire",
       "description": "The unscrupulous CEO of Coplanar Corp, his inflated ego is matched only by his appetite for profit. Every decision he makes serves his own ascent, with employees, rivals, and entire cities treated as disposable assets in his pursuit of power."
@@ -435,7 +435,7 @@
     {
       "id": 40,
       "name": "AMPIX",
-      "alignment": "Neutral",
+      "alignment": "Evil",
       "home_plane": "3D",
       "home_location": "Coplanar Plains",
       "home_district": "Angle Ranch",
