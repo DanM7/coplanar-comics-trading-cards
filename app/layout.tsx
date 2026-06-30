@@ -16,7 +16,15 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession(authOptions);
+  let session = null;
+  try {
+    session = await getServerSession(authOptions);
+  } catch (error) {
+    if (process.env.NODE_ENV === "production") {
+      throw error;
+    }
+    console.warn("[auth] Session unavailable in dev:", error);
+  }
 
   return (
     <html lang="en">

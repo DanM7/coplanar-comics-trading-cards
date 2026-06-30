@@ -1,6 +1,7 @@
 import type { Alignment } from "@/types/character";
 import type { CoreStats } from "@/types/character-stats";
 import type { MoveDisplay } from "@/types/character-moves";
+import type { AttackAnimationEffect, EnergyColorSource } from "@/types/character-moves";
 
 export type BattleTeamId = "player" | "cpu";
 
@@ -42,6 +43,7 @@ export interface BattleFighter {
   maxHp: number;
   currentHp: number;
   isKO: boolean;
+  frontImageUrl?: string;
 }
 
 export interface BattleTeam {
@@ -57,11 +59,22 @@ export type BattlePhase =
   | "victory"
   | "defeat";
 
+export interface CombatLogAnimation {
+  attackerId: string;
+  defenderId: string;
+  moveName: string;
+  attackType: "physical" | "energy";
+  effects: AttackAnimationEffect[];
+  energyColor?: string;
+  energyColorSource: EnergyColorSource;
+}
+
 export interface CombatLogEntry {
   id: string;
   round: number;
   message: string;
   kind: "info" | "attack" | "miss" | "ko" | "round";
+  animation?: CombatLogAnimation;
 }
 
 export interface PendingPlayerAction {

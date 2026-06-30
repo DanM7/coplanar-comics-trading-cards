@@ -19,9 +19,10 @@ function nextLogId(): string {
 function createLogEntry(
   round: number,
   message: string,
-  kind: CombatLogEntry["kind"]
+  kind: CombatLogEntry["kind"],
+  animation?: CombatLogEntry["animation"]
 ): CombatLogEntry {
-  return { id: nextLogId(), round, message, kind };
+  return { id: nextLogId(), round, message, kind, animation };
 }
 
 function allFighters(state: BattleState): BattleFighter[] {
@@ -163,49 +164,78 @@ function updateFighterHp(
   };
 }
 
-function advanceTurn(state: BattleState, rng: () => number = Math.random): BattleState {
-  let nextIndex = state.turnIndex + 1;
-  let round = state.round;
-
-  if (nextIndex >= state.turnOrder.length) {
-    round += 1;
-    const freshOrder = computeTurnOrder(state.playerTeam, state.cpuTeam, rng);
-    nextIndex = 0;
-
-    let nextState: BattleState = {
-      ...state,
-      round,
-      turnOrder: freshOrder,
-      turnIndex: 0,
-      log: [
-        ...state.log,
-        createLogEntry(round, `— Round ${round} —`, "round"),
-      ],
-    };
-
-    nextState = checkVictory(nextState);
-    if (nextState.phase !== "battle") {
-      return { ...nextState, awaitingPlayerAction: false };
-    }
-
-    const nextFighter = findFighter(nextState, freshOrder[0]);
-    return {
-      ...nextState,
-      awaitingPlayerAction: nextFighter?.team === "player",
-    };
+function isFighterReady(
+  state: BattleState,
+  fighterId: string | undefined
+): boolean {
+  if (!fighterId) {
+    return false;
   }
 
-  const nextFighterId = state.turnOrder[nextIndex];
-  const nextFighter = findFighter(state, nextFighterId);
+  const fighter = findFighter(state, fighterId);
+  return Boolean(fighter && !fighter.isKO);
+}
 
-  let nextState: BattleState = {
-    ...state,
-    turnIndex: nextIndex,
-    awaitingPlayerAction: nextFighter?.team === "player",
-  };
+function advanceTurn(state: BattleState, rng: () => number = Math.random): BattleState {
+  let turnOrder = state.turnOrder;
+  let turnIndex = state.turnIndex + 1;
+  let round = state.round;
+  let log = state.log;
+  let workingState = state;
 
-  nextState = checkVictory(nextState);
-  return nextState;
+  const maxSteps = Math.max(turnOrder.length, 1) * 2 + 6;
+
+  for (let step = 0; step < maxSteps; step += 1) {
+    if (turnIndex >= turnOrder.length) {
+      round += 1;
+      turnOrder = computeTurnOrder(
+        workingState.playerTeam,
+        workingState.cpuTeam,
+        rng
+      );
+      turnIndex = 0;
+      log = [...log, createLogEntry(round, `— Round ${round} —`, "round")];
+
+      workingState = {
+        ...workingState,
+        round,
+        turnOrder,
+        turnIndex,
+        log,
+      };
+
+      const victoryState = checkVictory(workingState);
+      if (victoryState.phase !== "battle") {
+        return { ...victoryState, awaitingPlayerAction: false };
+      }
+
+      workingState = victoryState;
+
+      if (turnOrder.length === 0) {
+        return { ...workingState, awaitingPlayerAction: false };
+      }
+
+      continue;
+    }
+
+    const nextFighterId = turnOrder[turnIndex];
+    if (!isFighterReady(workingState, nextFighterId)) {
+      turnIndex += 1;
+      continue;
+    }
+
+    const nextFighter = findFighter(workingState, nextFighterId)!;
+    return checkVictory({
+      ...workingState,
+      turnOrder,
+      turnIndex,
+      round,
+      log,
+      awaitingPlayerAction: nextFighter.team === "player",
+    });
+  }
+
+  return checkVictory({ ...workingState, awaitingPlayerAction: false });
 }
 
 export function executePlayerAction(
@@ -219,10 +249,8 @@ export function executePlayerAction(
 
   const activeFighterId = state.turnOrder[state.turnIndex];
   const attacker = findFighter(state, activeFighterId);
-  const defender = findFighter(state, input.targetFighterId);
-
-  if (!attacker || !defender || attacker.isKO) {
-    return state;
+  if (!attacker || attacker.isKO) {
+    return advanceTurn(state, rng);
   }
 
   const move = attacker.moves[input.moveIndex];
@@ -230,7 +258,12 @@ export function executePlayerAction(
     return state;
   }
 
-  return resolveAndAdvance(state, attacker, defender, move, input.moveIndex, rng);
+  const defender = findFighter(state, input.targetFighterId);
+  if (!defender || defender.isKO) {
+    return state;
+  }
+
+  return resolveAndAdvance(state, attacker, defender, input.moveIndex, rng);
 }
 
 export function executeCpuTurn(
@@ -243,8 +276,12 @@ export function executeCpuTurn(
 
   const activeFighterId = state.turnOrder[state.turnIndex];
   const attacker = findFighter(state, activeFighterId);
-  if (!attacker || attacker.isKO || attacker.team !== "cpu") {
-    return state;
+  if (!attacker || attacker.isKO) {
+    return advanceTurn(state, rng);
+  }
+
+  if (attacker.team !== "cpu") {
+    return advanceTurn(state, rng);
   }
 
   const targets = livingFighters(opponentTeam(state, "cpu"));
@@ -254,16 +291,14 @@ export function executeCpuTurn(
 
   const moveIndex = Math.floor(rng() * attacker.moves.length);
   const target = targets[Math.floor(rng() * targets.length)]!;
-  const move = attacker.moves[moveIndex]!;
 
-  return resolveAndAdvance(state, attacker, target, move, moveIndex, rng);
+  return resolveAndAdvance(state, attacker, target, moveIndex, rng);
 }
 
 function resolveAndAdvance(
   state: BattleState,
   attacker: BattleFighter,
   defender: BattleFighter,
-  move: { name: string; attackType: string },
   moveIndex: number,
   rng: () => number
 ): BattleState {
@@ -274,10 +309,11 @@ function resolveAndAdvance(
   const attackerTeam = teamForFighter(state, attacker);
   const defenderTeam = teamForFighter(state, defender);
 
+  const move = attacker.moves[moveIndex]!;
   const result = resolveAttack({
     attacker,
     defender,
-    move: attacker.moves[moveIndex]!,
+    move,
     attackerTeam,
     defenderTeam,
     rng,
@@ -285,6 +321,15 @@ function resolveAndAdvance(
 
   const hitPct = Math.round(result.hitChance * 100);
   const attackLabel = move.attackType === "energy" ? "Energy" : "Physical";
+  const animation = {
+    attackerId: attacker.id,
+    defenderId: defender.id,
+    moveName: move.name,
+    attackType: move.attackType,
+    effects: move.animation?.effects ?? ["lunge"],
+    energyColor: move.animation?.energyColor,
+    energyColorSource: move.animation?.energyColorSource ?? "character",
+  };
 
   let message: string;
   let kind: CombatLogEntry["kind"] = "attack";
@@ -308,7 +353,10 @@ function resolveAndAdvance(
 
   nextState = {
     ...nextState,
-    log: [...nextState.log, createLogEntry(nextState.round, message, kind)],
+    log: [
+      ...nextState.log,
+      createLogEntry(nextState.round, message, kind, animation),
+    ],
   };
 
   nextState = checkVictory(nextState);

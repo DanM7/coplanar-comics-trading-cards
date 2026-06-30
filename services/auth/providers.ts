@@ -1,12 +1,11 @@
 import type { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
-import AppleProvider from "next-auth/providers/apple";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { isDevAuthBypassEnabled } from "./dev-bypass";
 
 /**
- * OAuth providers for Google, Apple, and Facebook.
+ * OAuth providers for Google and Facebook.
  * Credentials are read from environment variables; see .env.example.
  */
 export function buildAuthProviders(): NextAuthOptions["providers"] {
@@ -34,15 +33,6 @@ export function buildAuthProviders(): NextAuthOptions["providers"] {
       GoogleProvider({
         clientId: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      })
-    );
-  }
-
-  if (process.env.APPLE_CLIENT_ID && process.env.APPLE_CLIENT_SECRET) {
-    providers.push(
-      AppleProvider({
-        clientId: process.env.APPLE_CLIENT_ID,
-        clientSecret: process.env.APPLE_CLIENT_SECRET,
       })
     );
   }

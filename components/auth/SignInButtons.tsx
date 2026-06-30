@@ -1,6 +1,7 @@
 "use client";
 
 import { useAuth } from "@/hooks/useAuth";
+import { isDevAuthBypassVisible } from "@/services/auth/dev-bypass";
 
 export function SignInButtons() {
   const {
@@ -8,14 +9,12 @@ export function SignInButtons() {
     isLoading,
     user,
     signInWithGoogle,
-    signInWithApple,
     signInWithFacebook,
     signInDev,
     signOut,
   } = useAuth();
 
-  const devBypassEnabled =
-    process.env.NEXT_PUBLIC_DEV_AUTH_BYPASS === "true";
+  const devBypassEnabled = isDevAuthBypassVisible();
 
   if (isLoading) {
     return <p className="auth-status">Loading session…</p>;
@@ -38,9 +37,6 @@ export function SignInButtons() {
     <div className="auth-bar">
       <button type="button" className="auth-btn" onClick={signInWithGoogle}>
         Google
-      </button>
-      <button type="button" className="auth-btn" onClick={signInWithApple}>
-        Apple
       </button>
       <button type="button" className="auth-btn" onClick={signInWithFacebook}>
         Facebook

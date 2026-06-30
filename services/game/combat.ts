@@ -74,3 +74,19 @@ export function resolveAttack(input: {
     defenderKO: defenderHpAfter <= 0,
   };
 }
+
+/** Expected damage if the attack hits (same formula as resolveAttack, no miss roll). */
+export function projectAttackDamage(input: {
+  attacker: BattleFighter;
+  defender: BattleFighter;
+  move: MoveDisplay;
+  attackerTeam: BattleTeam;
+  defenderTeam: BattleTeam;
+}): Pick<AttackResult, "damage" | "hitChance" | "defenderKO"> {
+  const result = resolveAttack({ ...input, rng: () => 0 });
+  return {
+    damage: result.damage,
+    hitChance: result.hitChance,
+    defenderKO: result.defenderKO,
+  };
+}

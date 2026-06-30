@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 import styles from "@/components/play/play.module.css";
 
 const PlayView = dynamic(
@@ -14,7 +15,9 @@ const PlayView = dynamic(
 export default function PlayPage() {
   return (
     <div className={`page-play ${styles.play}`}>
-      <PlayView />
+      <Suspense fallback={<p className={styles.playIntro}>Loading play mode…</p>}>
+        <PlayView />
+      </Suspense>
     </div>
   );
 }

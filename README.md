@@ -29,3 +29,7 @@ Each location contains four districts aligned to the four planes:
 
 ## License
 MIT License unless otherwise specified.
+
+## Production deployment
+
+See **[docs/DEPLOYMENT-NETLIFY-NEON.md](docs/DEPLOYMENT-NETLIFY-NEON.md)** for Netlify + Neon setup (sign-in, saved collections, OAuth).

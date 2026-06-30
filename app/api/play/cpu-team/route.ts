@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { attachRosterFrontImages } from "@/services/game/roster-images";
 import { defaultCpuTeam } from "@/services/game/roster";
 
 export async function GET(request: Request) {
@@ -8,7 +9,7 @@ export async function GET(request: Request) {
     .map((value) => value.trim())
     .filter(Boolean);
 
-  const entries = defaultCpuTeam(exclude ?? []);
+  const entries = attachRosterFrontImages(defaultCpuTeam(exclude ?? []));
 
   if (entries.length !== 3) {
     return NextResponse.json(

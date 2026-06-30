@@ -35,6 +35,7 @@ function buildFighter(input: {
     maxHp: maxHpFromDurability(effectiveStats.durability),
     currentHp: maxHpFromDurability(effectiveStats.durability),
     isKO: false,
+    frontImageUrl: input.entry.frontImageUrl,
   };
 }
 

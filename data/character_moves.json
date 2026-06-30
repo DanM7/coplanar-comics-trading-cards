@@ -1,4 +1,2234 @@
 {
+  "animations": {
+    "nameRules": [
+      {
+        "contains": "slam",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "smash",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "bash",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "stomp",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "quake",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "headbutt",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "ram",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "stampede",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "shockwave",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "demolish",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "demolition",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "wreck",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "bore",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "drill",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "belly",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "roll over",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "snuff",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "extinguish",
+        "effects": [
+          "shake"
+        ]
+      },
+      {
+        "contains": "flatulence",
+        "effects": [
+          "shake",
+          "spray"
+        ]
+      },
+      {
+        "contains": "spin",
+        "effects": [
+          "spin"
+        ]
+      },
+      {
+        "contains": "whirl",
+        "effects": [
+          "spin"
+        ]
+      },
+      {
+        "contains": "cyclone",
+        "effects": [
+          "spin"
+        ]
+      },
+      {
+        "contains": "tornado",
+        "effects": [
+          "spin"
+        ]
+      },
+      {
+        "contains": "wind-up",
+        "effects": [
+          "spin"
+        ]
+      },
+      {
+        "contains": "petal dance",
+        "effects": [
+          "spin"
+        ]
+      },
+      {
+        "contains": "propeller",
+        "effects": [
+          "spin"
+        ]
+      },
+      {
+        "contains": "flushnado",
+        "effects": [
+          "spin",
+          "spray"
+        ]
+      },
+      {
+        "contains": "grind",
+        "effects": [
+          "spin"
+        ]
+      },
+      {
+        "contains": "supernova",
+        "effects": [
+          "spin",
+          "pulse",
+          "flash"
+        ]
+      },
+      {
+        "contains": "flash",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "bolt",
+        "effects": [
+          "flash",
+          "laserBolts"
+        ]
+      },
+      {
+        "contains": "beam",
+        "effects": [
+          "flash",
+          "laserBolts"
+        ]
+      },
+      {
+        "contains": "surge",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "ray",
+        "effects": [
+          "flash",
+          "laserBolts"
+        ]
+      },
+      {
+        "contains": "light",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "spotlight",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "beacon",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "screech",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "rayfire",
+        "effects": [
+          "flash",
+          "laserBolts"
+        ]
+      },
+      {
+        "contains": "noir",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "voltage",
+        "effects": [
+          "flash",
+          "laserBolts"
+        ]
+      },
+      {
+        "contains": "wire",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "live",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "spark",
+        "effects": [
+          "flash",
+          "laserBolts"
+        ]
+      },
+      {
+        "contains": "static",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "grid",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "overload",
+        "effects": [
+          "flash",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "havoc",
+        "effects": [
+          "flash",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "breath",
+        "effects": [
+          "flash",
+          "spray"
+        ]
+      },
+      {
+        "contains": "oblivion",
+        "effects": [
+          "flash",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "geometric",
+        "effects": [
+          "flash"
+        ]
+      },
+      {
+        "contains": "rad",
+        "effects": [
+          "flash",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "burst",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "pulse",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "eruption",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "bloom",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "resonance",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "aura",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "atmos",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "possession",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "regenerative",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "crystalline",
+        "effects": [
+          "pulse",
+          "flash"
+        ]
+      },
+      {
+        "contains": "fracture",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "illusion",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "cognitive",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "reaper",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "belch",
+        "effects": [
+          "pulse",
+          "spray"
+        ]
+      },
+      {
+        "contains": "cascade",
+        "effects": [
+          "pulse",
+          "spray"
+        ]
+      },
+      {
+        "contains": "singularity",
+        "effects": [
+          "pulse",
+          "flash"
+        ]
+      },
+      {
+        "contains": "event",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "heroic",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "masquerade",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "inkspace",
+        "effects": [
+          "pulse",
+          "flash"
+        ]
+      },
+      {
+        "contains": "unframe",
+        "effects": [
+          "pulse",
+          "flash"
+        ]
+      },
+      {
+        "contains": "angle",
+        "effects": [
+          "pulse",
+          "flash"
+        ]
+      },
+      {
+        "contains": "assault",
+        "effects": [
+          "pulse",
+          "lunge"
+        ]
+      },
+      {
+        "contains": "break",
+        "effects": [
+          "pulse",
+          "shake"
+        ]
+      },
+      {
+        "contains": "wall",
+        "effects": [
+          "pulse",
+          "shake"
+        ]
+      },
+      {
+        "contains": "dune",
+        "effects": [
+          "pulse",
+          "spray"
+        ]
+      },
+      {
+        "contains": "living",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "mural",
+        "effects": [
+          "pulse",
+          "spray"
+        ]
+      },
+      {
+        "contains": "corrosive",
+        "effects": [
+          "pulse",
+          "spray"
+        ]
+      },
+      {
+        "contains": "identity",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "aeonsteel",
+        "effects": [
+          "pulse",
+          "flash"
+        ]
+      },
+      {
+        "contains": "timeline",
+        "effects": [
+          "pulse",
+          "flash"
+        ]
+      },
+      {
+        "contains": "rend",
+        "effects": [
+          "pulse",
+          "lunge"
+        ]
+      },
+      {
+        "contains": "tear",
+        "effects": [
+          "pulse",
+          "lunge"
+        ]
+      },
+      {
+        "contains": "warp",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "chaos",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "panel",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "continuity",
+        "effects": [
+          "pulse"
+        ]
+      },
+      {
+        "contains": "tune",
+        "effects": [
+          "pulse",
+          "flash"
+        ]
+      },
+      {
+        "contains": "planetary",
+        "effects": [
+          "pulse",
+          "flash"
+        ]
+      },
+      {
+        "contains": "spray",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "cloud",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "leak",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "spew",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "mist",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "smoke",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "stink",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "bomb",
+        "effects": [
+          "spray",
+          "shake"
+        ]
+      },
+      {
+        "contains": "gas",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "toxic",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "poison",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "fuel",
+        "effects": [
+          "spray",
+          "flash"
+        ]
+      },
+      {
+        "contains": "veil",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "ooze",
+        "effects": [
+          "spray",
+          "smoke"
+        ]
+      },
+      {
+        "contains": "wormbelch",
+        "effects": [
+          "spray",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "mucus",
+        "effects": [
+          "spray"
+        ]
+      },
+      {
+        "contains": "dispense",
+        "effects": [
+          "spray"
+        ]
+      },
+      {
+        "contains": "flush",
+        "effects": [
+          "spray",
+          "spin"
+        ]
+      },
+      {
+        "contains": "splash",
+        "effects": [
+          "spray"
+        ]
+      },
+      {
+        "contains": "hydrant",
+        "effects": [
+          "spray"
+        ]
+      },
+      {
+        "contains": "water",
+        "effects": [
+          "spray"
+        ]
+      },
+      {
+        "contains": "gasoline",
+        "effects": [
+          "spray",
+          "flash"
+        ]
+      },
+      {
+        "contains": "whip",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "lash",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "slice",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "slash",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "cut",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "dive",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "charge",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "rush",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "dash",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "lunge",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "strike",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "hit",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "punch",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "jab",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "kick",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "swipe",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "rake",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "claw",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "bite",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "chomp",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "peck",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "toss",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "throw",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "hurl",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "pull",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "grip",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "hold",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "bind",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "snare",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "sweep",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "swing",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "chop",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "pinch",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "sting",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "tail",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "gore",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "gouge",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "rip",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "tear",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "tackle",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "hop",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "sling",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "rescue",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "carry",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "shard",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "shot",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "fetch",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "rattle",
+        "effects": [
+          "lunge",
+          "shake"
+        ]
+      },
+      {
+        "contains": "guard",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "repair",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "reload",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "grin",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "holler",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "walk",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "dance",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "audit",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "reprimand",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "whack",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "howl",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "swat",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "ambush",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "razor",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "cleaver",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "haymaker",
+        "effects": [
+          "lunge",
+          "shake"
+        ]
+      },
+      {
+        "contains": "shoulder",
+        "effects": [
+          "lunge",
+          "shake"
+        ]
+      },
+      {
+        "contains": "dew",
+        "effects": [
+          "lunge",
+          "spray"
+        ]
+      },
+      {
+        "contains": "talon",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "delivery",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "tragic",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "sorrow",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "quack",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "rain",
+        "effects": [
+          "lunge",
+          "spray"
+        ]
+      },
+      {
+        "contains": "thorn",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "dust",
+        "effects": [
+          "lunge",
+          "spray"
+        ]
+      },
+      {
+        "contains": "forge",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "web",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "leg",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "prickly",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "plaid",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "chink",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "glide",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "constrict",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "ice",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "arctic",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "strand",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "cuff",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "restraint",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "vacuum",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "suction",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "memo",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "propeller",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "itch",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "lice",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "triage",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "glob",
+        "effects": [
+          "lunge",
+          "spray"
+        ]
+      },
+      {
+        "contains": "squish",
+        "effects": [
+          "lunge",
+          "shake"
+        ]
+      },
+      {
+        "contains": "crystal",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "sharp",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "piercing",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "suck",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "void",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "prong",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "utensil",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "square",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "crank",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "gourd",
+        "effects": [
+          "lunge",
+          "shake"
+        ]
+      },
+      {
+        "contains": "paw",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "burrow",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "ziggo",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "cable",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "tak",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "dragon",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "wiggle",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "prank",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "vigilance",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "trail",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "mash",
+        "effects": [
+          "lunge",
+          "shake"
+        ]
+      },
+      {
+        "contains": "gnarl",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "showoff",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "frenzy",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "crumb",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "jagged",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "flex",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "phantom",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "wing",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "turbo",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "tinker",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "jazz",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "gelatinous",
+        "effects": [
+          "lunge",
+          "spray"
+        ]
+      },
+      {
+        "contains": "step",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "shardstorm",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "rebind",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "riftcleave",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "hostile",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "takeover",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "inflation",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "barrage",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "curse",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "horn",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "current",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "river",
+        "effects": [
+          "lunge",
+          "spray"
+        ]
+      },
+      {
+        "contains": "hardy",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "crescent",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "kinetic",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "muck",
+        "effects": [
+          "lunge",
+          "spray"
+        ]
+      },
+      {
+        "contains": "silt",
+        "effects": [
+          "lunge",
+          "spray"
+        ]
+      },
+      {
+        "contains": "missile",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "smiley",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "hooha",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "manta",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "boa",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "polar",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "hair",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "roley",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "blast",
+        "effects": [
+          "shake",
+          "flash"
+        ]
+      },
+      {
+        "contains": "nymph",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "scarab",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "beetle",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "larry",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "everyday",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "mel",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "scorpolion",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "lip",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "pale",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "fork",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "blok",
+        "effects": [
+          "lunge",
+          "shake"
+        ]
+      },
+      {
+        "contains": "wind",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "life",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "paws",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "ferret",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "winch",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "raiser",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "xen",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "mawdrath",
+        "effects": [
+          "lunge",
+          "spray"
+        ]
+      },
+      {
+        "contains": "flat",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "lock",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "loop",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "tantrum",
+        "effects": [
+          "lunge",
+          "shake"
+        ]
+      },
+      {
+        "contains": "field",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "hell",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "tag",
+        "effects": [
+          "lunge",
+          "spray"
+        ]
+      },
+      {
+        "contains": "volley",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "vowel",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "monologue",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "air",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "purr",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "reddline",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "jurassic",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "tea",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "lien",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "doppel",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "rail",
+        "effects": [
+          "lunge",
+          "spin"
+        ]
+      },
+      {
+        "contains": "mind",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "mac",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "cursed",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "shadow",
+        "effects": [
+          "lunge",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "ring",
+        "effects": [
+          "lunge",
+          "spin",
+          "pulse"
+        ]
+      },
+      {
+        "contains": "harmonic",
+        "effects": [
+          "pulse",
+          "flash"
+        ]
+      },
+      {
+        "contains": "axe",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "aeonedge",
+        "effects": [
+          "lunge",
+          "flash"
+        ]
+      },
+      {
+        "contains": "spike",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "pyro",
+        "effects": [
+          "flash",
+          "pulse",
+          "flames"
+        ]
+      },
+      {
+        "contains": "lava",
+        "effects": [
+          "flash",
+          "pulse",
+          "shake",
+          "flames"
+        ]
+      },
+      {
+        "contains": "core",
+        "effects": [
+          "pulse",
+          "shake"
+        ]
+      },
+      {
+        "contains": "frosting",
+        "effects": [
+          "lunge",
+          "spray"
+        ]
+      },
+      {
+        "contains": "thagomizer",
+        "effects": [
+          "lunge"
+        ]
+      },
+      {
+        "contains": "laser",
+        "effects": [
+          "flash",
+          "laserBolts"
+        ]
+      },
+      {
+        "contains": "fire",
+        "effects": [
+          "flash",
+          "flames"
+        ]
+      },
+      {
+        "contains": "flame",
+        "effects": [
+          "flash",
+          "flames"
+        ]
+      },
+      {
+        "contains": "burn",
+        "effects": [
+          "flash",
+          "flames"
+        ]
+      },
+      {
+        "contains": "inferno",
+        "effects": [
+          "shake",
+          "flames"
+        ]
+      },
+      {
+        "contains": "blaze",
+        "effects": [
+          "flash",
+          "flames"
+        ]
+      },
+      {
+        "contains": "scorch",
+        "effects": [
+          "flash",
+          "flames"
+        ]
+      }
+    ],
+    "energyDefaults": {
+      "colorSource": "character"
+    },
+    "weaponColorRules": [
+      {
+        "contains": "fire",
+        "color": "#ff6b35"
+      },
+      {
+        "contains": "pyro",
+        "color": "#ff6b35"
+      },
+      {
+        "contains": "flame",
+        "color": "#ff6b35"
+      },
+      {
+        "contains": "lava",
+        "color": "#ff4500"
+      },
+      {
+        "contains": "ice",
+        "color": "#7dd3fc"
+      },
+      {
+        "contains": "frost",
+        "color": "#7dd3fc"
+      },
+      {
+        "contains": "poison",
+        "color": "#5cff4a"
+      },
+      {
+        "contains": "toxic",
+        "color": "#5cff4a"
+      },
+      {
+        "contains": "acid",
+        "color": "#a3e635"
+      },
+      {
+        "contains": "corrosive",
+        "color": "#a3e635"
+      },
+      {
+        "contains": "electric",
+        "color": "#ffe566"
+      },
+      {
+        "contains": "voltage",
+        "color": "#ffe566"
+      },
+      {
+        "contains": "spark",
+        "color": "#ffe566"
+      },
+      {
+        "contains": "static",
+        "color": "#ffe566"
+      },
+      {
+        "contains": "shadow",
+        "color": "#6b7280"
+      },
+      {
+        "contains": "sonic",
+        "color": "#c084fc"
+      },
+      {
+        "contains": "screech",
+        "color": "#c084fc"
+      },
+      {
+        "contains": "rad",
+        "color": "#84cc16"
+      },
+      {
+        "contains": "radioactive",
+        "color": "#84cc16"
+      },
+      {
+        "contains": "cosmic",
+        "color": "#a78bfa"
+      },
+      {
+        "contains": "oil",
+        "color": "#1a1a1a"
+      },
+      {
+        "contains": "ink",
+        "color": "#6366f1"
+      },
+      {
+        "contains": "crystal",
+        "color": "#67e8f9"
+      },
+      {
+        "contains": "dragon",
+        "color": "#f97316"
+      },
+      {
+        "contains": "gas",
+        "color": "#84cc16"
+      },
+      {
+        "contains": "mud",
+        "color": "#92400e"
+      },
+      {
+        "contains": "water",
+        "color": "#38bdf8"
+      }
+    ],
+    "fallbacks": {
+      "physical": [
+        "lunge"
+      ],
+      "energy": [
+        "pulse",
+        "flash"
+      ]
+    }
+  },
   "moves": [
     {
       "id": 1,
@@ -121,6 +2351,7 @@
       "move1": "Static Havoc",
       "move1_value": 3,
       "move1_type": "energy",
+      "move1_energy_color": "#ffe566",
       "move2": "Grid Overload",
       "move2_value": 3,
       "move2_type": "energy"
@@ -475,7 +2706,8 @@
       "name": "Gas",
       "move1": "Poison Cloud",
       "move1_value": 3,
-      "move1_type": "energy"
+      "move1_type": "energy",
+      "move1_energy_color": "#5cff4a",
       "move2": "Toxic Leak",
       "move2_value": 3,
       "move2_type": "energy"
@@ -518,7 +2750,10 @@
       "move1": "Live Wire",
       "move1_value": 3,
       "move2": "Voltage Surge",
-      "move2_value": 4
+      "move2_value": 4,
+      "move2_type": "energy",
+      "move2_energy_color": "#ffe566",
+      "move2_energy_color_source": "weapon"
     },
     {
       "id": 61,

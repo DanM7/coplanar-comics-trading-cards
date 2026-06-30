@@ -10,7 +10,6 @@ export function useAuth() {
     isAuthenticated: status === "authenticated",
     isLoading: status === "loading",
     signInWithGoogle: () => signIn("google"),
-    signInWithApple: () => signIn("apple"),
     signInWithFacebook: () => signIn("facebook"),
     signInDev: () => signIn("dev"),
     signOut: () => signOut(),
