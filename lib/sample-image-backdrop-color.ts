@@ -76,6 +76,7 @@ export async function sampleImageBackdropColor(
   return new Promise((resolve) => {
     const img = new Image();
     img.decoding = "async";
+    img.crossOrigin = "anonymous";
 
     img.onload = () => {
       try {

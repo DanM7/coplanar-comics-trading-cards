@@ -379,16 +379,10 @@
 }
 
 .cardCanvas {
-  --card-w: 300px;
-  --card-h: 420px;
-  --back-stats-top: calc(var(--card-h) * 296 / 420);
-  --back-stats-bottom: 10px;
   --border-line-gap: 2px;
   --card-content-inset: calc(
     var(--border-width, 4px) + var(--border-line-gap) + 1px
   );
-  width: var(--card-w);
-  height: var(--card-h);
   position: relative;
   border-radius: var(--border-radius, 10px);
   overflow: hidden;
@@ -466,6 +460,10 @@
   text-align: center;
   padding: 0.5rem 0.6rem;
   flex-shrink: 0;
+}
+
+.nameplateInner {
+  display: block;
 }
 
 .characterName {
@@ -642,8 +640,28 @@
   );
   border-bottom: 2px solid var(--border-color, var(--accent));
   background: var(--og-frame-backdrop, #2a2a3a);
-  /* Frame height follows scaled image (width-based zoom, not transform). */
+  /* Reserve space before the OG image decodes to avoid back-text reflow. */
+  min-height: calc(
+    var(--card-w, 300px) * var(--og-scale, 1) * 0.48
+  );
   height: fit-content;
+}
+
+.backOgFrameLoaded {
+  min-height: 0;
+}
+
+.backOgScaler img {
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+.backOgFrameLoaded .backOgScaler img {
+  opacity: 1;
+}
+
+.backContentPending {
+  visibility: hidden;
 }
 
 .backOgScaler {
@@ -664,7 +682,7 @@
 .backBody {
   flex: 1;
   min-height: 0;
-  padding: 0.35rem calc(0.75rem + 2px) 0.5rem;
+  padding: 0.35em calc(0.75em + 2px) 0.5em;
   display: flex;
   flex-direction: column;
   color: #cbd5e0;
@@ -707,17 +725,19 @@
   overflow: hidden;
   padding-bottom: 0;
   margin-bottom: 0;
+  text-align: left;
 }
 
 .cardCanvas:not(.layoutBackCompact):not(.layoutBackLore) .backSectionDivider .backText {
   margin: 0;
   width: 100%;
+  text-align: left;
 }
 
 .backStatsSection {
   box-sizing: border-box;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
 }

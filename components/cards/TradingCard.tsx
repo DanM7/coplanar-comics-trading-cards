@@ -5,6 +5,8 @@ interface TradingCardProps {
   card: GeneratedCard;
   compact?: boolean;
   interactive?: boolean;
+  flipped?: boolean;
+  onFlipChange?: (flipped: boolean) => void;
 }
 
 /**
@@ -14,9 +16,19 @@ export function TradingCard({
   card,
   compact,
   interactive = true,
+  flipped,
+  onFlipChange,
 }: TradingCardProps) {
   if (!interactive) {
     return <CardFlip card={card} compact={compact} defaultFlipped={false} />;
   }
-  return <CardFlip card={card} compact={compact} />;
+
+  return (
+    <CardFlip
+      card={card}
+      compact={compact}
+      flipped={flipped}
+      onFlipChange={onFlipChange}
+    />
+  );
 }

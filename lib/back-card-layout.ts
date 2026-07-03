@@ -6,6 +6,9 @@
 export const BACK_STATS_ANCHOR_TOP_AT_420 = 296;
 export const BACK_STATS_ANCHOR_REFERENCE_HEIGHT = 420;
 
+/** Typical OG frame height as a fraction of card width at 100% scale. */
+export const OG_FRAME_HEIGHT_WIDTH_RATIO = 0.48;
+
 export function backStatsAnchorTopCssVar(
   heightVar = "var(--card-h, 420px)",
   offsetY = 0

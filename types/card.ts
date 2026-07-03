@@ -1,3 +1,5 @@
+import type { EditorCardMeta } from "@/components/editor/EditableCardFace";
+import type { CardDesignConfig } from "./card-design";
 import type { Alignment, HomeRegion } from "./character";
 import type { MoveDisplay } from "./character-moves";
 
@@ -50,6 +52,14 @@ export interface GeneratedCardBack {
   flavorText?: string;
 }
 
+/** Editor-accurate card face data for live CSS rendering in pack/binder. */
+export interface CardDisplay {
+  frontPortraitUrl: string;
+  backPortraitUrl: string;
+  design: CardDesignConfig;
+  meta: EditorCardMeta;
+}
+
 export interface GeneratedCard {
   characterId: string;
   seriesId: string;
@@ -59,6 +69,8 @@ export interface GeneratedCard {
   finishedFrontUrl?: string;
   /** Full baked back PNG from assets/cards when exported. */
   finishedBackUrl?: string;
+  /** Live compose data when a finished print is available. */
+  display?: CardDisplay;
   front: GeneratedCardFront;
   back: GeneratedCardBack;
 }

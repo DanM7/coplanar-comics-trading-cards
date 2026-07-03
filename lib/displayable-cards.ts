@@ -8,6 +8,7 @@ import {
 } from "@/lib/card-editor-designs-loader";
 import { cardPrintPngFilename, cardPrintPngPublicUrl } from "@/lib/card-export-filenames";
 import { normalizeCharacterId } from "@/lib/character-id";
+import { resolveCardDisplay } from "@/lib/resolve-card-display";
 import { formatCardPrintId } from "@/lib/format-card-series-footer";
 import type { GeneratedCard } from "@/types/card";
 import type { Character } from "@/types/character";
@@ -93,10 +94,14 @@ export function attachFinishedCardArt(card: GeneratedCard): GeneratedCard {
     return card;
   }
 
+  const printId = String(print.id);
+  const display = resolveCardDisplay(card.characterId, printId);
+
   return {
     ...card,
-    printId: String(print.id),
+    printId,
     finishedFrontUrl: cardPrintPngPublicUrl(print.id, "front"),
     finishedBackUrl: cardPrintPngPublicUrl(print.id, "back"),
+    ...(display ? { display } : {}),
   };
 }

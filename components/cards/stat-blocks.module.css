@@ -26,24 +26,18 @@
 }
 
 .statBlockRowMove {
-  display: block;
+  align-items: flex-start;
   margin-top: 8px;
-}
-
-.statBlockRowMove::after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 .statBlockRowMove .statBlockLabel {
   line-height: 1.15;
+  text-align: left;
 }
 
 .statBlockRowMove .statBlocks {
-  float: right;
-  margin-left: 0.25rem;
-  align-items: flex-start;
+  flex: 0 0 auto;
+  margin-top: 0.05rem;
 }
 
 .statBlockLabel {

@@ -6,7 +6,11 @@ export const SERIES_TITLES: Record<string, string> = {
   "coplanar-comics-series-1": SERIES_TITLE,
 };
 
-export const CARDS_PER_PACK = 10;
+export const CARDS_PER_PACK = 12;
+
+/** Sidebar strip grid when revealing packs (landscape / desktop). */
+export const PACK_STRIP_GRID_COLS = 3;
+export const PACK_STRIP_GRID_ROWS = 4;
 
 export const BINDER_SLOTS_PER_PAGE = 9;
 

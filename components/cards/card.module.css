@@ -16,6 +16,28 @@
   font: inherit;
   color: inherit;
   cursor: pointer;
+  text-align: left;
+  container-type: inline-size;
+}
+
+.previewCardShell {
+  cursor: default;
+  overflow: visible;
+}
+
+.previewCardShell .face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.previewCardShell .front,
+.previewCardShell .back {
+  position: absolute;
+  inset: 0;
+  transform: none;
+  backface-visibility: visible;
 }
 
 .cardInner {
@@ -71,6 +93,27 @@
 .back {
   transform: rotateY(180deg);
   background: linear-gradient(160deg, #1e2a3a 0%, #0f1419 100%);
+}
+
+/** Baked PNG pairs flip without 3D (keeps raster text sharp). */
+.cardFlatFlip {
+  perspective: none;
+}
+
+.cardInnerFlat {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.cardFlatFlip .face {
+  backface-visibility: visible;
+  transform: none;
+}
+
+.cardInnerFlat .face {
+  position: absolute;
+  inset: 0;
 }
 
 .frame {
@@ -297,7 +340,8 @@
 .finishedCardArt {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
+  object-position: center;
   display: block;
   background: var(--bg-surface);
 }

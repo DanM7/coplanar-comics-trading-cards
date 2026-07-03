@@ -1,4 +1,5 @@
 export { openPack, pickCardIdsFromPools, pickRandomCardIds, resolvePackCards } from "./pack-opener";
+export type { PackPullMode } from "@/lib/pack-pool";
 export {
   addCardsToCollection,
   buildBinderPages,

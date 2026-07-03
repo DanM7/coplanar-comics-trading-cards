@@ -1,0 +1,31 @@
+.host {
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive scaling only — all card layout/typography lives in editor.module.css. */
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  box-shadow: none;
+  --card-w: 100cqw;
+  --card-h: calc(100cqw * 7 / 5);
+  --back-stats-top: calc(var(--card-h) * 296 / 420);
+  --back-stats-bottom: calc(var(--card-h) * 10 / 420);
+  font-size: calc(100cqw / 18.75);
+}
+
+@supports not (container-type: inline-size) {
+  .canvas {
+    --card-w: var(--card-width, 300px);
+    --card-h: var(--card-height, 420px);
+    font-size: calc(var(--card-w) / 18.75);
+  }
+}

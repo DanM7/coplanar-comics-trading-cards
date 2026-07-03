@@ -37,6 +37,7 @@ export async function exportCardElementToPng(
     pixelRatio,
     cacheBust: true,
     skipAutoScale: true,
+    preferredFontFormat: "woff2",
   });
 }
 

@@ -86,8 +86,8 @@ function StatBlockRow({
         className={`${styles.statBlockRow} ${styles.statBlockRowMove}`}
         style={rowStyle}
       >
-        {blocks}
         <span className={styles.statBlockLabel}>{label}</span>
+        {blocks}
       </div>
     );
   }

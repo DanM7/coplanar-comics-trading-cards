@@ -395,7 +395,7 @@
         "backOgScale": 90,
         "backOgBackdropColor": "#b7baac",
         "backGhostOpacity": 55,
-        "backGhostOffsetY": -2,
+        "backGhostOffsetY": -78,
         "backMetaFontSize": 80
       },
       "status": "done"

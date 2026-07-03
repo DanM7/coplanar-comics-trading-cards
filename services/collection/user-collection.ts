@@ -73,7 +73,7 @@ export async function addCardsToCollection(
     counts.set(id, (counts.get(id) ?? 0) + 1);
   }
 
-  await syncCatalogToDatabase();
+  await ensurePackCardsInCatalog([...counts.keys()]);
 
   await prisma.$transaction(
     Array.from(counts.entries()).map(([cardId, delta]) =>
@@ -83,6 +83,53 @@ export async function addCardsToCollection(
         update: { quantity: { increment: delta } },
       })
     )
+  );
+}
+
+async function ensurePackCardsInCatalog(cardIds: string[]): Promise<void> {
+  const uniqueIds = [...new Set(cardIds.map((id) => normalizeCharacterId(id)))];
+  if (uniqueIds.length === 0) {
+    return;
+  }
+
+  await prisma.$transaction(
+    uniqueIds.flatMap((cardId) => {
+      const character = getCharacterById(cardId);
+      if (!character) {
+        return [];
+      }
+
+      const print = getDefaultCardPrintForCharacter(character.id);
+      const frontImagePath = print
+        ? cardPrintPngPublicUrl(print.id, "front")
+        : null;
+      const backImagePath = print
+        ? cardPrintPngPublicUrl(print.id, "back")
+        : null;
+
+      return [
+        prisma.card.upsert({
+          where: { id: character.id },
+          create: {
+            id: character.id,
+            name: character.name,
+            alignment: character.alignment,
+            tier: character.tier,
+            homeRegion: character.home_region,
+            frontImagePath,
+            backImagePath,
+          },
+          update: {
+            name: character.name,
+            alignment: character.alignment,
+            tier: character.tier,
+            homeRegion: character.home_region,
+            frontImagePath,
+            backImagePath,
+          },
+        }),
+      ];
+    })
   );
 }
 

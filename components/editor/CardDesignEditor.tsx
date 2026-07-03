@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getCardRaritySymbol } from "@/constants/card-rarity";
 import {
   BACKGROUND_PRESETS,
@@ -26,9 +26,10 @@ import { useCardDesignEditor } from "@/hooks/useCardDesignEditor";
 import { useOgBackdropColor } from "@/hooks/useOgBackdropColor";
 import { CharacterStatsPanel } from "./CharacterStatsPanel";
 import { CollapsibleSection } from "./CollapsibleSection";
-import type { CardStats } from "@/types/card";
+import { CardPreviewShell } from "@/components/cards/CardPreviewShell";
+import { DesignedCardFace } from "@/components/cards/DesignedCardFace";
+import type { CardDisplay, CardStats } from "@/types/card";
 import { DEFAULT_CARD_DESIGN } from "@/types/card-design";
-import { EditableCardFace } from "./EditableCardFace";
 import { TextOffsetControl } from "./TextOffsetControl";
 import styles from "./editor.module.css";
 
@@ -230,22 +231,6 @@ export function CardDesignEditor() {
   const { effectiveColor: ogBackdropColor, sampledColor: ogSampledBackdrop } =
     useOgBackdropColor(backPortraitUrl, design.backOgBackdropColor);
 
-  if (loading) {
-    return <p className={styles.hint}>Loading characters and raw assets…</p>;
-  }
-
-  if (characters.length === 0) {
-    return (
-      <p className={styles.hint}>
-        {loadError ?? (
-          <>
-            No characters in <code>data/character_descriptions.json</code>.
-          </>
-        )}
-      </p>
-    );
-  }
-
   const cardBackStats: CardStats = selectedStatRecord
     ? {
         strength: selectedStatRecord.stats.strength,
@@ -264,25 +249,62 @@ export function CardDesignEditor() {
     ? moveDisplaysFromRecord(selectedMoveRecord)
     : [];
 
-  const cardPreviewMeta = {
-    displayName: meta.displayName,
-    cardId: meta.cardId,
-    alignment: meta.alignment,
-    tier: cardBackTier,
-    realm: meta.realm,
-    home_plane: selectedCharacter?.home_plane ?? meta.home_plane,
-    home_location: selectedCharacter?.home_location ?? meta.home_location,
-    home_district: selectedCharacter?.home_district ?? meta.home_district,
-    type: selectedCharacter?.type ?? meta.type,
-    identity: selectedCharacter?.identity ?? meta.identity,
-    description: meta.description,
-    seriesFooterLine:
-      meta.seriesFooterLine ||
-      `${getCardRaritySymbol(selectedCardPrint?.rarity ?? "common")} ${formatCardPrintId(selectedCardPrintId ?? "")} – ${SERIES_TITLES[DEFAULT_SERIES_ID]}`,
-    flavorText: meta.flavorText || undefined,
-    stats: cardBackStats,
-    moves: cardBackMoves,
-  };
+  const cardPreviewMeta = useMemo(
+    () => ({
+      displayName: meta.displayName,
+      cardId: meta.cardId,
+      alignment: meta.alignment,
+      tier: cardBackTier,
+      realm: meta.realm,
+      home_plane: selectedCharacter?.home_plane ?? meta.home_plane,
+      home_location: selectedCharacter?.home_location ?? meta.home_location,
+      home_district: selectedCharacter?.home_district ?? meta.home_district,
+      type: selectedCharacter?.type ?? meta.type,
+      identity: selectedCharacter?.identity ?? meta.identity,
+      description: meta.description,
+      seriesFooterLine:
+        meta.seriesFooterLine ||
+        `${getCardRaritySymbol(selectedCardPrint?.rarity ?? "common")} ${formatCardPrintId(selectedCardPrintId ?? "")} – ${SERIES_TITLES[DEFAULT_SERIES_ID]}`,
+      flavorText: meta.flavorText || undefined,
+      stats: cardBackStats,
+      moves: cardBackMoves,
+    }),
+    [
+      cardBackMoves,
+      cardBackStats,
+      cardBackTier,
+      meta,
+      selectedCardPrint?.rarity,
+      selectedCardPrintId,
+      selectedCharacter,
+    ]
+  );
+
+  const cardPreviewDisplay = useMemo<CardDisplay>(
+    () => ({
+      frontPortraitUrl: portraitUrl,
+      backPortraitUrl,
+      meta: cardPreviewMeta,
+      design,
+    }),
+    [portraitUrl, backPortraitUrl, cardPreviewMeta, design]
+  );
+
+  if (loading) {
+    return <p className={styles.hint}>Loading characters and raw assets…</p>;
+  }
+
+  if (characters.length === 0) {
+    return (
+      <p className={styles.hint}>
+        {loadError ?? (
+          <>
+            No characters in <code>data/character_descriptions.json</code>.
+          </>
+        )}
+      </p>
+    );
+  }
 
   return (
     <div className={styles.editor}>
@@ -841,22 +863,20 @@ export function CardDesignEditor() {
 
         <div className={styles.previewDual}>
           <div className={styles.previewDualCards}>
-            <EditableCardFace
-              side="front"
-              canvasRef={frontCanvasRef}
-              portraitUrl={portraitUrl}
-              backPortraitUrl={backPortraitUrl}
-              meta={cardPreviewMeta}
-              design={design}
-            />
-            <EditableCardFace
-              side="back"
-              canvasRef={backCanvasRef}
-              portraitUrl={portraitUrl}
-              backPortraitUrl={backPortraitUrl}
-              meta={cardPreviewMeta}
-              design={design}
-            />
+            <CardPreviewShell>
+              <DesignedCardFace
+                side="front"
+                display={cardPreviewDisplay}
+                canvasRef={frontCanvasRef}
+              />
+            </CardPreviewShell>
+            <CardPreviewShell>
+              <DesignedCardFace
+                side="back"
+                display={cardPreviewDisplay}
+                canvasRef={backCanvasRef}
+              />
+            </CardPreviewShell>
           </div>
           <div className={styles.previewCharNav}>
             <button

@@ -1,10 +1,12 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import type { NextAuthOptions } from "next-auth";
-import { resolveAuthSecret } from "@/lib/auth-env";
+import { ensureProductionAuthEnv, resolveAuthSecret } from "@/lib/auth-env";
 import { prisma } from "@/lib/prisma";
 import { isDevAuthBypassEnabled } from "./dev-bypass";
 import { buildAuthProviders } from "./providers";
 import { ensureUserExists } from "./ensure-user";
+
+ensureProductionAuthEnv();
 
 const providers = buildAuthProviders();
 
@@ -13,6 +15,7 @@ const useJwtSessions = isDevAuthBypassEnabled();
 
 export const authOptions: NextAuthOptions = {
   secret: resolveAuthSecret(),
+  trustHost: true,
   adapter: useJwtSessions ? undefined : PrismaAdapter(prisma),
   providers,
   session: {
