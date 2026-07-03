@@ -96,6 +96,16 @@ export function scoreTeam(entries: PlayRosterEntry[]): number {
   return computeTeamPower(entries)?.totalScore ?? 0;
 }
 
+/** Solo fighter heuristic for roster sorting (same stat/move formula as team power, no synergy). */
+export function rosterEntryPowerScore(entry: PlayRosterEntry): number {
+  const effective = entry.stats;
+  const hp = maxHpFromDurability(effective.durability);
+  const physical = basePhysicalPower(effective);
+  const energy = baseEnergyPower(effective);
+  const moveScore = averageMoveValue(entry) * MOVE_SCORE_MULTIPLIER;
+  return hp + physical + energy + moveScore;
+}
+
 export function computeTeamPowerFromBattleTeam(
   team: BattleTeam
 ): TeamPowerBreakdown | null {

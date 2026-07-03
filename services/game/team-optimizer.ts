@@ -1,7 +1,8 @@
 import { primaryCharacterType } from "@/lib/format-character-home";
 import type { Alignment } from "@/types/character";
+import type { CoreStatKey } from "@/types/character-stats";
 import type { PlayRosterEntry } from "@/types/game";
-import { scoreTeam } from "@/services/game/team-power";
+import { rosterEntryPowerScore, scoreTeam } from "@/services/game/team-power";
 
 export interface PlayRosterFilters {
   alignment?: Alignment | "";
@@ -9,43 +10,65 @@ export interface PlayRosterFilters {
   type?: string;
 }
 
-export type PlayRosterSort =
-  | "num-asc"
-  | "num-desc"
-  | "tier-asc"
-  | "tier-desc";
+export type PlayRosterSortField = "num" | "power" | CoreStatKey;
+
+export type PlayRosterSortDirection = "asc" | "desc";
 
 function characterNumber(entry: PlayRosterEntry): number {
   const parsed = Number.parseInt(entry.characterId, 10);
   return Number.isFinite(parsed) ? parsed : 0;
 }
 
+function compareNumbers(
+  a: number,
+  b: number,
+  direction: PlayRosterSortDirection
+): number {
+  return direction === "asc" ? a - b : b - a;
+}
+
+function tieBreakByNumber(
+  a: PlayRosterEntry,
+  b: PlayRosterEntry,
+  direction: PlayRosterSortDirection
+): number {
+  const diff = compareNumbers(characterNumber(a), characterNumber(b), direction);
+  return diff !== 0 ? diff : a.name.localeCompare(b.name);
+}
+
 export function sortPlayRoster(
   roster: PlayRosterEntry[],
-  sort: PlayRosterSort
+  field: PlayRosterSortField,
+  direction: PlayRosterSortDirection
 ): PlayRosterEntry[] {
   const sorted = [...roster];
 
   sorted.sort((a, b) => {
-    switch (sort) {
-      case "num-asc": {
-        const diff = characterNumber(a) - characterNumber(b);
+    switch (field) {
+      case "num": {
+        const diff = compareNumbers(
+          characterNumber(a),
+          characterNumber(b),
+          direction
+        );
         return diff !== 0 ? diff : a.name.localeCompare(b.name);
       }
-      case "num-desc": {
-        const diff = characterNumber(b) - characterNumber(a);
-        return diff !== 0 ? diff : a.name.localeCompare(b.name);
+      case "power": {
+        const diff = compareNumbers(
+          rosterEntryPowerScore(a),
+          rosterEntryPowerScore(b),
+          direction
+        );
+        return diff !== 0 ? diff : tieBreakByNumber(a, b, direction);
       }
-      case "tier-asc": {
-        const diff = a.tier - b.tier;
-        return diff !== 0 ? diff : characterNumber(a) - characterNumber(b);
+      default: {
+        const diff = compareNumbers(
+          a.stats[field] ?? 0,
+          b.stats[field] ?? 0,
+          direction
+        );
+        return diff !== 0 ? diff : tieBreakByNumber(a, b, direction);
       }
-      case "tier-desc": {
-        const diff = b.tier - a.tier;
-        return diff !== 0 ? diff : characterNumber(a) - characterNumber(b);
-      }
-      default:
-        return 0;
     }
   });
 

@@ -1,5 +1,8 @@
 import { CORE_STAT_BLOCK_DEFS } from "@/lib/card-stat-blocks";
-import { CORE_STAT_KEYS, type CoreStats } from "@/types/character-stats";
+import { primaryCharacterType } from "@/lib/format-character-home";
+import { CORE_STAT_KEYS } from "@/types/character-stats";
+import { MAX_CORE_STAT_BLOCKS } from "@/types/character-moves";
+import type { CoreStats } from "@/types/character-stats";
 import type { PlayRosterEntry } from "@/types/game";
 import type { TeamSynergyBonuses } from "@/types/game";
 import {
@@ -88,6 +91,22 @@ export function previewTeamBonuses(
   };
 }
 
+/** Sum of each stat's highest slot value (max 30 with six stats at 5 blocks). */
+export const MAX_TEAM_STAT_POWER =
+  CORE_STAT_KEYS.length * MAX_CORE_STAT_BLOCKS;
+
+export function teamStatPowerFromSlotEntries(
+  slotEntries: Array<PlayRosterEntry | null>
+): number {
+  return CORE_STAT_KEYS.reduce((sum, key) => {
+    const highest = Math.max(
+      0,
+      ...slotEntries.map((entry) => entry?.stats[key] ?? 0)
+    );
+    return sum + highest;
+  }, 0);
+}
+
 /** Sum of all six team stat bonus decimals (max 3.0 with three tier-5 fighters). */
 export function totalTeamStatBoost(bonuses: CoreStats): number {
   return CORE_STAT_KEYS.reduce((sum, key) => sum + (bonuses[key] ?? 0), 0);
@@ -114,16 +133,43 @@ export function formatTeamStatBonuses(bonuses: CoreStats): string[] {
   });
 }
 
-export function formatTeamSynergyBonuses(synergy: TeamSynergyBonuses): string[] {
+export function formatTeamSynergyBonuses(
+  entries: PlayRosterEntry[],
+  synergy: TeamSynergyBonuses
+): string[] {
   const parts: string[] = [];
+
   if (synergy.typeDamage > 0) {
-    parts.push(`Type +${Math.round(synergy.typeDamage * 100)}% damage`);
+    const typeCounts = new Map<string, number>();
+    for (const entry of entries) {
+      const primary = primaryCharacterType(entry.type) ?? "Unknown";
+      typeCounts.set(primary, (typeCounts.get(primary) ?? 0) + 1);
+    }
+
+    const typeDetail = [...typeCounts.entries()]
+      .filter(([, count]) => count >= 2)
+      .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]))
+      .map(([type, count]) => `${type} x${count}`)
+      .join(", ");
+
+    parts.push(
+      `Type (${typeDetail}): +${Math.round(synergy.typeDamage * 100)}% damage`
+    );
   }
+
   if (synergy.alignmentDefense > 0) {
-    parts.push(`Alignment +${Math.round(synergy.alignmentDefense * 100)}% defense`);
+    const alignment = entries[0]?.alignment ?? "Unknown";
+    parts.push(
+      `Alignment (${alignment}): +${Math.round(synergy.alignmentDefense * 100)}% defense`
+    );
   }
+
   if (synergy.homeAccuracy > 0) {
-    parts.push(`Home +${Math.round(synergy.homeAccuracy * 100)}% accuracy`);
+    const home = entries.find((entry) => entry.homeDistrict.trim())?.homeDistrict.trim();
+    parts.push(
+      `Home (${home ?? "Unknown"}): +${Math.round(synergy.homeAccuracy * 100)}% accuracy`
+    );
   }
+
   return parts;
 }

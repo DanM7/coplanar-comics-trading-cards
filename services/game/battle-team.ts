@@ -11,6 +11,7 @@ import {
   computeTeamSynergy,
   maxHpFromDurability,
 } from "@/services/game/stats";
+import { playRosterCardFrontUrl } from "@/lib/play-roster-image";
 
 function buildFighter(input: {
   entry: PlayRosterEntry;
@@ -35,7 +36,7 @@ function buildFighter(input: {
     maxHp: maxHpFromDurability(effectiveStats.durability),
     currentHp: maxHpFromDurability(effectiveStats.durability),
     isKO: false,
-    frontImageUrl: input.entry.frontImageUrl,
+    frontImageUrl: playRosterCardFrontUrl(input.entry),
   };
 }
 

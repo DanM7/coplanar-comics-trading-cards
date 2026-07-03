@@ -17,6 +17,8 @@ export interface PlayRosterEntry {
   ownedQuantity?: number;
   /** Finished card front PNG when exported to assets/cards/. */
   frontImageUrl?: string;
+  /** Raw front portrait for back-face ghost (no card frame). */
+  portraitUrl?: string;
 }
 
 export interface TeamSynergyBonuses {

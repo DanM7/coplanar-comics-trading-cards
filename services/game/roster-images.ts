@@ -1,19 +1,23 @@
+import { portraitUrlForCharacter } from "@/lib/character-portrait-url";
 import { resolvePlayPortraitUrl } from "@/lib/play-portrait";
 import type { PlayRosterEntry } from "@/types/game";
 
-/** Server-only: attach raw front portrait URLs for play UI (no card frame). */
+/** Server-only: attach finished front PNG + raw portrait URLs for play UI. */
 export function attachRosterFrontImages(
   roster: PlayRosterEntry[]
 ): PlayRosterEntry[] {
   return roster.map((entry) => {
-    const portraitUrl = resolvePlayPortraitUrl(entry.characterId);
-    if (!portraitUrl) {
+    const frontImageUrl = resolvePlayPortraitUrl(entry.characterId);
+    const portraitUrl = portraitUrlForCharacter(entry.characterId);
+
+    if (!frontImageUrl && !portraitUrl) {
       return entry;
     }
 
     return {
       ...entry,
-      frontImageUrl: portraitUrl,
+      ...(frontImageUrl ? { frontImageUrl } : {}),
+      ...(portraitUrl ? { portraitUrl } : {}),
     };
   });
 }

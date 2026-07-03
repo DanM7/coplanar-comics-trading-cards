@@ -27,6 +27,20 @@ export function primaryCharacterType(
   return trimmed;
 }
 
+/** All types in order, e.g. `Construct / Cartoon` → [`Construct`, `Cartoon`]. */
+export function characterTypesFromString(
+  type: CharacterType | string | undefined
+): string[] {
+  if (!type?.trim()) {
+    return [];
+  }
+
+  return type
+    .split(" / ")
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
 export function identityLabelForCharacterType(
   type: CharacterType | string | undefined
 ): string {

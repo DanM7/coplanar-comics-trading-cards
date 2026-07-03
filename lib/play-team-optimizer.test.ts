@@ -6,6 +6,7 @@ import {
   scoreTeam,
   sortPlayRoster,
 } from "@/services/game/team-optimizer";
+import { rosterEntryPowerScore } from "@/services/game/team-power";
 
 function mockEntry(
   id: string,
@@ -32,7 +33,7 @@ function mockEntry(
 }
 
 describe("sortPlayRoster", () => {
-  it("sorts by card number and tier", () => {
+  it("sorts by card number", () => {
     const roster = [
       mockEntry("10", { tier: 2 }),
       mockEntry("2", { tier: 4 }),
@@ -40,11 +41,54 @@ describe("sortPlayRoster", () => {
     ];
 
     expect(
-      sortPlayRoster(roster, "num-asc").map((entry) => entry.characterId)
+      sortPlayRoster(roster, "num", "asc").map((entry) => entry.characterId)
     ).toEqual(["2", "5", "10"]);
+  });
+
+  it("sorts by power and core stats", () => {
+    const roster = [
+      mockEntry("1", {
+        stats: {
+          strength: 1,
+          speed: 1,
+          intelligence: 1,
+          durability: 1,
+          energy_projection: 1,
+          skill: 1,
+        },
+      }),
+      mockEntry("2", {
+        stats: {
+          strength: 5,
+          speed: 5,
+          intelligence: 5,
+          durability: 5,
+          energy_projection: 5,
+          skill: 5,
+        },
+        moves: [{ name: "Blast", attackType: "energy", value: 3 }],
+      }),
+      mockEntry("3", {
+        stats: {
+          strength: 3,
+          speed: 3,
+          intelligence: 3,
+          durability: 3,
+          energy_projection: 3,
+          skill: 3,
+        },
+      }),
+    ];
+
     expect(
-      sortPlayRoster(roster, "tier-desc").map((entry) => entry.characterId)
-    ).toEqual(["2", "10", "5"]);
+      sortPlayRoster(roster, "power", "desc").map((entry) => entry.characterId)
+    ).toEqual(["2", "3", "1"]);
+    expect(rosterEntryPowerScore(roster[1])).toBeGreaterThan(
+      rosterEntryPowerScore(roster[2])
+    );
+    expect(
+      sortPlayRoster(roster, "strength", "desc").map((entry) => entry.characterId)
+    ).toEqual(["2", "3", "1"]);
   });
 });
 
