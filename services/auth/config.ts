@@ -15,7 +15,6 @@ const useJwtSessions = isDevAuthBypassEnabled();
 
 export const authOptions: NextAuthOptions = {
   secret: resolveAuthSecret(),
-  trustHost: true,
   adapter: useJwtSessions ? undefined : PrismaAdapter(prisma),
   providers,
   session: {

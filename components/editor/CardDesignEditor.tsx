@@ -231,23 +231,29 @@ export function CardDesignEditor() {
   const { effectiveColor: ogBackdropColor, sampledColor: ogSampledBackdrop } =
     useOgBackdropColor(backPortraitUrl, design.backOgBackdropColor);
 
-  const cardBackStats: CardStats = selectedStatRecord
-    ? {
-        strength: selectedStatRecord.stats.strength,
-        speed: selectedStatRecord.stats.speed,
-        intelligence: selectedStatRecord.stats.intelligence,
-        durability: selectedStatRecord.stats.durability,
-        energy_projection: selectedStatRecord.stats.energy_projection,
-        skill: selectedStatRecord.stats.skill,
-      }
-    : selectedCharacter?.stats ?? meta.stats;
+  const cardBackStats = useMemo<CardStats>(
+    () =>
+      selectedStatRecord
+        ? {
+            strength: selectedStatRecord.stats.strength,
+            speed: selectedStatRecord.stats.speed,
+            intelligence: selectedStatRecord.stats.intelligence,
+            durability: selectedStatRecord.stats.durability,
+            energy_projection: selectedStatRecord.stats.energy_projection,
+            skill: selectedStatRecord.stats.skill,
+          }
+        : selectedCharacter?.stats ?? meta.stats,
+    [selectedStatRecord, selectedCharacter?.stats, meta.stats]
+  );
 
   const cardBackTier =
     selectedStatRecord?.tier ?? selectedCharacter?.tier ?? meta.tier;
 
-  const cardBackMoves = selectedMoveRecord
-    ? moveDisplaysFromRecord(selectedMoveRecord)
-    : [];
+  const cardBackMoves = useMemo(
+    () =>
+      selectedMoveRecord ? moveDisplaysFromRecord(selectedMoveRecord) : [],
+    [selectedMoveRecord]
+  );
 
   const cardPreviewMeta = useMemo(
     () => ({
