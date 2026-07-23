@@ -2,11 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { TradingCard } from "@/components/cards/TradingCard";
-import { useCompactLandscape } from "@/hooks/useCompactLandscape";
+import { usePackStripGrid } from "@/hooks/usePackViewport";
 import { alignmentBorderColor } from "@/lib/alignment-border-color";
 import { PackCardStrip } from "./PackCardStrip";
-
-const PACK_STRIP_GRID_MQ = "(min-width: 900px)";
 import { normalizeCharacterId } from "@/lib/character-id";
 import { preloadCardArtEager, waitForCardBackPortrait } from "@/lib/pack-art-preload";
 import type { GeneratedCard } from "@/types/card";
@@ -33,18 +31,8 @@ export function CardReveal({
   phase,
   savedToCollection,
 }: CardRevealProps) {
-  const compactLandscape = useCompactLandscape();
-  const [desktopStripGrid, setDesktopStripGrid] = useState(false);
+  const useStripGrid = usePackStripGrid();
   const [viewIndex, setViewIndex] = useState(revealIndex);
-  const useStripGrid = compactLandscape || desktopStripGrid;
-
-  useEffect(() => {
-    const media = window.matchMedia(PACK_STRIP_GRID_MQ);
-    const sync = () => setDesktopStripGrid(media.matches);
-    sync();
-    media.addEventListener("change", sync);
-    return () => media.removeEventListener("change", sync);
-  }, []);
   const [isFlipped, setIsFlipped] = useState(false);
   const [progressBackAcknowledged, setProgressBackAcknowledged] = useState(false);
   const [showNewBadge, setShowNewBadge] = useState(false);
@@ -148,14 +136,7 @@ export function CardReveal({
       : `Next Card (${revealIndex + 1}/${cards.length})`;
 
   return (
-    <div
-      className={[
-        styles.revealLayout,
-        compactLandscape ? styles.revealLayoutLandscape : "",
-      ]
-        .filter(Boolean)
-        .join(" ")}
-    >
+    <div className={styles.revealLayout}>
       <div className={styles.cardHero}>
         <div className={styles.cardStage}>
           <div key={`${viewIndex}-${displayed.characterId}`} className={styles.cardSlide}>

@@ -6,6 +6,10 @@ import {
   MOVE_ATTACK_TYPE_COLORS,
   RIGHT_STAT_COLUMN_KEYS,
 } from "@/lib/card-stat-blocks";
+import { MoveTeamStatBoost } from "@/components/cards/MoveTeamStatBoost";
+import { MoveOpponentStatReduction } from "@/components/cards/MoveOpponentStatReduction";
+import { MoveSelfStatBoost } from "@/components/cards/MoveSelfStatBoost";
+import { MoveHpBoostLabel } from "@/components/cards/MoveHpBoostLabel";
 import { MAX_TEAM_STAT_POWER } from "@/services/game/team-slots";
 import type { MoveDisplay } from "@/types/character-moves";
 import {
@@ -69,45 +73,113 @@ function CoreStatBlockRow({
   );
 }
 
-function MoveStatSection({ move }: { move: MoveDisplay }) {
+function MoveStatSection({
+  move,
+  moveSlot,
+}: {
+  move: MoveDisplay;
+  moveSlot: 1 | 2;
+}) {
   const filled = filledBlockCount(move.value, MAX_MOVE_STAT_BLOCKS);
   const moveFillColor = MOVE_ATTACK_TYPE_COLORS[move.attackType];
+  const isRightColumn = moveSlot === 2;
+  const isTeamStatBoost =
+    Boolean(move.statBoosts?.length) && move.scope === "team";
+  const isSelfStatBoost =
+    Boolean(move.statBoosts?.length) &&
+    (move.scope === "self" || move.scope === undefined);
+  const isOpponentStatReduction =
+    Boolean(move.statReductions?.length) && move.scope === "opponent";
+
+  const effectContent = move.hpBoost ? (
+    <span
+      className={[
+        styles.rosterCardBackMoveEffectTrack,
+        styles.rosterCardBackMoveEffectTrackHp,
+      ].join(" ")}
+    >
+      <MoveHpBoostLabel
+        label={move.name}
+        hpBoost={move.hpBoost}
+        scope={move.scope}
+        variant="roster"
+      />
+    </span>
+  ) : isTeamStatBoost && move.statBoosts ? (
+    <span className={styles.rosterCardBackMoveEffectTrack}>
+      <MoveTeamStatBoost
+        label={move.name}
+        effects={move.statBoosts}
+        variant="roster"
+      />
+    </span>
+  ) : isOpponentStatReduction && move.statReductions ? (
+    <span className={styles.rosterCardBackMoveEffectTrack}>
+      <MoveOpponentStatReduction
+        label={move.name}
+        effects={move.statReductions}
+        variant="roster"
+      />
+    </span>
+  ) : isSelfStatBoost && move.statBoosts ? (
+    <span className={styles.rosterCardBackMoveEffectTrack}>
+      <MoveSelfStatBoost
+        label={move.name}
+        effects={move.statBoosts}
+        variant="roster"
+      />
+    </span>
+  ) : (
+    <span
+      className={styles.rosterCardBackCoreBlocks}
+      aria-label={`${move.name}: ${filled} of ${MAX_MOVE_STAT_BLOCKS}`}
+    >
+      {Array.from({ length: MAX_MOVE_STAT_BLOCKS }, (_, index) => {
+        const isFilled = index < filled;
+        const blockStyle = isFilled
+          ? ({ "--move-type-fill": moveFillColor } as CSSProperties)
+          : undefined;
+
+        return (
+          <span
+            key={index}
+            className={[
+              styles.rosterCardBackBlock,
+              styles.rosterCardBackMoveBlock,
+              isFilled
+                ? styles.rosterCardBackBlockMoveFilled
+                : styles.rosterCardBackBlockEmpty,
+            ].join(" ")}
+            style={blockStyle}
+            aria-hidden
+          />
+        );
+      })}
+    </span>
+  );
 
   return (
     <div className={styles.rosterCardBackMoveSection}>
-      <span className={styles.rosterCardBackMoveLabel}>{move.name}</span>
+      <span
+        className={[
+          styles.rosterCardBackMoveLabel,
+          isRightColumn ? styles.rosterCardBackMoveLabelRight : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
+        {move.name}
+      </span>
       <div className={styles.rosterCardBackCore}>
+        {isRightColumn ? (
+          <div className={styles.rosterCardBackCoreColumn} aria-hidden />
+        ) : null}
         <div className={styles.rosterCardBackCoreColumn}>
-          <div className={styles.rosterCardBackCoreRow}>
-            <span
-              className={styles.rosterCardBackCoreBlocks}
-              aria-label={`${move.name}: ${filled} of ${MAX_MOVE_STAT_BLOCKS}`}
-            >
-              {Array.from({ length: MAX_MOVE_STAT_BLOCKS }, (_, index) => {
-                const isFilled = index < filled;
-                const blockStyle = isFilled
-                  ? ({ "--move-type-fill": moveFillColor } as CSSProperties)
-                  : undefined;
-
-                return (
-                  <span
-                    key={index}
-                    className={[
-                      styles.rosterCardBackBlock,
-                      styles.rosterCardBackMoveBlock,
-                      isFilled
-                        ? styles.rosterCardBackBlockMoveFilled
-                        : styles.rosterCardBackBlockEmpty,
-                    ].join(" ")}
-                    style={blockStyle}
-                    aria-hidden
-                  />
-                );
-              })}
-            </span>
-          </div>
+          <div className={styles.rosterCardBackCoreRow}>{effectContent}</div>
         </div>
-        <div className={styles.rosterCardBackCoreColumn} aria-hidden />
+        {!isRightColumn ? (
+          <div className={styles.rosterCardBackCoreColumn} aria-hidden />
+        ) : null}
       </div>
     </div>
   );
@@ -152,8 +224,8 @@ export function RosterCardBackStats({
 
       {move1 || move2 ? (
         <div className={styles.rosterCardBackMoves}>
-          {move1 ? <MoveStatSection move={move1} /> : null}
-          {move2 ? <MoveStatSection move={move2} /> : null}
+          {move1 ? <MoveStatSection move={move1} moveSlot={1} /> : null}
+          {move2 ? <MoveStatSection move={move2} moveSlot={2} /> : null}
         </div>
       ) : null}
     </div>

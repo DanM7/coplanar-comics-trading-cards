@@ -143,7 +143,7 @@
       "home_district": "Realspace Row",
       "type": "Creature",
       "identity": "Species: Corrosivus Liquefactus",
-      "description": "Acid tumbled into Coplanar County through a dimensional rift, confused and out of control, and Molten‑Man quickly posed as a friend while shaping him into a living weapon. When Acid’s growing mind recognized the manipulation, he broke free in a fury and now lurks in the swamps, unsure whether he’s meant to protect this world or melt it."
+      "description": "Acid tumbled into Coplanar County through a dimensional rift, confused and out of control. He was first discovered by Molten‑Man, who quickly posed as a friend, only seaking to shape Acid into a living weapon. When Acid recognized the manipulation, he broke free in a fury. Now lurking in the swamps, he is unsure whether he is meant to protect this world or melt it."
     },
     {
       "id": 14,
@@ -186,8 +186,8 @@
       "home_location": "Parallel Pines",
       "home_district": "Pine Hollow",
       "type": "Cartoon",
-      "identity": "Animator: Devouring Dan Maguire",
-      "description": "The Abdominal Snowman is a deranged cartoon snow beast whose entire midsection is literally a giant stomach organ, rumbling and flexing as if it has a mind of its own. It lurks atop the highest peaks of Coplanar County, living for the thrill of devouring anything foolish enough to climb its mountains, turning every ascent into a desperate race against its insatiable hunger."
+      "identity": "Animator: Devourer Dan Maguire",
+      "description": "The Abdominal Snowman is a deranged snow beast whose entire midsection is literally a giant stomach organ, rumbling and flexing as if it has a mind of its own. It lurks atop the highest peaks of Coplanar County, living for the thrill of devouring anything foolish enough to climb its mountains, turning every hiker's ascent into a desperate race against the creature's insatiable hunger."
     },
     {
       "id": 18,
@@ -197,8 +197,8 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Robot",
-      "identity": "Inventor / Manufacturer: Coplanar Corp - Weapons Division",
-      "description": "ASR is a compact, cube‑shaped Ammo Supplying Robot, quietly rolling through Coplanar County with no allegiance to heroes or villains. It simply follows its programming with calm precision—dispensing ammunition to whoever requests it—making its neutrality both useful and unnervingly unpredictable."
+      "identity": "Manufacturer: Coplanar Corp - Weapons Division",
+      "description": "ASR is a compact, cube‑shaped Ammo Supplying Robot, quietly rolling through Coplanar County with no allegiance to heroes or villains. It simply follows its programming with calm precision: dispensing ammunition to whoever requests it. Its neutrality both useful and unnervingly unpredictable."
     },
     {
       "id": 19,

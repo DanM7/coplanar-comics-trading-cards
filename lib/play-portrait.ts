@@ -18,7 +18,12 @@ export function resolvePlayPortraitUrl(characterId: string): string | null {
     return null;
   }
 
-  if (!finishedPngExists(print.id, "front")) {
+  // Production serverless bundles exclude card PNGs from disk, but Netlify still
+  // serves them from /assets/cards/ after cards:sync during build.
+  if (
+    process.env.NODE_ENV !== "production" &&
+    !finishedPngExists(print.id, "front")
+  ) {
     return null;
   }
 

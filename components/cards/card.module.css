@@ -30,6 +30,9 @@
   inset: 0;
   width: 100%;
   height: 100%;
+  overflow: visible;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .previewCardShell .front,
@@ -221,7 +224,8 @@
 }
 
 .backContent {
-  padding: 0.4rem calc(0.75rem + 2px) 0.75rem;
+  --back-inline-padding: calc(0.75rem + 2px);
+  padding: 0.4rem var(--back-inline-padding) 0.75rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -308,7 +312,7 @@
   margin-top: 0;
   overflow: hidden;
   border-top: 1px solid #4a5568;
-  padding: 0.35rem 12px 0;
+  padding: 0.35rem var(--back-inline-padding) 0;
   background: transparent;
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;

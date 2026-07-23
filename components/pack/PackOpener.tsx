@@ -8,7 +8,6 @@ import {
   isSignInReminderDismissed,
 } from "@/lib/guest-pack-session";
 import { CARDS_PER_PACK } from "@/constants/series";
-import { useCompactLandscape } from "@/hooks/useCompactLandscape";
 import { usePackOpen } from "@/hooks/usePackOpen";
 import { FoilPack } from "./FoilPack";
 import { CardReveal } from "./CardReveal";
@@ -29,7 +28,6 @@ export function PackOpener() {
     revealAll,
     reset,
   } = usePackOpen();
-  const compactLandscape = useCompactLandscape();
   const [showSignInReminder, setShowSignInReminder] = useState(false);
 
   useEffect(() => {
@@ -73,14 +71,7 @@ export function PackOpener() {
         className={`${styles.packScene} ${isRevealing || showIdleLayout ? styles.packSceneActive : ""}`}
       >
         {showIdleLayout && (
-          <div
-            className={[
-              styles.idleLayout,
-              compactLandscape ? styles.idleLayoutLandscape : "",
-            ]
-              .filter(Boolean)
-              .join(" ")}
-          >
+          <div className={styles.idleLayout}>
             <div className={styles.cardHero}>
               <div className={styles.cardStage}>
                 <FoilPack

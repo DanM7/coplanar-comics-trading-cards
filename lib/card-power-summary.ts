@@ -27,9 +27,22 @@ export function sumMovePower(moves?: MoveDisplay[]): number {
       return sum;
     }
 
+    if (move.statBoosts?.length) {
+      return sum;
+    }
+
+    if (move.statReductions?.length) {
+      return sum;
+    }
+
+    if (move.hpBoost) {
+      return sum;
+    }
+
     const value = move.value;
     if (typeof value === "number" && Number.isFinite(value)) {
-      return sum + value;
+      const multiplier = move.scope === "range" ? 3 : 1;
+      return sum + value * multiplier;
     }
 
     return sum;

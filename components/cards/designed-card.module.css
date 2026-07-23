@@ -6,6 +6,10 @@
   height: 100%;
 }
 
+.previewCardShell .host {
+  overflow: visible;
+}
+
 /* Responsive scaling only — all card layout/typography lives in editor.module.css. */
 .canvas {
   position: absolute;

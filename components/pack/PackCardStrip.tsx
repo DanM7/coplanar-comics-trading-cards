@@ -10,7 +10,7 @@ interface PackCardStripProps {
   children: ReactNode;
 }
 
-/** Portrait: horizontal scroll. Landscape / desktop: flexible 3×4 grid beside the hero card. */
+/** Stacked viewports: one scroll row. Sidebar viewports: 3×4 thumb grid. */
 export function PackCardStrip({ grid, activeIndex, children }: PackCardStripProps) {
   const gridRef = useRef<HTMLDivElement>(null);
 

@@ -113,7 +113,7 @@
       "rarity": "common",
       "character": 13,
       "design": {
-        "backOgScale": 65,
+        "backOgScale": 60,
         "backGhostOpacity": 90,
         "backOgBackdropColor": "#b9baac",
         "backGhostOffsetY": -58
@@ -125,7 +125,7 @@
       "rarity": "common",
       "character": 14,
       "design": {
-        "backOgScale": 65,
+        "backOgScale": 70,
         "backGhostOpacity": 50,
         "backOgBackdropColor": "#96978a",
         "backGhostOffsetY": -70
@@ -138,8 +138,8 @@
       "character": 15,
       "design": {
         "backOgScale": 75,
-        "backGhostOpacity": 50,
         "backOgBackdropColor": "#7b7c73",
+        "backGhostOpacity": 50,
         "backGhostOffsetY": -20
       },
       "status": "done"
@@ -158,12 +158,25 @@
       "id": "17",
       "rarity": "common",
       "character": 17,
-      "status": "need front image"
+      "design": {
+        "backOgScale": 80,
+        "backOgBackdropColor": "#aaac9d",
+        "backGhostOpacity": 50,
+        "backGhostOffsetY": -40
+      },
+      "status": "done"
     },
     {
       "id": "18",
       "rarity": "common",
       "character": 18,
+      "design": {
+        "backMetaFontSize": 80,
+        "backOgScale": 85,
+        "backOgBackdropColor": "#b3b4a5",
+        "backGhostOpacity": 60,
+        "backGhostOffsetY": -40
+      },
       "status": "need front image"
     },
     {
@@ -171,7 +184,7 @@
       "rarity": "common",
       "character": 19,
       "design": {
-        "backOgScale": 75,
+        "backOgScale": 85,
         "backGhostOpacity": 50,
         "backOgBackdropColor": "#d1d2c3"
       },
@@ -189,7 +202,7 @@
     },
     {
       "id": "21",
-      "rarity": "common",
+      "rarity": "uncommon",
       "character": 21,
       "design": {
         "backGhostOpacity": 65,
@@ -373,6 +386,13 @@
       "id": "38",
       "rarity": "rare",
       "character": 38,
+      "design": {
+        "backOgScale": 70,
+        "backOgBackdropColor": "#b7baac",
+        "backGhostOpacity": 55,
+        "backGhostOffsetY": -98,
+        "backMetaFontSize": 80
+      },
 	  "status": "draw og image!"
     },
     {

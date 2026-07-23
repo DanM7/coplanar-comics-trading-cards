@@ -1,4 +1,5 @@
 import { portraitUrlForCharacter } from "@/lib/character-portrait-url";
+import { isDevToolsEnabled } from "@/lib/dev-only";
 import { resolvePlayPortraitUrl } from "@/lib/play-portrait";
 import type { PlayRosterEntry } from "@/types/game";
 
@@ -8,7 +9,9 @@ export function attachRosterFrontImages(
 ): PlayRosterEntry[] {
   return roster.map((entry) => {
     const frontImageUrl = resolvePlayPortraitUrl(entry.characterId);
-    const portraitUrl = portraitUrlForCharacter(entry.characterId);
+    const portraitUrl = isDevToolsEnabled()
+      ? portraitUrlForCharacter(entry.characterId)
+      : null;
 
     if (!frontImageUrl && !portraitUrl) {
       return entry;

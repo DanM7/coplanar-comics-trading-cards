@@ -1,6 +1,6 @@
 import type { CoreStatKey } from "@/types/character-stats";
 import type { CardStats } from "@/types/card";
-import type { MoveAttackType } from "@/types/character-moves";
+import type { MoveAttackType, MoveScope, MoveHpBoostEffect, MoveStatBoostEffect, MoveStatReductionEffect } from "@/types/character-moves";
 
 export const MOVE_STAT_COLOR = "#f7fafc";
 
@@ -43,6 +43,10 @@ export type StatBlockRowData = {
   /** Move rows top-align label + blocks when names wrap. */
   isMove?: boolean;
   moveAttackType?: MoveAttackType;
+  moveScope?: MoveScope;
+  moveStatBoosts?: MoveStatBoostEffect[];
+  moveStatReductions?: MoveStatReductionEffect[];
+  moveHpBoost?: MoveHpBoostEffect;
 };
 
 export function statBlockRowsForKeys(

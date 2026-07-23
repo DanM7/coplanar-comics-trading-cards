@@ -167,12 +167,12 @@ a:hover {
 
 @media (max-width: 768px) {
   html {
-    --site-header-offset: 0;
+    --site-header-offset: 0px;
   }
 }
 
 html[data-mobile-landscape] {
-  --site-header-offset: 0;
+  --site-header-offset: 0px;
 }
 
 html[data-mobile-landscape] main:has(> .page-play) {
@@ -387,6 +387,11 @@ main:has(> .page-binder) {
   padding-bottom: 0.5rem;
 }
 
+main:has(> .packPage) {
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
 .page-binder {
   display: flex;
   flex-direction: column;
@@ -401,6 +406,11 @@ main:has(> .page-binder) {
   }
 
   main:has(> .page-binder) {
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  main:has(> .packPage) {
     padding-top: 0.75rem;
     padding-bottom: 0.5rem;
   }

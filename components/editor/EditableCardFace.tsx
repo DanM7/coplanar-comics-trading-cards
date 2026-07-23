@@ -372,9 +372,11 @@ export function EditableCardFace({
               ]
                 .filter(Boolean)
                 .join(" ")}
-              style={backStatsSectionStyle}
             >
-              <div className={styles.backStatsMain}>
+              <div
+                className={styles.backStatsMain}
+                style={backStatsSectionStyle}
+              >
                 <p className={`${styles.backText} ${styles.tierPowerLine}`}>
                   {formatTierPowerLine(meta.stats, meta.tier, meta.moves)}
                 </p>
@@ -382,6 +384,7 @@ export function EditableCardFace({
                   className={styles.backText}
                   stats={meta.stats}
                   moves={meta.moves}
+                  showMoveScope
                 />
                 {meta.flavorText ? (
                   <p className={styles.flavorText}>{meta.flavorText}</p>
@@ -439,9 +442,11 @@ export function EditableCardFace({
                 </div>
                 <div
                   className={styles.backStatsSection}
-                  style={sectionFontStyle(backStatsFontSize)}
                 >
-                  <div className={styles.backStatsMain}>
+                  <div
+                    className={styles.backStatsMain}
+                    style={sectionFontStyle(backStatsFontSize)}
+                  >
                     <p className={`${styles.backText} ${styles.tierPowerLine}`}>
                       {formatTierPowerLine(meta.stats, meta.tier, meta.moves)}
                     </p>
@@ -449,6 +454,7 @@ export function EditableCardFace({
                       className={styles.backText}
                       stats={meta.stats}
                       moves={meta.moves}
+                      showMoveScope
                     />
                     {meta.flavorText ? (
                       <p className={styles.flavorText}>{meta.flavorText}</p>

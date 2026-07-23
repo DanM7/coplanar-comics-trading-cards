@@ -1,7 +1,25 @@
+import type { CoreStatKey } from "@/types/character-stats";
+
 export const MAX_CORE_STAT_BLOCKS = 5;
 export const MAX_MOVE_STAT_BLOCKS = 5;
 
 export type MoveAttackType = "physical" | "energy";
+
+export type MoveScope = "range" | "self" | "team" | "opponent";
+
+export interface MoveStatBoostEffect {
+  stat: CoreStatKey;
+  amount: number;
+}
+
+export interface MoveStatReductionEffect {
+  stat: CoreStatKey;
+  amount: number;
+}
+
+export interface MoveHpBoostEffect {
+  percent: number;
+}
 
 export type AttackAnimationEffect =
   | "shake"
@@ -58,6 +76,9 @@ export interface CharacterMoveRecord {
   move1_effects?: AttackAnimationEffect[];
   move1_energy_color?: string;
   move1_energy_color_source?: EnergyColorSource;
+  move1_scope?: MoveScope;
+  move1_effect1?: string;
+  move1_effect2?: string;
   move2: string;
   move2_value: number;
   /** Scales off Energy Projection when energy. */
@@ -65,6 +86,9 @@ export interface CharacterMoveRecord {
   move2_effects?: AttackAnimationEffect[];
   move2_energy_color?: string;
   move2_energy_color_source?: EnergyColorSource;
+  move2_scope?: MoveScope;
+  move2_effect1?: string;
+  move2_effect2?: string;
 }
 
 export interface CharacterMovesFile {
@@ -76,5 +100,9 @@ export interface MoveDisplay {
   name: string;
   value: number;
   attackType: MoveAttackType;
+  scope?: MoveScope;
+  statBoosts?: MoveStatBoostEffect[];
+  statReductions?: MoveStatReductionEffect[];
+  hpBoost?: MoveHpBoostEffect;
   animation?: MoveAnimationConfig;
 }

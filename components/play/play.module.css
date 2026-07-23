@@ -779,8 +779,13 @@
   flex-direction: column;
   gap: 1px;
   width: 100%;
-  /* 5 blocks × 8px + 4 gaps × 1px → half-width 22px for label inset */
-  --move-blocks-half-width: 22px;
+  /* 5 blocks × 8px + 4 gaps × 1px */
+  --roster-stat-block-size: 8px;
+  --roster-stat-block-gap: 1px;
+  --roster-stat-blocks-width: calc(
+    var(--roster-stat-block-size) * 5 + var(--roster-stat-block-gap) * 4
+  );
+  --move-blocks-half-width: calc(var(--roster-stat-blocks-width) / 2);
 }
 
 .rosterCardBackMoveLabel {
@@ -793,6 +798,165 @@
   padding-left: max(0px, calc((100% - 3px) / 4 - var(--move-blocks-half-width)));
   text-align: left;
   word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.rosterCardBackMoveLabelRight {
+  padding-left: calc(50% + 1.5px + (100% - 3px) / 4 - var(--move-blocks-half-width));
+}
+
+.rosterCardBackMoveEffectTrack {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: var(--roster-stat-blocks-width);
+  max-width: 100%;
+}
+
+.rosterCardBackMoveEffectTrackHp {
+  width: auto;
+}
+
+.statBlockHpBoostRow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--roster-stat-block-gap);
+  width: auto;
+}
+
+.statBlockHpBoostTrack {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--roster-stat-block-gap);
+  box-sizing: border-box;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f7fafc;
+  white-space: nowrap;
+  width: var(--roster-stat-blocks-width);
+  flex: 0 0 auto;
+}
+
+.statBlockHpBoostTrackTeam {
+  font-size: 10px;
+}
+
+.statBlockHpBoostAmount {
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f7fafc;
+  white-space: nowrap;
+}
+
+.statBlockHpBoostPrefix {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f7fafc;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.rosterCardBackBoostPlus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 8px;
+  height: 8px;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--boost-color, #f7fafc);
+}
+
+.rosterCardBackBoostSpacer {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+}
+
+.rosterCardBackBlockBoostFilled {
+  background: var(--boost-color, #e2e8f0);
+  border-color: var(--boost-color, #e2e8f0);
+}
+
+.selfStatBoostRow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--roster-stat-block-gap);
+  width: var(--roster-stat-blocks-width);
+  max-width: 100%;
+  font-size: 10px;
+}
+
+.selfStatBoostGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--roster-stat-block-gap);
+  flex-shrink: 0;
+}
+
+.teamStatBoostRow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--roster-stat-block-gap);
+  width: var(--roster-stat-blocks-width);
+  max-width: 100%;
+}
+
+.teamStatBoostGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--roster-stat-block-gap);
+  flex-shrink: 0;
+}
+
+.teamStatBoostGroup .rosterCardBackBlock {
+  flex-shrink: 0;
+}
+
+.teamStatBoostLead,
+.teamStatBoostPlus {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--roster-stat-block-gap);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--boost-color, #f7fafc);
+  white-space: nowrap;
+}
+
+.opponentStatReductionLead,
+.opponentStatReductionPlus {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--roster-stat-block-gap);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--boost-color, #f7fafc);
+  white-space: nowrap;
+}
+
+.statEffectTriangle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--roster-stat-block-size, 8px);
+  height: var(--roster-stat-block-size, 8px);
+  flex: 0 0 var(--roster-stat-block-size, 8px);
+  box-sizing: border-box;
+  font-size: calc(var(--roster-stat-block-size, 8px) * 0.95);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--boost-color, #f7fafc);
+  border-bottom: 1px solid #f7fafc;
 }
 
 .rosterCardThumb {
@@ -1075,6 +1239,41 @@
   gap: 0.65rem;
 }
 
+.battleField {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.battleFighterRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.battleFighterRowRangeTarget {
+  cursor: pointer;
+  border: 2px solid color-mix(in srgb, var(--brand-red) 65%, transparent);
+  border-radius: 8px;
+  padding: 0.35rem;
+  margin: -0.35rem;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--brand-red) 25%, transparent);
+  background: color-mix(in srgb, var(--brand-red) 4%, transparent);
+}
+
+.battleFighterRowRangeTarget:hover {
+  border-color: var(--brand-red);
+  background: color-mix(in srgb, var(--brand-red) 8%, transparent);
+}
+
+.battleFighterRowRangeTarget:focus-visible {
+  outline: 2px solid var(--brand-red);
+  outline-offset: 2px;
+}
+
+.battleSlotEmpty {
+  min-height: 0;
+}
+
 .battleColumn {
   display: grid;
   grid-template-rows: auto auto;
@@ -1087,7 +1286,8 @@
     grid-template-columns: 1fr;
   }
 
-  .battleColumns {
+  .battleColumns,
+  .battleFighterRow {
     grid-template-columns: 1fr;
   }
 }

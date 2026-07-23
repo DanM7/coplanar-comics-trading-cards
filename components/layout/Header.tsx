@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { CARD_PUBLISHER_LOGO_URL, UNIVERSE_BRAND } from "@/constants/project";
 import { SignInButtons } from "@/components/auth/SignInButtons";
-import { COMPACT_LANDSCAPE_MQ } from "@/hooks/useCompactLandscape";
+import { PACK_COMPACT_HORIZONTAL_MQ } from "@/lib/pack-viewport";
 import { SiteNav } from "./SiteNav";
 
 const MOBILE_HEADER_MQ = "(max-width: 768px)";
@@ -30,7 +30,7 @@ export function Header() {
 
   useEffect(() => {
     const mobileMedia = window.matchMedia(MOBILE_HEADER_MQ);
-    const landscapeMedia = window.matchMedia(COMPACT_LANDSCAPE_MQ);
+    const landscapeMedia = window.matchMedia(PACK_COMPACT_HORIZONTAL_MQ);
 
     const syncLayout = () => {
       const mobile = mobileMedia.matches;

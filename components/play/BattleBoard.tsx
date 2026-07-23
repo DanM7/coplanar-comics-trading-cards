@@ -15,6 +15,7 @@ import {
   getActiveFighter,
 } from "@/services/game/match";
 import { projectAttackDamage } from "@/services/game/combat";
+import { formatHpBoostLabel } from "@/lib/move-stat-effects";
 import {
   computeTeamPowerFromBattleTeam,
   formatTeamPowerScore,
@@ -209,14 +210,21 @@ export function BattleBoard({
     () => battle.cpuTeam.fighters.filter((fighter) => !fighter.isKO),
     [battle.cpuTeam.fighters]
   );
-  const canPickTarget =
-    battle.awaitingPlayerAction &&
-    selectedMoveIndex !== null &&
-    cpuTargets.length > 0;
   const selectedMove =
     activeFighter && selectedMoveIndex !== null
       ? activeFighter.moves[selectedMoveIndex]
       : null;
+  const isRangeMove = selectedMove?.scope === "range";
+  const canPickSingleTarget =
+    battle.awaitingPlayerAction &&
+    selectedMoveIndex !== null &&
+    !isRangeMove &&
+    cpuTargets.length > 0;
+  const canExecuteRange =
+    battle.awaitingPlayerAction &&
+    selectedMoveIndex !== null &&
+    isRangeMove &&
+    cpuTargets.length > 0;
 
   const damagePreviewForTarget = (defender: BattleFighter) => {
     if (
@@ -265,7 +273,8 @@ export function BattleBoard({
   const handleEnemyAttack = (targetFighterId: string) => {
     if (
       selectedMoveIndex === null ||
-      !battle.awaitingPlayerAction
+      !battle.awaitingPlayerAction ||
+      isRangeMove
     ) {
       return;
     }
@@ -274,6 +283,22 @@ export function BattleBoard({
       executePlayerAction(battle, {
         moveIndex: selectedMoveIndex,
         targetFighterId,
+      })
+    );
+  };
+
+  const handleRangeAttack = () => {
+    if (
+      selectedMoveIndex === null ||
+      !battle.awaitingPlayerAction ||
+      !isRangeMove
+    ) {
+      return;
+    }
+
+    onBattleChange(
+      executePlayerAction(battle, {
+        moveIndex: selectedMoveIndex,
       })
     );
   };
@@ -347,41 +372,87 @@ export function BattleBoard({
             </div>
           </div>
 
-          <div className={styles.battleColumns} aria-label="Battle field">
-            {[0, 1, 2].map((slot) => {
-              const cpuFighter = battle.cpuTeam.fighters.find(
-                (fighter) => fighter.slot === slot
-              );
-              const playerFighter = battle.playerTeam.fighters.find(
-                (fighter) => fighter.slot === slot
-              );
-
-              return (
-                <div key={slot} className={styles.battleColumn}>
-                  {cpuFighter ? (
-                    <FighterCard
-                      fighter={cpuFighter}
-                      isActive={activeFighter?.id === cpuFighter.id}
-                      isAttackable={
-                        canPickTarget && !cpuFighter.isKO
+          <div className={styles.battleField} aria-label="Battle field">
+            <div
+              className={[
+                styles.battleFighterRow,
+                styles.battleFighterRowCpu,
+                canExecuteRange ? styles.battleFighterRowRangeTarget : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+              onClick={canExecuteRange ? handleRangeAttack : undefined}
+              onKeyDown={
+                canExecuteRange
+                  ? (event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        handleRangeAttack();
                       }
-                      onAttack={() => handleEnemyAttack(cpuFighter.id)}
-                      activeAnimation={activeAnimation}
-                      variant="cpu"
-                      damagePreview={damagePreviewForTarget(cpuFighter)}
-                    />
-                  ) : null}
-                  {playerFighter ? (
-                    <FighterCard
-                      fighter={playerFighter}
-                      isActive={activeFighter?.id === playerFighter.id}
-                      activeAnimation={activeAnimation}
-                      variant="player"
-                    />
-                  ) : null}
-                </div>
-              );
-            })}
+                    }
+                  : undefined
+              }
+              role={canExecuteRange ? "button" : undefined}
+              tabIndex={canExecuteRange ? 0 : undefined}
+              aria-label={
+                canExecuteRange && selectedMove
+                  ? `Use ${selectedMove.name} on all opponents`
+                  : undefined
+              }
+            >
+              {[0, 1, 2].map((slot) => {
+                const cpuFighter = battle.cpuTeam.fighters.find(
+                  (fighter) => fighter.slot === slot
+                );
+
+                return cpuFighter ? (
+                  <FighterCard
+                    key={cpuFighter.id}
+                    fighter={cpuFighter}
+                    isActive={activeFighter?.id === cpuFighter.id}
+                    isAttackable={canPickSingleTarget && !cpuFighter.isKO}
+                    onAttack={() => handleEnemyAttack(cpuFighter.id)}
+                    activeAnimation={activeAnimation}
+                    variant="cpu"
+                    damagePreview={
+                      canPickSingleTarget || canExecuteRange
+                        ? damagePreviewForTarget(cpuFighter)
+                        : null
+                    }
+                  />
+                ) : (
+                  <div key={`cpu-empty-${slot}`} className={styles.battleSlotEmpty} />
+                );
+              })}
+            </div>
+
+            <div
+              className={[
+                styles.battleFighterRow,
+                styles.battleFighterRowPlayer,
+              ].join(" ")}
+            >
+              {[0, 1, 2].map((slot) => {
+                const playerFighter = battle.playerTeam.fighters.find(
+                  (fighter) => fighter.slot === slot
+                );
+
+                return playerFighter ? (
+                  <FighterCard
+                    key={playerFighter.id}
+                    fighter={playerFighter}
+                    isActive={activeFighter?.id === playerFighter.id}
+                    activeAnimation={activeAnimation}
+                    variant="player"
+                  />
+                ) : (
+                  <div
+                    key={`player-empty-${slot}`}
+                    className={styles.battleSlotEmpty}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
 
@@ -389,9 +460,11 @@ export function BattleBoard({
           {battle.awaitingPlayerAction && activeFighter ? (
             <>
               <p className={styles.actionHint}>
-                {canPickTarget
-                  ? `${activeFighter.name} — tap an opponent to use ${activeFighter.moves[selectedMoveIndex!]?.name}.`
-                  : `${activeFighter.name}'s turn — choose a move.`}
+                {canExecuteRange
+                  ? `${activeFighter.name} — tap the highlighted opponents to use ${selectedMove?.name} on all targets.`
+                  : canPickSingleTarget
+                    ? `${activeFighter.name} — tap an opponent to use ${activeFighter.moves[selectedMoveIndex!]?.name}.`
+                    : `${activeFighter.name}'s turn — choose a move.`}
               </p>
               <div className={styles.moveGrid}>
                 {activeFighter.moves.map((move, index) => (
@@ -407,11 +480,19 @@ export function BattleBoard({
                     onClick={() => setSelectedMoveIndex(index)}
                   >
                     <span className={styles.moveName}>{move.name}</span>
-                    <span className={styles.movePower}>Power {move.value}</span>
-                    <span className={styles.moveType}>
-                      {move.attackType === "energy" ? "Energy" : "Physical"}{" "}
-                      attack
-                    </span>
+                    {move.hpBoost ? (
+                      <span className={styles.movePower}>
+                        {formatHpBoostLabel(move.hpBoost.percent, move.scope)}
+                      </span>
+                    ) : (
+                      <>
+                        <span className={styles.movePower}>Power {move.value}</span>
+                        <span className={styles.moveType}>
+                          {move.attackType === "energy" ? "Energy" : "Physical"}{" "}
+                          attack
+                        </span>
+                      </>
+                    )}
                   </button>
                 ))}
               </div>
