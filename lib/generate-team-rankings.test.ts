@@ -79,7 +79,7 @@ export function generateTeamRankings(): void {
       characterCount: roster.length,
       teamCombinationCount: rankedTeams.length,
       scoring:
-        "Team power v1 — HP + physical + energy + move average×15 + synergy weights (type 280, alignment 450, home 250)",
+        "Team power v1 — HP + physical + energy + move average×15 + synergy weights (type 280, alignment 450, home accuracy 250; plane +5% / location +10% / district +15%)",
     },
     characters: roster.map((entry) => ({
       id: entry.characterId,

@@ -29,6 +29,8 @@ function buildFighter(input: {
     slot: input.slot,
     alignment: input.entry.alignment,
     type: input.entry.type,
+    homePlane: input.entry.homePlane,
+    homeLocation: input.entry.homeLocation,
     homeDistrict: input.entry.homeDistrict,
     baseStats: input.entry.stats,
     effectiveStats,
@@ -53,6 +55,8 @@ export function buildBattleTeam(
   const synergy = computeTeamSynergy({
     types: entries.map((entry) => entry.type),
     alignments: entries.map((entry) => entry.alignment),
+    homePlanes: entries.map((entry) => entry.homePlane),
+    homeLocations: entries.map((entry) => entry.homeLocation),
     homeDistricts: entries.map((entry) => entry.homeDistrict),
   });
 

@@ -18,6 +18,9 @@ export function CardBack({ back }: CardBackProps) {
             <p className={styles.backText}>{back.idAlignmentLine}</p>
             <p className={styles.backText}>{back.homeLine}</p>
             <p className={styles.backText}>{back.typeIdentityLine}</p>
+            {back.affiliationLine ? (
+              <p className={styles.backText}>{back.affiliationLine}</p>
+            ) : null}
           </header>
           <div className={`${styles.backSectionDivider} ${styles.description}`}>
             <p className={styles.backText}>{back.description}</p>

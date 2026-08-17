@@ -2708,10 +2708,12 @@
     {
       "id": 51,
       "name": "Wrist Missle",
-      "move1": "Smoke Trail",
-      "move1_value": 2,
-      "move2": "Missile Barrage",
-      "move2_value": 3
+      "move1": "Missile Barrage",
+      "move1_value": 3,
+      "move2": "Smoke Trail",
+      "move2_value": 0,
+      "move2_scope": "team",
+      "move2_effect1": "Skill_Up_1"
     },
     {
       "id": 52,
@@ -2719,6 +2721,7 @@
       "move1": "Splashdown Sweep",
       "move1_value": 1,
       "move1_type": "energy",
+      "move1_scope": "range",
       "move2": "Double Flushnado",
       "move2_value": 2,
       "move2_type": "energy"
@@ -2744,9 +2747,9 @@
       "id": 55,
       "name": "Gas",
       "move1": "Poison Cloud",
-      "move1_value": 3,
-      "move1_type": "energy",
-      "move1_energy_color": "#5cff4a",
+      "move1_value": 0,
+      "move1_effect1": "Skill_Up_1",
+      "move1_scope": "team",
       "move2": "Toxic Leak",
       "move2_value": 3,
       "move2_type": "energy"
@@ -2755,17 +2758,19 @@
       "id": 56,
       "name": "Wrecking Ball",
       "move1": "Demolition Swing",
-      "move1_value": 4,
-      "move2": "Spike Smash",
-      "move2_value": 3
+      "move1_value": 3,
+      "move1_scope": "range",
+      "move2": "Reputation for Destruction",
+      "move2_value": 4
     },
     {
       "id": 57,
       "name": "Ochindew",
-      "move1": "Dew Strike",
+      "move1": "Cavern Creep",
       "move1_value": 2,
-      "move2": "Ochin Rush",
-      "move2_value": 2
+      "move2": "Violet Malice",
+      "move2_value": 2,
+      "move2_type": "energy"
     },
     {
       "id": 58,

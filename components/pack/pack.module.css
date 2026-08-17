@@ -24,49 +24,6 @@
   isolation: isolate;
 }
 
-.packPageGlow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.packPageGlow::before,
-.packPageGlow::after {
-  content: "";
-  position: absolute;
-  border-radius: 6px;
-  border: 1px solid rgba(240, 120, 48, 0.12);
-}
-
-.packPageGlow::before {
-  width: min(42vw, 22rem);
-  height: min(52vh, 28rem);
-  left: -6%;
-  top: 8%;
-  transform: rotate(-14deg);
-  background: linear-gradient(
-    145deg,
-    rgba(240, 120, 48, 0.09) 0%,
-    rgba(240, 120, 48, 0.02) 100%
-  );
-}
-
-.packPageGlow::after {
-  width: min(38vw, 18rem);
-  height: min(44vh, 22rem);
-  right: -4%;
-  bottom: 6%;
-  transform: rotate(11deg);
-  border-color: rgba(24, 72, 120, 0.25);
-  background: linear-gradient(
-    160deg,
-    rgba(24, 72, 120, 0.12) 0%,
-    rgba(24, 72, 120, 0.02) 100%
-  );
-}
-
 .packTitle {
   font-family: "Georgia", serif;
   font-size: clamp(1.35rem, 2.5vw, 2rem);

@@ -58,6 +58,8 @@ export function computeTeamPower(
   const synergy = computeTeamSynergy({
     types: entries.map((entry) => entry.type),
     alignments: entries.map((entry) => entry.alignment),
+    homePlanes: entries.map((entry) => entry.homePlane),
+    homeLocations: entries.map((entry) => entry.homeLocation),
     homeDistricts: entries.map((entry) => entry.homeDistrict),
   });
 
@@ -114,6 +116,8 @@ export function computeTeamPowerFromBattleTeam(
     name: fighter.name,
     alignment: fighter.alignment,
     type: fighter.type,
+    homePlane: fighter.homePlane,
+    homeLocation: fighter.homeLocation,
     homeDistrict: fighter.homeDistrict,
     tier: 0,
     stats: fighter.baseStats,

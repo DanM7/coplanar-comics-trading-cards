@@ -86,6 +86,8 @@ export function previewTeamBonuses(
     synergy: computeTeamSynergy({
       types: entries.map((entry) => entry.type),
       alignments: entries.map((entry) => entry.alignment),
+      homePlanes: entries.map((entry) => entry.homePlane),
+      homeLocations: entries.map((entry) => entry.homeLocation),
       homeDistricts: entries.map((entry) => entry.homeDistrict),
     }),
   };
@@ -164,10 +166,15 @@ export function formatTeamSynergyBonuses(
     );
   }
 
-  if (synergy.homeAccuracy > 0) {
-    const home = entries.find((entry) => entry.homeDistrict.trim())?.homeDistrict.trim();
+  if (synergy.homeAccuracy > 0 && synergy.homeAccuracyMatch) {
+    const kindLabel =
+      synergy.homeAccuracyMatch.kind === "plane"
+        ? "Plane"
+        : synergy.homeAccuracyMatch.kind === "location"
+          ? "Location"
+          : "District";
     parts.push(
-      `Home (${home ?? "Unknown"}): +${Math.round(synergy.homeAccuracy * 100)}% accuracy`
+      `${kindLabel} (${synergy.homeAccuracyMatch.value}): +${Math.round(synergy.homeAccuracy * 100)}% accuracy`
     );
   }
 

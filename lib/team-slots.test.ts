@@ -42,6 +42,8 @@ describe("team stat bonus display", () => {
         name: "X",
         alignment: "Hero",
         type: "Human",
+        homePlane: "Human",
+        homeLocation: "Coplanar City",
         homeDistrict: "Downtown",
         tier: 3,
         stats: {
@@ -73,6 +75,8 @@ describe("team stat bonus display", () => {
         name: "A",
         alignment: "Good",
         type: "Construct",
+        homePlane: "Human",
+        homeLocation: "Coplanar City",
         homeDistrict: "Realspace Row",
         tier: 3,
         stats: {
@@ -90,6 +94,8 @@ describe("team stat bonus display", () => {
         name: "B",
         alignment: "Good",
         type: "Construct",
+        homePlane: "Human",
+        homeLocation: "Coplanar City",
         homeDistrict: "Realspace Row",
         tier: 3,
         stats: {
@@ -107,6 +113,8 @@ describe("team stat bonus display", () => {
         name: "C",
         alignment: "Good",
         type: "Superhuman",
+        homePlane: "Human",
+        homeLocation: "Coplanar City",
         homeDistrict: "Realspace Row",
         tier: 3,
         stats: {
@@ -124,13 +132,15 @@ describe("team stat bonus display", () => {
     const synergy = computeTeamSynergy({
       types: entries.map((entry) => entry.type),
       alignments: entries.map((entry) => entry.alignment),
+      homePlanes: entries.map((entry) => entry.homePlane),
+      homeLocations: entries.map((entry) => entry.homeLocation),
       homeDistricts: entries.map((entry) => entry.homeDistrict),
     });
 
     expect(formatTeamSynergyBonuses(entries, synergy)).toEqual([
       "Type (Construct x2): +5% damage",
       "Alignment (Good): +15% defense",
-      "Home (Realspace Row): +10% accuracy",
+      "District (Realspace Row): +15% accuracy",
     ]);
   });
 });

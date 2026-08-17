@@ -96,6 +96,17 @@ export function formatCharacterHomeBreadcrumb(input: {
   return `Home: ${breadcrumb.join(" › ")}`;
 }
 
+/** e.g. `Affiliation: Realspace Reapers` — empty when missing. */
+export function formatCharacterAffiliationLine(
+  affiliation?: string
+): string | null {
+  const trimmed = (affiliation ?? "").trim();
+  if (!trimmed) {
+    return null;
+  }
+  return `Affiliation: ${trimmed}`;
+}
+
 export function formatCharacterBackHeaderLines(input: {
   cardId: string;
   alignment: Alignment;
@@ -104,7 +115,13 @@ export function formatCharacterBackHeaderLines(input: {
   home_district?: string;
   type?: string;
   identity?: string;
-}): { idAlignmentLine: string; homeLine: string; typeIdentityLine: string } {
+  affiliation?: string;
+}): {
+  idAlignmentLine: string;
+  homeLine: string;
+  typeIdentityLine: string;
+  affiliationLine: string | null;
+} {
   return {
     idAlignmentLine: formatCharacterBackIdLine({
       cardId: input.cardId,
@@ -119,5 +136,6 @@ export function formatCharacterBackHeaderLines(input: {
       type: input.type,
       identity: input.identity,
     }),
+    affiliationLine: formatCharacterAffiliationLine(input.affiliation),
   };
 }

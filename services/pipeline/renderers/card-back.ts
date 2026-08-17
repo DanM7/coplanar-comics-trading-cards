@@ -34,6 +34,7 @@ export function renderCardBack(
       home_district: character.home_district,
       type: character.type,
       identity: character.identity,
+      affiliation: character.affiliation,
     }),
     tier: character.tier,
     stats,

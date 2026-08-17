@@ -85,6 +85,7 @@ function normalizeCharacterRecord(
     home_region: toHomeRegion(record.home_plane),
     type: record.type,
     identity: record.identity,
+    affiliation: record.affiliation?.trim() || undefined,
     is_boss: record.is_boss,
     first_appearance: record.first_appearance,
     stats,

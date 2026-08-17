@@ -81,6 +81,7 @@ export interface EditorMeta {
   home_district: string;
   type?: string;
   identity?: string;
+  affiliation?: string;
 
   description: string;
 
@@ -172,6 +173,7 @@ export function metaFromCharacter(character: Character): EditorMeta {
     home_district: character.home_district,
     type: character.type,
     identity: character.identity,
+    affiliation: character.affiliation,
 
     description: character.description,
 

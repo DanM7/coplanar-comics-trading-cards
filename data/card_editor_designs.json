@@ -14,6 +14,7 @@
       "rarity": "common",
       "character": 2,
       "design": {
+        "backOgScale": 115,
         "backGhostOpacity": 70
       },
       "status": "done"
@@ -525,23 +526,52 @@
     },
     {
       "id": "50",
-      "rarity": "common",
-      "character": 50
+      "rarity": "rare",
+      "character": 50,
+      "design": {
+        "backMetaFontSize": 80,
+        "backOgScale": 75,
+        "backOgBackdropColor": "#b3b5a8",
+        "backGhostOpacity": 65,
+        "backGhostOffsetY": -40
+      },
+      "status": "done"
     },
     {
       "id": "51",
       "rarity": "common",
-      "character": 51
+      "character": 51,
+      "design": {
+        "backOgScale": 80,
+        "backOgBackdropColor": "#babcaf",
+        "backGhostOpacity": 55,
+        "backGhostOffsetY": -22
+      },
+      "status": "done"
     },
     {
       "id": "52",
-      "rarity": "common",
-      "character": 52
+      "rarity": "uncommon",
+      "character": 52,
+      "design": {
+        "backOgScale": 90,
+        "backOgBackdropColor": "#cccdbf",
+        "backGhostOpacity": 40,
+        "backGhostOffsetY": 2
+      },
+      "status": "done"
     },
     {
       "id": "53",
       "rarity": "uncommon",
-      "character": 53
+      "character": 53,
+      "design": {
+        "backOgScale": 85,
+        "backOgBackdropColor": "#d6d7c6",
+        "backGhostOpacity": 65,
+        "backGhostOffsetY": 0
+      },
+      "status": "done"
     },
     {
       "id": "54",
@@ -551,17 +581,40 @@
     {
       "id": "55",
       "rarity": "common",
-      "character": 55
+      "character": 55,
+      "design": {
+        "backMetaFontSize": 80,
+        "backOgScale": 60,
+        "backOgBackdropColor": "#b0b2a4",
+        "backGhostOpacity": 80,
+        "backGhostOffsetY": -90
+      },
+      "status": "done"
     },
     {
       "id": "56",
       "rarity": "common",
-      "character": 56
+      "character": 56,
+      "design": {
+        "backMetaFontSize": 80,
+        "backOgScale": 60,
+        "backOgBackdropColor": "#b0b2a4",
+        "backGhostOpacity": 90,
+        "backGhostOffsetY": -34
+      },
+      "status": "done"
     },
     {
       "id": "57",
       "rarity": "common",
-      "character": 57
+      "character": 57,
+      "design": {
+        "backOgScale": 80,
+        "backOgBackdropColor": "#b8bbae",
+        "backGhostOpacity": 70,
+        "backGhostOffsetY": -50
+      },
+      "status": "done"
     },
     {
       "id": "58",

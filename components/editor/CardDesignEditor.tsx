@@ -267,6 +267,7 @@ export function CardDesignEditor() {
       home_district: selectedCharacter?.home_district ?? meta.home_district,
       type: selectedCharacter?.type ?? meta.type,
       identity: selectedCharacter?.identity ?? meta.identity,
+      affiliation: selectedCharacter?.affiliation ?? meta.affiliation,
       description: meta.description,
       seriesFooterLine:
         meta.seriesFooterLine ||

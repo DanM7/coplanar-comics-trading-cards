@@ -37,6 +37,8 @@ export function characterToRosterEntry(
     name: character.name,
     alignment: character.alignment,
     type: character.type,
+    homePlane: character.home_plane,
+    homeLocation: character.home_location,
     homeDistrict: character.home_district,
     tier: character.tier,
     stats,

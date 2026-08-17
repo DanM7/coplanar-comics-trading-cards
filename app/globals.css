@@ -42,10 +42,61 @@ body {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   background: var(--bg-body);
   color: var(--text-primary);
   line-height: 1.5;
+}
+
+.site-bg-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.site-bg-glow::before,
+.site-bg-glow::after {
+  content: "";
+  position: absolute;
+  border-radius: 6px;
+  border: 1px solid rgba(240, 120, 48, 0.12);
+}
+
+.site-bg-glow::before {
+  width: min(42vw, 22rem);
+  height: min(52vh, 28rem);
+  left: -6%;
+  top: 8%;
+  transform: rotate(-14deg);
+  background: linear-gradient(
+    145deg,
+    rgba(240, 120, 48, 0.09) 0%,
+    rgba(240, 120, 48, 0.02) 100%
+  );
+}
+
+.site-bg-glow::after {
+  width: min(38vw, 18rem);
+  height: min(44vh, 22rem);
+  right: -4%;
+  bottom: 6%;
+  transform: rotate(11deg);
+  border-color: rgba(24, 72, 120, 0.25);
+  background: linear-gradient(
+    160deg,
+    rgba(24, 72, 120, 0.12) 0%,
+    rgba(24, 72, 120, 0.02) 100%
+  );
+}
+
+.site-header,
+main {
+  position: relative;
+  z-index: 1;
 }
 
 a {

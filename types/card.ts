@@ -42,6 +42,8 @@ export interface GeneratedCardBack {
   homeLine: string;
   /** `Type: Creature • Species: …` from character descriptions */
   typeIdentityLine: string;
+  /** `Affiliation: Realspace Reapers` when present on the character */
+  affiliationLine?: string | null;
   tier: number;
   stats: CardStats;
   moves?: MoveDisplay[];

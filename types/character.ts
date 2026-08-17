@@ -29,6 +29,7 @@ export interface CharacterDescriptionRecord {
   home_district: string;
   type?: CharacterType | string;
   identity?: string;
+  affiliation?: string;
   is_boss?: boolean;
   first_appearance?: boolean;
 }
@@ -52,6 +53,7 @@ export interface Character {
   home_region: HomeRegion;
   type?: CharacterType | string;
   identity?: string;
+  affiliation?: string;
   is_boss?: boolean;
   first_appearance?: boolean;
   stats: CardStats;

@@ -42,6 +42,7 @@ export interface EditorCardMeta {
   home_district: string;
   type?: string;
   identity?: string;
+  affiliation?: string;
   description: string;
   seriesFooterLine: string;
   flavorText?: string;
@@ -261,7 +262,7 @@ export function EditableCardFace({
     fontSize: `calc(0.75em * ${percent / 100})`,
   });
 
-  const { idAlignmentLine, homeLine, typeIdentityLine } =
+  const { idAlignmentLine, homeLine, typeIdentityLine, affiliationLine } =
     formatCharacterBackHeaderLines({
       cardId: meta.cardId,
       alignment: meta.alignment as Alignment,
@@ -270,6 +271,7 @@ export function EditableCardFace({
       home_district: meta.home_district,
       type: meta.type,
       identity: meta.identity,
+      affiliation: meta.affiliation,
     });
 
   const backStatsSectionStyle: CSSProperties = sectionFontStyle(
@@ -356,6 +358,9 @@ export function EditableCardFace({
                   <p className={styles.backText}>{idAlignmentLine}</p>
                   <p className={styles.backText}>{homeLine}</p>
                   <p className={styles.backText}>{typeIdentityLine}</p>
+                  {affiliationLine ? (
+                    <p className={styles.backText}>{affiliationLine}</p>
+                  ) : null}
                 </header>
                 <div
                   className={styles.backSectionDivider}
@@ -433,6 +438,9 @@ export function EditableCardFace({
                   <p className={styles.backText}>{idAlignmentLine}</p>
                   <p className={styles.backText}>{homeLine}</p>
                   <p className={styles.backText}>{typeIdentityLine}</p>
+                  {affiliationLine ? (
+                    <p className={styles.backText}>{affiliationLine}</p>
+                  ) : null}
                 </header>
                 <div
                   className={styles.backSectionDivider}

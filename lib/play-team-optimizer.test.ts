@@ -17,6 +17,8 @@ function mockEntry(
     name: id,
     alignment: "Good",
     type: "Human",
+    homePlane: "Human",
+    homeLocation: "Coplanar City",
     homeDistrict: "Realspace Row",
     tier: 3,
     stats: {

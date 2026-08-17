@@ -734,11 +734,11 @@
             "tier": 2,
             "stats": {
                 "intelligence": 1,
-                "strength": 2,
-                "durability": 2,
-                "skill": 2,
-                "energy_projection": 1,
-                "speed": 3
+                "strength": 3,
+                "durability": 3,
+                "skill": 1,
+                "energy_projection": 2,
+                "speed": 1
             }
         },
         {

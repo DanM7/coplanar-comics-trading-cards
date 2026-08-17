@@ -25,6 +25,8 @@ function mockEntry(
     name: id,
     alignment: "Good",
     type: "Human",
+    homePlane: "Human",
+    homeLocation: "Coplanar City",
     homeDistrict: "Realspace Row",
     tier: 3,
     stats: tierStats(3),
@@ -96,6 +98,68 @@ describe("computeTeamSynergy alignment", () => {
         homeDistricts: [],
       }).alignmentDefense
     ).toBe(0);
+  });
+});
+
+describe("computeTeamSynergy home accuracy", () => {
+  it("grants +5% for shared plane, +10% location, +15% district (best tier wins)", () => {
+    expect(
+      computeTeamSynergy({
+        types: [],
+        alignments: [],
+        homePlanes: ["Human", "Human / Lapsed Continuum", "Human"],
+        homeLocations: ["A", "B", "C"],
+        homeDistricts: ["X", "Y", "Z"],
+      })
+    ).toMatchObject({
+      homeAccuracy: 0.05,
+      homeAccuracyMatch: { kind: "plane", value: "Human" },
+    });
+
+    expect(
+      computeTeamSynergy({
+        types: [],
+        alignments: [],
+        homePlanes: ["Human", "Comic", "3D"],
+        homeLocations: ["Coplanar City", "Coplanar City", "Coplanar City"],
+        homeDistricts: ["X", "Y", "Z"],
+      })
+    ).toMatchObject({
+      homeAccuracy: 0.1,
+      homeAccuracyMatch: { kind: "location", value: "Coplanar City" },
+    });
+
+    expect(
+      computeTeamSynergy({
+        types: [],
+        alignments: [],
+        homePlanes: ["Human", "Comic", "3D"],
+        homeLocations: ["A", "B", "C"],
+        homeDistricts: [
+          "Realspace Row",
+          "Realspace Row / Panel Park",
+          "Realspace Row",
+        ],
+      })
+    ).toMatchObject({
+      homeAccuracy: 0.15,
+      homeAccuracyMatch: { kind: "district", value: "Realspace Row" },
+    });
+  });
+
+  it("uses district over location when both match", () => {
+    expect(
+      computeTeamSynergy({
+        types: [],
+        alignments: [],
+        homePlanes: ["Human", "Human", "Human"],
+        homeLocations: ["Coplanar City", "Coplanar City", "Coplanar City"],
+        homeDistricts: ["Realspace Row", "Realspace Row", "Realspace Row"],
+      })
+    ).toMatchObject({
+      homeAccuracy: 0.15,
+      homeAccuracyMatch: { kind: "district", value: "Realspace Row" },
+    });
   });
 });
 
