@@ -2,7 +2,7 @@ import { CARDS_PER_PACK } from "@/constants/series";
 import { normalizeCharacterId } from "@/lib/character-id";
 import { getCommonDisplayableCharacters } from "@/lib/common-displayable-cards";
 import { getDisplayableCharacters } from "@/lib/displayable-cards";
-import { pickCardIdsFromPools } from "@/lib/pack-pool";
+import { pickCardIdsFromPools, type PackPullMode } from "@/lib/pack-pool";
 import { generateCardFromCharacter } from "@/services/pipeline";
 import type { GeneratedCard } from "@/types/card";
 
@@ -13,7 +13,8 @@ import type { GeneratedCard } from "@/types/card";
 export function pickRandomCardIds(
   count: number = CARDS_PER_PACK,
   ownedCharacterIds: Iterable<string> = [],
-  random?: () => number
+  random?: () => number,
+  mode: PackPullMode = "collector"
 ): string[] {
   const displayable = getDisplayableCharacters();
   const commons = getCommonDisplayableCharacters();
@@ -23,7 +24,8 @@ export function pickRandomCardIds(
     displayable.map((character) => character.id),
     commons.map((character) => character.id),
     ownedCharacterIds,
-    random
+    random,
+    { mode }
   );
 }
 
@@ -39,11 +41,14 @@ export function resolvePackCards(cardIds: string[]): GeneratedCard[] {
     .map((character) => generateCardFromCharacter(character));
 }
 
-export function openPack(ownedCharacterIds: Iterable<string> = []): {
+export function openPack(
+  ownedCharacterIds: Iterable<string> = [],
+  mode: PackPullMode = "collector"
+): {
   cardIds: string[];
   cards: GeneratedCard[];
 } {
-  const cardIds = pickRandomCardIds(CARDS_PER_PACK, ownedCharacterIds);
+  const cardIds = pickRandomCardIds(CARDS_PER_PACK, ownedCharacterIds, undefined, mode);
   const cards = resolvePackCards(cardIds);
   return { cardIds, cards };
 }

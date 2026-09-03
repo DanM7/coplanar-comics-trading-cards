@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
@@ -19,9 +20,15 @@ import {
 } from "@/services/game/team-slots";
 import type { BattleState, PlayRosterEntry } from "@/types/game";
 import { usePlayRoster } from "@/hooks/usePlayRoster";
-import { BattleBoard } from "./BattleBoard";
+import { dismissPlayIntro, isPlayIntroDismissed } from "@/lib/play-intro";
+import { PlayIntroModal } from "./PlayIntroModal";
 import { TeamSelect } from "./TeamSelect";
 import styles from "./play.module.css";
+
+const BattleBoard = dynamic(
+  () => import("./BattleBoard").then((module) => module.BattleBoard),
+  { ssr: false }
+);
 
 async function fetchCpuTeam(excludeIds: string[]): Promise<PlayRosterEntry[]> {
   const query =
@@ -46,7 +53,19 @@ export function PlayView() {
   const [battle, setBattle] = useState<BattleState | null>(null);
   const [startingBattle, setStartingBattle] = useState(false);
   const [startError, setStartError] = useState<string | null>(null);
+  const [introModalOpen, setIntroModalOpen] = useState(false);
   const autoStartAttemptedRef = useRef(false);
+
+  useEffect(() => {
+    if (!isPlayIntroDismissed()) {
+      setIntroModalOpen(true);
+    }
+  }, []);
+
+  const acknowledgeIntro = useCallback(() => {
+    dismissPlayIntro();
+    setIntroModalOpen(false);
+  }, []);
 
   const roster = useMemo(() => data?.roster ?? [], [data?.roster]);
   const parsedTeamIds = useMemo(
@@ -144,7 +163,7 @@ export function PlayView() {
   }, [parsedTeamIds]);
 
   useEffect(() => {
-    if (isLoading || error || battle || startingBattle) {
+    if (isLoading || error || battle || startingBattle || introModalOpen) {
       return;
     }
 
@@ -174,6 +193,7 @@ export function PlayView() {
   }, [
     battle,
     error,
+    introModalOpen,
     isLoading,
     launchBattle,
     parsedTeamIds,
@@ -183,20 +203,20 @@ export function PlayView() {
   ]);
 
   if (isLoading) {
-    return <p className={styles.playIntro}>Loading play roster…</p>;
+    return <p className={styles.playStatusCenter}>Loading play roster…</p>;
   }
 
   if (error) {
-    return <p className={styles.playIntro}>Could not load roster: {error}</p>;
+    return (
+      <p className={styles.playStatusCenter}>Could not load roster: {error}</p>
+    );
   }
 
   return (
     <>
-      <h1>Play!</h1>
-      <p className={styles.playIntro}>
-        Field a team of three and battle the CPU using the Coplanar official
-        stat, synergy, and combat rules.
-      </p>
+      {introModalOpen ? (
+        <PlayIntroModal onAcknowledge={acknowledgeIntro} />
+      ) : null}
 
       {startError ? (
         <p className={styles.playIntro}>{startError}</p>
@@ -204,13 +224,11 @@ export function PlayView() {
 
       {!battle ? (
         startingBattle && parsedTeamIds ? (
-          <p className={styles.playIntro}>Starting battle…</p>
+          <p className={styles.playStatusCenter}>Starting battle…</p>
         ) : (
           <TeamSelect
             roster={roster}
             teamSlots={teamSlots}
-            mode={data?.mode ?? "guest"}
-            totalOwned={data?.totalOwned ?? 0}
             onPick={pickCharacter}
             onClearSlot={clearSlot}
             onSelectTeam={selectTeam}

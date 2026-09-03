@@ -22,6 +22,7 @@ export function usePreloadedImageSrc(url: string): string {
 
     const img = new Image();
     img.decoding = "async";
+    img.crossOrigin = "anonymous";
 
     const commit = () => {
       if (!cancelled) {

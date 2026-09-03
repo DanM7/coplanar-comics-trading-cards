@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  useEffect,
   useLayoutEffect,
   useRef,
   useState,
@@ -25,7 +26,7 @@ import {
   type CardSide,
 } from "@/types/card-design";
 import type { Alignment, HomePlane, HomeRegion } from "@/types/character";
-import { backStatsAnchorTopCssVar } from "@/lib/back-card-layout";
+import { backStatsAnchorTopCssVar, OG_FRAME_HEIGHT_WIDTH_RATIO } from "@/lib/back-card-layout";
 import { usePreloadedImageSrc } from "@/hooks/usePreloadedImageSrc";
 import { useOgBackdropColor } from "@/hooks/useOgBackdropColor";
 import styles from "./editor.module.css";
@@ -41,6 +42,7 @@ export interface EditorCardMeta {
   home_district: string;
   type?: string;
   identity?: string;
+  affiliation?: string;
   description: string;
   seriesFooterLine: string;
   flavorText?: string;
@@ -55,6 +57,7 @@ interface EditableCardFaceProps {
   meta: EditorCardMeta;
   design: CardDesignConfig;
   canvasRef?: Ref<HTMLDivElement>;
+  canvasClassName?: string;
 }
 
 export function EditableCardFace({
@@ -64,6 +67,7 @@ export function EditableCardFace({
   meta,
   design,
   canvasRef,
+  canvasClassName,
 }: EditableCardFaceProps) {
   const displayPortraitUrl = usePreloadedImageSrc(portraitUrl);
   const displayBackPortraitUrl = usePreloadedImageSrc(backPortraitUrl ?? "");
@@ -103,6 +107,24 @@ export function EditableCardFace({
     : DEFAULT_CARD_DESIGN.backOgScale;
   const ogFrameRef = useRef<HTMLDivElement>(null);
   const [ogFrameHeight, setOgFrameHeight] = useState(0);
+  const [ogImageLoaded, setOgImageLoaded] = useState(false);
+  const hasBackPortrait = Boolean(backPortraitUrl?.trim());
+  const backContentReady = !hasBackPortrait || ogImageLoaded;
+
+  useEffect(() => {
+    setOgImageLoaded(false);
+  }, [backPortraitUrl]);
+
+  useLayoutEffect(() => {
+    if (!hasBackPortrait) {
+      return;
+    }
+
+    const img = ogFrameRef.current?.querySelector("img");
+    if (img?.complete && img.naturalWidth > 0) {
+      setOgImageLoaded(true);
+    }
+  }, [displayBackPortraitUrl, hasBackPortrait]);
 
   useLayoutEffect(() => {
     if (side !== "back") {
@@ -134,10 +156,20 @@ export function EditableCardFace({
           ? styles.layoutFrontMinimal
           : styles.layoutFrontClassic;
 
+    const portraitOffsetY = Number.isFinite(design.portraitOffsetY)
+      ? design.portraitOffsetY
+      : DEFAULT_CARD_DESIGN.portraitOffsetY;
+    const nameOffsetX = Number.isFinite(design.nameOffsetX)
+      ? design.nameOffsetX
+      : 6;
+    const nameOffsetY = Number.isFinite(design.nameOffsetY)
+      ? design.nameOffsetY
+      : 6;
+
     return (
       <div
         ref={canvasRef}
-        className={`${styles.cardCanvas} ${layoutClass}`}
+        className={`${styles.cardCanvas} ${layoutClass} ${canvasClassName ?? ""}`}
         style={borderStyle}
       >
         <div
@@ -152,18 +184,19 @@ export function EditableCardFace({
               crossOrigin="anonymous"
               style={{
                 objectFit: design.portraitFit,
-                objectPosition: `center calc(50% - ${Number.isFinite(design.portraitOffsetY) ? design.portraitOffsetY : DEFAULT_CARD_DESIGN.portraitOffsetY}px)`,
+                objectPosition: `center calc(50% - calc(${portraitOffsetY} * var(--card-h, 420px) / 420))`,
               }}
             />
           </div>
-          <div
-            className={styles.nameplate}
-            style={{
-              right: `calc(var(--border-width, 4px) + ${Number.isFinite(design.nameOffsetX) ? design.nameOffsetX : 6}px)`,
-              transform: `translate(${Number.isFinite(design.nameOffsetX) ? design.nameOffsetX : 6}px, ${-(Number.isFinite(design.nameOffsetY) ? design.nameOffsetY : 6)}px)`,
-            }}
-          >
-            <h3 className={styles.characterName}>{meta.displayName}</h3>
+          <div className={styles.nameplate}>
+            <div
+              className={styles.nameplateInner}
+              style={{
+                transform: `translate(calc(${nameOffsetX} * var(--card-w, 300px) / 300), calc(${-nameOffsetY} * var(--card-h, 420px) / 420))`,
+              }}
+            >
+              <h3 className={styles.characterName}>{meta.displayName}</h3>
+            </div>
           </div>
         </div>
         <div
@@ -213,19 +246,23 @@ export function EditableCardFace({
     ? design.backGhostMaskOffsetY
     : DEFAULT_CARD_DESIGN.backGhostMaskOffsetY;
 
+  const ogFrameEstimate = `calc(var(--card-w, 300px) * ${backOgScale / 100} * ${OG_FRAME_HEIGHT_WIDTH_RATIO})`;
+  const ogFrameHeightEffective =
+    ogFrameHeight > 0 ? `${ogFrameHeight}px` : ogFrameEstimate;
+
   const ghostLayerStyle = {
     opacity: backGhostOpacity / 100,
-    "--og-frame-height": `${ogFrameHeight}px`,
+    "--og-frame-height": ogFrameHeightEffective,
     "--ghost-offset-y": `${backGhostOffsetY}px`,
     "--ghost-mask-offset-x": `${backGhostMaskOffsetX}px`,
     "--ghost-mask-offset-y": `${backGhostMaskOffsetY}px`,
   } as CSSProperties;
 
   const sectionFontStyle = (percent: number): CSSProperties => ({
-    fontSize: `calc(0.75rem * ${percent / 100})`,
+    fontSize: `calc(0.75em * ${percent / 100})`,
   });
 
-  const { idAlignmentLine, homeLine, typeIdentityLine } =
+  const { idAlignmentLine, homeLine, typeIdentityLine, affiliationLine } =
     formatCharacterBackHeaderLines({
       cardId: meta.cardId,
       alignment: meta.alignment as Alignment,
@@ -234,6 +271,7 @@ export function EditableCardFace({
       home_district: meta.home_district,
       type: meta.type,
       identity: meta.identity,
+      affiliation: meta.affiliation,
     });
 
   const backStatsSectionStyle: CSSProperties = sectionFontStyle(
@@ -257,7 +295,7 @@ export function EditableCardFace({
   return (
     <div
       ref={canvasRef}
-      className={`${styles.cardCanvas} ${backLayoutClass}`}
+      className={`${styles.cardCanvas} ${backLayoutClass} ${canvasClassName ?? ""}`}
       style={{ ...borderStyle, ...backCanvasStyle }}
     >
       <div
@@ -286,16 +324,33 @@ export function EditableCardFace({
               {backPortraitUrl ? (
                 <div
                   ref={ogFrameRef}
-                  className={styles.backOgFrame}
+                  className={[
+                    styles.backOgFrame,
+                    ogImageLoaded ? styles.backOgFrameLoaded : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
                   style={ogFrameStyle}
                 >
                   <div className={styles.backOgScaler}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={displayBackPortraitUrl} alt="" crossOrigin="anonymous" />
+                    <img
+                      src={displayBackPortraitUrl}
+                      alt=""
+                      crossOrigin="anonymous"
+                      onLoad={() => setOgImageLoaded(true)}
+                    />
                   </div>
                 </div>
               ) : null}
-              <div className={styles.backBody}>
+              <div
+                className={[
+                  styles.backBody,
+                  !backContentReady ? styles.backContentPending : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+              >
                 <header
                   className={styles.backHeader}
                   style={sectionFontStyle(backMetaFontSize)}
@@ -303,6 +358,9 @@ export function EditableCardFace({
                   <p className={styles.backText}>{idAlignmentLine}</p>
                   <p className={styles.backText}>{homeLine}</p>
                   <p className={styles.backText}>{typeIdentityLine}</p>
+                  {affiliationLine ? (
+                    <p className={styles.backText}>{affiliationLine}</p>
+                  ) : null}
                 </header>
                 <div
                   className={styles.backSectionDivider}
@@ -313,10 +371,17 @@ export function EditableCardFace({
               </div>
             </div>
             <div
-              className={styles.backStatsSection}
-              style={backStatsSectionStyle}
+              className={[
+                styles.backStatsSection,
+                !backContentReady ? styles.backContentPending : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
             >
-              <div className={styles.backStatsMain}>
+              <div
+                className={styles.backStatsMain}
+                style={backStatsSectionStyle}
+              >
                 <p className={`${styles.backText} ${styles.tierPowerLine}`}>
                   {formatTierPowerLine(meta.stats, meta.tier, meta.moves)}
                 </p>
@@ -324,6 +389,7 @@ export function EditableCardFace({
                   className={styles.backText}
                   stats={meta.stats}
                   moves={meta.moves}
+                  showMoveScope
                 />
                 {meta.flavorText ? (
                   <p className={styles.flavorText}>{meta.flavorText}</p>
@@ -337,16 +403,33 @@ export function EditableCardFace({
             {backPortraitUrl ? (
               <div
                 ref={ogFrameRef}
-                className={styles.backOgFrame}
+                className={[
+                  styles.backOgFrame,
+                  ogImageLoaded ? styles.backOgFrameLoaded : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
                 style={ogFrameStyle}
               >
                 <div className={styles.backOgScaler}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={displayBackPortraitUrl} alt="" crossOrigin="anonymous" />
+                  <img
+                    src={displayBackPortraitUrl}
+                    alt=""
+                    crossOrigin="anonymous"
+                    onLoad={() => setOgImageLoaded(true)}
+                  />
                 </div>
               </div>
             ) : null}
-            <div className={styles.backBody}>
+            <div
+              className={[
+                styles.backBody,
+                !backContentReady ? styles.backContentPending : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+            >
               <div className={styles.backMain}>
                 <header
                   className={styles.backHeader}
@@ -355,6 +438,9 @@ export function EditableCardFace({
                   <p className={styles.backText}>{idAlignmentLine}</p>
                   <p className={styles.backText}>{homeLine}</p>
                   <p className={styles.backText}>{typeIdentityLine}</p>
+                  {affiliationLine ? (
+                    <p className={styles.backText}>{affiliationLine}</p>
+                  ) : null}
                 </header>
                 <div
                   className={styles.backSectionDivider}
@@ -364,9 +450,11 @@ export function EditableCardFace({
                 </div>
                 <div
                   className={styles.backStatsSection}
-                  style={sectionFontStyle(backStatsFontSize)}
                 >
-                  <div className={styles.backStatsMain}>
+                  <div
+                    className={styles.backStatsMain}
+                    style={sectionFontStyle(backStatsFontSize)}
+                  >
                     <p className={`${styles.backText} ${styles.tierPowerLine}`}>
                       {formatTierPowerLine(meta.stats, meta.tier, meta.moves)}
                     </p>
@@ -374,6 +462,7 @@ export function EditableCardFace({
                       className={styles.backText}
                       stats={meta.stats}
                       moves={meta.moves}
+                      showMoveScope
                     />
                     {meta.flavorText ? (
                       <p className={styles.flavorText}>{meta.flavorText}</p>

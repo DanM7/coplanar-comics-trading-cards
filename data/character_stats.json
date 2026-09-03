@@ -213,25 +213,25 @@
             "name": "Abdominal Snowman",
             "tier": 3,
             "stats": {
-                "intelligence": 1,
-                "strength": 4,
-                "durability": 4,
+                "intelligence": 2,
+                "strength": 3,
+                "durability": 3,
                 "skill": 1,
                 "energy_projection": 2,
-                "speed": 1
+                "speed": 2
             }
         },
         {
             "id": 18,
             "name": "Ammo Supplying Robot",
-            "tier": 1,
+            "tier": 3,
             "stats": {
-                "intelligence": 3,
+                "intelligence": 4,
                 "strength": 0,
-                "durability": 2,
-                "skill": 3,
+                "durability": 3,
+                "skill": 4,
                 "energy_projection": 0,
-                "speed": 1
+                "speed": 2
             }
         },
         {
@@ -255,9 +255,9 @@
                 "intelligence": 2,
                 "strength": 0,
                 "durability": 1,
-                "skill": 4,
+                "skill": 3,
                 "energy_projection": 3,
-                "speed": 3
+                "speed": 2
             }
         },
         {
@@ -266,7 +266,7 @@
             "tier": 1,
             "stats": {
                 "intelligence": 2,
-                "strength": 0,
+                "strength": 1,
                 "durability": 0,
                 "skill": 2,
                 "energy_projection": 1,
@@ -283,7 +283,7 @@
                 "durability": 3,
                 "skill": 5,
                 "energy_projection": 0,
-                "speed": 4
+                "speed": 3
             }
         },
         {
@@ -422,7 +422,7 @@
             "tier": 3,
             "stats": {
                 "intelligence": 5,
-                "strength": 0,
+                "strength": 1,
                 "durability": 2,
                 "skill": 5,
                 "energy_projection": 0,
@@ -538,8 +538,8 @@
             "name": "Mr. Beep",
             "tier": 1,
             "stats": {
-                "intelligence": 2,
-                "strength": 0,
+                "intelligence": 0,
+                "strength": 1,
                 "durability": 1,
                 "skill": 1,
                 "energy_projection": 1,
@@ -734,11 +734,11 @@
             "tier": 2,
             "stats": {
                 "intelligence": 1,
-                "strength": 2,
-                "durability": 2,
-                "skill": 2,
-                "energy_projection": 1,
-                "speed": 3
+                "strength": 3,
+                "durability": 3,
+                "skill": 1,
+                "energy_projection": 2,
+                "speed": 1
             }
         },
         {

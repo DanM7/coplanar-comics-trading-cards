@@ -1,4 +1,4 @@
-import { primaryCharacterType } from "@/lib/format-character-home";
+import { characterTypesFromString, primaryCharacterType } from "@/lib/format-character-home";
 import { CORE_STAT_KEYS, type CoreStats } from "@/types/character-stats";
 import type { Alignment } from "@/types/character";
 import type { TeamSynergyBonuses } from "@/types/game";
@@ -9,6 +9,11 @@ const TYPE_DAMAGE_BONUS_TRIPLE = 0.1;
 const TYPE_DAMAGE_BONUS_PAIR = 0.05;
 /** Incoming damage reduction when all three fighters share Good, Evil, or Neutral. */
 const ALIGNMENT_DEFENSE_BONUS = 0.15;
+
+/** Accuracy tiers — best match wins (district > location > plane). */
+const HOME_ACCURACY_DISTRICT = 0.15;
+const HOME_ACCURACY_LOCATION = 0.1;
+const HOME_ACCURACY_PLANE = 0.05;
 
 const ALIGNMENT_SYNERGY_VALUES = new Set<Alignment>([
   "Good",
@@ -27,6 +32,73 @@ function hasAlignmentSynergy(alignments: Alignment[]): boolean {
   }
 
   return alignments.every((alignment) => alignment === shared);
+}
+
+/** Multi-value fields use ` / ` (e.g. Acid: `Human / Lapsed Continuum`). */
+function parseHomeFieldValues(raw: string | undefined): string[] {
+  return characterTypesFromString(raw);
+}
+
+/** True when every fighter shares at least one overlapping non-empty value. */
+function teamSharesHomeValue(fields: (string | undefined)[]): string | null {
+  if (fields.length !== 3) {
+    return null;
+  }
+
+  const valueSets = fields.map((field) => new Set(parseHomeFieldValues(field)));
+  if (valueSets.some((set) => set.size === 0)) {
+    return null;
+  }
+
+  let shared: Set<string> | null = null;
+  for (const set of valueSets) {
+    if (shared === null) {
+      shared = new Set(set);
+      continue;
+    }
+    shared = new Set([...shared].filter((value) => set.has(value)));
+  }
+
+  if (!shared || shared.size === 0) {
+    return null;
+  }
+
+  return [...shared].sort((a, b) => a.localeCompare(b))[0] ?? null;
+}
+
+function computeHomeAccuracy(input: {
+  homePlanes: (string | undefined)[];
+  homeLocations: (string | undefined)[];
+  homeDistricts: (string | undefined)[];
+}): {
+  homeAccuracy: number;
+  homeAccuracyMatch: TeamSynergyBonuses["homeAccuracyMatch"];
+} {
+  const sharedDistrict = teamSharesHomeValue(input.homeDistricts);
+  if (sharedDistrict) {
+    return {
+      homeAccuracy: HOME_ACCURACY_DISTRICT,
+      homeAccuracyMatch: { kind: "district", value: sharedDistrict },
+    };
+  }
+
+  const sharedLocation = teamSharesHomeValue(input.homeLocations);
+  if (sharedLocation) {
+    return {
+      homeAccuracy: HOME_ACCURACY_LOCATION,
+      homeAccuracyMatch: { kind: "location", value: sharedLocation },
+    };
+  }
+
+  const sharedPlane = teamSharesHomeValue(input.homePlanes);
+  if (sharedPlane) {
+    return {
+      homeAccuracy: HOME_ACCURACY_PLANE,
+      homeAccuracyMatch: { kind: "plane", value: sharedPlane },
+    };
+  }
+
+  return { homeAccuracy: 0, homeAccuracyMatch: null };
 }
 
 export function clamp(value: number, min: number, max: number): number {
@@ -65,7 +137,9 @@ export function applyTeamStatBonuses(
 export function computeTeamSynergy(input: {
   types: (string | undefined)[];
   alignments: Alignment[];
-  homeDistricts: string[];
+  homePlanes?: (string | undefined)[];
+  homeLocations?: (string | undefined)[];
+  homeDistricts: (string | undefined)[];
 }): TeamSynergyBonuses {
   const typeCounts = new Map<string, number>();
   for (const type of input.types) {
@@ -84,11 +158,11 @@ export function computeTeamSynergy(input: {
     ? ALIGNMENT_DEFENSE_BONUS
     : 0;
 
-  const trimmedHomes = input.homeDistricts.map((home) => home.trim());
-  const allSameHome =
-    trimmedHomes.length === 3 &&
-    trimmedHomes.every((home) => home.length > 0 && home === trimmedHomes[0]);
-  const homeAccuracy = allSameHome ? 0.1 : 0;
+  const { homeAccuracy, homeAccuracyMatch } = computeHomeAccuracy({
+    homePlanes: input.homePlanes ?? [],
+    homeLocations: input.homeLocations ?? [],
+    homeDistricts: input.homeDistricts,
+  });
 
   const rawTotal = typeDamage + alignmentDefense + homeAccuracy;
   const scale = rawTotal > SYNERGY_CAP ? SYNERGY_CAP / rawTotal : 1;
@@ -97,6 +171,7 @@ export function computeTeamSynergy(input: {
     typeDamage: typeDamage * scale,
     alignmentDefense: alignmentDefense * scale,
     homeAccuracy: homeAccuracy * scale,
+    homeAccuracyMatch,
   };
 }
 

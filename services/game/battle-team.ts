@@ -11,6 +11,7 @@ import {
   computeTeamSynergy,
   maxHpFromDurability,
 } from "@/services/game/stats";
+import { playRosterCardFrontUrl } from "@/lib/play-roster-image";
 
 function buildFighter(input: {
   entry: PlayRosterEntry;
@@ -28,6 +29,8 @@ function buildFighter(input: {
     slot: input.slot,
     alignment: input.entry.alignment,
     type: input.entry.type,
+    homePlane: input.entry.homePlane,
+    homeLocation: input.entry.homeLocation,
     homeDistrict: input.entry.homeDistrict,
     baseStats: input.entry.stats,
     effectiveStats,
@@ -35,7 +38,7 @@ function buildFighter(input: {
     maxHp: maxHpFromDurability(effectiveStats.durability),
     currentHp: maxHpFromDurability(effectiveStats.durability),
     isKO: false,
-    frontImageUrl: input.entry.frontImageUrl,
+    frontImageUrl: playRosterCardFrontUrl(input.entry),
   };
 }
 
@@ -52,6 +55,8 @@ export function buildBattleTeam(
   const synergy = computeTeamSynergy({
     types: entries.map((entry) => entry.type),
     alignments: entries.map((entry) => entry.alignment),
+    homePlanes: entries.map((entry) => entry.homePlane),
+    homeLocations: entries.map((entry) => entry.homeLocation),
     homeDistricts: entries.map((entry) => entry.homeDistrict),
   });
 

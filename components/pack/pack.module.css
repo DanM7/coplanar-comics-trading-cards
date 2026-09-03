@@ -2,57 +2,26 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  height: calc(100dvh - 4.25rem);
-  max-height: calc(100dvh - 4.25rem);
+  --pack-viewport-height: 100dvh;
+  --pack-viewport-height: 100svh;
+  --pack-scene-padding-block: 0.75rem;
+  /* Net main padding after negative margin + drop-shadow bleed */
+  --pack-shadow-bleed: 1.75rem;
+  --pack-page-inset-block: 1.375rem;
+  --pack-page-height: calc(
+    var(--pack-viewport-height) - var(--site-header-offset, 4.25rem) -
+      var(--pack-page-inset-block)
+  );
+  /* main bottom padding (net of margin) + shadow bleed + safe gap */
+  --pack-chrome-bottom: calc(2rem + var(--pack-shadow-bleed));
+  height: var(--pack-page-height);
+  max-height: var(--pack-page-height);
   width: 100%;
   max-width: none;
-  margin: -1rem -1rem;
+  margin: -0.75rem -1rem -0.5rem;
   padding: 0;
   overflow: hidden;
   isolation: isolate;
-}
-
-.packPageGlow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.packPageGlow::before,
-.packPageGlow::after {
-  content: "";
-  position: absolute;
-  border-radius: 6px;
-  border: 1px solid rgba(240, 120, 48, 0.12);
-}
-
-.packPageGlow::before {
-  width: min(42vw, 22rem);
-  height: min(52vh, 28rem);
-  left: -6%;
-  top: 8%;
-  transform: rotate(-14deg);
-  background: linear-gradient(
-    145deg,
-    rgba(240, 120, 48, 0.09) 0%,
-    rgba(240, 120, 48, 0.02) 100%
-  );
-}
-
-.packPageGlow::after {
-  width: min(38vw, 18rem);
-  height: min(44vh, 22rem);
-  right: -4%;
-  bottom: 6%;
-  transform: rotate(11deg);
-  border-color: rgba(24, 72, 120, 0.25);
-  background: linear-gradient(
-    160deg,
-    rgba(24, 72, 120, 0.12) 0%,
-    rgba(24, 72, 120, 0.02) 100%
-  );
 }
 
 .packTitle {
@@ -71,7 +40,14 @@
 .packScene {
   position: relative;
   z-index: 1;
-  --pack-card-width: min(92vw, calc((100dvh - 16rem) * 5 / 7));
+  --pack-available-height: calc(
+    var(--pack-page-height) - var(--pack-chrome-bottom) -
+      var(--pack-scene-padding-block)
+  );
+  --pack-card-width: min(
+    calc(100vw - 2rem),
+    calc(var(--pack-available-height) * 5 / 7)
+  );
   --pack-card-height: calc(var(--pack-card-width) * 7 / 5);
   flex: 1;
   display: flex;
@@ -84,35 +60,131 @@
   overflow: hidden;
 }
 
+/* Idle foil pack: size from viewport only — no strip/controls reserved yet. */
+.packScene:has(.idleLayout) {
+  --pack-chrome-bottom: calc(2rem + var(--pack-shadow-bleed));
+  --pack-available-height: calc(
+    var(--pack-page-height) - var(--pack-chrome-bottom) -
+      var(--pack-scene-padding-block)
+  );
+  --pack-card-width: min(
+    calc(100vw - 2rem),
+    calc(var(--pack-available-height) * 5 / 7)
+  );
+}
+
+/* Card reveal (stacked): hero row + one thumb row + controls. */
+.packScene:has(.revealLayout) {
+  --pack-chrome-bottom: 7.5rem;
+  --pack-available-height: calc(
+    var(--pack-page-height) - var(--pack-chrome-bottom) -
+      var(--pack-scene-padding-block)
+  );
+  --pack-card-width: min(
+    calc(100vw - 2rem),
+    calc(var(--pack-available-height) * 5 / 7)
+  );
+}
+
 .packSceneActive {
   flex: 1;
   gap: 0;
   padding: 0.25rem 0.5rem 0.35rem;
   min-height: 0;
-  --pack-card-width: min(92vw, calc((100dvh - 17rem) * 5 / 7));
 }
 
-@media (min-width: 900px) {
-  .packScene {
+/* Narrow portrait-like viewport: stacked hero + strip scroll. */
+@media (max-width: 899px) and (orientation: portrait) {
+  .packScene:has(.idleLayout) {
+    /* floating "Tap to open" chip + shadow */
+    --pack-chrome-bottom: calc(4.5rem + var(--pack-shadow-bleed));
+    --pack-available-height: calc(
+      var(--pack-page-height) - var(--pack-chrome-bottom) -
+        var(--pack-scene-padding-block)
+    );
     --pack-card-width: min(
-      calc(100vw - 24rem),
-      calc((100dvh - 6.5rem) * 5 / 7)
+      calc(100vw - 2.5rem),
+      calc(var(--pack-available-height) * 5 / 7)
     );
   }
 
-  .packSceneActive {
+  .packScene:has(.revealLayout) {
+    --pack-chrome-bottom: 7rem;
+    --pack-available-height: calc(
+      var(--pack-page-height) - var(--pack-chrome-bottom) -
+        var(--pack-scene-padding-block)
+    );
     --pack-card-width: min(
-      calc(100vw - 24rem),
-      calc((100dvh - 6.5rem) * 5 / 7)
+      calc(100vw - 2.5rem),
+      calc(var(--pack-available-height) * 5 / 7)
+    );
+  }
+
+  .idleLayout {
+    position: relative;
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-areas: "hero";
+  }
+
+  .packSidebar {
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.35rem;
+    z-index: 2;
+    max-width: none;
+    padding: 0;
+    gap: 0;
+    pointer-events: none;
+  }
+
+  .packSidebar .message {
+    margin: 0;
+    padding: 0.35rem 0.55rem;
+    border-radius: 6px;
+    background: rgba(10, 22, 40, 0.78);
+    font-size: 0.75rem;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .packSidebar .packSubtitle {
+    display: none;
+  }
+
+  .cardHero {
+    width: 100%;
+    padding-inline: 0.65rem;
+  }
+
+  .cardHero .cardStage {
+    width: 100%;
+    padding: 0.35rem 0.5rem;
+  }
+
+  .cardSlide {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+}
+
+/* Wide viewport: account for sidebar beside the idle foil pack. */
+@media (min-width: 900px) {
+  .packScene:has(.idleLayout) {
+    --pack-card-width: min(
+      calc(100vw - 18rem),
+      calc(var(--pack-available-height) * 5 / 7)
     );
   }
 }
 
 .foilPack {
+  box-sizing: border-box;
   width: var(--pack-card-width);
   height: var(--pack-card-height);
-  max-width: 100%;
-  max-height: 100%;
+  aspect-ratio: 5 / 7;
+  flex-shrink: 0;
   position: relative;
   cursor: pointer;
   transform-style: preserve-3d;
@@ -279,6 +351,10 @@
   gap: 0.5rem;
 }
 
+.idleLayout .cardStage {
+  container-type: normal;
+}
+
 .packSidebar {
   grid-area: sidebar;
   display: flex;
@@ -301,6 +377,10 @@
     align-self: center;
     padding: 0 0.5rem;
   }
+
+  .packSidebar .packSubtitle {
+    display: block;
+  }
 }
 
 .cardStage {
@@ -314,6 +394,10 @@
   max-height: 100%;
   padding: 0.25rem;
   overflow: hidden;
+}
+
+.packScene .cardStage {
+  container-type: normal;
 }
 
 .cardStage::before,
@@ -364,22 +448,138 @@
 
 .revealLayout {
   flex: 1;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   min-height: 0;
   max-height: 100%;
   width: 100%;
   overflow: hidden;
-  grid-template-columns: auto minmax(0, 1fr);
-  grid-template-rows: minmax(0, 1fr) auto;
-  grid-template-areas:
-    "hero hero"
-    "strip controls";
   gap: 0.35rem;
   padding: 0;
+  --pack-controls-column: 11rem;
+  --strip-thumb-width: clamp(3rem, 18vw, 4.25rem);
+  --pack-strip-gap: clamp(0.2rem, 0.8vw, 0.35rem);
+  --pack-strip-grid-cols: 3;
+  --pack-strip-grid-rows: 4;
+}
+
+.revealLayout .cardHero {
+  flex: 1 1 0;
+  min-height: 5.5rem;
+  isolation: isolate;
+  z-index: 1;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.revealLayout .cardStripRail {
+  flex: 0 0 auto;
+}
+
+.revealLayout .revealControls {
+  flex: 0 0 auto;
+}
+
+/* Stacked reveal: one compact row of thumbs below the hero. */
+.revealLayout .cardStripRail {
+  flex-shrink: 0;
+  max-height: calc(var(--strip-thumb-width) * 7 / 5 + 0.75rem);
+}
+
+.cardStripRail {
+  min-width: 0;
+  padding: 0 0.25rem;
+}
+
+/* Portrait: horizontal scroll row of thumbs. */
+.packStripScrollRow {
+  scroll-padding-inline: calc(50% - var(--strip-thumb-width) / 2);
+  padding-inline: calc(50% - var(--strip-thumb-width) / 2);
+}
+
+/* Flexible 3×4 thumb grid in the reveal sidebar (fixed thumb size, no stretch). */
+.packStripGridFlex {
+  display: grid;
+  width: max-content;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+  grid-template-columns: repeat(var(--pack-strip-grid-cols), auto);
+  grid-template-rows: repeat(var(--pack-strip-grid-rows), auto);
+  gap: var(--pack-strip-gap);
+  overflow: hidden;
+  padding: 0.15rem;
+  touch-action: manipulation;
+  align-content: start;
+  justify-content: center;
+}
+
+.packStripGridFlex .stripItem {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  scroll-snap-align: unset;
+  gap: 0;
+  justify-content: center;
+}
+
+.packStripGridFlex .stripMarker {
+  display: none;
+}
+
+.packStripGridFlex .stripThumb {
+  width: var(--strip-thumb-width, 3.25rem);
+  height: calc(var(--strip-thumb-width, 3.25rem) * 7 / 5);
+  max-width: var(--strip-thumb-width, 3.25rem);
+  max-height: calc(var(--strip-thumb-width, 3.25rem) * 7 / 5);
+  aspect-ratio: 5 / 7;
+}
+
+.packStripRailGrid {
+  padding: 0;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+.stripItem {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  width: var(--strip-thumb-width, 4.125rem);
+}
+
+.stripMarker {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.stripMarkerActive {
+  background: var(--accent);
+  box-shadow: 0 0 6px rgba(240, 120, 48, 0.65);
 }
 
 .cardHero {
-  grid-area: hero;
   min-height: 0;
   max-height: 100%;
   display: flex;
@@ -394,75 +594,396 @@
 }
 
 .cardStrip {
-  grid-area: strip;
-  --strip-thumb-width: clamp(3.375rem, 10.5vw, 4.5rem);
-  display: grid;
-  grid-template-columns: repeat(2, var(--strip-thumb-width));
-  grid-template-rows: repeat(5, auto);
-  gap: 0.35rem;
-  align-content: start;
-  padding: 0.25rem;
-  align-self: start;
+  display: none;
 }
 
 .revealControls {
-  grid-area: controls;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   justify-content: center;
   align-items: stretch;
-  align-self: center;
-  padding: 0 0.25rem;
-  min-width: 9rem;
-  max-width: 14rem;
+  align-self: stretch;
+  padding: 0 0.25rem 0.35rem;
+  min-width: 0;
+  max-width: none;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.revealControls .btn {
+  min-width: 0;
+  width: 100%;
+  white-space: nowrap;
 }
 
 .revealControls .packTitle {
   margin-bottom: 0.35rem;
 }
 
-.revealControls .btn {
-  min-width: 8.5rem;
-}
-
-@media (min-width: 900px) {
+/* Tall + wide reveal: strip grid | hero | controls (split-screen safe). */
+@media (min-width: 900px) and (min-height: 520px) {
   .revealLayout {
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) var(--pack-controls-column);
     grid-template-rows: minmax(0, 1fr);
     grid-template-areas: "strip hero controls";
     gap: 0 0.75rem;
     padding: 0 0.25rem;
     align-items: center;
+    --strip-thumb-width: 3.25rem;
+    --pack-card-width: min(
+      calc((100svh - var(--site-header-offset, 4.25rem) - 2rem) * 5 / 7),
+      calc((100vw - var(--pack-controls-column) - 12rem) * 0.55)
+    );
   }
 
-  .cardStrip {
-    --strip-thumb-width: clamp(3.75rem, 5.25vw, 4.875rem);
-    align-self: center;
-    max-height: calc(100dvh - 6.5rem);
-    overflow-y: auto;
-    scrollbar-width: thin;
+  .revealLayout .cardHero {
+    flex: unset;
+    grid-area: hero;
+    min-height: 0;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+    min-width: 0;
+    width: 100%;
+    padding-inline: 0.25rem;
   }
 
-  .revealControls {
+  .revealLayout .cardStripRail {
+    flex: unset;
+    grid-area: strip;
+    max-height: 100%;
+  }
+
+  .revealLayout .revealControls {
+    flex: unset;
+    grid-area: controls;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    align-self: center;
+    align-self: stretch;
+    justify-self: end;
+    width: var(--pack-controls-column);
+    min-width: var(--pack-controls-column);
+    max-width: var(--pack-controls-column);
     padding: 0 0.25rem;
-    min-width: 9.5rem;
+    flex-shrink: 0;
+  }
+
+  .revealLayout .packStripRailGrid {
+    align-self: center;
+    justify-self: start;
+    padding: 0.25rem 0.35rem;
+  }
+
+  .revealLayout .cardHero .cardStage {
+    width: min(var(--pack-card-width), 100%);
+    height: auto;
+    aspect-ratio: 5 / 7;
+    max-height: 100%;
+  }
+
+  .packScene .revealLayout .cardHero button:not(.foilPack) {
+    width: min(
+      calc((100svh - var(--site-header-offset, 4.25rem) - 2rem) * 5 / 7),
+      calc((100vw - var(--pack-controls-column) - 12rem) * 0.55)
+    ) !important;
+    height: min(
+      calc(100svh - var(--site-header-offset, 4.25rem) - 2rem),
+      calc(
+        min(
+          calc((100svh - var(--site-header-offset, 4.25rem) - 2rem) * 5 / 7),
+          calc((100vw - var(--pack-controls-column) - 12rem) * 0.55)
+        ) * 7 / 5
+      )
+    ) !important;
+    max-width: 100%;
+    max-height: 100%;
+    --card-width: 100%;
+    --card-height: 100%;
+    --back-stats-top: calc(var(--card-height) * 296 / 420);
+  }
+
+  .revealLayout .stripMarker {
+    display: none;
   }
 }
 
-.cardHero button {
-  --card-width: var(--pack-card-width);
-  --card-height: var(--pack-card-height);
-  --back-stats-top: calc(var(--card-height) * 296 / 420);
-  width: var(--card-width);
-  height: var(--card-height);
+@media (min-width: 900px) and (min-height: 520px) {
+  .packScene:has(.revealLayout) {
+    --pack-chrome-bottom: 2rem;
+  }
+}
+
+/* Compact horizontal viewport: short or narrow side-by-side layout. */
+@media (orientation: landscape) and (max-height: 520px),
+  (max-width: 899px) and (orientation: landscape) {
+  .packPage {
+    display: flex;
+    flex-direction: column;
+    --pack-page-inset-block: 0px;
+    --pack-page-height: calc(
+      var(--pack-viewport-height) - var(--site-header-offset, 4.25rem)
+    );
+    height: var(--pack-page-height);
+    max-height: var(--pack-page-height);
+    margin: 0;
+    min-height: 0;
+  }
+
+  .packScene,
+  .packSceneActive {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+    padding: 0.2rem 0.35rem;
+    --pack-scene-padding-block: 0.55rem;
+  }
+
+  .packScene:has(.idleLayout) {
+    --pack-chrome-bottom: calc(1.5rem + var(--pack-shadow-bleed));
+    --pack-available-height: calc(
+      var(--pack-page-height) - var(--pack-chrome-bottom) -
+        var(--pack-scene-padding-block)
+    );
+    --pack-card-width: min(
+      calc(100vw - 2rem),
+      calc(var(--pack-available-height) * 5 / 7)
+    );
+  }
+
+  .packScene:has(.revealLayout) {
+    --pack-chrome-bottom: 6.5rem;
+    --pack-available-height: calc(
+      var(--pack-page-height) - var(--pack-chrome-bottom) -
+        var(--pack-scene-padding-block)
+    );
+    --pack-card-width: min(
+      calc(100vw - 2rem),
+      calc(var(--pack-available-height) * 5 / 7)
+    );
+  }
+
+  .revealLayout {
+    --strip-thumb-width: clamp(2rem, 9vw, 2.75rem);
+    gap: 0.25rem;
+  }
+
+  .revealLayout .cardStripRail {
+    flex: 0 1 auto;
+    max-height: calc(var(--strip-thumb-width) * 7 / 5 + 0.35rem);
+  }
+
+  .revealLayout .revealControls {
+    flex: 0 0 auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    justify-content: center;
+    padding-bottom: 0.15rem;
+  }
+
+  .revealLayout .revealControls .btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.45rem 0.55rem;
+    font-size: 0.78rem;
+  }
+
+  .packScene .revealLayout .cardHero button:not(.foilPack) {
+    width: min(
+      calc(100vw - 2rem),
+      calc((100svh - var(--site-header-offset, 4.25rem) - 7rem) * 5 / 7)
+    ) !important;
+    height: min(
+      calc(100svh - var(--site-header-offset, 4.25rem) - 7rem),
+      calc(
+        min(
+          calc(100vw - 2rem),
+          calc((100svh - var(--site-header-offset, 4.25rem) - 7rem) * 5 / 7)
+        ) * 7 / 5
+      )
+    ) !important;
+  }
+
+  .cardStage::before,
+  .cardStage::after {
+    display: none;
+  }
+
+  .idleLayout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-areas: "hero";
+    align-items: stretch;
+    position: relative;
+    min-height: 0;
+    height: 100%;
+  }
+
+  .idleLayout .packSidebar {
+    position: absolute;
+    left: 50%;
+    bottom: 0.35rem;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: calc(100% - 1rem);
+    padding: 0;
+    gap: 0;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .idleLayout .packSidebar .message {
+    margin: 0;
+    padding: 0.3rem 0.55rem;
+    border-radius: 6px;
+    background: rgba(10, 22, 40, 0.78);
+    font-size: 0.72rem;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .idleLayout .packSidebar .packSubtitle {
+    display: none;
+  }
+
+  .idleLayout .cardHero {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .idleLayout .cardHero .cardStage {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    container-type: normal;
+  }
+}
+
+.revealLayout .cardHero .cardStage {
+  overflow: visible;
+}
+
+/* Foil pack: always viewport-sized — never inherit trading-card button rules. */
+.packScene .cardHero .foilPack {
+  width: var(--pack-card-width);
+  height: auto;
+  aspect-ratio: 5 / 7;
+  max-width: min(var(--pack-card-width), 100%);
+  max-height: min(var(--pack-card-height), var(--pack-available-height));
+  margin-inline: auto;
+  overflow: visible;
+  border-radius: 10px;
+  box-shadow: none;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.45));
+}
+
+.idleLayout .cardHero {
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.idleLayout .cardHero .cardStage {
+  max-height: 100%;
+  overflow: hidden;
+  padding-bottom: var(--pack-shadow-bleed);
+  box-sizing: border-box;
+}
+
+.revealLayout .cardHero .cardStage {
+  overflow: visible;
+}
+
+.revealLayout .cardSlide {
+  container-type: size;
+  flex: 1 1 0;
+  min-height: 0;
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.revealLayout .cardHeroStack {
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.revealLayout .cardHero .cardStage {
+  container-type: normal;
+  flex: 1 1 0;
+  min-height: 0;
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.packScene .revealLayout .cardHero button:not(.foilPack) {
+  width: min(
+    calc(100vw - 2rem),
+    calc((100svh - var(--site-header-offset, 4.25rem) - 9rem) * 5 / 7)
+  ) !important;
+  height: min(
+    calc(100svh - var(--site-header-offset, 4.25rem) - 9rem),
+    calc(
+      min(
+        calc(100vw - 2rem),
+        calc((100svh - var(--site-header-offset, 4.25rem) - 9rem) * 5 / 7)
+      ) * 7 / 5
+    )
+  ) !important;
   max-width: 100%;
   max-height: 100%;
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.45));
+  --card-width: 100%;
+  --card-height: 100%;
+  --back-stats-top: calc(var(--card-height) * 296 / 420);
+  margin-inline: auto;
+  flex-shrink: 0;
+  filter: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  overflow: visible;
+}
+
+@supports (width: round(1px, 1px)) {
+  .revealLayout .cardHero button {
+    --back-stats-top: calc(var(--card-height) * 296 / 420);
+  }
+}
+
+@media (min-width: 900px) and (min-height: 520px) {
+  .revealLayout .cardStage::before,
+  .revealLayout .cardStage::after {
+    display: none;
+  }
+}
+
+.packScene .cardHero button:not(.foilPack) {
+  overflow: visible;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.packScene .cardHero .face {
+  overflow: visible;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 .revealArea {
@@ -477,16 +998,31 @@
 .cardSlide {
   animation: cardSlideIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   opacity: 0;
-  transform: translateY(40px) scale(0.9);
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.cardHeroStack {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
 }
 
 @keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: none;
   }
 }
 
@@ -517,6 +1053,7 @@
 }
 
 .stripThumb {
+  position: relative;
   width: var(--strip-thumb-width, 4.125rem);
   aspect-ratio: 5 / 7;
   height: auto;
@@ -528,6 +1065,22 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+button.stripThumb {
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+button.stripThumb:hover {
+  filter: brightness(1.08);
+}
+
+button.stripThumb:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .stripThumb.unrevealed {
@@ -545,11 +1098,12 @@
 }
 
 .stripThumb.revealed {
-  border-color: var(--accent);
+  border-width: 2px;
+  border-style: solid;
 }
 
 .stripThumb.current {
-  box-shadow: 0 0 8px var(--accent);
+  border-width: 2px;
 }
 
 .message {
@@ -588,4 +1142,63 @@
 
 .error {
   color: var(--error);
+}
+
+.newCardBadge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 5;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-size: clamp(0.65rem, 2.2cqw, 0.8rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-yellow-light);
+  background: linear-gradient(
+    135deg,
+    var(--brand-blue-bright) 0%,
+    var(--brand-blue) 42%,
+    var(--brand-orange) 100%
+  );
+  border: 2px solid var(--brand-cyan-light);
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.65s ease;
+}
+
+.newCardBadgeFade {
+  opacity: 0;
+}
+
+.stripNewBadge {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--brand-yellow-light);
+  background: linear-gradient(
+    135deg,
+    var(--brand-blue-bright) 0%,
+    var(--brand-blue) 42%,
+    var(--brand-orange) 100%
+  );
+  border: 1.5px solid var(--brand-cyan-light);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  pointer-events: none;
 }

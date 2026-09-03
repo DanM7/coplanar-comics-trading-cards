@@ -58,6 +58,8 @@ export function computeTeamPower(
   const synergy = computeTeamSynergy({
     types: entries.map((entry) => entry.type),
     alignments: entries.map((entry) => entry.alignment),
+    homePlanes: entries.map((entry) => entry.homePlane),
+    homeLocations: entries.map((entry) => entry.homeLocation),
     homeDistricts: entries.map((entry) => entry.homeDistrict),
   });
 
@@ -96,6 +98,16 @@ export function scoreTeam(entries: PlayRosterEntry[]): number {
   return computeTeamPower(entries)?.totalScore ?? 0;
 }
 
+/** Solo fighter heuristic for roster sorting (same stat/move formula as team power, no synergy). */
+export function rosterEntryPowerScore(entry: PlayRosterEntry): number {
+  const effective = entry.stats;
+  const hp = maxHpFromDurability(effective.durability);
+  const physical = basePhysicalPower(effective);
+  const energy = baseEnergyPower(effective);
+  const moveScore = averageMoveValue(entry) * MOVE_SCORE_MULTIPLIER;
+  return hp + physical + energy + moveScore;
+}
+
 export function computeTeamPowerFromBattleTeam(
   team: BattleTeam
 ): TeamPowerBreakdown | null {
@@ -104,6 +116,8 @@ export function computeTeamPowerFromBattleTeam(
     name: fighter.name,
     alignment: fighter.alignment,
     type: fighter.type,
+    homePlane: fighter.homePlane,
+    homeLocation: fighter.homeLocation,
     homeDistrict: fighter.homeDistrict,
     tier: 0,
     stats: fighter.baseStats,

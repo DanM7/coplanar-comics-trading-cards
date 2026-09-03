@@ -240,7 +240,7 @@ function advanceTurn(state: BattleState, rng: () => number = Math.random): Battl
 
 export function executePlayerAction(
   state: BattleState,
-  input: { moveIndex: number; targetFighterId: string },
+  input: { moveIndex: number; targetFighterId?: string },
   rng: () => number = Math.random
 ): BattleState {
   if (state.phase !== "battle" || !state.awaitingPlayerAction) {
@@ -255,6 +255,19 @@ export function executePlayerAction(
 
   const move = attacker.moves[input.moveIndex];
   if (!move) {
+    return state;
+  }
+
+  if (move.scope === "range") {
+    const defenders = livingFighters(opponentTeam(state, attacker.team));
+    if (defenders.length === 0) {
+      return state;
+    }
+
+    return resolveRangeAndAdvance(state, attacker, defenders, input.moveIndex, rng);
+  }
+
+  if (!input.targetFighterId) {
     return state;
   }
 
@@ -290,12 +303,21 @@ export function executeCpuTurn(
   }
 
   const moveIndex = Math.floor(rng() * attacker.moves.length);
+  const move = attacker.moves[moveIndex];
+  if (!move) {
+    return advanceTurn(state, rng);
+  }
+
+  if (move.scope === "range") {
+    return resolveRangeAndAdvance(state, attacker, targets, moveIndex, rng);
+  }
+
   const target = targets[Math.floor(rng() * targets.length)]!;
 
   return resolveAndAdvance(state, attacker, target, moveIndex, rng);
 }
 
-function resolveAndAdvance(
+function applySingleAttack(
   state: BattleState,
   attacker: BattleFighter,
   defender: BattleFighter,
@@ -351,13 +373,60 @@ function resolveAndAdvance(
     result.defenderKO
   );
 
-  nextState = {
+  return {
     ...nextState,
     log: [
       ...nextState.log,
       createLogEntry(nextState.round, message, kind, animation),
     ],
   };
+}
+
+function resolveRangeAndAdvance(
+  state: BattleState,
+  attacker: BattleFighter,
+  defenders: BattleFighter[],
+  moveIndex: number,
+  rng: () => number
+): BattleState {
+  let nextState = state;
+
+  for (const defender of defenders) {
+    const currentDefender = findFighter(nextState, defender.id);
+    if (!currentDefender || currentDefender.isKO) {
+      continue;
+    }
+
+    nextState = applySingleAttack(
+      nextState,
+      attacker,
+      currentDefender,
+      moveIndex,
+      rng
+    );
+    nextState = checkVictory(nextState);
+    if (nextState.phase !== "battle") {
+      return { ...nextState, awaitingPlayerAction: false };
+    }
+  }
+
+  return advanceTurn(nextState, rng);
+}
+
+function resolveAndAdvance(
+  state: BattleState,
+  attacker: BattleFighter,
+  defender: BattleFighter,
+  moveIndex: number,
+  rng: () => number
+): BattleState {
+  let nextState = applySingleAttack(
+    state,
+    attacker,
+    defender,
+    moveIndex,
+    rng
+  );
 
   nextState = checkVictory(nextState);
   if (nextState.phase !== "battle") {

@@ -145,7 +145,7 @@ Set for **Production** (and **Deploy previews** if you want OAuth on preview URL
 | Variable | Value |
 |----------|--------|
 | `DATABASE_URL` | Neon **main** branch connection string |
-| `NEXTAUTH_URL` | `https://YOUR-SITE.netlify.app` (no trailing slash) |
+| `NEXTAUTH_URL` | `https://YOUR-SITE.netlify.app` (no trailing slash). If unset or still `localhost`, the app uses Netlify’s `URL` env var in production. |
 | `NEXTAUTH_SECRET` | Output of `openssl rand -base64 32` |
 
 ### OAuth — start with Google
@@ -235,8 +235,8 @@ Do **not** upgrade to Prisma 7 to fix this — it is unrelated.
 
 ### If sign-in fails
 
-- `NEXTAUTH_URL` must exactly match the browser URL (https, no trailing slash)
-- Google redirect URI must match exactly
+- `NEXTAUTH_URL` must exactly match the browser URL (https, no trailing slash). **Do not leave it as `http://localhost:3000` on Netlify** — Google OAuth will redirect to localhost and fail.
+- Add your production URL to Google **Authorized redirect URIs**: `https://YOUR-SITE.netlify.app/api/auth/callback/google`
 - Check Netlify **Functions** log for NextAuth errors
 - Confirm `DATABASE_URL` is reachable from Netlify (Neon IP allowlist is usually open by default)
 

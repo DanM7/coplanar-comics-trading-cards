@@ -26,24 +26,132 @@
 }
 
 .statBlockRowMove {
-  display: block;
+  align-items: flex-start;
   margin-top: 8px;
-}
-
-.statBlockRowMove::after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 .statBlockRowMove .statBlockLabel {
   line-height: 1.15;
+  text-align: left;
+  flex: 1 1 0;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.statBlocks,
+.moveRangeRow,
+.teamStatBoostRow,
+.selfStatBoostRow {
+  --stat-block-size: 0.55rem;
+  --stat-block-gap: 0.12rem;
 }
 
 .statBlockRowMove .statBlocks {
-  float: right;
-  margin-left: 0.25rem;
-  align-items: flex-start;
+  flex: 0 0 auto;
+  margin-top: 0.05rem;
+}
+
+.statBlockMoveColumn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 0 0 auto;
+  margin-top: 0.05rem;
+  --stat-block-size: 0.55rem;
+  --stat-block-gap: 0.12rem;
+}
+
+.moveRangeRow {
+  display: inline-flex;
+  gap: var(--stat-block-gap);
+  position: relative;
+  margin-top: 0.1rem;
+  height: calc(var(--stat-block-size) * 0.85);
+}
+
+.moveRangeSizer {
+  width: var(--stat-block-size);
+  flex: 0 0 var(--stat-block-size);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.moveRangeOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.moveRangeOvals {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(var(--stat-block-size) * 2 + var(--stat-block-gap));
+  height: calc(var(--stat-block-size) * 0.62);
+}
+
+.moveRangeOvalOuter,
+.moveRangeOvalInner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--range-color, #e2e8f0);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.moveRangeOvalOuter {
+  width: 100%;
+  height: 100%;
+}
+
+.moveRangeOvalInner {
+  width: 62%;
+  height: 62%;
+}
+
+.moveRangeArrowLeft,
+.moveRangeArrowRight {
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  background: var(--range-color, #e2e8f0);
+  transform: translateY(-50%);
+}
+
+.moveRangeArrowLeft {
+  left: 0;
+  right: calc(50% + (var(--stat-block-size) * 2 + var(--stat-block-gap)) / 2);
+}
+
+.moveRangeArrowLeft::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-right: 4px solid var(--range-color, #e2e8f0);
+}
+
+.moveRangeArrowRight {
+  right: 0;
+  left: calc(50% + (var(--stat-block-size) * 2 + var(--stat-block-gap)) / 2);
+}
+
+.moveRangeArrowRight::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 4px solid var(--range-color, #e2e8f0);
 }
 
 .statBlockLabel {
@@ -59,15 +167,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.12rem;
+  gap: var(--stat-block-gap);
   flex: 0 0 auto;
   flex-wrap: nowrap;
 }
 
 .statBlock {
   display: inline-block;
-  width: 0.55rem;
-  height: 0.55rem;
+  width: var(--stat-block-size);
+  height: var(--stat-block-size);
   border: 1px solid color-mix(in srgb, var(--stat-color, #cbd5e0) 55%, transparent);
   box-sizing: border-box;
 }
@@ -84,4 +192,146 @@
 .statBlockMoveFilled {
   background: var(--move-type-fill, #fc8181);
   border-color: #f7fafc;
+}
+
+.statBlockBoostPlus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--stat-block-size);
+  height: var(--stat-block-size);
+  font-size: calc(var(--stat-block-size) * 0.95);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--boost-color, #f7fafc);
+}
+
+.statBlockBoostFilled {
+  background: var(--boost-color, #e2e8f0);
+  border-color: var(--boost-color, #e2e8f0);
+}
+
+.statBlockSpacer {
+  display: inline-block;
+  width: var(--stat-block-size);
+  height: var(--stat-block-size);
+  flex: 0 0 var(--stat-block-size);
+}
+
+.statBlockHpBoostRow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--stat-block-gap);
+  flex: 0 0 auto;
+}
+
+.statBlockHpBoostTrack {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--stat-block-gap);
+  box-sizing: border-box;
+  font-size: 0.72em;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f7fafc;
+  white-space: nowrap;
+  width: calc(var(--stat-block-size) * 5 + var(--stat-block-gap) * 4);
+}
+
+.statBlockHpBoostTrackTeam {
+  font-size: 0.82em;
+}
+
+.statBlockHpBoostAmount {
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f7fafc;
+  white-space: nowrap;
+}
+
+.statBlockHpBoostPrefix {
+  font-size: 0.82em;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f7fafc;
+  white-space: nowrap;
+}
+
+.selfStatBoostRow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--stat-block-gap);
+  flex: 0 0 auto;
+  width: calc(var(--stat-block-size) * 5 + var(--stat-block-gap) * 4);
+  max-width: 100%;
+  font-size: 0.82em;
+}
+
+.selfStatBoostGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--stat-block-gap);
+  flex-shrink: 0;
+}
+
+.teamStatBoostRow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--stat-block-gap);
+  flex: 0 0 auto;
+  width: calc(var(--stat-block-size) * 5 + var(--stat-block-gap) * 4);
+  max-width: 100%;
+}
+
+.teamStatBoostGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--stat-block-gap);
+  flex-shrink: 0;
+}
+
+.teamStatBoostGroup .statBlock {
+  flex-shrink: 0;
+}
+
+.teamStatBoostLead,
+.teamStatBoostPlus {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--stat-block-gap);
+  font-size: 0.82em;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--boost-color, #f7fafc);
+  white-space: nowrap;
+}
+
+.opponentStatReductionLead,
+.opponentStatReductionPlus {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--stat-block-gap);
+  font-size: 0.82em;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--boost-color, #f7fafc);
+  white-space: nowrap;
+}
+
+.statEffectTriangle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--stat-block-size);
+  height: var(--stat-block-size);
+  flex: 0 0 var(--stat-block-size);
+  box-sizing: border-box;
+  font-size: calc(var(--stat-block-size) * 0.95);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--boost-color, #f7fafc);
+  border-bottom: 1px solid #f7fafc;
 }

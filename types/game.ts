@@ -10,6 +10,9 @@ export interface PlayRosterEntry {
   name: string;
   alignment: Alignment;
   type?: string;
+  /** May be multi-value, e.g. `Human / Lapsed Continuum`. */
+  homePlane: string;
+  homeLocation: string;
   homeDistrict: string;
   tier: number;
   stats: CoreStats;
@@ -17,15 +20,24 @@ export interface PlayRosterEntry {
   ownedQuantity?: number;
   /** Finished card front PNG when exported to assets/cards/. */
   frontImageUrl?: string;
+  /** Raw front portrait for back-face ghost (no card frame). */
+  portraitUrl?: string;
 }
+
+export type HomeAccuracyMatchKind = "plane" | "location" | "district";
 
 export interface TeamSynergyBonuses {
   /** +0 / +0.05 / +0.10 damage multiplier component */
   typeDamage: number;
   /** +0 / +0.15 incoming damage reduction (all Good, Evil, or Neutral) */
   alignmentDefense: number;
-  /** +0 / +0.10 hit chance */
+  /** +0 / +0.05 (plane) / +0.10 (location) / +0.15 (district) hit chance */
   homeAccuracy: number;
+  /** Which home field earned the accuracy bonus (best tier wins). */
+  homeAccuracyMatch: {
+    kind: HomeAccuracyMatchKind;
+    value: string;
+  } | null;
 }
 
 export interface BattleFighter {
@@ -36,6 +48,8 @@ export interface BattleFighter {
   slot: number;
   alignment: Alignment;
   type?: string;
+  homePlane: string;
+  homeLocation: string;
   homeDistrict: string;
   baseStats: CoreStats;
   effectiveStats: CoreStats;

@@ -14,6 +14,7 @@
       "rarity": "common",
       "character": 2,
       "design": {
+        "backOgScale": 115,
         "backGhostOpacity": 70
       },
       "status": "done"
@@ -113,7 +114,7 @@
       "rarity": "common",
       "character": 13,
       "design": {
-        "backOgScale": 65,
+        "backOgScale": 60,
         "backGhostOpacity": 90,
         "backOgBackdropColor": "#b9baac",
         "backGhostOffsetY": -58
@@ -125,7 +126,7 @@
       "rarity": "common",
       "character": 14,
       "design": {
-        "backOgScale": 65,
+        "backOgScale": 70,
         "backGhostOpacity": 50,
         "backOgBackdropColor": "#96978a",
         "backGhostOffsetY": -70
@@ -138,8 +139,8 @@
       "character": 15,
       "design": {
         "backOgScale": 75,
-        "backGhostOpacity": 50,
         "backOgBackdropColor": "#7b7c73",
+        "backGhostOpacity": 50,
         "backGhostOffsetY": -20
       },
       "status": "done"
@@ -158,12 +159,25 @@
       "id": "17",
       "rarity": "common",
       "character": 17,
-      "status": "need front image"
+      "design": {
+        "backOgScale": 80,
+        "backOgBackdropColor": "#aaac9d",
+        "backGhostOpacity": 50,
+        "backGhostOffsetY": -40
+      },
+      "status": "done"
     },
     {
       "id": "18",
       "rarity": "common",
       "character": 18,
+      "design": {
+        "backMetaFontSize": 80,
+        "backOgScale": 85,
+        "backOgBackdropColor": "#b3b4a5",
+        "backGhostOpacity": 60,
+        "backGhostOffsetY": -40
+      },
       "status": "need front image"
     },
     {
@@ -171,7 +185,7 @@
       "rarity": "common",
       "character": 19,
       "design": {
-        "backOgScale": 75,
+        "backOgScale": 85,
         "backGhostOpacity": 50,
         "backOgBackdropColor": "#d1d2c3"
       },
@@ -189,7 +203,7 @@
     },
     {
       "id": "21",
-      "rarity": "common",
+      "rarity": "uncommon",
       "character": 21,
       "design": {
         "backGhostOpacity": 65,
@@ -373,6 +387,13 @@
       "id": "38",
       "rarity": "rare",
       "character": 38,
+      "design": {
+        "backOgScale": 70,
+        "backOgBackdropColor": "#b7baac",
+        "backGhostOpacity": 55,
+        "backGhostOffsetY": -98,
+        "backMetaFontSize": 80
+      },
 	  "status": "draw og image!"
     },
     {
@@ -395,7 +416,7 @@
         "backOgScale": 90,
         "backOgBackdropColor": "#b7baac",
         "backGhostOpacity": 55,
-        "backGhostOffsetY": -2,
+        "backGhostOffsetY": -78,
         "backMetaFontSize": 80
       },
       "status": "done"
@@ -505,23 +526,52 @@
     },
     {
       "id": "50",
-      "rarity": "common",
-      "character": 50
+      "rarity": "rare",
+      "character": 50,
+      "design": {
+        "backMetaFontSize": 80,
+        "backOgScale": 75,
+        "backOgBackdropColor": "#b3b5a8",
+        "backGhostOpacity": 65,
+        "backGhostOffsetY": -40
+      },
+      "status": "done"
     },
     {
       "id": "51",
       "rarity": "common",
-      "character": 51
+      "character": 51,
+      "design": {
+        "backOgScale": 80,
+        "backOgBackdropColor": "#babcaf",
+        "backGhostOpacity": 55,
+        "backGhostOffsetY": -22
+      },
+      "status": "done"
     },
     {
       "id": "52",
-      "rarity": "common",
-      "character": 52
+      "rarity": "uncommon",
+      "character": 52,
+      "design": {
+        "backOgScale": 90,
+        "backOgBackdropColor": "#cccdbf",
+        "backGhostOpacity": 40,
+        "backGhostOffsetY": 2
+      },
+      "status": "done"
     },
     {
       "id": "53",
       "rarity": "uncommon",
-      "character": 53
+      "character": 53,
+      "design": {
+        "backOgScale": 85,
+        "backOgBackdropColor": "#d6d7c6",
+        "backGhostOpacity": 65,
+        "backGhostOffsetY": 0
+      },
+      "status": "done"
     },
     {
       "id": "54",
@@ -531,17 +581,40 @@
     {
       "id": "55",
       "rarity": "common",
-      "character": 55
+      "character": 55,
+      "design": {
+        "backMetaFontSize": 80,
+        "backOgScale": 60,
+        "backOgBackdropColor": "#b0b2a4",
+        "backGhostOpacity": 80,
+        "backGhostOffsetY": -90
+      },
+      "status": "done"
     },
     {
       "id": "56",
       "rarity": "common",
-      "character": 56
+      "character": 56,
+      "design": {
+        "backMetaFontSize": 80,
+        "backOgScale": 60,
+        "backOgBackdropColor": "#b0b2a4",
+        "backGhostOpacity": 90,
+        "backGhostOffsetY": -34
+      },
+      "status": "done"
     },
     {
       "id": "57",
       "rarity": "common",
-      "character": 57
+      "character": 57,
+      "design": {
+        "backOgScale": 80,
+        "backOgBackdropColor": "#b8bbae",
+        "backGhostOpacity": 70,
+        "backGhostOffsetY": -50
+      },
+      "status": "done"
     },
     {
       "id": "58",

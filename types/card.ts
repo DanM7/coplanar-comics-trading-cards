@@ -1,3 +1,5 @@
+import type { EditorCardMeta } from "@/components/editor/EditableCardFace";
+import type { CardDesignConfig } from "./card-design";
 import type { Alignment, HomeRegion } from "./character";
 import type { MoveDisplay } from "./character-moves";
 
@@ -40,6 +42,8 @@ export interface GeneratedCardBack {
   homeLine: string;
   /** `Type: Creature • Species: …` from character descriptions */
   typeIdentityLine: string;
+  /** `Affiliation: Realspace Reapers` when present on the character */
+  affiliationLine?: string | null;
   tier: number;
   stats: CardStats;
   moves?: MoveDisplay[];
@@ -48,6 +52,14 @@ export interface GeneratedCardBack {
   /** @deprecated Use seriesFooterLine */
   seriesTitle?: string;
   flavorText?: string;
+}
+
+/** Editor-accurate card face data for live CSS rendering in pack/binder. */
+export interface CardDisplay {
+  frontPortraitUrl: string;
+  backPortraitUrl: string;
+  design: CardDesignConfig;
+  meta: EditorCardMeta;
 }
 
 export interface GeneratedCard {
@@ -59,6 +71,8 @@ export interface GeneratedCard {
   finishedFrontUrl?: string;
   /** Full baked back PNG from assets/cards when exported. */
   finishedBackUrl?: string;
+  /** Live compose data when a finished print is available. */
+  display?: CardDisplay;
   front: GeneratedCardFront;
   back: GeneratedCardBack;
 }

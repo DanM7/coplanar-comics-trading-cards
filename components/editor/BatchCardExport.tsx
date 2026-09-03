@@ -2,15 +2,15 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import {
-  EditableCardFace,
-  type EditorCardMeta,
-} from "@/components/editor/EditableCardFace";
+import { CardPreviewShell } from "@/components/cards/CardPreviewShell";
+import { DesignedCardFace } from "@/components/cards/DesignedCardFace";
+import type { EditorCardMeta } from "@/components/editor/EditableCardFace";
 import {
   PNG_EXPORT_SCALE_DEFAULT,
   saveCardElementPng,
 } from "@/lib/export-card-png";
 import { waitForImageUrls } from "@/lib/preload-images";
+import type { CardDisplay } from "@/types/card";
 import type { CardDesignConfig } from "@/types/card-design";
 import styles from "./editor.module.css";
 
@@ -300,23 +300,32 @@ export function BatchCardExport() {
       >
         {activeJob ? (
           <>
-            <EditableCardFace
-              key={`${activeJob.printId}-front`}
-              side="front"
-              portraitUrl={activeJob.frontUrl}
-              meta={activeJob.meta}
-              design={activeJob.design}
-              canvasRef={frontCanvasRef}
-            />
-            <EditableCardFace
-              key={`${activeJob.printId}-back`}
-              side="back"
-              portraitUrl={activeJob.frontUrl}
-              backPortraitUrl={activeJob.backUrl}
-              meta={activeJob.meta}
-              design={activeJob.design}
-              canvasRef={backCanvasRef}
-            />
+            <CardPreviewShell>
+              <DesignedCardFace
+                key={`${activeJob.printId}-front`}
+                side="front"
+                display={{
+                  frontPortraitUrl: activeJob.frontUrl,
+                  backPortraitUrl: activeJob.backUrl,
+                  meta: activeJob.meta,
+                  design: activeJob.design,
+                }}
+                canvasRef={frontCanvasRef}
+              />
+            </CardPreviewShell>
+            <CardPreviewShell>
+              <DesignedCardFace
+                key={`${activeJob.printId}-back`}
+                side="back"
+                display={{
+                  frontPortraitUrl: activeJob.frontUrl,
+                  backPortraitUrl: activeJob.backUrl,
+                  meta: activeJob.meta,
+                  design: activeJob.design,
+                }}
+                canvasRef={backCanvasRef}
+              />
+            </CardPreviewShell>
           </>
         ) : null}
       </div>

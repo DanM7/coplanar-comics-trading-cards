@@ -87,6 +87,7 @@ function metaFromCharacter(character: Character): EditorCardMeta {
     home_district: character.home_district,
     type: character.type,
     identity: character.identity,
+    affiliation: character.affiliation,
     description: character.description,
     flavorText: "",
     seriesFooterLine: "",

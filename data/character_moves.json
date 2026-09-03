@@ -2243,7 +2243,10 @@
       "id": 2,
       "name": "Centim",
       "move1": "Adorable Vigilance",
-      "move1_value": 1,
+      "move1_value": 0,
+      "move1_scope": "self",
+      "move1_effect1": "Strength_Up_1",
+      "move1_effect2": "Durability_Up_1",
       "move2": "Forest Trail Hop",
       "move2_value": 1
     },
@@ -2253,7 +2256,10 @@
       "move1": "Spring Stomp",
       "move1_value": 1,
       "move2": "Boingy Pranks",
-      "move2_value": 2
+      "move2_scope": "self",
+      "move2_effect1": "Intelligence_Up_1",
+      "move2_effect2": "Skill_Up_1",
+      "move2_value": 0
     },
     {
       "id": 4,
@@ -2261,14 +2267,17 @@
       "move1": "Muck Mash",
       "move1_value": 5,
       "move2": "Stink Bomb",
-      "move2_value": 4,
-      "move2_type": "energy"
+      "move2_value": 3,
+      "move2_type": "energy",
+      "move2_scope": "range"
     },
     {
       "id": 5,
       "name": "Ball Thing",
-      "move1": "Gnarl",
-      "move1_value": 2,
+      "move1": "Snarling Grin",
+      "move1_value": 0,
+	  "move1_scope": "self",
+	  "move1_effect1": "Strength_Up_1",
       "move2": "Skyfall Slam",
       "move2_value": 3
     },
@@ -2314,8 +2323,9 @@
       "move1": "Lava Stomp",
       "move1_value": 4,
       "move2": "Core Eruption",
-      "move2_value": 4,
-      "move2_type": "energy"
+      "move2_value": 3,
+      "move2_type": "energy",
+      "move2_scope": "range"
     },
     {
       "id": 11,
@@ -2323,17 +2333,19 @@
       "move1": "Frosting Frenzy",
       "move1_value": 2,
       "move2": "Crumb Blast",
-      "move2_value": 2
+      "move2_value": 2,
+      "move2_scope": "range"
     },
     {
       "id": 12,
       "name": "Unknown",
-      "move1": "Smoke Veil",
+      "move1": "Possession Pulse",
       "move1_value": 3,
       "move1_type": "energy",
-      "move2": "Possession Pulse",
-      "move2_value": 3,
-      "move2_type": "energy"
+      "move2": "Smoke Veil",
+      "move2_value": 2,
+      "move2_type": "energy",
+      "move2_scope": "range"
     },
     {
       "id": 13,
@@ -2342,8 +2354,9 @@
       "move1_type": "energy",
       "move1_value": 4,
       "move2": "Regenerative Frenzy",
-      "move2_value": 4,
-      "move2_type": "energy"
+      "move2_value": 0,
+      "move2_scope": "self",
+      "move2_effect1": "HP_Up_25%"
     },
     {
       "id": 14,
@@ -2353,8 +2366,9 @@
       "move1_type": "energy",
       "move1_energy_color": "#ffe566",
       "move2": "Grid Overload",
-      "move2_value": 3,
-      "move2_type": "energy"
+      "move2_value": 2,
+      "move2_type": "energy",
+      "move2_scope": "range"
     },
     {
       "id": 15,
@@ -2362,7 +2376,8 @@
       "move1": "Rail Grind Rush",
       "move1_value": 2,
       "move2": "Lock-Up Loop",
-      "move2_value": 2
+      "move2_value": 2,
+      "move2_type": "energy"
     },
     {
       "id": 16,
@@ -2371,23 +2386,29 @@
       "move1_value": 2,
       "move2": "Dune Cloud",
       "move2_value": 1,
-      "move2_type": "energy"
+      "move2_type": "energy",
+      "move2_scope": "range"
     },
     {
       "id": 17,
       "name": "Abdominal Snowman",
-      "move1": "Belly Quake",
+      "move1": "Frosty Feast",
       "move1_value": 3,
-      "move2": "Snow Slam",
-      "move2_value": 3
+      "move2": "Digestive Dread",
+      "move2_value": 3,
+      "move2_type": "energy"
     },
     {
       "id": 18,
       "name": "Ammo Supplying Robot",
       "move1": "Reload Rush",
-      "move1_value": 1,
+      "move1_value": 0,
+      "move1_scope": "team",
+      "move1_effect1": "Strength_Up_2",
       "move2": "Field Repair",
-      "move2_value": 1
+      "move2_value": 0,
+      "move2_scope": "team",
+      "move2_effect1": "HP_Up_25%"
     },
     {
       "id": 19,
@@ -2395,24 +2416,27 @@
       "move1": "Hell Chomp",
       "move1_value": 2,
       "move2": "Jagged Grin",
-      "move2_value": 2
+      "move2_value": 0,
+      "move2_scope": "opponent",
+      "move2_effect1": "Durability_Down_2"
     },
     {
       "id": 20,
       "name": "Grafitti",
       "move1": "Spray Tag",
-      "move1_value": 2,
+      "move1_value": 3,
+	  "move1_type": "energy",
       "move2": "Living Mural",
       "move2_value": 2,
-      "move2_type": "energy"
+      "move2_type": "energy",
+      "move2_scope": "range"
     },
     {
       "id": 21,
       "name": "David Letter-Man",
-      "move1": "Vowel Volley",
+      "move1": "Monologue Jab",
       "move1_value": 1,
-      "move1_type": "energy",
-      "move2": "Monologue Jab",
+      "move2": "Vowel Volley",
       "move2_value": 1,
       "move2_type": "energy"
     },
@@ -2422,15 +2446,18 @@
       "move1": "Phantom Flex",
       "move1_value": 3,
       "move2": "Air-Punch Ambush",
-      "move2_value": 3
+      "move2_value": 2,
+      "move2_scope": "range"
     },
     {
       "id": 23,
       "name": "Mr. Homonym",
-      "move1": "Wing & Whack",
+      "move1": "Bat Whack",
       "move1_value": 1,
       "move2": "Homer Howl",
-      "move2_value": 1
+      "move2_value": 0,
+      "move2_scope": "opponent",
+      "move2_effect1": "Durability_Down_2"
     },
     {
       "id": 24,
@@ -2439,7 +2466,8 @@
       "move1_value": 2,
       "move2": "Event Purr-izon",
       "move2_value": 2,
-      "move2_type": "energy"
+      "move2_type": "energy",
+      "move2_scope": "range"
     },
     {
       "id": 25,
@@ -2499,7 +2527,8 @@
       "move1_value": 4,
       "move2": "Atmos Aura",
       "move2_value": 4,
-      "move2_type": "energy"
+      "move2_type": "energy",
+      "move2_scope": "range"
     },
     {
       "id": 32,
@@ -2507,15 +2536,18 @@
       "move1": "Spike Stomp",
       "move1_value": 4,
       "move2": "Pyro Pulse",
-      "move2_value": 4
+      "move2_value": 4,
+      "move2_type": "energy"
     },
     {
       "id": 33,
       "name": "Uni-man",
       "move1": "Rail‑Mind Grind",
-      "move1_value": 2,
+      "move1_value": 1,
       "move2": "Dr. Mac Dash",
-      "move2_value": 2
+      "move2_value": 0,
+	  "move2_scope": "self",
+	  "move2_effect1": "Speed_Up_1"
     },
     {
       "id": 34,
@@ -2523,7 +2555,8 @@
       "move1": "Shardstorm",
       "move1_value": 3,
       "move2": "Cursed Rebind",
-      "move2_value": 3
+      "move2_value": 3,
+      "move2_type": "energy"
     },
     {
       "id": 35,
@@ -2546,10 +2579,11 @@
     {
       "id": 37,
       "name": "Rings",
-      "move1": "Harmonic Pulse",
+      "move1": "Ring Bind",
       "move1_value": 3,
-      "move2": "Ring Bind",
-      "move2_value": 4
+      "move2": "Harmonic Pulse",
+      "move2_value": 4,
+      "move2_type": "energy"
     },
     {
       "id": 38,
@@ -2557,8 +2591,9 @@
       "move1": "Axe Aeonedge Riftcleave",
       "move1_value": 5,
       "move2": "Timeline Rend",
-      "move2_value": 5,
-      "move2_type": "energy"
+      "move2_value": 4,
+      "move2_type": "energy",
+      "move2_scope": "range"
     },
     {
       "id": 39,
@@ -2566,14 +2601,15 @@
       "move1": "Hostile Takeover",
       "move1_value": 4,
       "move2": "Inflation Spike",
-      "move2_value": 4
+      "move2_value": 0,
+	  "move2_scope": "team",
+	  "move2_effect1": "Strength_Up_3"
     },
     {
       "id": 40,
       "name": "AMPIX",
       "move1": "Inkspace Tear",
       "move1_value": 3,
-      "move1_type": "energy",
       "move2": "Unframe the Flesh",
       "move2_value": 3,
       "move2_type": "energy"
@@ -2593,7 +2629,8 @@
       "move1": "#@$! Barrage",
       "move1_value": 1,
       "move2": "Curse Out",
-      "move2_value": 1
+      "move2_value": 1,
+      "move2_type": "energy"
     },
     {
       "id": 43,
@@ -2610,7 +2647,8 @@
       "move1": "Razor Current",
       "move1_value": 3,
       "move2": "River Ambush",
-      "move2_value": 3
+      "move2_value": 0,
+	  "move2_effect1": "Skill_Up_1"
     },
     {
       "id": 45,
@@ -2618,7 +2656,8 @@
       "move1": "Punchline Slam",
       "move1_value": 2,
       "move2": "Hardy Har Har",
-      "move2_value": 2
+      "move2_value": 2,
+      "move2_type": "energy"
     },
     {
       "id": 46,
@@ -2669,10 +2708,12 @@
     {
       "id": 51,
       "name": "Wrist Missle",
-      "move1": "Smoke Trail",
-      "move1_value": 2,
-      "move2": "Missile Barrage",
-      "move2_value": 3
+      "move1": "Missile Barrage",
+      "move1_value": 3,
+      "move2": "Smoke Trail",
+      "move2_value": 0,
+      "move2_scope": "team",
+      "move2_effect1": "Skill_Up_1"
     },
     {
       "id": 52,
@@ -2680,6 +2721,7 @@
       "move1": "Splashdown Sweep",
       "move1_value": 1,
       "move1_type": "energy",
+      "move1_scope": "range",
       "move2": "Double Flushnado",
       "move2_value": 2,
       "move2_type": "energy"
@@ -2705,9 +2747,9 @@
       "id": 55,
       "name": "Gas",
       "move1": "Poison Cloud",
-      "move1_value": 3,
-      "move1_type": "energy",
-      "move1_energy_color": "#5cff4a",
+      "move1_value": 0,
+      "move1_effect1": "Skill_Up_1",
+      "move1_scope": "team",
       "move2": "Toxic Leak",
       "move2_value": 3,
       "move2_type": "energy"
@@ -2716,17 +2758,19 @@
       "id": 56,
       "name": "Wrecking Ball",
       "move1": "Demolition Swing",
-      "move1_value": 4,
-      "move2": "Spike Smash",
-      "move2_value": 3
+      "move1_value": 3,
+      "move1_scope": "range",
+      "move2": "Reputation for Destruction",
+      "move2_value": 4
     },
     {
       "id": 57,
       "name": "Ochindew",
-      "move1": "Dew Strike",
+      "move1": "Cavern Creep",
       "move1_value": 2,
-      "move2": "Ochin Rush",
-      "move2_value": 2
+      "move2": "Violet Malice",
+      "move2_value": 2,
+      "move2_type": "energy"
     },
     {
       "id": 58,

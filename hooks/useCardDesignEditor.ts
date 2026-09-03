@@ -81,6 +81,7 @@ export interface EditorMeta {
   home_district: string;
   type?: string;
   identity?: string;
+  affiliation?: string;
 
   description: string;
 
@@ -172,6 +173,7 @@ export function metaFromCharacter(character: Character): EditorMeta {
     home_district: character.home_district,
     type: character.type,
     identity: character.identity,
+    affiliation: character.affiliation,
 
     description: character.description,
 
@@ -511,13 +513,23 @@ export function useCardDesignEditor() {
 
 
   useEffect(() => {
+    const DEV_FETCH_TIMEOUT_MS = 15_000;
+
     async function devFetchJson<T>(url: string): Promise<T | null> {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), DEV_FETCH_TIMEOUT_MS);
+
       try {
-        const response = await fetch(url, { cache: "no-store" });
+        const response = await fetch(url, {
+          cache: "no-store",
+          signal: controller.signal,
+        });
         if (!response.ok) return null;
         return (await response.json()) as T;
       } catch {
         return null;
+      } finally {
+        clearTimeout(timeoutId);
       }
     }
 
@@ -558,7 +570,7 @@ export function useCardDesignEditor() {
           setLoadError(
             descriptionsData
               ? "No characters found in data/character_descriptions.json."
-              : "Could not load character data from /api/dev/character-descriptions. Use npm run dev (not npm start) or set ENABLE_CARD_EDITOR=true in .env, then restart the server."
+              : "Could not load character data from /api/dev/character-descriptions. Use npm run dev (not npm start) or set ENABLE_CARD_EDITOR=true in .env, then restart the server. If the page was open a long time, restart npm run dev — a stuck dev server can hang these requests."
           );
         } else {
           setLoadError(null);

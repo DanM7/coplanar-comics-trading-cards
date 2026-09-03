@@ -29,6 +29,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
+        <div className="site-bg-glow" aria-hidden />
         <AuthProvider session={session}>
           <Header />
           <main>{children}</main>

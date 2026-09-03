@@ -1,6 +1,10 @@
 "use client";
 
 import { useState, type ReactNode, type SyntheticEvent } from "react";
+import {
+  CARD_EDITOR_HEIGHT,
+  CARD_EDITOR_WIDTH,
+} from "@/lib/export-card-png";
 import styles from "./card.module.css";
 
 interface FinishedCardImageProps {
@@ -36,6 +40,8 @@ export function FinishedCardImage({
       <img
         src={url}
         alt={alt}
+        width={CARD_EDITOR_WIDTH}
+        height={CARD_EDITOR_HEIGHT}
         className={styles.finishedCardArt}
         onError={() => setFailed(true)}
         onLoad={(event) => {

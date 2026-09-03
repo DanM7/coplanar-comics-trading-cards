@@ -17,6 +17,8 @@ export interface PackOpenResult {
   packId?: string;
   cardIds: string[];
   cards: GeneratedCard[];
+  /** Character ids that were not owned before this pack was opened. */
+  newCharacterIds: string[];
   openedAt: string;
   savedToCollection?: boolean;
 }

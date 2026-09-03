@@ -5,12 +5,18 @@ import {
   overridesFromMoveSlot,
   resolveMoveAnimation,
 } from "@/lib/move-animations";
+import {
+  moveHpBoostFromSlot,
+  moveStatBoostEffectsFromSlots,
+  moveStatReductionEffectsFromSlots,
+} from "@/lib/move-stat-effects";
 import type {
   CharacterMoveRecord,
   CharacterMovesFile,
   MoveAnimationsConfig,
   MoveAttackType,
   MoveDisplay,
+  MoveScope,
 } from "@/types/character-moves";
 
 let cachedById: Map<string, CharacterMoveRecord> | null = null;
@@ -18,6 +24,14 @@ let cachedAnimations: MoveAnimationsConfig | null = null;
 
 export function normalizeMoveAttackType(value: unknown): MoveAttackType {
   return value === "energy" ? "energy" : "physical";
+}
+
+export function normalizeMoveScope(value: unknown): MoveScope | undefined {
+  if (value === "range") return "range";
+  if (value === "self") return "self";
+  if (value === "team") return "team";
+  if (value === "opponent") return "opponent";
+  return undefined;
 }
 
 export function getMoveAnimationsConfig(): MoveAnimationsConfig {
@@ -66,12 +80,19 @@ export function moveDisplaysFromRecord(
 ): MoveDisplay[] {
   const moves: MoveDisplay[] = [];
 
-  if (record.move1.trim()) {
+  if (record.move1?.trim()) {
     const attackType = normalizeMoveAttackType(record.move1_type);
+    const statBoosts = moveStatBoostEffectsFromSlots(record, 1);
+    const statReductions = moveStatReductionEffectsFromSlots(record, 1);
+    const hpBoost = moveHpBoostFromSlot(record, 1);
     moves.push({
       name: record.move1,
       value: record.move1_value,
       attackType,
+      scope: normalizeMoveScope(record.move1_scope),
+      statBoosts: statBoosts.length ? statBoosts : undefined,
+      statReductions: statReductions.length ? statReductions : undefined,
+      hpBoost,
       animation: resolveMoveAnimation({
         moveName: record.move1,
         attackType,
@@ -81,12 +102,19 @@ export function moveDisplaysFromRecord(
     });
   }
 
-  if (record.move2.trim()) {
+  if (record.move2?.trim()) {
     const attackType = normalizeMoveAttackType(record.move2_type);
+    const statBoosts = moveStatBoostEffectsFromSlots(record, 2);
+    const statReductions = moveStatReductionEffectsFromSlots(record, 2);
+    const hpBoost = moveHpBoostFromSlot(record, 2);
     moves.push({
       name: record.move2,
       value: record.move2_value,
       attackType,
+      scope: normalizeMoveScope(record.move2_scope),
+      statBoosts: statBoosts.length ? statBoosts : undefined,
+      statReductions: statReductions.length ? statReductions : undefined,
+      hpBoost,
       animation: resolveMoveAnimation({
         moveName: record.move2,
         attackType,

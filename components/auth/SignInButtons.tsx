@@ -1,20 +1,18 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { isDevAuthBypassVisible } from "@/services/auth/dev-bypass";
+import { SignInModal } from "./SignInModal";
 
 export function SignInButtons() {
-  const {
-    isAuthenticated,
-    isLoading,
-    user,
-    signInWithGoogle,
-    signInWithFacebook,
-    signInDev,
-    signOut,
-  } = useAuth();
+  const { isAuthenticated, isLoading, user, signOut } = useAuth();
+  const [signInOpen, setSignInOpen] = useState(false);
 
-  const devBypassEnabled = isDevAuthBypassVisible();
+  useEffect(() => {
+    if (isAuthenticated) {
+      setSignInOpen(false);
+    }
+  }, [isAuthenticated]);
 
   if (isLoading) {
     return <p className="auth-status">Loading session…</p>;
@@ -34,18 +32,19 @@ export function SignInButtons() {
   }
 
   return (
-    <div className="auth-bar">
-      <button type="button" className="auth-btn" onClick={signInWithGoogle}>
-        Google
-      </button>
-      <button type="button" className="auth-btn" onClick={signInWithFacebook}>
-        Facebook
-      </button>
-      {devBypassEnabled && (
-        <button type="button" className="auth-btn auth-btn--ghost" onClick={signInDev}>
-          Dev Sign In
+    <>
+      <div className="auth-bar">
+        <button
+          type="button"
+          className="auth-btn"
+          aria-haspopup="dialog"
+          aria-expanded={signInOpen}
+          onClick={() => setSignInOpen(true)}
+        >
+          Sign In
         </button>
-      )}
-    </div>
+      </div>
+      <SignInModal open={signInOpen} onClose={() => setSignInOpen(false)} />
+    </>
   );
 }

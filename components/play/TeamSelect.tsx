@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import Image from "next/image";
+import { useMemo, useState, type CSSProperties } from "react";
+import { CORE_STAT_BLOCK_DEFS } from "@/lib/card-stat-blocks";
 import { primaryCharacterType } from "@/lib/format-character-home";
 import {
   computeTeamPower,
@@ -11,7 +11,7 @@ import {
   filterPlayRoster,
   findBestTeam,
   sortPlayRoster,
-  type PlayRosterSort,
+  type PlayRosterSortField,
 } from "@/services/game/team-optimizer";
 import {
   entriesFromTeamSlots,
@@ -21,6 +21,7 @@ import {
   type TeamSlots,
 } from "@/services/game/team-slots";
 import { TeamStatBonusBlocks } from "@/components/play/TeamStatBonusBlocks";
+import { RosterPickCard } from "@/components/play/RosterPickCard";
 import type { Alignment } from "@/types/character";
 import type { PlayRosterEntry } from "@/types/game";
 import styles from "./play.module.css";
@@ -28,8 +29,6 @@ import styles from "./play.module.css";
 interface TeamSelectProps {
   roster: PlayRosterEntry[];
   teamSlots: TeamSlots;
-  mode: "collection" | "guest";
-  totalOwned: number;
   onPick: (characterId: string) => void;
   onClearSlot: (slotIndex: number) => void;
   onSelectTeam: (characterIds: string[]) => void;
@@ -40,18 +39,44 @@ interface TeamSelectProps {
 
 const ALL_FILTER = "";
 
-const SORT_OPTIONS: { value: PlayRosterSort; label: string }[] = [
-  { value: "num-asc", label: "# Asc" },
-  { value: "num-desc", label: "# Desc" },
-  { value: "tier-asc", label: "Tier Asc" },
-  { value: "tier-desc", label: "Tier Desc" },
+const STAT_SORT_FIELDS = [
+  "intelligence",
+  "strength",
+  "durability",
+  "skill",
+  "energy_projection",
+  "speed",
+] as const satisfies readonly PlayRosterSortField[];
+
+const SORT_FIELD_OPTIONS: {
+  value: PlayRosterSortField;
+  label: string;
+  color?: string;
+}[] = [
+  { value: "num", label: "#" },
+  { value: "power", label: "Power", color: "var(--brand-orange)" },
+  ...STAT_SORT_FIELDS.map((key) => ({
+    value: key,
+    label: CORE_STAT_BLOCK_DEFS[key].label,
+    color: CORE_STAT_BLOCK_DEFS[key].color,
+  })),
 ];
+
+function sortFieldStyle(field: PlayRosterSortField): CSSProperties | undefined {
+  const option = SORT_FIELD_OPTIONS.find((item) => item.value === field);
+  if (!option?.color) {
+    return undefined;
+  }
+
+  return {
+    color: option.color,
+    ["--sort-stat-color" as string]: option.color,
+  };
+}
 
 export function TeamSelect({
   roster,
   teamSlots,
-  mode,
-  totalOwned,
   onPick,
   onClearSlot,
   onSelectTeam,
@@ -59,12 +84,14 @@ export function TeamSelect({
   canStart,
   startingBattle = false,
 }: TeamSelectProps) {
-  const [sort, setSort] = useState<PlayRosterSort>("num-asc");
+  const [sortField, setSortField] = useState<PlayRosterSortField>("power");
+  const [sortDesc, setSortDesc] = useState(true);
   const [alignmentFilter, setAlignmentFilter] = useState<Alignment | "">(
     ALL_FILTER
   );
   const [homeFilter, setHomeFilter] = useState(ALL_FILTER);
   const [typeFilter, setTypeFilter] = useState(ALL_FILTER);
+  const [bonusesOpen, setBonusesOpen] = useState(true);
 
   const selectedIds = useMemo(
     () => teamSlots.filter((id): id is string => id !== null),
@@ -73,6 +100,16 @@ export function TeamSelect({
 
   const selectedEntries = useMemo(
     () => entriesFromTeamSlots(teamSlots, roster),
+    [roster, teamSlots]
+  );
+
+  const slotEntries = useMemo(
+    () =>
+      teamSlots.map((characterId) =>
+        characterId
+          ? roster.find((entry) => entry.characterId === characterId) ?? null
+          : null
+      ),
     [roster, teamSlots]
   );
 
@@ -131,8 +168,9 @@ export function TeamSelect({
   );
 
   const displayedRoster = useMemo(
-    () => sortPlayRoster(filteredRoster, sort),
-    [filteredRoster, sort]
+    () =>
+      sortPlayRoster(filteredRoster, sortField, sortDesc ? "desc" : "asc"),
+    [filteredRoster, sortDesc, sortField]
   );
 
   const atMax = selectedIds.length >= TEAM_SLOT_COUNT;
@@ -146,252 +184,243 @@ export function TeamSelect({
   };
 
   const synergyLines = bonusPreview
-    ? formatTeamSynergyBonuses(bonusPreview.synergy)
+    ? formatTeamSynergyBonuses(selectedEntries, bonusPreview.synergy)
     : [];
 
   return (
-    <section className={styles.playPanel}>
-      <span className={styles.modeBadge}>
-        {mode === "collection"
-          ? `Your Collection (${totalOwned} UNIQUE)`
-          : "Guest Mode — full roster"}
-      </span>
-      <div className={styles.teamSelectHeader}>
-        <h2>Build Your Team</h2>
-        <p className={styles.selectionCount}>
-          Selected {selectedIds.length} / {TEAM_SLOT_COUNT}
-        </p>
-      </div>
-      <p className={styles.playIntro}>
-        Pick three fighters. Team stat bonuses and synergy (Type, Alignment,
-        Home) apply automatically using the official combat rules.
-      </p>
+    <section className={`${styles.playPanel} ${styles.teamSelectPanel}`}>
+      <div className={styles.teamSelectLayout}>
+        <div className={styles.teamSelectLeft}>
+          <div className={styles.teamBuildColumn}>
+            <div className={styles.teamSlots}>
+              {teamSlots.map((characterId, slotIndex) => {
+                const entry = characterId
+                  ? roster.find((item) => item.characterId === characterId)
+                  : undefined;
 
-      <div className={styles.teamBuildRow}>
-        <div className={styles.teamSlots}>
-          {teamSlots.map((characterId, slotIndex) => {
-            const entry = characterId
-              ? roster.find((item) => item.characterId === characterId)
-              : undefined;
-
-            return (
-              <div key={slotIndex} className={styles.teamSlot}>
-                {entry ? (
-                  <button
-                    type="button"
-                    className={styles.teamSlotFilled}
-                    onClick={() => onClearSlot(slotIndex)}
-                    title={`Remove ${entry.name}`}
-                  >
-                    {entry.frontImageUrl ? (
-                      <Image
-                        src={entry.frontImageUrl}
-                        alt=""
-                        width={90}
-                        height={126}
-                        className={styles.teamSlotThumb}
-                        unoptimized
+                return (
+                  <div key={slotIndex} className={styles.teamSlot}>
+                    {entry ? (
+                      <RosterPickCard
+                        entry={entry}
+                        isSelected
+                        slotToggleDisabled={false}
+                        onToggleSlot={() => onClearSlot(slotIndex)}
                       />
                     ) : (
-                      <div
-                        className={styles.teamSlotThumbPlaceholder}
-                        aria-hidden
-                      />
+                      <div className={styles.teamSlotEmpty}>
+                        <span className={styles.teamSlotLabel}>
+                          Slot {slotIndex + 1}
+                        </span>
+                      </div>
                     )}
-                    <span className={styles.teamSlotName}>{entry.name}</span>
-                  </button>
-                ) : (
-                  <div className={styles.teamSlotEmpty}>
-                    <span className={styles.teamSlotLabel}>
-                      Slot {slotIndex + 1}
-                    </span>
                   </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                );
+              })}
+            </div>
 
-        <aside className={styles.teamBonusPanel}>
-          <h3 className={styles.teamBonusTitle}>Team Bonuses</h3>
-          {teamPower ? (
-            <p className={styles.teamPowerScore}>
-              Team power:{" "}
-              <strong>{formatTeamPowerScore(teamPower.totalScore)}</strong>
-            </p>
-          ) : null}
-          {bonusPreview ? (
-            <>
-              <div className={styles.teamBonusSection}>
-                <p className={styles.teamBonusSectionLabel}>Stat boosts</p>
-                <TeamStatBonusBlocks bonuses={bonusPreview.statBonuses} />
-              </div>
-              <div className={styles.teamBonusSection}>
-                <p className={styles.teamBonusSectionLabel}>Synergy</p>
-                {synergyLines.length > 0 ? (
-                  <ul className={styles.teamBonusList}>
-                    {synergyLines.map((line) => (
-                      <li key={line}>{line}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className={styles.teamBonusEmpty}>No synergy yet</p>
-                )}
-              </div>
-            </>
-          ) : (
-            <p className={styles.teamBonusEmpty}>
-              Select fighters to preview bonuses.
-            </p>
-          )}
-        </aside>
-      </div>
-
-      {roster.length > 0 ? (
-        <div className={styles.filterBar}>
-          <label className={styles.filterField}>
-            <span className={styles.filterLabel}>Sort</span>
-            <select
-              className={styles.filterSelect}
-              value={sort}
-              onChange={(event) =>
-                setSort(event.target.value as PlayRosterSort)
-              }
+            <aside
+              className={[
+                styles.teamBonusPanel,
+                bonusesOpen ? "" : styles.teamBonusPanelCollapsed,
+              ]
+                .filter(Boolean)
+                .join(" ")}
             >
-              {SORT_OPTIONS.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className={styles.filterField}>
-            <span className={styles.filterLabel}>Alignment</span>
-            <select
-              className={styles.filterSelect}
-              value={alignmentFilter}
-              onChange={(event) =>
-                setAlignmentFilter(event.target.value as Alignment | "")
-              }
-            >
-              <option value={ALL_FILTER}>All alignments</option>
-              {alignmentOptions.map((alignment) => (
-                <option key={alignment} value={alignment}>
-                  {alignment}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className={styles.filterField}>
-            <span className={styles.filterLabel}>Home</span>
-            <select
-              className={styles.filterSelect}
-              value={homeFilter}
-              onChange={(event) => setHomeFilter(event.target.value)}
-            >
-              <option value={ALL_FILTER}>All homes</option>
-              {homeOptions.map((home) => (
-                <option key={home} value={home}>
-                  {home}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className={styles.filterField}>
-            <span className={styles.filterLabel}>Type</span>
-            <select
-              className={styles.filterSelect}
-              value={typeFilter}
-              onChange={(event) => setTypeFilter(event.target.value)}
-            >
-              <option value={ALL_FILTER}>All types</option>
-              {typeOptions.map((type) => (
-                <option key={type} value={type}>
-                  {type}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <button
-            type="button"
-            className={`${styles.playBtn} ${styles.playBtnSecondary}`}
-            disabled={!canFindBest}
-            onClick={handleFindBest}
-          >
-            Find Best
-          </button>
-        </div>
-      ) : null}
-
-      {roster.length === 0 ? (
-        <p className={styles.playIntro}>
-          No playable cards found. Open packs or sign in to build a team from
-          your collection.
-        </p>
-      ) : displayedRoster.length === 0 ? (
-        <p className={styles.playIntro}>
-          No fighters match the current filters. Try broadening Alignment, Home,
-          or Type.
-        </p>
-      ) : (
-        <div className={styles.rosterGrid}>
-          {displayedRoster.map((entry) => {
-            const isSelected = selectedIds.includes(entry.characterId);
-            const disabled = !isSelected && atMax;
-
-            return (
               <button
-                key={entry.characterId}
                 type="button"
-                className={[
-                  styles.rosterCard,
-                  isSelected ? styles.rosterCardSelected : "",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-                disabled={disabled}
-                onClick={() => onPick(entry.characterId)}
+                className={styles.teamBonusToggle}
+                aria-expanded={bonusesOpen}
+                onClick={() => setBonusesOpen((open) => !open)}
               >
-                {entry.frontImageUrl ? (
-                  <Image
-                    src={entry.frontImageUrl}
-                    alt=""
-                    width={150}
-                    height={210}
-                    className={styles.rosterCardThumb}
-                    unoptimized
-                  />
-                ) : (
-                  <div
-                    className={styles.rosterCardThumbPlaceholder}
-                    aria-hidden
-                  />
-                )}
-                <p className={styles.rosterCardName}>{entry.name}</p>
-                <p className={styles.rosterCardMeta}>
-                  Tier {entry.tier} • {entry.alignment}
-                  <br />
-                  {entry.type ?? "Unknown type"}
-                </p>
+                <span className={styles.teamBonusTitle}>Team Bonuses</span>
+                <span className={styles.teamBonusChevron} aria-hidden>
+                  {bonusesOpen ? "▾" : "▸"}
+                </span>
               </button>
-            );
-          })}
-        </div>
-      )}
+              {bonusesOpen ? (
+                <>
+                  {teamPower ? (
+                    <p className={styles.teamPowerScore}>
+                      Team power:{" "}
+                      <strong>{formatTeamPowerScore(teamPower.totalScore)}</strong>
+                    </p>
+                  ) : null}
+                  {bonusPreview || slotEntries.some((entry) => entry !== null) ? (
+                    <>
+                      <div className={styles.teamBonusSection}>
+                        <p className={styles.teamBonusSectionLabel}>Stat boosts</p>
+                        <TeamStatBonusBlocks slotEntries={slotEntries} />
+                      </div>
+                      {bonusPreview ? (
+                        <div className={styles.teamBonusSection}>
+                          <p className={styles.teamBonusSectionLabel}>Synergy</p>
+                          {synergyLines.length > 0 ? (
+                            <ul className={styles.teamBonusList}>
+                              {synergyLines.map((line) => (
+                                <li key={line}>{line}</li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p className={styles.teamBonusEmpty}>No synergy yet</p>
+                          )}
+                        </div>
+                      ) : null}
+                    </>
+                  ) : (
+                    <p className={styles.teamBonusEmpty}>
+                      Select fighters to preview bonuses.
+                    </p>
+                  )}
+                </>
+              ) : null}
+            </aside>
 
-      <div className={styles.playActions}>
-        <button
-          type="button"
-          className={styles.playBtn}
-          disabled={!canStart}
-          onClick={onStart}
-        >
-          {startingBattle ? "Starting…" : "Start Battle"}
-        </button>
+            <div className={styles.teamBuildActions}>
+              <button
+                type="button"
+                className={`${styles.playBtn} ${styles.playBtnSecondary} ${styles.teamBuildActionsFindBest}`}
+                disabled={!canFindBest}
+                onClick={handleFindBest}
+              >
+                Find Best
+              </button>
+              <button
+                type="button"
+                className={`${styles.playBtn} ${styles.teamBuildActionsStart}`}
+                disabled={!canStart}
+                onClick={onStart}
+              >
+                {startingBattle ? "Starting…" : "Start Battle"}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.teamSelectRight}>
+          {roster.length > 0 ? (
+            <div className={styles.filterBar}>
+              <div className={styles.sortControls}>
+                <label className={styles.filterField}>
+                  <span className={styles.filterLabel}>Sort</span>
+                  <select
+                    className={`${styles.filterSelect} ${styles.sortFieldSelect}`}
+                    style={sortFieldStyle(sortField)}
+                    value={sortField}
+                    onChange={(event) =>
+                      setSortField(event.target.value as PlayRosterSortField)
+                    }
+                  >
+                    {SORT_FIELD_OPTIONS.map((option) => (
+                      <option
+                        key={option.value}
+                        value={option.value}
+                        style={option.color ? { color: option.color } : undefined}
+                      >
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+
+                <div className={styles.filterField}>
+                  <span className={styles.filterLabel}>Dir</span>
+                  <button
+                    type="button"
+                    className={styles.sortDirBtn}
+                    aria-label={
+                      sortDesc ? "Sort descending" : "Sort ascending"
+                    }
+                    title={sortDesc ? "Descending" : "Ascending"}
+                    onClick={() => setSortDesc((current) => !current)}
+                  >
+                    {sortDesc ? "↓" : "↑"}
+                  </button>
+                </div>
+              </div>
+
+              <label className={styles.filterField}>
+                <span className={styles.filterLabel}>Alignment</span>
+                <select
+                  className={styles.filterSelect}
+                  value={alignmentFilter}
+                  onChange={(event) =>
+                    setAlignmentFilter(event.target.value as Alignment | "")
+                  }
+                >
+                  <option value={ALL_FILTER}>All alignments</option>
+                  {alignmentOptions.map((alignment) => (
+                    <option key={alignment} value={alignment}>
+                      {alignment}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <label className={styles.filterField}>
+                <span className={styles.filterLabel}>Home</span>
+                <select
+                  className={styles.filterSelect}
+                  value={homeFilter}
+                  onChange={(event) => setHomeFilter(event.target.value)}
+                >
+                  <option value={ALL_FILTER}>All homes</option>
+                  {homeOptions.map((home) => (
+                    <option key={home} value={home}>
+                      {home}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <label className={styles.filterField}>
+                <span className={styles.filterLabel}>Type</span>
+                <select
+                  className={styles.filterSelect}
+                  value={typeFilter}
+                  onChange={(event) => setTypeFilter(event.target.value)}
+                >
+                  <option value={ALL_FILTER}>All types</option>
+                  {typeOptions.map((type) => (
+                    <option key={type} value={type}>
+                      {type}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+          ) : null}
+
+          <div className={styles.rosterScroll}>
+            {roster.length === 0 ? (
+              <p className={styles.playIntro}>
+                No playable cards found. Open packs or sign in to build a team
+                from your collection.
+              </p>
+            ) : displayedRoster.length === 0 ? (
+              <p className={styles.playIntro}>
+                No fighters match the current filters. Try broadening Alignment,
+                Home, or Type.
+              </p>
+            ) : (
+              <div className={styles.rosterGrid}>
+                {displayedRoster.map((entry) => {
+                  const isSelected = selectedIds.includes(entry.characterId);
+
+                  return (
+                    <RosterPickCard
+                      key={entry.characterId}
+                      entry={entry}
+                      isSelected={isSelected}
+                      slotToggleDisabled={!isSelected && atMax}
+                      onToggleSlot={() => onPick(entry.characterId)}
+                    />
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );

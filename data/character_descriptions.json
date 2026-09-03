@@ -138,12 +138,12 @@
       "id": 13,
       "name": "Acid",
       "alignment": "Good",
-      "home_plane": "Human",
+      "home_plane": "Human / Lapsed Continuum",
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Creature",
       "identity": "Species: Corrosivus Liquefactus",
-      "description": "Acid tumbled into Coplanar County through a dimensional rift, confused and out of control, and Molten‑Man quickly posed as a friend while shaping him into a living weapon. When Acid’s growing mind recognized the manipulation, he broke free in a fury and now lurks in the swamps, unsure whether he’s meant to protect this world or melt it."
+      "description": "Acid tumbled into Coplanar County through a dimensional rift, confused and out of control. He was first discovered by Molten‑Man, who quickly posed as a friend, only seaking to shape Acid into a living weapon. When Acid recognized the manipulation, he broke free in a fury. Now lurking in the swamps, he is unsure whether he is meant to protect this world or melt it."
     },
     {
       "id": 14,
@@ -186,8 +186,8 @@
       "home_location": "Parallel Pines",
       "home_district": "Pine Hollow",
       "type": "Cartoon",
-      "identity": "Animator: Devouring Dan Maguire",
-      "description": "The Abdominal Snowman is a deranged cartoon snow beast whose entire midsection is literally a giant stomach organ, rumbling and flexing as if it has a mind of its own. It lurks atop the highest peaks of Coplanar County, living for the thrill of devouring anything foolish enough to climb its mountains, turning every ascent into a desperate race against its insatiable hunger."
+      "identity": "Animator: Devourer Dan Maguire",
+      "description": "The Abdominal Snowman is a deranged snow beast whose entire midsection is literally a giant stomach organ, rumbling and flexing as if it has a mind of its own. It lurks atop the highest peaks of Coplanar County, living for the thrill of devouring anything foolish enough to climb its mountains, turning every hiker's ascent into a desperate race against the creature's insatiable hunger."
     },
     {
       "id": 18,
@@ -197,8 +197,8 @@
       "home_location": "Coplanar City",
       "home_district": "Realspace Row",
       "type": "Robot",
-      "identity": "Inventor / Manufacturer: Coplanar Corp - Weapons Division",
-      "description": "ASR is a compact, cube‑shaped Ammo Supplying Robot, quietly rolling through Coplanar County with no allegiance to heroes or villains. It simply follows its programming with calm precision—dispensing ammunition to whoever requests it—making its neutrality both useful and unnervingly unpredictable."
+      "identity": "Manufacturer: Coplanar Corp - Weapons Division",
+      "description": "ASR is a compact, cube‑shaped Ammo Supplying Robot, quietly rolling through Coplanar County with no allegiance to heroes or villains. It simply follows its programming with calm precision: dispensing ammunition to whoever requests it. Its neutrality both useful and unnervingly unpredictable."
     },
     {
       "id": 19,
@@ -546,7 +546,7 @@
       "id": 50,
       "name": "Cyclone",
       "alignment": "Good",
-      "home_plane": "Human",
+      "home_plane": "Human / Lapsed Continuum",
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Construct / Superhuman",
@@ -603,21 +603,22 @@
       "name": "Gas",
       "alignment": "Evil",
       "home_plane": "Human",
-      "home_location": "Coplanar Plains",
-      "home_district": "Sketchline Fields",
+      "home_location": "Coplanar City",
+      "home_district": "Realspace Row",
       "type": "Superhuman",
-      "identity": "Real Name: Gareth ",
-      "description": "Once a disaster response specialist who watched an entire rescue operation collapse when Cartoon Plane physics turned a burning building into a slapstick deathtrap. Now he weaponizes industrial-grade accelerants with surgical precision, hunting cartoons with the conviction of a man who believes their “comedy” has cost real lives."
+      "identity": "Real Name: Gareth Hague",
+      "affiliation": "Realspace Reapers",
+      "description": "Once a disaster response specialist, he watched an entire rescue operation collapse when cartoon plane physics turned a burning building into a slapstick deathtrap. Now he hunts cartoons with the conviction of a man who believes their “comedy” has cost real lives."
     },
     {
       "id": 56,
       "name": "Wrecking Ball",
       "alignment": "Good",
       "home_plane": "Human",
-      "home_location": "Coplanar Plains",
-      "home_district": "Sketchline Fields",
+      "home_location": "Coplanar City",
+      "home_district": "Realspace Row",
       "type": "Cyborg",
-      "identity": "",
+      "identity": "Will Kovacs",
       "description": "Rebuilt by CC-BMR under the promise of humanitarian rehabilitation, he escaped when he realized the program was exploiting vulnerable people and weaponizing their bodies. He now fights as a free agent alongside Scissor Kick to shield civilians and cartoons from harm, driven by a belief that Realspace needs guardians, not enforcers."
     },
     {
@@ -628,8 +629,8 @@
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
       "type": "Creature",
-      "identity": "Species: Ochindew Limus Ossium",
-      "description": ""
+      "identity": "Species: Maliglum Purpureus",
+      "description": "A humanoid mass of viscous purple fluid, Ochindew crawls from the cverns of the Coplanar Plains, his glistening form leaving trails of his living poison. His antennae quiver with malice, detecting fear like heat, and his touch dissolves flesh into a slick, lingering smear of violet residue. "
     },
     {
       "id": 58,
@@ -638,9 +639,9 @@
       "home_plane": "Human",
       "home_location": "Coplanar Plains",
       "home_district": "Sketchline Fields",
-      "type": "Superhuman",
+      "type": "Human",
       "identity": "Real Name: Spencer Litman",
-      "description": "A heroic figure from Sketchline Fields who uses his spotlight to illuminate the darkness and guide others through the district’s dangerous alleys."
+      "description": "Spencer Litman knows the alleys of Sketchline Fields better than most people know their own homes. The district is a maze of half‑lit corners and unfinished streets where trouble always is waiting in the dark. His wrist-mounted spotlights cut through the gloom, either blinding enemies or to show people what the shadows are hiding. Some nights he guides lost travelers. Other nights he exposes the kind of danger that prefers to stay unseen. In a place where darkness feels like it has intentions of its own, Spotlight walks the paths no one else wants to, keeping the light steady for anyone who needs it."
     },
     {
       "id": 59,
